@@ -1,0 +1,37 @@
+---
+title: Assimilação de dados
+description: Saiba como visualizar e gerenciar a assimilação de dados do Commerce no New Relic.
+feature: Cloud, Observability
+exl-id: f88bf20c-604b-4986-b71c-bb726b2f00b8
+source-git-commit: bf3debc5986d51a721537b52ffced58b2ee521ea
+workflow-type: tm+mt
+source-wordcount: '210'
+ht-degree: 0%
+
+---
+
+# Assimilação de dados
+
+A New Relic depende de dados avançados para fornecer monitoramento e análise eficazes, mas grandes conjuntos de dados podem afetar resultados oportunos, desempenho e conformidade. Este tópico fornece algumas orientações sobre como gerenciar a assimilação de dados e estratégias para refinar seus dados de forma a torná-los mais eficazes.
+
+O New Relic fornece uma _Gestão de dados_ exibição que resume o uso do plano por fonte de dados.
+
+**Para visualizar os dados e fontes de assimilação**:
+
+1. No menu de usuário do New Relic, clique em **[!UICONTROL Manage your data]**.
+1. Clique em **[!UICONTROL Data management]** no _Administração_ lista.
+
+   ![Gestão de dados](../../assets/new-relic/data-ingestion.png)
+
+   A variável **[!UICONTROL Data ingestion]** exibe os dados assimilados do dia e a fonte de dados.
+A guia de retenção de dados exibe e controla por quanto tempo os dados são armazenados.
+
+1. Selecione o **[!UICONTROL Limits]** e veja os limites da sua conta.
+
+As fontes de dados para o Adobe Commerce incluem:
+
+- **Eventos APM**—dados do evento usados em gráficos e painéis
+- **Infraestrutura**— métricas de processo e host, como CPU, armazenamento, rede
+- **Logs**— logs para CDN, APM e servidor de aplicativos
+
+Os dados de log contribuem para uma grande parte da assimilação. Veja como [Exibir e analisar dados de log](log-management.md#view-and-analyze-log-data) e trabalhe com seu representante da Adobe para formar uma estratégia de assimilação e retenção de dados. Leia mais sobre [gerenciando assimilação de dados](https://docs.newrelic.com/docs/data-apis/manage-data/manage-data-coming-new-relic/) no _Documentação do New Relic_.

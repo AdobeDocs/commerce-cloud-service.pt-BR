@@ -1,0 +1,40 @@
+---
+title: Visão geral das opções de armazenamento e do gerenciamento de configuração
+description: Personalize sua loja da Adobe Commerce na infraestrutura em nuvem.
+feature: Cloud, Configuration, Services
+exl-id: 06d477e4-02de-4742-8495-541458400e93
+source-git-commit: 8a0523f1714b6ea41887e99b5c31294cf5e5255e
+workflow-type: tm+mt
+source-wordcount: '191'
+ht-degree: 0%
+
+---
+
+# Visão geral das opções de armazenamento e do gerenciamento de configuração
+
+Há várias maneiras de personalizar seu armazenamento, como adicionar um tema personalizado, instalar uma extensão ou impor uma configuração específica em ambientes de infraestrutura em nuvem. Você pode definir configurações para serviços específicos diretamente em ambientes de Preparo e Produção. Você pode configurar vários sites e lojas. A configuração da Loja ajuda a definir essas opções na estação de trabalho local e implantar configurações específicas em todos os ambientes.
+
+Para acessar sua loja, use o `magento-cloud url` e responda aos prompts. Ou você pode encontrar o url na variável [!DNL Cloud Console] em **Acessar site**.
+
+## Configurar opções de loja
+
+As opções de armazenamento incluem o seguinte:
+
+* [Módulo B2B (B2B)](b2b-module.md)
+* [Temas personalizados](custom-theme.md)
+* [Extensões](extensions.md)
+* [Vários sites](multiple-sites.md)
+* [Serviços de pagamento](paypal.md)
+
+## Configurar serviços e integrações
+
+Há [arquivos de configuração](../environment/overview.md) que gerenciam determinados comportamentos de implantação em ambientes remotos. Você pode revisar esses tópicos separadamente:
+
+* [Implantação do aplicativo](../application/configure-app-yaml.md)
+* [Ações de criação e implantação de ambientes](../environment/configure-env-yaml.md)
+* [Rotas de solicitação de entrada](../routes/routes-yaml.md)
+* [Serviços compatíveis](../services/services-yaml.md)
+
+## Gerenciamento de configuração
+
+Após configurar as opções, os serviços e as integrações da loja, use o gerenciamento de configurações para implantar essas configurações em todos os ambientes de forma consistente e com tempo de inatividade mínimo. Consulte [Gerenciamento de configurações](store-settings.md).

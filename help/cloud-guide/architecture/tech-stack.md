@@ -1,0 +1,34 @@
+---
+title: Pilha de tecnologia
+description: Consulte a pilha de tecnologia que forma a infraestrutura do Commerce na nuvem.
+feature: Cloud, Iaas, Paas
+exl-id: e456db25-c44b-4053-b96d-517d3d1606d0
+source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+workflow-type: tm+mt
+source-wordcount: '374'
+ht-degree: 0%
+
+---
+
+# Pilha de tecnologia
+
+Considere a Adobe Commerce na infraestrutura em nuvem como cinco camadas funcionais, conforme mostrado abaixo:
+
+![Pilha em nuvem](../../assets/CloudStack.svg)
+
+1. [**Infraestrutura em nuvem**](pro-architecture.md): escolha a Amazon Web Services (AWS) ou o Microsoft Azure como a sua base de Infraestrutura como um serviço (IaaS) para os projetos Pro de infraestrutura em nuvem do Adobe Commerce.
+
+   O Adobe analisa rotineiramente seu uso de recurso de computação virtual (vCPU) e aloca recursos automaticamente para otimizar seu uso a longo prazo e reduzir o risco de exceder sua permissão diária máxima anual de vCPU. Se você espera aumento no tráfego do site por períodos específicos, continue abrindo um tíquete de suporte para [solicitar um upsize temporário](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/how-to-request-temporary-magento-upsize.html).
+
+1. [**Plataforma como um serviço**](cloud-architecture.md): cada projeto de infraestrutura em nuvem do Adobe Commerce fornece um ambiente de integração de Plataforma como um serviço (PaaS) para desenvolvimento, teste e integração de serviços.
+1. [**Adobe Commerce**](../project/overview.md): o Adobe Commerce na infraestrutura em nuvem fornece uma infraestrutura pré-provisionada que inclui PHP, MySQL (MariaDB), Redis, [!DNL RabbitMQ]e tecnologias de mecanismo de pesquisa compatíveis.
+1. [**Ferramentas de desempenho**](../monitor/new-relic-service.md): as ferramentas de desempenho do New Relic permitem depurar, monitorar e gerenciar os aplicativos e a infraestrutura coletando, analisando e exibindo dados da Adobe Commerce em projetos de infraestrutura em nuvem.
+1. [**Rede de entrega de conteúdo (CDN), Firewall de aplicativo da Web ([!DNL WAF]) e Otimização de imagem (IO)**](../cdn/fastly.md):
+
+   * [Fastly CDN](../cdn/fastly.md#ddos-protection)— fornece serviços seguros de CDN com proteção integrada contra ataques de DDoS (Distributed Denial of Service, negação de serviço distribuída) como [!DNL Ping of Death], [!DNL Smurf] e outros ataques de inundação baseados no protocolo ICMP.
+   * [Firewall de Aplicativo Web (WAF)](../cdn/fastly-waf-service.md)— os serviços WAF garantem a conformidade com o PCI para vitrines Adobe Commerce em ambientes de produção e políticas WAF que protegem seus aplicativos Web Adobe Commerce contra ataques de injeção, informações mal-intencionadas, script entre sites, exfiltração de dados, violações de protocolo HTTP e outros [[!DNL OWASP] Dez principais ameaças à segurança](https://owasp.org/www-project-top-ten/).
+   * [Otimização de imagem (IO)](../cdn/fastly-image-optimization.md)— oferece manipulação e otimização de imagens em tempo real para acelerar a entrega de imagens e simplificar a manutenção de conjuntos de fontes de imagem para aplicativos Web responsivos. O Fastly IO descarrega o processamento de imagens e a carga de redimensionamento, liberando servidores para processar pedidos e conversões com eficiência.
+
+Os aplicativos monolíticos consomem muitos recursos e são difíceis de dimensionar e atender rapidamente. Com a infraestrutura em nuvem, os clientes do Commerce obtêm acesso inigualável a microsserviços baseados em SaaS, que são avançados, inteligentes e de alto desempenho. Consulte [Software e serviços compatíveis](cloud-architecture.md#supported-software-and-services).
+
+Use o [Guia de introdução ao Commerce](../../get-started/overview.md) para configurar seu novo programa na nuvem e começar a gerenciar seu [!DNL Commerce] aplicativo em um ambiente nativo em nuvem.

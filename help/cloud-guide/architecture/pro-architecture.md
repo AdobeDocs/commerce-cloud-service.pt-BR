@@ -1,0 +1,207 @@
+---
+title: Arquitetura Pro
+description: Saiba mais sobre os ambientes compatíveis com a arquitetura Pro.
+feature: Cloud, Auto Scaling, Iaas, Paas, Storage
+topic: Architecture
+exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
+source-git-commit: 6807b572366d28fd54fbec89e7c119ec158b5e10
+workflow-type: tm+mt
+source-wordcount: '1472'
+ht-degree: 0%
+
+---
+
+# Arquitetura Pro
+
+Sua arquitetura Pro do Adobe Commerce na infraestrutura em nuvem é compatível com vários ambientes que você pode usar para desenvolver, testar e iniciar sua loja.
+
+- **Principal**—Fornece um `master` ramificação implantada nos contêineres do Platform as a service (PaaS).
+- **Integração**—Fornece um único `integration` ramificação para desenvolvimento, embora seja possível criar uma ramificação adicional. Isso permite até dois _ativo_ ramificações implantadas nos contêineres da Platform as a service (PaaS).
+- **Estágios**—Fornece um único `staging` ramificação implantada nos contêineres IaaS (Infraestrutura como um serviço dedicado).
+- **Produção**—Fornece um único `production` ramificação implantada nos contêineres IaaS (Infraestrutura como um serviço dedicado).
+
+A tabela a seguir resume as diferenças entre ambientes:
+
+|                                        | INTEGRAÇÃO | ESTÁGIOS | PRODUÇÃO |
+| -------------------------------------- | ----------- | ----------------- | -------------------- |
+| Oferece suporte ao gerenciamento de configurações no [!DNL Cloud Console] | Sim | Limitado | Limitado |
+| Suporta várias ramificações | Sim | Não (somente armazenamento temporário) | Não (somente produção) |
+| Usa arquivos YAML para configuração | Sim | Não | Não |
+| É executado em hardware IaaS dedicado | Não | Sim | Sim |
+| Inclui o Fastly CDN | Não | Sim | Sim |
+| Inclui o serviço New Relic | Não | APM | APM + NRI |
+| Backups automáticos | Não | Sim | Sim |
+
+>[!NOTE]
+>
+>O Adobe fornece a ferramenta Cloud Docker for Commerce para implantação em um ambiente do Cloud Docker local, para que você possa desenvolver e testar projetos do Adobe Commerce. Consulte [Desenvolvimento de docker](../dev-tools/cloud-docker.md).
+
+## Arquitetura do ambiente
+
+Seu projeto é um único repositório Git com três ramificações de ambiente principais: `integration`, `staging`, e `production`. O diagrama a seguir mostra a relação hierárquica dos ambientes Pro:
+
+![Visualização de alto nível da arquitetura de ambiente Pro](../../assets/pro-branch-architecture.png)
+
+### Ambiente mestre
+
+Em projetos Pro, a `master` A ramificação fornece um ambiente PaaS ativo com o ambiente de produção. Sempre envie uma cópia do código de produção para a `master` para que você possa depurar o ambiente de produção sem interromper os serviços.
+
+**Avisos:**
+
+- Fazer **não** crie uma ramificação com base no `master` filial. Use o ambiente de integração para criar ramificações ativas para desenvolvimento.
+
+- Não use o `master` ambiente para desenvolvimento, UAT ou teste de desempenho
+
+### Ambiente de integração
+
+O ambiente de integração é executado em um container Linux (LXC) em uma grade de servidores conhecida como PaaS. Cada ambiente inclui um servidor da Web e um banco de dados para testar o site. Consulte [Endereços IP Regionais](../project/regional-ip-addresses.md) para obter uma lista de endereços IP do AWS e do Azure.
+
+**Casos de uso recomendados:**
+
+Os ambientes de integração são projetados para testes e desenvolvimento limitados antes de mover as alterações para ambientes de preparo e produção. Por exemplo, você pode usar o ambiente de integração para concluir as seguintes tarefas:
+
+- Verifique se as alterações nos processos de integração contínua (CI) são compatíveis com a nuvem
+
+- Teste fluxos de trabalho críticos em páginas principais como Página inicial, Categoria, Página de detalhes do produto (PDP), Check-out e Administração
+
+Para obter o melhor desempenho no ambiente de integração, siga estas práticas recomendadas:
+
+- Restringir tamanho do catálogo
+
+- Limitar o uso a um ou dois usuários simultâneos
+
+- Desative os trabalhos cron e execute manualmente conforme necessário
+
+**Avisos:**
+
+- Os serviços Fastly CDN e New Relic não estão acessíveis em um ambiente de integração
+
+- A arquitetura do ambiente de integração não corresponde à arquitetura de preparo e produção
+
+- Não use o `integration` ambiente para testes de desenvolvimento, de desempenho ou de aceitação de usuários (UAT)
+
+- Não use o `integration` ambiente para testar B2B para a funcionalidade do Adobe Commerce
+
+- Não é possível restaurar o banco de dados no ambiente de integração a partir da produção ou preparação do banco de dados
+
+{{enhanced-integration-envs}}
+
+### Ambiente de preparo
+
+O ambiente de preparo fornece um ambiente de quase produção para testar o site. Esse ambiente, que é hospedado em hardware IaaS dedicado, inclui todos os serviços, como Fastly CDN, New Relic APM e pesquisa.
+
+**Casos de uso recomendados:**
+
+O ambiente corresponde à arquitetura de produção e é projetado para UAT, preparo de conteúdo e revisão final antes de enviar os recursos para a `production` ambiente. Por exemplo, você pode usar a variável `staging` para concluir as seguintes tarefas:
+
+- Teste de regressão com base nos dados de produção
+
+- Teste de desempenho com o Fastly caching ativado
+
+- Teste novas builds em vez de correção na produção
+
+- Teste UAT para novas builds
+
+- Testar B2B para Adobe Commerce
+
+- Personalizar a configuração do cron e testar os trabalhos do cron
+
+Consulte [Fluxo de trabalho de implantação](pro-develop-deploy-workflow.md#deployment-workflow) e [Testar implantação](../test/staging-and-production.md).
+
+**Avisos:**
+
+- Depois de iniciar o site de produção, use o ambiente de preparo principalmente para testar patches para correções de erros críticos de produção.
+
+- Não é possível criar uma ramificação a partir da variável `staging` filial. Em vez disso, você envia alterações de código da `integration` ramificação para a `staging` filial.
+
+### Ambiente de produção
+
+O ambiente de produção executa suas vitrines para o público em geral de um único site e de vários sites. Esse ambiente é executado em hardware IaaS dedicado com nós redundantes de alta disponibilidade para acesso contínuo e proteção de failover para seus clientes. O ambiente de produção inclui todos os serviços no ambiente de preparo, além da [Infraestrutura New Relic (NRI)](../monitor/new-relic-service.md#new-relic-infrastructure) serviço, que se conecta automaticamente aos dados do aplicativo e ao performance analytics para fornecer monitoramento dinâmico do servidor.
+
+**Aviso:**
+
+Não é possível criar uma ramificação a partir da variável `production` filial. Em vez disso, você envia alterações de código da `staging` ramificação para a `production` filial.
+
+### Pilha de tecnologia de produção
+
+O ambiente de produção tem três máquinas virtuais (VMs) por trás de um Balanceador de Carga Elástico gerenciado por um HAProxy por VM. Cada VM inclui as seguintes tecnologias:
+
+- **Fastly CDN**—Armazenamento em cache de HTTP e CDN
+
+- **NGINX**— web server usando PHP-FPM, uma instância com vários workers
+
+- **GlusterFS**— servidor de arquivos para gerenciar todas as implantações de arquivos estáticos e a sincronização com quatro montagens de diretórios:
+
+   - `var`
+   - `pub/media`
+   - `pub/static`
+   - `app/etc`
+
+- **Redis**— um servidor por VM com apenas um ativo e os outros dois como réplicas
+
+- **Elasticsearch**—pesquisa por Adobe Commerce na infraestrutura em nuvem 2.2 a 2.4.3-p2
+
+- **OpenSearch**—pesquisa por Adobe Commerce na infraestrutura em nuvem 2.3.7-p3, 2.4.3-p2, 2.4.4 e posterior
+
+- **Galera**—cluster de banco de dados com um banco de dados MariaDB MySQL por nó com uma configuração de incremento automático de três para IDs exclusivas em cada banco de dados
+
+A figura a seguir mostra as tecnologias usadas no ambiente de produção:
+
+![Pilha de tecnologia de produção](../../assets/az-stack-diagram.png)
+
+## Hardware redundante
+
+Em vez de executar um modelo tradicional, ativo-passivo `master` ou uma configuração primária-secundária, o Adobe Commerce na infraestrutura em nuvem executa uma _arquitetura redundante_ em que todas as três instâncias aceitam leituras e gravações. Essa arquitetura oferece tempo de inatividade zero durante o dimensionamento e garante a integridade transacional.
+
+Devido ao hardware único e redundante, o Adobe pode fornecer três servidores gateway. A maioria dos serviços externos do permite adicionar vários endereços IP a um incluo na lista de permissões, portanto, ter mais de um endereço IP fixo não é um problema. Os três gateways são mapeados para os três servidores em seu cluster de ambiente de produção e mantêm endereços IP estáticos. Ele é totalmente redundante e altamente disponível em todos os níveis:
+
+- DNS
+- Rede de entrega de conteúdo (CDN)
+- Balanceador de carga elástico (ELB)
+- Cluster de três servidores que inclui todos os serviços da Adobe Commerce, incluindo o banco de dados e o servidor da Web
+
+## Backup e recuperação de desastres
+
+O Adobe Commerce na infraestrutura em nuvem usa uma arquitetura de alta disponibilidade que replica cada projeto Pro em três zonas de disponibilidade do AWS ou do Azure separadas, cada zona com um data center separado. Além dessa redundância, os ambientes de preparo e produção Pro recebem backups dinâmicos e regulares projetados para uso em casos de _falha catastrófica_.
+
+**Backups automáticos** incluir dados persistentes de todos os serviços em execução, como o banco de dados MySQL e os arquivos armazenados nos volumes montados. Os backups são salvos no EBS (Elastic Block Storage, armazenamento em bloco elástico) criptografado na mesma região do ambiente de produção. Os backups automáticos não são acessíveis publicamente porque são armazenados em um sistema separado.
+
+{{pro-backups}}
+
+Você pode criar um **backup manual** do banco de dados para seus ambientes de preparo e produção usando comandos da CLI. Consulte [Fazer backup do banco de dados](../storage/database-dump.md). Para `integration` A Adobe recomenda criar um backup como uma primeira etapa depois de acessar seu projeto do Adobe Commerce na infraestrutura em nuvem e antes de aplicar qualquer alteração importante. Consulte [Gerenciamento de backup](../storage/snapshots.md).
+
+### Objetivo de ponto de recuperação
+
+O RPO é um tempo máximo de seis horas para o último backup (por exemplo, às 06:00, depois às 12:00 e, depois, às 18:00). A frequência dos backups depende da programação de backup do seu plano e do volume de alterações a serem gravadas no serviço de armazenamento.
+
+### Política de retenção
+
+O Adobe retém backups automáticos de acordo com a seguinte política de retenção de dados:
+
+| Período | Política de Retenção de Backup |
+| ------------------ | ----------------------- |
+| Dias 1 a 3 | Um backup por hora |
+| Dias 4 a 7 | Um backup por dia |
+| Semanas 2 a 6 | Um backup por semana |
+| Semanas 8 a 12 | Um backup quinzenal |
+| Mês 3 até 5 | Um backup por mês |
+
+Essa política pode variar dependendo do seu plano de infraestrutura em nuvem.
+
+### Meta de tempo de recuperação
+
+O RTO depende do tamanho do armazenamento. Grandes volumes de EBS demoram mais tempo para restaurar. Os tempos de restauração podem variar dependendo do tamanho do banco de dados:
+
+- Um banco de dados grande (mais de 200 GB) pode levar 5 horas
+- Um banco de dados médio (150 GB) pode levar 2 horas e meia
+- Um banco de dados pequeno (60 GB) pode levar 1 hora
+
+{{pro-backups}}
+
+## Escalabilidade de cluster Pro
+
+O dimensionamento e a configuração do cluster Pro _compute_ as configurações variam dependendo do provedor de nuvem escolhido (AWS, Azure), da região e das dependências do serviço. A infraestrutura em nuvem de Adobe pode dimensionar clusters Pro para acomodar as expectativas de tráfego e os requisitos de serviço à medida que as demandas mudam.
+
+A arquitetura redundante capacita a infraestrutura em nuvem do Adobe a fazer upscaling sem tempo de inatividade. Ao fazer o upscaling, cada uma das três instâncias gira para atualizar a capacidade sem afetar a operação do site. Por exemplo, você pode adicionar servidores web extras a um cluster existente se a restrição estiver no nível do PHP em vez do nível do banco de dados. Isso proporciona _dimensionamento horizontal_ para complementar o dimensionamento vertical fornecido por CPUs extras no nível do banco de dados. Consulte [Arquitetura dimensionada](scaled-architecture.md).
+
+Se você esperar um aumento significativo no tráfego por um evento ou outro motivo, poderá solicitar um aumento temporário na capacidade. Consulte [Como solicitar um upsize temporário](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/how-to-request-temporary-magento-upsize.html) no _Centro de ajuda do Commerce_.
