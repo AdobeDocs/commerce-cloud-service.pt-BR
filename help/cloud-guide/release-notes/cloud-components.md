@@ -3,9 +3,9 @@ title: Componentes da nuvem para o Commerce
 description: Consulte uma lista das melhorias mais recentes no pacote de componentes da nuvem.
 recommendations: noDisplay, catalog
 exl-id: b4e2508a-3558-4fa8-bae0-3eb76c7b2775
-source-git-commit: f9edcc85c14354a2eddacbc5219557e107a367cb
+source-git-commit: c02dfd2709cdc63ac1630edaa8c89cad5f737ea1
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,13 @@ As notas de versão incluem:
 
 <!--Add release notes below-->
 
-## v1.0.13 {#latest}
+## v1.0.14 {#latest}
+
+Data de lançamento: 8 de abril de 2024
+
+- ![novo ícone](../../assets/new.svg) **PHP** — Adição de suporte para PHP 8.3.
+
+## v1.0.13
 
 Data de lançamento: 10 de março de 2023
 

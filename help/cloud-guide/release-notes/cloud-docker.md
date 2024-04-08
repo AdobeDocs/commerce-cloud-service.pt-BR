@@ -3,11 +3,11 @@ title: Pacote do Cloud Docker
 description: Consulte uma lista das melhorias mais recentes no pacote do Cloud Docker.
 feature: Cloud, Docker, Release Notes
 recommendations: noDisplay, catalog
-last-substantial-update: 2023-07-31T00:00:00Z
+last-substantial-update: 2024-04-08T00:00:00Z
 exl-id: 907d977f-2e9c-4553-a46b-000bc6a57b28
-source-git-commit: 21754f2ee3df586cd03d57210741b36409ad2b36
+source-git-commit: bc76cba0219f16fd055c20289811b51c35c9b026
 workflow-type: tm+mt
-source-wordcount: '3620'
+source-wordcount: '3662'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,16 @@ As notas de versão incluem:
 
 <!--Add release notes below-->
 
-## v1.3.6 {#latest}
+## v1.3.7 {#latest}
+
+Data de lançamento: 8 de abril de 2024
+
+- ![novo ícone](../../assets/new.svg) **PHP** — Adição de suporte para imagens do PHP 8.3 e PHP 8.3.
+- ![novo ícone](../../assets/new.svg) **Nginx** — Adição da imagem nginx v. 1.24.
+- ![novo ícone](../../assets/new.svg) **Opensearch** - Adição da imagem OpenSearch v. 2.12, 1.3.
+- ![novo ícone](../../assets/new.svg) **Compositor** - Versão do Composer atualizada para 2.2.23.
+
+## v1.3.6
 
 Data de lançamento: 31 de julho de 2023
 
