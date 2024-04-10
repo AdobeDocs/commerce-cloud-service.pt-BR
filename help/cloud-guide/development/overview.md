@@ -6,7 +6,7 @@ feature: Cloud, Install
 topic: Development
 last-substantial-update: 2024-02-06T00:00:00Z
 exl-id: d4452d7d-d3dc-4f8d-8bd7-76f05d89f545
-source-git-commit: abe9aa36b907be8bdfdf42e6f28f1e1eac68fecf
+source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
 workflow-type: tm+mt
 source-wordcount: '548'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Antes de preparar o espaço de trabalho local, verifique se você tem [credencia
 
 ## Pacotes obrigatórios
 
-O Adobe Commerce na infraestrutura em nuvem usa o Composer para gerenciar as dependências e as atualizações de projetos. Para o desenvolvimento local, você deve instalar as versões do PHP e do Composer que sejam compatíveis com o seu projeto na nuvem. Por exemplo, se estiver usando a variável [!DNL Commerce] 2.4.6, você pode ver que a variável [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/2.4.6/.magento.app.yaml) usos do arquivo de configuração **PHP 8.2** e **Composer 2.2.21**.
+O Adobe Commerce na infraestrutura em nuvem usa o Composer para gerenciar as dependências e as atualizações de projetos. Para o desenvolvimento local, você deve instalar as versões do PHP e do Composer que sejam compatíveis com o seu projeto na nuvem. Por exemplo, se estiver usando a variável [!DNL Commerce] 2.4.7, você pode ver que a variável [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/2.4.7/.magento.app.yaml) usos do arquivo de configuração **PHP 8.3** e **Composer 2.7.2**.
 
 O Composer instala as bibliotecas e dependências necessárias para o seu projeto na `vendor` diretório. Os seguintes arquivos do Composer necessários estão no diretório raiz do projeto:
 
@@ -47,10 +47,10 @@ O Adobe Commerce na infraestrutura em nuvem usa um metapackage que requer `magen
 >=current_version <next_version
 ```
 
-Por exemplo, para usar a versão mais recente do Adobe Commerce 2.4.5, defina `2.4.5` como a versão &quot;atual&quot; e `2.4.6` como a versão &quot;próxima&quot; na `composer.json` arquivo:
+Por exemplo, para usar a versão mais recente do Adobe Commerce 2.4.7, defina `2.4.7` como a versão &quot;atual&quot; e `2.4.8` como a versão &quot;próxima&quot; na `composer.json` arquivo:
 
 ```text
-"magento/magento-cloud-metapackage": ">=2.4.5 <2.4.6"
+"magento/magento-cloud-metapackage": ">=2.4.7 <2.4.8"
 ```
 
 Os principais pacotes desse metapackage são os seguintes:

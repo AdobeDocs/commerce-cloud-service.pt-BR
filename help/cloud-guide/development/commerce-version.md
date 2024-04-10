@@ -3,7 +3,7 @@ title: Atualizar versão do Commerce
 description: Saiba como atualizar a versão do Adobe Commerce no projeto de infraestrutura em nuvem.
 feature: Cloud, Upgrade
 exl-id: 87821007-4979-4a20-940b-aa3c82c192d8
-source-git-commit: 745a9f08353bd5dfbb871ca88947157c145c7c70
+source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
 workflow-type: tm+mt
 source-wordcount: '1439'
 ht-degree: 0%
@@ -124,7 +124,7 @@ Antes de atualizar o aplicativo, você deve atualizar os arquivos de configuraç
 
 ### .magento.app.yaml
 
-Sempre revise os valores contidos na variável [.magento.app.yaml](../application/configure-app-yaml.md) arquivo para a versão instalada, pois controla a maneira como o aplicativo é criado e implantado na infraestrutura em nuvem. O exemplo a seguir é para a versão 2.4.6 e usa o Composer 2.2.21. A variável `build: flavor:` não é usada para o Composer 2.x; consulte [Instalação e uso do Composer 2](../application/properties.md#installing-and-using-composer-2).
+Sempre revise os valores contidos na variável [.magento.app.yaml](../application/configure-app-yaml.md) arquivo para a versão instalada, pois controla a maneira como o aplicativo é criado e implantado na infraestrutura em nuvem. O exemplo a seguir é para a versão 2.4.7 e usa o Composer 2.7.2. A variável `build: flavor:` não é usada para o Composer 2.x; consulte [Instalação e uso do Composer 2](../application/properties.md#installing-and-using-composer-2).
 
 **Para atualizar o `.magento.app.yaml` arquivo**:
 
@@ -135,13 +135,13 @@ Sempre revise os valores contidos na variável [.magento.app.yaml](../applicatio
 1. Atualize as opções do PHP.
 
    ```yaml
-   type: php:8.2
+   type: php:8.3
    
    build:
        flavor: none
    dependencies:
        php:
-           composer/composer: '2.2.21'
+           composer/composer: '2.7.2'
    ```
 
 1. Modifique o `hooks` propriedade `build` e `deploy` comandos.
