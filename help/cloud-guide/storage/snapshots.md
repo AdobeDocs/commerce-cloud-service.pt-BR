@@ -3,9 +3,9 @@ title: Gerenciamento de backup
 description: Saiba como criar e restaurar manualmente um backup para seu projeto do Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Paas, Snapshots, Storage
 exl-id: 1cb00db7-2375-4761-9c07-1e20a74859e0
-source-git-commit: 1d8ffabb9f903e89495d11c973a9f0a5a8dd1d43
+source-git-commit: 069cbc233492d22932e8dce5bf0426dce8459727
 workflow-type: tm+mt
-source-wordcount: '682'
+source-wordcount: '685'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Você pode executar um backup manual de ambientes iniciais ativos a qualquer mom
 
 Um backup ou _instantâneo_ é um backup completo dos dados do ambiente que inclui todos os dados persistentes dos serviços em execução (banco de dados MySQL) e quaisquer arquivos armazenados nos volumes montados (var, pub/media, app/etc). O instantâneo não _não_ incluir código, pois o código já está armazenado no repositório baseado em Git. Não é possível fazer download de uma cópia de um snapshot.
 
-O recurso de backup não **não** se aplicam aos ambientes Pro. Os ambientes Pro de armazenamento temporário e produção recebem backups regulares para fins de recuperação de desastres por padrão. Consulte [Pro Backup e recuperação de desastres](../architecture/pro-architecture.md#backup-and-disaster-recovery). Diferentemente dos backups automáticos em tempo real nos ambientes Pro Staging e Production, os backups são **não** automático. É necessário _seu_ responsabilidade de criar manualmente um backup ou configurar um trabalho cron para criar periodicamente um backup dos ambientes de integração Starter ou Pro.
+O recurso de backup/snapshot não **não** se aplicam aos ambientes Pro Staging e Production, que recebem backups regulares para fins de recuperação de desastres por padrão. Consulte [Pro Backup e recuperação de desastres](../architecture/pro-architecture.md#backup-and-disaster-recovery) para obter mais informações. Diferentemente dos backups automáticos em tempo real nos ambientes Pro Staging e Production, os backups são **não** automático. É necessário _seu_ responsabilidade de criar manualmente um backup ou configurar um trabalho cron para criar periodicamente um backup dos ambientes de integração Starter ou Pro.
 
 ## Criar um backup manual
 
