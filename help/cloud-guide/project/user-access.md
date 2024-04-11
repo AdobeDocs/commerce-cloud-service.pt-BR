@@ -6,9 +6,9 @@ feature: Cloud, Roles/Permissions
 last-substantial-update: 2023-06-27T00:00:00Z
 topic: Security
 exl-id: 3357a3ea-bf86-4a65-95d1-6b24f1152248
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b85a163ff62f8a63430dff7c96b5cf391cf38d79
 workflow-type: tm+mt
-source-wordcount: '1441'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -161,7 +161,11 @@ Você pode usar o [[!DNL Cloud Console]](../../get-started/cloud-console.md) par
 
 1. Clique em **[!UICONTROL Add User]**.
 
-1. Depois de adicionar usuários, implante novamente todos os ambientes para aplicar as alterações. Adicionar um usuário não aciona uma implantação automaticamente. A reimplantação é uma etapa importante para garantir que o usuário possa acessar um ambiente usando SSH.
+   >[!IMPORTANT]
+   >
+   >Adicionar um usuário não aciona uma implantação automaticamente.
+
+1. Depois de adicionar usuários, implante novamente todos os ambientes para aplicar as alterações. Adicionar um usuário não aciona uma implantação automaticamente. A reimplantação é uma etapa importante para garantir que o usuário possa acessar um ambiente usando SSH ou executar tarefas de administrador.
 
 Depois de adicionar o usuário, o Adobe envia um email para o endereço especificado com instruções para acessar o projeto Adobe Commerce na infraestrutura em nuvem.
 
