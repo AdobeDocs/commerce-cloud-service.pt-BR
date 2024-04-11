@@ -1,33 +1,64 @@
 ---
-source-git-commit: 28aaae20fa03f31107bcd3fb569350a68842b152
+source-git-commit: 78e19b0cb274caf3799882d1f5d8242225c936ad
 workflow-type: tm+mt
-source-wordcount: '3125'
+source-wordcount: '4098'
 ht-degree: 0%
 
 ---
 # ece-tools
 
 <!-- The template to render with above values -->
-**Versão**: 2002.1.14
+**Versão**: 2002.1.18
 
-Esta referência contém 32 comandos disponíveis através do `ece-tools` ferramenta de linha de comando.
+Esta referência contém 34 comandos disponíveis através do `ece-tools` ferramenta de linha de comando.
 A lista inicial é gerada automaticamente usando o `ece-tools list` comando no Adobe Commerce na infraestrutura em nuvem.
 
 >[!NOTE]
 >
 >Essa referência é gerada a partir da base de código do aplicativo. Para alterar o conteúdo, você pode atualizar o código-fonte para a implementação do comando correspondente no [codebase](https://github.com/magento/magento-cloud-cli) repositório e enviar suas alterações para revisão. Outra maneira é _Envie seus comentários_ (localize o link no canto superior direito). Para obter diretrizes de contribuição, consulte [Contribuições de código](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
 
-## `build`
+## `_complete`
 
-Compila o aplicativo.
+Comando interno para fornecer sugestões de conclusão de shell
 
 ```bash
-ece-tools build
+ece-tools _complete [-s|--shell SHELL] [-i|--input INPUT] [-c|--current CURRENT] [-a|--api-version API-VERSION] [-S|--symfony SYMFONY]
 ```
+
+### `--shell`, `-s`
+
+O tipo de concha (&quot;bash&quot;, &quot;fish&quot;, &quot;zsh&quot;)
+
+- Requer um valor
+
+### `--input`, `-i`
+
+Uma matriz de tokens de entrada (por exemplo, COMP_WORDS ou argv)
+
+- Padrão: `[]`
+- Requer um valor
+
+### `--current`, `-c`
+
+O índice da matriz &quot;input&quot; na qual o cursor está (por exemplo, COMP_CWORD)
+
+- Requer um valor
+
+### `--api-version`, `-a`
+
+A versão da API do script de conclusão
+
+- Requer um valor
+
+### `--symfony`, `-S`
+
+obsoleto
+
+- Requer um valor
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -55,14 +86,140 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--no-interaction`, `-n`
+
+Não faça nenhuma pergunta interativa
+
+- Padrão: `false`
+- Não aceita um valor
+
+
+## `build`
+
+Compila o aplicativo.
+
+```bash
+ece-tools build
+```
+
+### `--help`, `-h`
+
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--quiet`, `-q`
+
+Não enviar nenhuma mensagem
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--verbose`, `-v|-vv|-vvv`
+
+Aumentar a verbosidade das mensagens: 1 para saída normal, 2 para saída mais detalhada e 3 para depuração
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--version`, `-V`
+
+Exibir esta versão do aplicativo
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--ansi`
+
+Forçar (ou desativar — no- ansi) a saída ANSI
+
+- Não aceita um valor
+
+### `--no-ansi`
+
+Negar a opção &quot;—ansi&quot;
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--no-interaction`, `-n`
+
+Não faça nenhuma pergunta interativa
+
+- Padrão: `false`
+- Não aceita um valor
+
+
+## `completion`
+
+Despejar o script de conclusão do shell
+
+```bash
+ece-tools completion [--debug] [--] [<shell>]
+```
+
+
+### `shell`
+
+O tipo de shell (por exemplo, &quot;bash&quot;), o valor do var env &quot;$SHELL&quot; será usado se isso não for fornecido
+
+
+### `--debug`
+
+Analisar o log de depuração da conclusão
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--help`, `-h`
+
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--quiet`, `-q`
+
+Não enviar nenhuma mensagem
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--verbose`, `-v|-vv|-vvv`
+
+Aumentar a verbosidade das mensagens: 1 para saída normal, 2 para saída mais detalhada e 3 para depuração
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--version`, `-V`
+
+Exibir esta versão do aplicativo
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--ansi`
+
+Forçar (ou desativar — no- ansi) a saída ANSI
+
+- Não aceita um valor
+
+### `--no-ansi`
+
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -107,7 +264,7 @@ Usar diretório alternativo para salvar o despejo
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -135,14 +292,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -165,7 +321,7 @@ ece-tools deploy
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -193,14 +349,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -245,7 +400,7 @@ Para gerar a ajuda do comando raw
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -273,14 +428,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -298,7 +452,7 @@ Não faça nenhuma pergunta interativa
 Listar comandos
 
 ```bash
-ece-tools list [--raw] [--format FORMAT] [--] [<namespace>]
+ece-tools list [--raw] [--format FORMAT] [--short] [--] [<namespace>]
 ```
 
 
@@ -321,18 +475,16 @@ O formato de saída (txt, xml, json ou md)
 - Padrão: `txt`
 - Requer um valor
 
+### `--short`
 
-## `patch`
+Para ignorar a descrição dos argumentos dos comandos
 
-Aplica patches personalizados.
-
-```bash
-ece-tools patch
-```
+- Padrão: `false`
+- Não aceita um valor
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -360,14 +512,70 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--no-interaction`, `-n`
+
+Não faça nenhuma pergunta interativa
+
+- Padrão: `false`
+- Não aceita um valor
+
+
+## `patch`
+
+Aplica patches personalizados.
+
+```bash
+ece-tools patch
+```
+
+### `--help`, `-h`
+
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--quiet`, `-q`
+
+Não enviar nenhuma mensagem
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--verbose`, `-v|-vv|-vvv`
+
+Aumentar a verbosidade das mensagens: 1 para saída normal, 2 para saída mais detalhada e 3 para depuração
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--version`, `-V`
+
+Exibir esta versão do aplicativo
+
+- Padrão: `false`
+- Não aceita um valor
+
+### `--ansi`
+
+Forçar (ou desativar — no- ansi) a saída ANSI
+
+- Não aceita um valor
+
+### `--no-ansi`
+
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -390,7 +598,7 @@ ece-tools post-deploy
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -418,14 +626,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -458,7 +665,7 @@ Cenário(s)
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -486,14 +693,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -516,7 +722,7 @@ ece-tools backup:list
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -544,14 +750,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -587,7 +792,7 @@ Um caminho de recuperação de arquivo específico
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -615,14 +820,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -645,7 +849,7 @@ ece-tools build:generate
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -673,14 +877,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -703,7 +906,7 @@ ece-tools build:transfer
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -731,14 +934,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -768,7 +970,7 @@ Configuração no formato JSON
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -796,14 +998,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -833,7 +1034,7 @@ Configuração no formato JSON
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -861,14 +1062,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -891,7 +1091,7 @@ ece-tools cloud:config:validate
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -919,14 +1119,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -954,7 +1153,7 @@ ece-tools dump
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -982,14 +1181,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1012,7 +1210,7 @@ ece-tools cron:disable
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1040,14 +1238,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1070,7 +1267,7 @@ ece-tools cron:enable
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1098,14 +1295,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1128,7 +1324,7 @@ ece-tools cron:kill
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1156,14 +1352,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1193,7 +1388,7 @@ Código do trabalho do Cron a ser desbloqueado.
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1221,14 +1416,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1251,7 +1445,7 @@ ece-tools dev:generate:schema-error
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1279,14 +1473,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1309,7 +1502,7 @@ ece-tools dev:git:update-composer
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1337,14 +1530,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1376,7 +1568,7 @@ Variáveis de ambiente a serem exibidas, opções possíveis: serviços, rotas, 
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1404,14 +1596,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1447,7 +1638,7 @@ Usado para obter resultado no formato JSON
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1475,14 +1666,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1505,7 +1695,7 @@ ece-tools module:refresh
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1533,14 +1723,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1563,7 +1752,7 @@ ece-tools schema:generate
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1591,14 +1780,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1621,7 +1809,7 @@ ece-tools wizard:ideal-state
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1649,14 +1837,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1679,7 +1866,7 @@ ece-tools wizard:master-slave
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1707,14 +1894,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1737,7 +1923,7 @@ ece-tools wizard:scd-on-build
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1765,14 +1951,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1795,7 +1980,7 @@ ece-tools wizard:scd-on-demand
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1823,14 +2008,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1853,7 +2037,7 @@ ece-tools wizard:scd-on-deploy
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1881,14 +2065,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1911,7 +2094,7 @@ ece-tools wizard:split-db-state
 
 ### `--help`, `-h`
 
-Exibir esta mensagem de ajuda
+Exibe a ajuda para o comando fornecido. Quando nenhum comando é fornecido, exibir ajuda para \&lt;info>lista\&lt;/info> comando
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1939,14 +2122,13 @@ Exibir esta versão do aplicativo
 
 ### `--ansi`
 
-Forçar saída ANSI
+Forçar (ou desativar — no- ansi) a saída ANSI
 
-- Padrão: `false`
 - Não aceita um valor
 
 ### `--no-ansi`
 
-Desabilitar saída ANSI
+Negar a opção &quot;—ansi&quot;
 
 - Padrão: `false`
 - Não aceita um valor
