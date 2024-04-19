@@ -1,7 +1,7 @@
 ---
-source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
+source-git-commit: 6d8c082d78259f8f7adb0fb7f11ff4fcdb234124
 workflow-type: tm+mt
-source-wordcount: '21442'
+source-wordcount: '21171'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -112,7 +112,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -178,7 +178,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -244,7 +244,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -321,7 +321,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -402,7 +402,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -471,7 +471,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -554,7 +554,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -609,7 +609,7 @@ Filtrar por resultado (ao selecionar uma atividade padrão): sucesso ou falha
 
 ### `--incomplete`, `-i`
 
-Incluir somente atividades incompletas (ao selecionar uma atividade padrão). Esta é uma abreviação de \&lt;info>—state=em_andamento,pendente\&lt;/info>
+Incluir somente atividades incompletas (ao selecionar uma atividade padrão). Esta é uma abreviação de — state=in_progress,pending
 
 - Padrão: `false`
 - Não aceita um valor
@@ -691,7 +691,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -829,7 +829,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -892,7 +892,7 @@ Filtrar por resultado (ao selecionar uma atividade padrão): sucesso ou falha
 
 ### `--incomplete`, `-i`
 
-Incluir somente atividades incompletas (ao selecionar uma atividade padrão). Esta é uma abreviação de \&lt;info>—state=em_andamento,pendente\&lt;/info>
+Incluir somente atividades incompletas (ao selecionar uma atividade padrão). Esta é uma abreviação de — state=in_progress,pending
 
 - Padrão: `false`
 - Não aceita um valor
@@ -953,7 +953,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1034,7 +1034,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1125,7 +1125,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1169,7 +1169,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1233,7 +1233,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1324,7 +1324,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1382,7 +1382,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1458,7 +1458,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1541,7 +1541,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1612,7 +1612,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1682,7 +1682,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1820,7 +1820,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1897,7 +1897,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -1994,7 +1994,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -2134,7 +2134,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -2243,7 +2243,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -2336,7 +2336,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -2438,7 +2438,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -2515,7 +2515,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -2611,7 +2611,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -2688,7 +2688,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -2784,7 +2784,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -2869,7 +2869,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -2969,7 +2969,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -3025,7 +3025,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -3167,7 +3167,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -3257,7 +3257,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -3373,7 +3373,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -3456,7 +3456,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -3569,7 +3569,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -3663,7 +3663,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -3739,7 +3739,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -3809,7 +3809,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -3946,7 +3946,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -4016,7 +4016,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -4103,7 +4103,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -4173,7 +4173,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -4269,7 +4269,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -4372,7 +4372,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -4458,7 +4458,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -4534,7 +4534,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -4621,7 +4621,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -4722,7 +4722,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -4859,7 +4859,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -4940,7 +4940,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -5289,7 +5289,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -5359,7 +5359,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -5442,7 +5442,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -5513,7 +5513,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -5868,7 +5868,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -5924,7 +5924,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -6080,7 +6080,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -6130,7 +6130,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -6138,7 +6138,7 @@ Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da 
 
 ## `metrics:all`
 
-Mostrar métricas de CPU, disco e memória para um ambiente
+BETA Mostra métricas de CPU, disco e memória para um ambiente
 
 ```bash
 magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6153,13 +6153,13 @@ Mostrar tamanhos em bytes
 
 ### `--range`, `-r`
 
-O intervalo de tempo. As métricas serão carregadas por essa duração até a hora de término (—para). Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo \&lt;comment>5m\&lt;/comment>, máximo \&lt;comment>8h\&lt;/comment> ou mais (dependendo do projeto), padrão \&lt;comment>10m\&lt;/comment>.
+O intervalo de tempo. As métricas serão carregadas por essa duração até a hora de término (—para). Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo de 5m, máximo de 8h ou mais (dependendo do projeto), padrão de 10m.
 
 - Requer um valor
 
 ### `--interval`, `-i`
 
-O intervalo. O padrão é uma divisão do intervalo. Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo \&lt;comment>1m\&lt;/comment>.
+O intervalo. O padrão é uma divisão do intervalo. Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo 1 m.
 
 - Requer um valor
 
@@ -6260,7 +6260,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -6268,7 +6268,7 @@ Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da 
 
 ## `metrics:cpu`
 
-Mostrar o uso da CPU de um ambiente
+BETA Mostra o uso da CPU de um ambiente
 
 ```bash
 magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6276,13 +6276,13 @@ magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--la
 
 ### `--range`, `-r`
 
-O intervalo de tempo. As métricas serão carregadas por essa duração até a hora de término (—para). Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo \&lt;comment>5m\&lt;/comment>, máximo \&lt;comment>8h\&lt;/comment> ou mais (dependendo do projeto), padrão \&lt;comment>10m\&lt;/comment>.
+O intervalo de tempo. As métricas serão carregadas por essa duração até a hora de término (—para). Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo de 5m, máximo de 8h ou mais (dependendo do projeto), padrão de 10m.
 
 - Requer um valor
 
 ### `--interval`, `-i`
 
-O intervalo. O padrão é uma divisão do intervalo. Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo \&lt;comment>1m\&lt;/comment>.
+O intervalo. O padrão é uma divisão do intervalo. Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo 1 m.
 
 - Requer um valor
 
@@ -6383,7 +6383,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -6406,13 +6406,13 @@ Mostrar tamanhos em bytes
 
 ### `--range`, `-r`
 
-O intervalo de tempo. As métricas serão carregadas por essa duração até a hora de término (—para). Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo \&lt;comment>5m\&lt;/comment>, máximo \&lt;comment>8h\&lt;/comment> ou mais (dependendo do projeto), padrão \&lt;comment>10m\&lt;/comment>.
+O intervalo de tempo. As métricas serão carregadas por essa duração até a hora de término (—para). Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo de 5m, máximo de 8h ou mais (dependendo do projeto), padrão de 10m.
 
 - Requer um valor
 
 ### `--interval`, `-i`
 
-O intervalo. O padrão é uma divisão do intervalo. Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo \&lt;comment>1m\&lt;/comment>.
+O intervalo. O padrão é uma divisão do intervalo. Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo 1 m.
 
 - Requer um valor
 
@@ -6520,7 +6520,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -6528,7 +6528,7 @@ Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da 
 
 ## `metrics:memory`
 
-Mostrar uso de memória de um ambiente
+BETA Mostra o uso de memória de um ambiente
 
 ```bash
 magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6543,13 +6543,13 @@ Mostrar tamanhos em bytes
 
 ### `--range`, `-r`
 
-O intervalo de tempo. As métricas serão carregadas por essa duração até a hora de término (—para). Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo \&lt;comment>5m\&lt;/comment>, máximo \&lt;comment>8h\&lt;/comment> ou mais (dependendo do projeto), padrão \&lt;comment>10m\&lt;/comment>.
+O intervalo de tempo. As métricas serão carregadas por essa duração até a hora de término (—para). Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo de 5m, máximo de 8h ou mais (dependendo do projeto), padrão de 10m.
 
 - Requer um valor
 
 ### `--interval`, `-i`
 
-O intervalo. O padrão é uma divisão do intervalo. Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo \&lt;comment>1m\&lt;/comment>.
+O intervalo. O padrão é uma divisão do intervalo. Você pode especificar unidades: horas (h), minutos (m) ou segundos (s). Mínimo 1 m.
 
 - Requer um valor
 
@@ -6650,7 +6650,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -6784,7 +6784,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -6893,7 +6893,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7008,7 +7008,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7128,7 +7128,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7136,7 +7136,7 @@ Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da 
 
 ## `operation:list`
 
-Listar operações de tempo de execução em um ambiente
+BETA Lista as operações de tempo de execução em um ambiente
 
 ```bash
 magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -7224,7 +7224,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7232,7 +7232,7 @@ Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da 
 
 ## `operation:run`
 
-Executar uma operação no ambiente
+BETA Execute uma operação no ambiente
 
 ```bash
 magento-cloud operation:run [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-W|--no-wait] [--wait] [--] [<operation>]
@@ -7312,7 +7312,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7362,7 +7362,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7448,7 +7448,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7558,7 +7558,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7689,7 +7689,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7739,7 +7739,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7808,7 +7808,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7897,7 +7897,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -7965,7 +7965,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8072,7 +8072,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8162,7 +8162,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8212,7 +8212,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8289,7 +8289,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8380,7 +8380,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8474,7 +8474,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8574,7 +8574,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8654,7 +8654,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8734,7 +8734,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8814,7 +8814,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8897,7 +8897,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -8973,7 +8973,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9048,7 +9048,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9132,7 +9132,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9220,7 +9220,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9304,7 +9304,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9326,7 +9326,7 @@ O nome da operação
 
 ### `--variable`
 
-Uma variável a ser definida durante a operação, no formato \&lt;info>type:name=value\&lt;/info>
+Uma variável a ser definida durante a operação, no formato type:name=value
 
 - Padrão: `[]`
 - Requer um valor
@@ -9387,7 +9387,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9452,7 +9452,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9508,7 +9508,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9558,7 +9558,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9623,7 +9623,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9718,7 +9718,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9787,7 +9787,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9862,7 +9862,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -9952,7 +9952,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10027,7 +10027,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10114,7 +10114,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10198,7 +10198,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10269,7 +10269,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10364,7 +10364,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10435,7 +10435,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10512,7 +10512,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10661,7 +10661,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10744,7 +10744,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10846,7 +10846,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10929,7 +10929,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -11066,7 +11066,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
@@ -11157,7 +11157,7 @@ Responda &quot;sim&quot; às perguntas de confirmação; aceite o valor padrão 
 
 ### `--no-interaction`
 
-Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da variável de ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Padrão: `false`
 - Não aceita um valor
