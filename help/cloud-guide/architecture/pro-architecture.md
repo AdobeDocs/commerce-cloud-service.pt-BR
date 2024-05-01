@@ -4,7 +4,7 @@ description: Saiba mais sobre os ambientes compatíveis com a arquitetura Pro.
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 6807b572366d28fd54fbec89e7c119ec158b5e10
+source-git-commit: 95b033ba430cb5dc74fa654b9d519dfcd5b6d319
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 0%
@@ -34,7 +34,7 @@ A tabela a seguir resume as diferenças entre ambientes:
 
 >[!NOTE]
 >
->O Adobe fornece a ferramenta Cloud Docker for Commerce para implantação em um ambiente do Cloud Docker local, para que você possa desenvolver e testar projetos do Adobe Commerce. Consulte [Desenvolvimento de docker](../dev-tools/cloud-docker.md).
+>O Adobe fornece a ferramenta Cloud Docker para Commerce para implantação em um ambiente do Cloud Docker local, para que você possa desenvolver e testar projetos do Adobe Commerce. Consulte [Desenvolvimento de docker](../dev-tools/cloud-docker.md).
 
 ## Arquitetura do ambiente
 
@@ -195,8 +195,6 @@ O RTO depende do tamanho do armazenamento. Grandes volumes de EBS demoram mais t
 - Um banco de dados grande (mais de 200 GB) pode levar 5 horas
 - Um banco de dados médio (150 GB) pode levar 2 horas e meia
 - Um banco de dados pequeno (60 GB) pode levar 1 hora
-
-{{pro-backups}}
 
 ## Escalabilidade de cluster Pro
 
