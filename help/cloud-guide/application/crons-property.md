@@ -3,9 +3,9 @@ title: Propriedade Crons
 description: Consulte exemplos sobre como configurar a propriedade "crons" no [!DNL Commerce] arquivo de configuração do aplicativo.
 feature: Cloud, Configuration
 exl-id: 67d592c1-2933-4cdf-b4f6-d73cd44b9f59
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 1c0e05c3d8461bea473bcf6ec35162d65ef2774f
 workflow-type: tm+mt
-source-wordcount: '1063'
+source-wordcount: '1069'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ A variável `crons` propriedade descreve processos que são acionados em uma pro
 - `shutdown_timeout`—(_Opcional_) Se uma tarefa cron for cancelada, esse é o número de segundos após o qual um sinal SIGKILL é enviado para interromper a tarefa ou o processo. O padrão é 10 segundos.
 - `timeout`—(_Opcional_) A quantidade máxima de tempo que um trabalho cron pode ser executado antes do tempo limite. O padrão é o valor máximo permitido de 86.400 segundos (24 horas).
 
-Por padrão, cada projeto da Commerce Cloud tem o seguinte padrão `crons` configuração no `.magento.app.yaml` arquivo:
+Por padrão, cada projeto de nuvem do Commerce tem o seguinte padrão `crons` configuração no `.magento.app.yaml` arquivo:
 
 ```yaml
 crons:
@@ -56,7 +56,7 @@ Embora você possa usar `crontab` para analisar a configuração em projetos Pro
 
    >[!NOTE]
    >
-   >Se a variável `crontab -l` comando retorna um valor `Command not found` erro, você deve [Enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para ativar a opção de configuração de autoatendimento autônomo no seu projeto Pro.
+   >Se a variável `crontab -l` comando retorna um valor `Command not found` (somente em ambientes de produção e de armazenamento temporário Pro), você deve [Enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para ativar a opção de configuração de autoatendimento de cronograma automático em seu projeto.
 
 O exemplo a seguir mostra o `crontab` saída para um ambiente que tenha somente o padrão `crons` configuração:
 
