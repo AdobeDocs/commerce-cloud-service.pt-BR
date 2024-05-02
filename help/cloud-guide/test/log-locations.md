@@ -3,9 +3,9 @@ title: Exibir e gerenciar logs
 description: Entenda os tipos de arquivos de log disponíveis na infraestrutura da nuvem e onde encontrá-los.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: 86af69eed16e8fe464de93bd0f33cfbfd4ed8f49
 workflow-type: tm+mt
-source-wordcount: '1024'
+source-wordcount: '1056'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,7 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 >[!TIP]
 >
->Para ambientes Pro, a rotação, compactação e remoção automáticas de registros são ativadas para arquivos de registro com um nome de arquivo fixo. Cada tipo de arquivo de log tem um padrão rotativo e uma duração. Os ambientes iniciais não têm rotação de log. Detalhes completos sobre a rotação de logs do ambiente e a duração de logs compactados podem ser encontrados em: `/etc/logrotate.conf` e `/etc/logrotate.d/<various>`
+>Para ambientes Pro de armazenamento temporário e produção, a rotação, compactação e remoção automáticas de registros são ativadas para arquivos de registro com um nome de arquivo fixo. Cada tipo de arquivo de log tem um padrão rotativo e uma duração. Os ambientes iniciais não têm rotação de log. Detalhes completos sobre a rotação de logs do ambiente e a duração de logs compactados podem ser encontrados em: `/etc/logrotate.conf` e `/etc/logrotate.d/<various>`. A rotação de logs não pode ser configurada em ambientes Pro Integration. Para a Integração Pro, você deve implementar uma solução/script personalizados e [configurar seu cron](../application/crons-property.md) para executar o script conforme necessário.
 
 ## Criar e implantar logs
 
