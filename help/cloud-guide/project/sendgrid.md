@@ -2,9 +2,9 @@
 title: Serviço de email SendGrid
 description: Saiba mais sobre o serviço de email SendGrid para Adobe Commerce na infraestrutura em nuvem e como você pode testar sua configuração de DNS.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: 7c22dc3b0e736043a3e176d2b7ae6c9dcbbf1eb5
+source-git-commit: 2b106edcaaacb63c0e785f094b7e1b755885abd0
 workflow-type: tm+mt
-source-wordcount: '1019'
+source-wordcount: '1090'
 ht-degree: 0%
 
 ---
@@ -27,13 +27,21 @@ O proxy SMTP SendGrid não se destina ao uso como um servidor de email de uso ge
 
 ## Ativar ou desativar email
 
-Por padrão, o email de saída é ativado nos ambientes de produção profissional e de preparo. A variável [!UICONTROL Outgoing emails] pode aparecer nas configurações do ambiente independentemente do status até que você defina a `enable_smtp` propriedade. Você pode permitir que emails de saída de outros ambientes enviem emails de autenticação de dois fatores para usuários de projetos na nuvem. Consulte [Configurar emails para teste](outgoing-emails.md).
+Você pode ativar ou desativar os emails de saída para cada ambiente do Cloud Console ou da linha de comando.
+
+Por padrão, os emails de saída são ativados em ambientes de Produção e Preparo profissionais. No entanto, [!UICONTROL Outgoing emails] pode parecer desativado nas configurações do ambiente até que você defina a variável `enable_smtp` propriedade por meio da [linha de comando](outgoing-emails.md#enable-emails-in-the-cli) ou [Cloud Console](outgoing-emails.md#enable-emails-in-the-cloud-console). Você pode permitir que emails de saída para ambientes de integração e de preparo enviem emails de autenticação de dois fatores ou redefinam senhas para usuários do projeto na nuvem. Consulte [Configurar emails para teste](outgoing-emails.md).
+
+Se os emails de saída precisarem ser desativados ou reativados nos ambientes de Produção Pro ou de Preparo, você poderá enviar um [Tíquete de suporte do Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide).
+
+>[!TIP]
+>
+>Atualização do [!UICONTROL enable_smtp] valor da propriedade por [linha de comando](outgoing-emails.md#enable-emails-in-the-cli) também altera a [!UICONTROL Enable outgoing emails] definindo o valor deste ambiente no [Cloud Console](outgoing-emails.md#enable-emails-in-the-cloud-console).
 
 ## Painel SendGrid
 
 Todos os projetos na nuvem são gerenciados em uma conta central, portanto, somente o Suporte tem acesso ao painel SendGrid. O SendGrid não fornece recursos de restrição de subconta.
 
-Para revisar os logs de atividades para obter o status do delivery ou uma lista de endereços de email devolvidos, rejeitados ou bloqueados, [enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket). A equipe de suporte **não é possível** recuperar logs de atividades com mais de 30 dias.
+Para revisar os logs de atividades para obter o status do delivery ou uma lista de endereços de email devolvidos, rejeitados ou bloqueados, [enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket). A equipe de suporte **não é possível** recuperar logs de atividades com mais de 30 dias.
 
 Se possível, inclua as seguintes informações na solicitação:
 
@@ -47,7 +55,7 @@ O DKIM é uma tecnologia de autenticação de email que permite aos Provedores d
 
 >[!WARNING]
 >
->As assinaturas DKIM do SendGrid e o suporte à autenticação de domínio estão disponíveis apenas para projetos Pro e não para o Starter. Como resultado, os emails transacionais de saída provavelmente serão sinalizados por filtros de spam. Usar DKIM melhora a taxa de entrega como um remetente de email autenticado. Para melhorar a taxa de delivery de mensagens, você pode atualizar do Starter para o Pro ou usar seu próprio servidor SMTP ou provedor de serviços de delivery de email. Consulte [Configurar conexões de email](https://experienceleague.adobe.com/docs/commerce-admin/systems/communications/email-communications.html) no _Guia de sistemas do administrador_.
+>As assinaturas DKIM do SendGrid e o suporte à autenticação de domínio só estão disponíveis para projetos Pro e não para projetos Starter. Como resultado, os emails transacionais de saída provavelmente serão sinalizados por filtros de spam. Usar DKIM melhora a taxa de entrega como um remetente de email autenticado. Para melhorar a taxa de delivery de mensagens, você pode atualizar do Starter para o Pro ou usar seu próprio servidor SMTP ou provedor de serviços de delivery de email. Consulte [Configurar conexões de email](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) no _Guia de sistemas do administrador_.
 
 ### Autenticação de remetente e domínio
 
@@ -55,7 +63,7 @@ Para que o SendGrid envie emails transacionais em seu nome de ambientes de Produ
 
 **Para habilitar a autenticação de domínio**:
 
-1. Enviar um [tíquete de suporte](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) que solicita a ativação do DKIM para um domínio específico (**Somente ambientes de preparo e produção profissionais**).
+1. Enviar um [tíquete de suporte](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) para solicitar a ativação do DKIM para um domínio específico (**Somente ambientes de preparo e produção profissionais**).
 1. Atualize sua configuração de DNS com o `TXT` e `CNAME` registros fornecidos a você no tíquete de suporte.
 
 **Exemplo `TXT` registro com ID de conta**:
@@ -106,7 +114,7 @@ dig CNAME s2._domainkey.domain_name
 
 O limite de email transacional se refere ao número de mensagens de email transacionais que você pode enviar de ambientes Pro em um período específico, como 12.000 emails por mês de ambientes não relacionados à produção. O limite foi projetado para proteger contra o envio de spam e possíveis danos à reputação do email.
 
-Não há limites rígidos para o número de emails que podem ser enviados no ambiente de Produção, desde que a pontuação da Reputação do remetente seja superior a 95%. A reputação é afetada pelo número de emails devolvidos ou rejeitados e se os registros de spam baseados em DNS sinalizaram seu domínio como uma possível fonte de spam. Consulte [Emails não enviados quando os créditos SendGrid são excedidos no Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/emails-not-being-sent-sendgrid-credits-exceeded.html) no _Knowledge base de suporte do Commerce_.
+Não há limites rígidos para o número de emails que podem ser enviados no ambiente de Produção, desde que a pontuação da Reputação do remetente seja superior a 95%. A reputação é afetada pelo número de emails devolvidos ou rejeitados e se os registros de spam baseados em DNS sinalizaram seu domínio como uma possível fonte de spam. Consulte [Emails não enviados quando os créditos SendGrid são excedidos no Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/emails-not-being-sent-sendgrid-credits-exceeded) no _Knowledge base de suporte do Commerce_.
 
 **Para verificar se o máximo de créditos é excedido**:
 
@@ -120,8 +128,8 @@ Não há limites rígidos para o número de emails que podem ser enviados no amb
 
 1. Verifique a `/var/log/mail.log` para `authentication failed : Maxium credits exceeded` entradas.
 
-   Se você vir algum `authentication failed` entradas de log e a variável **Reputação de envio de email** for um mínimo de 95, você pode [Enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para solicitar um aumento da colocação de crédito.
+   Se você vir algum `authentication failed` entradas de log e a variável **Reputação de envio de email** for um mínimo de 95, você pode [Enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) para solicitar um aumento da colocação de crédito.
 
 ### Reputação de envio de email
 
-Uma reputação de envio de email é uma pontuação atribuída por um provedor de serviços de Internet (ISP) a uma empresa que envia mensagens de email. Quanto maior a pontuação, mais provável um ISP entregará mensagens na caixa de entrada de um recipient. Se a pontuação cair abaixo de um determinado nível, o ISP poderá rotear mensagens para a pasta de spam dos recipients ou até mesmo rejeitar mensagens completamente. A pontuação de reputação é determinada por vários fatores, como uma média de 30 dias de classificação de seus endereços IP em relação a outros endereços IP e taxa de reclamação de spam. Consulte [5 maneiras de verificar sua reputação de envio](https://sendgrid.com/blog/5-ways-check-sending-reputation/).
+Uma reputação de envio de email é uma pontuação atribuída por um provedor de serviços de Internet (ISP) a uma empresa que envia mensagens de email. Quanto maior a pontuação, mais provável um ISP entregará mensagens na caixa de entrada de um recipient. Se a pontuação cair abaixo de um determinado nível, o ISP poderá rotear mensagens para a pasta de spam dos recipients ou até mesmo rejeitar mensagens completamente. A pontuação de reputação é determinada por vários fatores, como uma média de 30 dias de classificação de seus endereços IP em relação a outros endereços IP e taxa de reclamação de spam. Consulte [8 maneiras de verificar sua reputação de envio de email](https://sendgrid.com/en-us/blog/5-ways-check-sending-reputation).
