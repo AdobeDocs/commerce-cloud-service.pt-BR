@@ -2,11 +2,11 @@
 title: Notas de versão do ECE-Tools
 description: Consulte uma lista das melhorias mais recentes no pacote ECE-Tools.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-04-08T00:00:00Z
+last-substantial-update: 2024-05-21T00:00:00Z
 exl-id: a464b940-c56e-4a7c-9948-559539e25361
-source-git-commit: e21f21e34f89b62842bd22c99ff5705f984898e0
+source-git-commit: 923e2114270df22e134e0676ac97f84d770bb226
 workflow-type: tm+mt
-source-wordcount: '2905'
+source-wordcount: '2929'
 ht-degree: 0%
 
 ---
@@ -28,8 +28,14 @@ As notas de versão incluem:
 
 <!--Add release notes below-->
 
+## v2002.1.19 {#latest}
 
-## v2002.1.18 {#latest}
+Data de lançamento: 21 de maio de 2024
+
+- ![novo ícone](../../assets/new.svg) **Lua**—Opção adicionada useLua para CACHE_CONFIGURATION.
+- ![ícone corrigir](../../assets/fix.svg) **Validador**—Validadores atualizados para novas versões do Redis e RabbitMQ.
+
+## v2002.1.18
 
 Data de lançamento: 8 de abril de 2024
 
@@ -47,7 +53,7 @@ Data de lançamento: 16 de janeiro de 2024
 
 Data de lançamento: 16 de outubro de 2023
 
-- ![novo ícone](../../assets/new.svg) **Variável de ambiente global ENABLE_WEBHOOKS**—Adição de [ENABLE_WEBHOOKS](../environment/variables-global.md#enable_webhooks) variável global para usar com webhooks do Commerce para se conectar a um endpoint externo, como a ação de tempo de execução do App Builder ou um sistema de gerenciamento de inventário de terceiros.
+- ![novo ícone](../../assets/new.svg) **Variável de ambiente global ENABLE_WEBHOOKS**—Adição de [ENABLE_WEBHOOKS](../environment/variables-global.md#enable_webhooks) variável global para uso com webhooks do Commerce para conexão com um endpoint externo, como a ação de tempo de execução do App Builder ou um sistema de gerenciamento de inventário de terceiros.
 
 ## v2002.1.15
 
@@ -70,7 +76,7 @@ Data de lançamento: 10 de março de 2023
 
 Data de lançamento: 27 de outubro de 2022
 
-- ![novo ícone](../../assets/new.svg) **Adição de suporte para Eventos Adobe I/O para Adobe Commerce**. Os desenvolvedores de extensão agora podem usar o [Eventos Adobe I/O](https://developer.adobe.com/events/docs/) para enviar informações de eventos de comércio de instâncias da Nuvem para seus aplicativos escritos para [Construtor de aplicativos Adobe](https://developer.adobe.com/app-builder/docs/overview/). Os eventos do Adobe I/O para Adobe Commerce estão na Visualização do parceiro.<!-- CEXT-932 -->
+- ![novo ícone](../../assets/new.svg) **Adição de suporte para Eventos Adobe I/O para Adobe Commerce**. Os desenvolvedores de extensão agora podem usar o [Eventos Adobe I/O](https://developer.adobe.com/events/docs/) para enviar informações de eventos do Commerce das instâncias do Cloud para seus aplicativos escritos para [Construtor de aplicativos Adobe](https://developer.adobe.com/app-builder/docs/overview/). Os eventos do Adobe I/O para Adobe Commerce estão na Visualização do parceiro.<!-- CEXT-932 -->
 - ![novo ícone](../../assets/new.svg) **Validador para configuração do OPcache**—Adição de um validador para verificar a configuração do OPcache quanto a caminhos excluídos.<!-- MCLOUD-9485 -->
 - ![ícone corrigir](../../assets/fix.svg) **Correção de um problema com a configuração do cache do GraphQL**—Agora o ECE-Tools mantém o GraphQL `id_salt` valor em `cache` configuração no `app/etc/env.php` arquivo.<!-- MCLOUD-9486 -->
 
@@ -87,7 +93,7 @@ Data de lançamento: 4 de agosto de 2022
 
 - ![ícone corrigir](../../assets/fix.svg) **Validador e OpenSearch do ElasticSuite**—Correção do problema do validador de verificação de integridade do ElasticSuite quando o OpenSearch é instalado.<!-- MCLOUD-8767 -->
 - ![ícone corrigir](../../assets/fix.svg) **Retornar tipos para comandos de implantação**—Tipos de retorno fixos para comandos de implantação.<!-- AC-3208 -->
-- ![ícone corrigir](../../assets/fix.svg) **[!DNL RabbitMQ]problema com a nova instalação do Commerce 2.4.5**—Fixo [!DNL RabbitMQ] problema de falha na instalação do novo Commerce 2.4.5.<!-- MCLOUD-9059 -->
+- ![ícone corrigir](../../assets/fix.svg) **[!DNL RabbitMQ]problema com a nova instalação do Commerce 2.4.5**—Fixo [!DNL RabbitMQ] problema de falha na nova instalação do Commerce 2.4.5.<!-- MCLOUD-9059 -->
 
 ## v2002.1.10
 
@@ -209,7 +215,7 @@ Data de lançamento: 9 de novembro de 2020
 
 **Atualizações de variável de ambiente**—
 
-- ![novo ícone](../../assets/new.svg) Adição de [SKIP_COMPOSER_DUMP_AUTOLOAD](../environment/variables-build.md#skip_composer_dump_autoload) variável de build. Configuração da variável para `true` impede o aplicativo de executar o `composer dump-autoload` durante a instalação do Cloud Docker for Commerce. A variável só é relevante para o Cloud Docker para contêineres do Commerce com sistemas de arquivos graváveis (criados para teste e desenvolvimento usando `./vendor/bin/ece-docker build:compose --with-test`). Com essas instalações, ignorando o `composer dump-autoload` impede erros ao executar outros comandos que tentam acessar arquivos de um arquivo excluído `generated` diretório.<!--MCLOUD-6939-->
+- ![novo ícone](../../assets/new.svg) Adição de [SKIP_COMPOSER_DUMP_AUTOLOAD](../environment/variables-build.md#skip_composer_dump_autoload) variável de build. Configuração da variável para `true` impede o aplicativo de executar o `composer dump-autoload` durante a instalação do Cloud Docker para Commerce. A variável só é relevante para o Cloud Docker para contêineres do Commerce com sistemas de arquivos graváveis (criada para teste e desenvolvimento usando `./vendor/bin/ece-docker build:compose --with-test`). Com essas instalações, ignorando o `composer dump-autoload` impede erros ao executar outros comandos que tentam acessar arquivos de um arquivo excluído `generated` diretório.<!--MCLOUD-6939-->
 
 ## v2002.1.2
 
@@ -313,7 +319,7 @@ Data de lançamento: 6 de fevereiro de 2020
 
 - ![novo ícone](../../assets/new.svg) **Atualizações da infraestrutura**—
 
-   - ![novo ícone](../../assets/new.svg) **Adição de pacote separado para o Cloud Docker for Commerce**—Dissociação do pacote Docker do `ece-tools` pacote para manter a qualidade do código e fornecer versões independentes. Atualizações e correções relacionadas ao `ece-tools` são gerenciados no [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) Repositório GitHub.<!--MAGECLOUD-2927-->
+   - ![novo ícone](../../assets/new.svg) **Adição de pacote separado para o Cloud Docker para Commerce**—Dissociação do pacote Docker do `ece-tools` pacote para manter a qualidade do código e fornecer versões independentes. Atualizações e correções relacionadas ao `ece-tools` são gerenciados no [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) Repositório GitHub.<!--MAGECLOUD-2927-->
 
    - ![novo ícone](../../assets/new.svg) **Recursos de patch atualizados**—A funcionalidade de correção foi movida do pacote ECE-Tools para um [magento-cloud-patches](https://github.com/magento/magento-cloud-patches) pacote. Durante a implantação, `ece-tools` O usa o novo pacote para aplicar patches. Consulte [Notas de versão de patches de nuvem](cloud-patches.md).<!--MAGECLOUD-4567-->
 
