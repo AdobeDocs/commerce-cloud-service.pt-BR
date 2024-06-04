@@ -1,11 +1,11 @@
 ---
 title: Acessar o painel de administração do Commerce
-description: Saiba como acessar o painel Administrador do Commerce.
+description: Saiba como acessar o painel de administração do Commerce.
 recommendations: noDisplay, catalog
 exl-id: 9a8a0a49-b108-48bd-b413-ec9431370c06
-source-git-commit: 85ff1283f773823ff2c6e6ab8f391fd5b4aa00e4
+source-git-commit: 3ca09243dc0a714c1d86cccf9f0620a8a39fd1e1
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '323'
 ht-degree: 0%
 
 ---
@@ -27,3 +27,7 @@ Depois de enviar a solicitação de alteração de senha, verifique se há notif
 >[!TIP]
 >
 >Se a redefinição de senha falhar ou você não conseguir fazer logon no painel de Administração, um usuário com acesso de administrador poderá se conectar ao projeto usando SSH e adicionar um usuário administrador usando o `admin:user:create` comando CLI. Consulte [Criar, editar ou desbloquear uma conta de administrador](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/admin.html) no _Guia de instalação_.
+
+## Monitorar integridade do site
+
+A variável [Ferramenta de análise do site](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/intro) O é uma ferramenta de autoatendimento proativa e um repositório central que inclui insights e recomendações detalhados do sistema para garantir a segurança e a operabilidade da instalação do Adobe Commerce. Ele fornece monitoramento de desempenho em tempo real, relatórios e conselhos 24 horas por dia, 7 dias por semana, para identificar possíveis problemas e melhor visibilidade das configurações de integridade, segurança e aplicativos do site. Ele ajuda a reduzir o tempo de resolução e a melhorar a estabilidade e o desempenho do site. Você pode acessar a Ferramenta de análise do site diretamente do [Painel de administração](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-2-logging-in-to-your-site-wide-analysis-tool-dashboard-from-your-stores-admin-panel) ou do [domínio dedicado](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-1-logging-in-to-your-site-wide-analysis-tool-dashboard-directly-from-the-site-wide-analysis-tool-domain-for-adobe-commerce-on-cloud-infrastructure-only) (Adobe Commerce somente em projetos de infraestrutura em nuvem).
