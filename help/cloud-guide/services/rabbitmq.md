@@ -3,9 +3,9 @@ title: Configurar o serviço RabbitMQ
 description: Saiba como habilitar o serviço RabbitMQ para gerenciar filas de mensagens para o Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Services
 exl-id: 85794b8f-2260-4a6e-b5a6-a1b4c356594e
-source-git-commit: d4c36b084094846cfad69adc2bffd567a58fab26
+source-git-commit: adcfbb7217c70122a4003a66d1bec1a623fbf11a
 workflow-type: tm+mt
-source-wordcount: '378'
+source-wordcount: '399'
 ht-degree: 0%
 
 ---
@@ -114,7 +114,7 @@ Para fins de depuração, é útil se conectar diretamente a uma instância de s
    }
    ```
 
-1. Ative o encaminhamento de porta local para o RabbitMQ.
+1. Ativar o encaminhamento de porta local para o RabbitMQ (se o projeto estiver localizado em uma região diferente, como US-3, EU-5 ou AP-3), substitua ``us-3``/``eu-5``/``ap-3`` para ``us``)
 
    ```bash
    ssh -L <port-number>:rabbitmq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
