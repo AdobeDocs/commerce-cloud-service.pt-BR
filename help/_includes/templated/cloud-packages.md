@@ -1,7 +1,7 @@
 ---
-source-git-commit: 74ce2b69c1d4f9412f9eac98dfea93cc08f737b6
+source-git-commit: 866b958249bdeef19ffb0e284da9fac32f90baea
 workflow-type: tm+mt
-source-wordcount: '2180'
+source-wordcount: '2191'
 ht-degree: 0%
 
 ---
@@ -716,7 +716,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/justinrainbow/json-schema.git">justinrain/json-schema</a>
+      <a href="https://github.com/jsonrainbow/json-schema.git">justinrain/json-schema</a>
     </td>
     <td>biblioteca</td>
     <td>Uma biblioteca para validar um esquema json.</td>
@@ -821,6 +821,13 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
+      <a href="https://github.com/php-fig/cache.git">psr/cache</a>
+    </td>
+    <td>biblioteca</td>
+    <td>Interface comum para o armazenamento em cache de bibliotecas</td>
+  </tr>
+  <tr>
+    <td>
       <a href="https://github.com/php-fig/clock.git">psr/clock</a>
     </td>
     <td>biblioteca</td>
@@ -852,7 +859,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
       <a href="https://github.com/php-fig/http-factory.git">psr/http-fábrica</a>
     </td>
     <td>biblioteca</td>
-    <td>Interfaces comuns para fábricas de mensagens HTTP PSR-7</td>
+    <td>PSR-17: interfaces comuns para fábricas de mensagens HTTP PSR-7</td>
   </tr>
   <tr>
     <td>
@@ -1335,7 +1342,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
       paypal/module-braintree-core
     </td>
     <td>magento2-module</td>
-    <td>Bifurcação do módulo Magento Braintree 2.2.0 por Gene Commerce para PayPal.</td>
+    <td>Bifurcação do módulo Magento Braintree 2.2.0 de Gene Commerce para PayPal.</td>
   </tr>
   </tbody>
 </table>
