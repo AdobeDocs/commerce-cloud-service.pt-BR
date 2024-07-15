@@ -1,5 +1,5 @@
 ---
-title: Componentes da nuvem para o Commerce
+title: Componentes na nuvem do Commerce
 description: Consulte uma lista das melhorias mais recentes no pacote de componentes da nuvem.
 recommendations: noDisplay, catalog
 exl-id: b4e2508a-3558-4fa8-bae0-3eb76c7b2775
@@ -10,16 +10,16 @@ ht-degree: 0%
 
 ---
 
-# Componentes da nuvem para o Commerce
+# Componentes na nuvem do Commerce
 
-A variável [Componentes da nuvem](https://github.com/magento/magento-cloud-components) O pacote de fornece funcionalidade principal estendida do Adobe Commerce para sites implantados na infraestrutura da nuvem. Este pacote é uma dependência do pacote ECE-Tools. Estas notas de versão descrevem os últimos aprimoramentos feitos neste pacote, que é um componente do [Cloud Tools Suite for Commerce](cloud-tools-suite.md).
+O pacote de [Componentes da Nuvem](https://github.com/magento/magento-cloud-components) fornece funcionalidade principal estendida do Adobe Commerce para sites implantados na infraestrutura da Nuvem. Este pacote é uma dependência do pacote ECE-Tools. Estas notas de versão descrevem as últimas melhorias neste pacote, que é um componente do [Conjunto de ferramentas da nuvem para o Commerce](cloud-tools-suite.md).
 
-A variável `magento/magento-cloud-components` O pacote usa a seguinte sequência de versão: `<major>.<minor>.<patch>`
+O pacote `magento/magento-cloud-components` usa a seguinte sequência de versão: `<major>.<minor>.<patch>`
 
 As notas de versão incluem:
 
 - ![novo ícone](../../assets/new.svg) Novos recursos
-- ![ícone corrigir](../../assets/fix.svg) Correções e aprimoramentos
+- ![ícone de correção](../../assets/fix.svg) Correções e melhorias
 
 <!--Add release notes below-->
 
@@ -27,98 +27,98 @@ As notas de versão incluem:
 
 Data de lançamento: 8 de abril de 2024
 
-- ![novo ícone](../../assets/new.svg) **PHP** — Adição de suporte para PHP 8.3.
+- ![novo ícone](../../assets/new.svg) **PHP** — Suporte adicionado para PHP 8.3.
 
 ## v1.0.13
 
 Data de lançamento: 10 de março de 2023
 
-- ![novo ícone](../../assets/new.svg) **Suporte avançado para PHP 8.2**—Correção de problemas de compatibilidade com determinadas versões do PHP 8.2.x para suportar o Commerce 2.4.6.
+- ![novo ícone](../../assets/new.svg) **Suporte aprimorado para PHP 8.2**—Corrigiu problemas de compatibilidade com determinadas versões do PHP 8.2.x para suportar Commerce 2.4.6.
 
 ## v1.0.12
 
 Data de lançamento: 13 de setembro de 2022
 
-- ![ícone corrigir](../../assets/fix.svg) **Erros no aquecimento**—Correção de um problema que tentava [warmup](../environment/variables-post-deploy.md#warm_up_pages) quando a visibilidade da página é definida como [**Não visível individualmente**](https://docs.magento.com/user-guide/system/data-attributes-product.html#simple-product-csv-file-structure) no Administrador, resultando em `ERROR: Warming up failed: <link to page>` erros no log de implantação.<!-- MCLOUD-9134 -->
+- ![Ícone de correção](../../assets/fix.svg) **Erros no warmup**—Corrigiu um problema que tentava [warmup](../environment/variables-post-deploy.md#warm_up_pages) quando a visibilidade da página estava definida como [**Não Visível Individualmente**](https://docs.magento.com/user-guide/system/data-attributes-product.html#simple-product-csv-file-structure) no Administrador, resultando em `ERROR: Warming up failed: <link to page>` erros no log de implantação.<!-- MCLOUD-9134 -->
 
 ## v1.0.11
 
 Data de lançamento: 4 de agosto de 2022
 
-- ![ícone corrigir](../../assets/fix.svg) **Suporte adicionado para compatibilidade com o Symfony 5.4**—Correções para compatibilidade com o Symfony 5.4.<!-- AC-3550 -->
+- ![ícone de correção](../../assets/fix.svg) **Suporte adicionado para compatibilidade com o Symfony 5.4**—Correções para compatibilidade com o Symfony 5.4.<!-- AC-3550 -->
 
 ## v1.0.10
 
 Data de lançamento: 10 de março de 2022
 
-- ![novo ícone](../../assets/new.svg) **Suporte ao PHP 8.1**—Adição de suporte para PHP 8.1 e remoção do suporte para PHP 7.1.
+- ![novo ícone](../../assets/new.svg) **Suporte para PHP 8.1**—Adicionou suporte para PHP 8.1 e descartou suporte para PHP 7.1.
 
 ## v1.0.9
 
 Data de lançamento: 25 de outubro de 2021
 
-- ![ícone corrigir](../../assets/fix.svg) **Atualizar monólogo**—Atualização da versão mínima necessária para o `monolog` empacotar para `^2.3`.<!-- ACMP-1263 -->
+- ![Ícone de correção](../../assets/fix.svg) **Atualizar Monólogo**—Atualizou a versão mínima necessária para o pacote `monolog` para `^2.3`.<!-- ACMP-1263 -->
 
 ## v1.0.8
 
 Data de lançamento: 29 de julho de 2021
 
-- ![ícone corrigir](../../assets/fix.svg) **Barras à direita removidas de URLs gerados automaticamente**—Remoção das barras à direita dos URLs de páginas de categoria gerados durante o aquecimento do cache.<!--MCLOUD-7192-->
+- ![Ícone de correção](../../assets/fix.svg) **Remoção de barras à direita de URLs geradas automaticamente**—Remoção das barras à direita de URLs de Páginas de Categoria geradas durante o aquecimento do cache.<!--MCLOUD-7192-->
 
 ## v1.0.7
 
 Data de lançamento: 9 de setembro de 2020
 
-- ![novo ícone](../../assets/new.svg) **Melhorias no registro**—Reduza o tamanho do `cache.log` para melhorar o desempenho.<!--MCLOUD-6859-->
+- ![novo ícone](../../assets/new.svg) **Melhorias no log**—Reduza o tamanho do arquivo `cache.log` para melhorar o desempenho.<!--MCLOUD-6859-->
 
-- ![ícone corrigir](../../assets/fix.svg) Correção de um erro de tipo nos valores de configuração do cache que causava a `php bin/magento cache:evict` Falha no comando da CLI.
+- ![ícone de correção](../../assets/fix.svg) Corrigido um erro de tipo nos valores de configuração de cache que causava a falha do comando da CLI `php bin/magento cache:evict`.
 
 ## v1.0.6
 
 Data de lançamento: 5 de agosto de 2020
 
-- ![novo ícone](../../assets/new.svg) **Melhorar o desempenho do Redis**—Adição de `./bin/magento cache:evict` comando para remover chaves Redis expiradas, o que reduz o uso de memória Redis para melhorar o desempenho.<!--MCLOUD-6023-->
+- ![novo ícone](../../assets/new.svg) **Melhorar o desempenho do Redis**—Adicionou o comando `./bin/magento cache:evict` para remover chaves Redis expiradas, o que reduz o uso de memória do Redis para melhorar o desempenho.<!--MCLOUD-6023-->
 
-- ![ícone corrigir](../../assets/fix.svg) Remoção do suporte para *Contexto de logons do New Relic* para corrigir um problema de desempenho.<!--MCLOUD-6422-->
+- ![ícone de correção](../../assets/fix.svg) Remoção do suporte para *Logs do New Relic no Contexto* para corrigir um problema de desempenho.<!--MCLOUD-6422-->
 
 ## v1.0.5
 
 Data de lançamento: 25 de junho de 2020
 
-- ![ícone corrigir](../../assets/fix.svg) Correção de um problema introduzido na versão 1.0.4 dos componentes da magento/magento-cloud que causava a falha da operação de liberação de cache durante a fase de implantação, interrompendo o processo de implantação.
+- ![ícone de correção](../../assets/fix.svg) corrigido um problema introduzido na versão 1.0.4 da magento/magento-cloud-components que causava a falha da operação de liberação de cache durante a fase de implantação, interrompendo o processo de implantação.
 
 ## v1.0.4
 
 Data de lançamento: 25 de junho de 2020
 
-- ![novo ícone](../../assets/new.svg) **Logs New Relic implementados no contexto**— os registros de aplicativos gerados pelo Adobe Commerce agora são exibidos em rastreamentos no New Relic para melhorar os recursos de solução de problemas.<!--MCLOUD-6029-->
+- ![novo ícone](../../assets/new.svg) **Logs do New Relic Implementados no Contexto**—Os logs de aplicativos gerados pelo Adobe Commerce agora são exibidos em rastreamentos no New Relic para melhorar os recursos de solução de problemas.<!--MCLOUD-6029-->
 
-- ![novo ícone](../../assets/new.svg) **Melhoria no registro**—Adição de registro para rastrear a invalidação do cache e os eventos de reindexação completa.<!--MCLOUD-6157-->
+- ![novo ícone](../../assets/new.svg) **Log aprimorado**—Log adicionado para rastrear a invalidação de cache e os eventos de reindexação completa.<!--MCLOUD-6157-->
 
 ## v1.0.3
 
 Data de lançamento: 27 de fevereiro de 2020
 
-- ![ícone corrigir](../../assets/fix.svg) Correção de um problema de compatibilidade com o suporte `ece-tools` Versões 2002.0.x que usam versões mais antigas do PHP.
+- ![ícone de correção](../../assets/fix.svg) Corrigido um problema de compatibilidade com versões do `ece-tools` 2002.0.x que usam versões mais antigas do PHP.
 
 ## v1.0.2
 
 Data de lançamento: 6 de fevereiro de 2020
 
-- ![novo ícone](../../assets/new.svg) Ampliou a funcionalidade do `WARM_UP_PAGES` variável de ambiente para suportar o pré-carregamento de cache de páginas de produto específicas. Consulte a [variáveis pós-implantação](../environment/variables-post-deploy.md#warm_up_pages) para obter uma descrição detalhada do recurso.<!--MAGECLOUD-4444-->
+- ![novo ícone](../../assets/new.svg) Estendeu a funcionalidade da variável de ambiente `WARM_UP_PAGES` para oferecer suporte ao pré-carregamento de cache para páginas de produto específicas. Consulte o tópico [variáveis pós-implantação](../environment/variables-post-deploy.md#warm_up_pages) para obter uma descrição detalhada do recurso.<!--MAGECLOUD-4444-->
 
-- ![ícone corrigir](../../assets/fix.svg) Correção de um problema em que um URL de armazenamento inválido causa falha no gancho pós-implantação ao usar o `WARM_UP_PAGES` funcionalidade para preencher o cache. Esse problema ocorria somente quando as substituições de URL eram desativadas.<!-- MAGECLOUD-4094 -->
+- ![ícone de correção](../../assets/fix.svg) Corrigido um problema em que uma URL de armazenamento inválida causa falha no gancho pós-implantação ao usar a funcionalidade `WARM_UP_PAGES` para preencher o cache. Esse problema ocorreu somente quando as regravações de URL foram desabilitadas.<!-- MAGECLOUD-4094 -->
 
 ## v1.0.1
 
 Data de lançamento: 23 de julho de 2019
 
-- ![ícone corrigir](../../assets/fix.svg) Correção de um problema que afetava [**PÁGINAS_AQUECIDAS**](../environment/variables-post-deploy.md#warm_up_pages) funcionalidade que usa um URL de armazenamento padrão. Agora, se a variável `config:show:default-url` não é possível buscar um URL de base, então o URL da variável MAGENTO_CLOUD_ROUTES é usado.<!-- MAGECLOUD-3866 -->
+- ![ícone de correção](../../assets/fix.svg) Corrigido um problema que afetava a funcionalidade [**WARM_UP_PAGES**](../environment/variables-post-deploy.md#warm_up_pages) que usa uma URL de repositório padrão. Agora, se o comando `config:show:default-url` não puder buscar uma URL base, a URL da variável MAGENTO_CLOUD_ROUTES será usada.<!-- MAGECLOUD-3866 -->
 
 ## v1.0.0
 
 Data de lançamento: 12 de junho de 2019
 
-Esta é a primeira versão do [`magento/magento-cloud-components`](https://github.com/magento/magento-cloud-components) que é uma nova dependência para `ece-tools` pacote versão 2002.0.20 e posterior.
+Esta é a primeira versão do pacote [`magento/magento-cloud-components`](https://github.com/magento/magento-cloud-components), que é uma nova dependência do pacote `ece-tools` versão 2002.0.20 e posterior.
 
-- ![novo ícone](../../assets/new.svg) Adição da capacidade de usar padrões de regex para configurar o **PÁGINAS_AQUECIDAS** variável de ambiente para armazenar em cache páginas únicas, vários domínios e várias páginas. Consulte [Variáveis pós-implantação](../environment/variables-post-deploy.md#warm_up_pages).<!--MAGECLOUD-3258-->
+- ![novo ícone](../../assets/new.svg) Adicionada a capacidade de usar padrões regex para configurar a variável de ambiente **WARM_UP_PAGES** para armazenar em cache páginas únicas, vários domínios e várias páginas. Consulte [variáveis de implantação do Post](../environment/variables-post-deploy.md#warm_up_pages).<!--MAGECLOUD-3258-->

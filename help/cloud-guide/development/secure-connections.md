@@ -18,14 +18,14 @@ O Secure Shell (SSH) é um protocolo comum usado para fazer logon com segurança
 
 ## Gerar um par de chaves SSH
 
-Crie um par de chaves SSH em cada máquina e espaço de trabalho que exija acesso ao código-fonte e aos ambientes do projeto. A chave SSH permite que você se conecte ao GitHub para gerenciar o código-fonte e se conectar aos servidores da nuvem sem precisar fornecer constantemente seu nome de usuário e senha. Consulte [Conexão com o GitHub com SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) para obter mais instruções sobre como criar um par de chaves SSH.
+Crie um par de chaves SSH em cada máquina e espaço de trabalho que exija acesso ao código-fonte e aos ambientes do projeto. A chave SSH permite que você se conecte ao GitHub para gerenciar o código-fonte e se conectar aos servidores da nuvem sem precisar fornecer constantemente seu nome de usuário e senha. Consulte [Conectando ao GitHub com SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) para obter mais instruções sobre como criar um par de chaves SSH.
 
-- A variável _chave pública_ O é seguro para fornecer acesso a um site, SSH e sFTP.
-- A variável _chave privada_ permanece privado na estação de trabalho.
+- A _chave pública_ é segura para fornecer acesso a um site, SSH e sFTP.
+- A _chave privada_ permanece privada na estação de trabalho.
 
 >[!CAUTION]
 >
->**Nunca compartilhe sua chave privada.** Não adicione-o a um tíquete, copie-o em um bate-papo ou anexe-o a emails.
+>**Nunca compartilhe sua chave privada.** Não adicione-o a um tíquete, copie-o em um chat ou anexe-o a emails.
 
 ## Adicionar uma chave pública SSH à sua conta
 
@@ -55,7 +55,7 @@ Você pode adicionar chaves SSH à sua conta usando um dos seguintes métodos: C
 
 >[!TIP]
 >
->Você pode listar e excluir chaves SSH usando os comandos da CLI da nuvem `ssh-key:list` e `ssh-key:delete`.
+>Você pode listar e excluir chaves SSH usando os comandos CLI da Nuvem `ssh-key:list` e `ssh-key:delete`.
 
 >[!TAB Console]
 
@@ -67,19 +67,19 @@ Você pode adicionar chaves SSH à sua conta usando um dos seguintes métodos: C
 
 1. Clique em **[!UICONTROL No SSH key]**. Esse ícone fica à direita do campo de comando e é visível quando o projeto não contém uma chave SSH.
 
-1. Copie e cole o conteúdo da sua chave SSH pública no **Chave pública** campo.
+1. Copie e cole o conteúdo da sua chave SSH pública no campo **Chave pública**.
 
 1. Siga os prompts restantes.
 
-**Para adicionar uma chave SSH ao seu perfil na nuvem**:
+**Para adicionar uma chave SSH ao seu perfil da nuvem**:
 
 1. Faça logon no [[!DNL Cloud Console]](https://console.adobecommerce.com).
 
 1. No menu de conta superior direito, clique em **Meu perfil**.
 
-1. No _Chaves SSH_ clique em **Adicionar chave pública**.
+1. Na exibição _Chaves SSH_, clique em **Adicionar chave pública**.
 
-1. No _Adicionar uma chave SSH_ formulário, dê à sua chave um **Título** e cole a chave SSH pública no **Chave** campo.
+1. No formulário _Adicionar uma chave SSH_, dê à sua chave um **Título** e cole a chave SSH pública no campo **Chave**.
 
 1. Clique em **Salvar**.
 
@@ -87,7 +87,7 @@ Você pode adicionar chaves SSH à sua conta usando um dos seguintes métodos: C
 
 ## Conectar-se a um ambiente remoto
 
-Você pode se conectar a um ambiente remoto usando o `magento-cloud` CLI ou um comando SSH. A variável `magento-cloud` Os comandos da CLI só podem ser usados em ambientes de integração Starter e Pro.
+Você pode se conectar a um ambiente remoto usando a CLI do `magento-cloud` ou um comando SSH. Os comandos da CLI do `magento-cloud` só podem ser usados em ambientes de integração Starter e Pro.
 
 ### Usar a CLI da nuvem
 
@@ -109,19 +109,19 @@ Você pode se conectar a um ambiente remoto usando o `magento-cloud` CLI ou um c
 
 ### Usar um comando SSH
 
-A variável [!DNL Cloud Console] inclui uma lista de comandos de acesso à Web e SSH para cada ambiente.
+O [!DNL Cloud Console] inclui uma lista de comandos de acesso à Web e SSH para cada ambiente.
 
 **Para copiar o comando SSH**:
 
 1. Faça logon no [[!DNL Cloud Console]](https://console.adobecommerce.com).
 
-1. Selecione um projeto na lista _Todos os projetos_ lista.
+1. Selecione um projeto na lista _Todos os projetos_.
 
 1. Selecione um ambiente.
 
 1. Clique em **[!UICONTROL SSH]**.
 
-1. No _SSH_ clique no botão copiar para copiar o comando SSH completo para a área de transferência.
+1. Na guia _SSH_, clique no botão Copiar para copiar o comando SSH completo para a área de transferência.
 
 1. Abra um terminal e cole o comando SSH para criar uma conexão.
 
@@ -139,30 +139,30 @@ A variável [!DNL Cloud Console] inclui uma lista de comandos de acesso à Web e
 
 ## sFTP
 
-A infraestrutura do Adobe Commerce na nuvem é compatível com o acesso a seus ambientes usando sFTP (FTP seguro) com autenticação SSH. Use um cliente compatível com autenticação de chave SSH para sFTP e use sua chave SSH pública. Sua chave SSH pública deve ser adicionada ao ambiente de destino. Para ambientes iniciais e de integração Pro, você pode [adicione-o por meio da variável [!DNL Cloud Console]](#add-your-ssh-key-using-the-project-web-interface).
+A infraestrutura do Adobe Commerce na nuvem é compatível com o acesso a seus ambientes usando sFTP (FTP seguro) com autenticação SSH. Use um cliente compatível com autenticação de chave SSH para sFTP e use sua chave SSH pública. Sua chave SSH pública deve ser adicionada ao ambiente de destino. Para ambientes Starter e ambientes de integração Pro, você pode [adicioná-lo por meio do [!DNL Cloud Console]](#add-your-ssh-key-using-the-project-web-interface).
 
-As conexões sFTP somente leitura são _não_ compatível; o acesso sFTP é fornecido com _gravação_ permissão por padrão.
+Conexões sFTP somente leitura _não_ suportadas; o acesso sFTP é fornecido com permissão de _gravação_ por padrão.
 
 Ao configurar o sFTP, use as informações do comando do ambiente de acesso SSH: `<project-id>-<environment-id>--<app-name>@ssh<cloud-host>`
 
-- **Nome de usuário**: Todo o conteúdo antes do `@` no destino de acesso SSH.
-- **Senha**: Não é necessário ter uma senha para sFTP. O acesso sFTP usa a autenticação de chave SSH.
-- **Host**: Todo o conteúdo depois de `@` no seu acesso SSH.
+- **Nome de usuário**: todo o conteúdo antes de `@` no seu destino de acesso SSH.
+- **Senha**: você não precisa de uma senha para sFTP. O acesso sFTP usa a autenticação de chave SSH.
+- **Host**: todo o conteúdo após `@` no seu acesso SSH.
 - **Porta**: 22, que é a porta SSH padrão.
-- **SSH** Chave privada: se necessário, forneça a localização da sua chave privada para o cliente sFTP. Por padrão, as chaves privadas são armazenadas no `~/.ssh` diretório.
+- **SSH** Chave privada: se necessário, forneça a localização da sua chave privada para o cliente sFTP. Por padrão, chaves privadas são armazenadas no diretório `~/.ssh`.
 
 Dependendo do cliente, opções adicionais podem ser necessárias para concluir a autenticação SSH para sFTP. Revise a documentação do cliente selecionado.
 
-Para **Ambientes iniciais e ambientes de integração Pro**, você também pode considerar [adicionar um `mount`](../application/properties.md#mounts) para obter acesso a um diretório específico. Você adicionaria a montagem ao seu `.magento.app.yaml` arquivo. Para obter uma lista de diretórios graváveis, consulte [Estrutura de projeto](../project/file-structure.md). Esse ponto de montagem só funciona nesses ambientes.
+Para **ambientes iniciais e ambientes de integração Pro**, você também pode considerar [adicionar um `mount`](../application/properties.md#mounts) para acessar um diretório específico. Você adicionaria a montagem ao arquivo `.magento.app.yaml`. Para obter uma lista de diretórios graváveis, consulte [Estrutura de projeto](../project/file-structure.md). Esse ponto de montagem só funciona nesses ambientes.
 
-Para **Ambientes profissionais de preparo e produção**, se você não tiver acesso SSH ao ambiente, deverá [enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para solicitar acesso ao sFTP e um ponto de montagem para acessar a pasta específica, por exemplo, `pub/media`.
+Para **ambientes de Preparo e Produção Pro**, se você não tiver acesso SSH ao ambiente, deverá [enviar um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para solicitar acesso sFTP e um ponto de montagem para acesso à pasta específica, por exemplo, `pub/media`.
 
 >[!NOTE]
->Para Preparo e produção profissionais, se a conexão sFTP for para um _genérico_ usuário que faz **não** precisa ser [adicionado ao projeto na nuvem](../project/user-access.md), você deve [enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) com o seu **público** chave anexada. **Nunca forneça sua chave SSH privada.**
+>Para Preparo e Produção Profissionais, se a conexão sFTP for para um usuário _genérico_ que **não** precise ser [adicionado ao projeto na nuvem](../project/user-access.md), você deve [enviar um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) com a chave **pública** anexada. **Nunca forneça sua chave SSH privada.**
 
 ## Tunelamento SSH
 
-Você pode usar o tunelamento SSH para se conectar a um serviço do ambiente de desenvolvimento local como se o serviço fosse local. Antes do encapsulamento, configure o [SSH](#add-an-ssh-public-key-to-your-account).
+Você pode usar o tunelamento SSH para se conectar a um serviço do ambiente de desenvolvimento local como se o serviço fosse local. Antes do túnel, configure o [SSH](#add-an-ssh-public-key-to-your-account).
 
 Use um aplicativo de terminal para fazer logon e emitir comandos.
 
@@ -176,7 +176,7 @@ Verifique se algum túnel está aberto usando.
 magento-cloud tunnel:list
 ```
 
-Para construir um túnel, você deve conhecer a [nome do aplicativo](../application/properties.md#name). Você pode verificar o nome do aplicativo usando a CLI:
+Para criar um túnel, você deve saber o [nome do aplicativo](../application/properties.md#name). Você pode verificar o nome do aplicativo usando a CLI:
 
 ```bash
 magento-cloud apps
@@ -188,7 +188,7 @@ magento-cloud apps
 magento-cloud tunnel:open -e <environment-ID> --app <app-name>
 ```
 
-Por exemplo, para abrir um túnel para a `sprint5` em um projeto com um aplicativo chamado `mymagento`, insira
+Por exemplo, para abrir um túnel para a ramificação `sprint5` em um projeto com um aplicativo chamado `mymagento`, digite
 
 ```bash
 magento-cloud tunnel:open -e sprint5 --app mymagento

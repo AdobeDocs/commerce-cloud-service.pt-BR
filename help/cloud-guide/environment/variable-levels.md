@@ -12,23 +12,23 @@ ht-degree: 0%
 
 # Níveis variáveis
 
-As variáveis de projeto se aplicam a todos os ambientes no projeto. As variáveis de ambiente se aplicam a um ambiente ou ramificação específica. Um ambiente _herda_ definições de variáveis do ambiente principal.
+As variáveis de projeto se aplicam a todos os ambientes no projeto. As variáveis de ambiente se aplicam a um ambiente ou ramificação específica. Um ambiente _herda_ definições de variável do ambiente pai.
 
-É possível substituir um valor herdado definindo a variável especificamente para o ambiente. Por exemplo, para definir variáveis para desenvolvimento, defina os valores da variável no `.magento.env.yaml` no ambiente de integração. Todos os ambientes que se ramificam do ambiente de integração herdam esses valores. Consulte [Configuração de implantação](configure-env-yaml.md) para obter detalhes sobre a configuração do seu ambiente usando o `.magento.env.yaml` arquivo.
+É possível substituir um valor herdado definindo a variável especificamente para o ambiente. Por exemplo, para definir variáveis para desenvolvimento, defina os valores das variáveis no arquivo `.magento.env.yaml` no ambiente de integração. Todos os ambientes que se ramificam do ambiente de integração herdam esses valores. Consulte [Configuração de implantação](configure-env-yaml.md) para obter detalhes sobre como configurar seu ambiente usando o arquivo `.magento.env.yaml`.
 
 >[!BEGINTABS]
 
 >[!TAB CLI]
 
-**Para definir variáveis usando a CLI da nuvem**:
+**Para definir variáveis usando a CLI da Nuvem**:
 
-- **Variáveis específicas do projeto**—Para definir o mesmo valor para _all_ em seu projeto. Essas variáveis estão disponíveis na build e no tempo de execução em todos os ambientes.
+- **Variáveis específicas de projeto**—Para definir o mesmo valor para _todos_ ambientes em seu projeto. Essas variáveis estão disponíveis na build e no tempo de execução em todos os ambientes.
 
   ```bash
   magento-cloud variable:create --level project --name <variable-name> --value <variable-value>
   ```
 
-- **Variáveis específicas do ambiente**—Para definir um valor único para um _específico_ ambiente. Essas variáveis estão disponíveis no tempo de execução e são herdadas por ambientes secundários. Especifique o ambiente no comando usando o `-e` opção.
+- **Variáveis específicas do ambiente**—Para definir um valor único para um ambiente _específico_. Essas variáveis estão disponíveis no tempo de execução e são herdadas por ambientes secundários. Especifique o ambiente no comando usando a opção `-e`.
 
   ```bash
   magento-cloud variable:create --level environment --name <variable-name> --value <variable-value>
@@ -38,19 +38,19 @@ Depois de definir variáveis específicas do projeto, você deve reimplantar man
 
 >[!TAB Console]
 
-**Para definir variáveis usando o[!DNL Cloud Console]**:
+**Para definir variáveis usando[!DNL Cloud Console]**:
 
 1. No _[!DNL Cloud Console]_, clique no ícone de configuração no lado direito da navegação do projeto.
 
    ![Configurar projeto](../../assets/icon-configure.png){width="36"}
 
-1. Para definir uma variável de nível de projeto, em _Configurações do projeto_ click **Variáveis**.
+1. Para definir uma variável de nível de projeto, em _Configurações do Projeto_, clique em **Variáveis**.
 
    ![Variáveis de projeto](../../assets/ui-project-variables.png)
 
-1. Para definir uma variável de nível de ambiente, na variável _Ambientes_ , selecione um ambiente e clique no link **[!UICONTROL Variables]** guia.
+1. Para definir uma variável de nível de ambiente, na lista _Ambientes_, selecione um ambiente e clique na guia **[!UICONTROL Variables]**.
 
-   ![Guia Variáveis de ambiente](../../assets/ui-environment-variables.png)
+   ![Guia de variáveis de ambiente](../../assets/ui-environment-variables.png)
 
 1. Clique em **[!UICONTROL Create variable]**.
 
@@ -66,18 +66,18 @@ Depois de definir variáveis específicas do projeto, você deve reimplantar man
 
 >[!CAUTION]
 >
->Definição de variáveis específicas do ambiente no [!DNL Cloud Console] O reimplanta automaticamente o ambiente.
+>Definir variáveis específicas do ambiente no [!DNL Cloud Console] reimplanta automaticamente o ambiente.
 
 >[!ENDTABS]
 
 ## Visibilidade
 
-É possível limitar a visibilidade de uma variável durante a criação ou o tempo de execução usando o `--visible-<build|runtime>` comando. Além disso, há opções para definir a herança e a sensibilidade.
+É possível limitar a visibilidade de uma variável durante a compilação ou o tempo de execução usando o comando `--visible-<build|runtime>`. Além disso, há opções para definir a herança e a sensibilidade.
 
 Use as seguintes opções para impedir que uma variável seja vista ou herdada:
 
-- `--inheritable false`—desativa a herança de ambientes secundários. Isso é útil para definir valores somente de produção no `master` e permitindo que todos os outros ambientes usem uma variável de nível de projeto com o mesmo nome.
-- `--sensitive true`—marca a variável como _não legível_ no [!DNL Cloud Console]. Não é possível exibir a variável na interface do usuário; no entanto, é possível exibi-la no container do aplicativo, como qualquer outra variável.
+- `--inheritable false` — desabilita a herança de ambientes filhos. Isso é útil para definir valores somente de produção na ramificação `master` e permitir que todos os outros ambientes usem uma variável de nível de projeto com o mesmo nome.
+- `--sensitive true` — marca a variável como _não legível_ em [!DNL Cloud Console]. Não é possível exibir a variável na interface do usuário; no entanto, é possível exibi-la no container do aplicativo, como qualquer outra variável.
 
 A seguir, é mostrado um caso específico para impedir que uma variável seja vista ou herdada. Você só pode especificar essas opções na CLI. Esse caso não se refere a todas as variáveis de ambiente disponíveis.
 

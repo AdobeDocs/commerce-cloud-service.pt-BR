@@ -1,5 +1,5 @@
 ---
-title: Variáveis pós-implantação
+title: Variáveis de implantação do Post
 description: Consulte a lista de variáveis de ambiente que controlam ações na fase de pós-implantação do Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Configuration, Cache
 recommendations: noDisplay, catalog
@@ -12,9 +12,9 @@ ht-degree: 0%
 
 ---
 
-# Variáveis pós-implantação
+# Variáveis de implantação do Post
 
-As seguintes _pós-implantação_ As variáveis controlam ações na fase de pós-implantação e podem herdar e substituir valores da [Variáveis globais](variables-global.md). Insira essas variáveis no `post-deploy` fase do `.magento.env.yaml` arquivo:
+As variáveis _pós-implantação_ a seguir controlam ações na fase de pós-implantação e podem herdar e substituir valores das [Variáveis globais](variables-global.md). Insira estas variáveis no estágio `post-deploy` do arquivo `.magento.env.yaml`:
 
 ```yaml
 stage:
@@ -30,9 +30,9 @@ Para obter mais informações sobre como personalizar o processo de criação e 
 ## `TTFB_TESTED_PAGES`
 
 - **Padrão**— `[]` (uma matriz vazia)
-- **Versão**—Adobe Commerce 2.1.4 e posterior
+- **Versão** — Adobe Commerce 2.1.4 e posterior
 
-Configurar _Tempo até o Primeiro Byte_ (TTFB) testando páginas especificadas para testar o desempenho do site. Especifique uma referência de caminho absoluto, ou URL com protocolo e host, para cada página que requer o teste.
+Configure o teste TTFB (Time To First Byte, tempo até o primeiro byte) de _tempo para páginas especificadas para testar o desempenho do site._ Especifique uma referência de caminho absoluto, ou URL com protocolo e host, para cada página que requer o teste.
 
 ```yaml
 stage:
@@ -43,7 +43,7 @@ stage:
        - "https://example.com/catalog/some-category"
 ```
 
-Depois de especificar as páginas para testar e confirmar suas alterações, a variável _Tempo até o Primeiro Byte_ o teste é executado durante a fase de pós-implantação e publica os resultados de cada caminho no registro da nuvem:
+Depois que você especificar as páginas para testar e confirmar suas alterações, o teste _Tempo até o Primeiro Byte_ será executado durante a fase de pós-implantação e publicará os resultados para cada caminho no log de nuvem:
 
 ```terminal
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.313s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/customer/account/create","status":200}
@@ -55,9 +55,9 @@ Para caminhos redirecionados, o log relata o caminho do destino de redirecioname
 ## `WARM_UP_CONCURRENCY`
 
 - **Padrão**—_Não definido_
-- **Versão**—Adobe Commerce 2.1.4 e posterior
+- **Versão** — Adobe Commerce 2.1.4 e posterior
 
-Especifique o limite de solicitações simultâneas a serem enviadas durante operações de aquecimento de cache para reduzir a carga do servidor. Esse valor limita o número de conexões paralelas e é útil para configurações de ambiente em que o `WARM_UP_PAGES` a variável pós-implantação especifica várias páginas para pré-carregamento de cache.
+Especifique o limite de solicitações simultâneas a serem enviadas durante operações de aquecimento de cache para reduzir a carga do servidor. Esse valor limita o número de conexões paralelas e é útil para configurações de ambiente em que a variável de pós-implantação `WARM_UP_PAGES` especifica várias páginas para pré-carregamento de cache.
 
 ```yaml
 stage:
@@ -68,11 +68,11 @@ stage:
 ## `WARM_UP_PAGES`
 
 - **Padrão**— `index.php`
-- **Versão**—Adobe Commerce 2.1.4 e posterior
+- **Versão** — Adobe Commerce 2.1.4 e posterior
 
-Personalize a lista de páginas usadas para pré-carregar o cache no `post_deploy` estágio. Você deve configurar o gancho pós-implantação. Consulte a [seção de ganchos](../application/hooks-property.md) do `.magento.app.yaml` arquivo.
+Personalize a lista de páginas usadas para pré-carregar o cache no estágio `post_deploy`. Você deve configurar o gancho pós-implantação. Consulte a [seção de ganchos](../application/hooks-property.md) do arquivo `.magento.app.yaml`.
 
-- **páginas únicas**—Especifique uma única página para adicionar ao cache. Não é necessário indicar o URL de base padrão. O exemplo a seguir armazena em cache o `BASE_URL/index.php` página:
+- **páginas únicas** — Especifique uma única página para adicionar ao cache. Não é necessário indicar o URL de base padrão. O exemplo a seguir armazena em cache a página `BASE_URL/index.php`:
 
   ```yaml
   stage:
@@ -81,7 +81,7 @@ Personalize a lista de páginas usadas para pré-carregar o cache no `post_deplo
         - "index.php"
   ```
 
-- **vários domínios**—Lista vários URLs. O exemplo a seguir armazena páginas em cache de dois domínios:
+- **vários domínios** — Lista várias URLs. O exemplo a seguir armazena páginas em cache de dois domínios:
 
   ```yaml
   stage:
@@ -91,23 +91,23 @@ Personalize a lista de páginas usadas para pré-carregar o cache no `post_deplo
         - 'http://example2.com/test'
   ```
 
-- **várias páginas**—Use o seguinte formato para armazenar em cache várias páginas de acordo com um padrão de expressão regular específico:
+- **várias páginas** — Use o formato a seguir para armazenar em cache várias páginas de acordo com um padrão de expressão regular específico:
 
   ```terminal
   <entity_type>:<pattern|url|product_sku>:<store_id|store_code>
   ```
 
-   - `entity_type`: possíveis variantes `category`, `cms-page`, `product`, `store-page`
-   - `pattern|url|product_sku`: Use um `regexp` padrão ou uma correspondência exata `url` para filtrar os URLs ou use um asterisco (\*) para todas as páginas. Usar o SKU do produto para o `product` tipo de entidade
-   - `store_id|store_code`: use a ID ou o Código do armazenamento ou um asterisco (\*) para todos os armazenamentos. Você pode passar várias IDs de armazenamento ou códigos separados por `|`
+   - `entity_type`: Possíveis variantes `category`, `cms-page`, `product`, `store-page`
+   - `pattern|url|product_sku`: Use um padrão `regexp` ou uma correspondência exata `url` para filtrar as URLs, ou use um asterisco (\*) para todas as páginas. Usar SKU do produto para o tipo de entidade `product`
+   - `store_id|store_code`: Use a ID ou o Código do armazenamento ou um asterisco (\*) para todos os armazenamentos. Você pode passar várias IDs de armazenamento ou códigos separados por `|`
 
-  O exemplo de caches a seguir para `category` e `cms-page` tipos de entidade com base nesses critérios:
-   - todas as páginas de categoria da loja com ID `1`
+  O exemplo a seguir armazena em cache os tipos de entidade `category` e `cms-page` com base nesses critérios:
+   - todas as páginas de categoria do armazenamento com ID `1`
    - todas as páginas de categoria para lojas com código `store1` e `store2`
    - página de categoria `cars` para armazenamento com código `store_en`
    - página cms `contact` para todas as lojas
-   - página cms `contact` para lojas com ID `1` e `2`
-   - qualquer página de categoria que contenha `car_` e termina com `html` para loja com ID 2
+   - página cms `contact` para armazenamentos com ID `1` e `2`
+   - qualquer página de categoria que contenha `car_` e termine com `html` para armazenamento com ID 2
    - qualquer página de categoria que contenha `tires_` para armazenamento com código `store_gb`
 
      ```yaml
@@ -123,7 +123,7 @@ Personalize a lista de páginas usadas para pré-carregar o cache no `post_deplo
            - "category:|tires_.*|:store_gb"
      ```
 
-  O exemplo de caches a seguir para o `product` tipo de entidade com base nesses critérios:
+  O exemplo a seguir armazena em cache o tipo de entidade `product` com base nesses critérios:
    - todos os produtos para todas as lojas (limitado programaticamente a 100 por loja para evitar problemas de desempenho)
    - todos os produtos da loja `store1`
    - produtos com `sku1` para todas as lojas
@@ -141,9 +141,9 @@ Personalize a lista de páginas usadas para pré-carregar o cache no `post_deplo
            - "product:sku1|sku2|sku3:store1|store2"
      ```
 
-  O exemplo de caches a seguir para o `store-page` tipo de entidade com base nesses critérios:
+  O exemplo a seguir armazena em cache o tipo de entidade `store-page` com base nesses critérios:
    - página `/contact-us` para todas as lojas
-   - página `/contact-us` para loja com ID `1`
+   - página `/contact-us` do armazenamento com ID `1`
    - página `/contact-us` para lojas com código `code1` e `code2`
 
   ```yaml

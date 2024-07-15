@@ -26,21 +26,21 @@ Historicamente, a arquitetura Pro consistia em três nós, cada um contendo uma 
 
 Há três nós de serviço para armazenamento de dados, cache e serviços: **OpenSearch** ou **Elasticsearch**, **MariaDB**, **Redis** e muito mais. Quando a camada de serviço se aproxima da capacidade, a única maneira de dimensionar é aumentar o tamanho do servidor, como aumentar a energia e a memória da CPU. A capacidade é limitada ao tamanho do nó disponível. Como o cluster de banco de dados foi projetado para alta disponibilidade, você não pode dimensionar horizontalmente de forma confiável com as tecnologias usadas.
 
-![Escalonamento da camada de serviço](../../assets/scaling-service.png)
+![Escalonamento de camada de serviço](../../assets/scaling-service.png)
 
-Considere um exemplo de que o tipo de instância do nó de serviço é _m5.2xlarge_ com RAM de 32 Gb. Um serviço, como o banco de dados, usa uma quantidade considerável de memória (30 Gb). Dimensionar para o próximo tamanho de instância disponível _m5.4xlarge_ O fornece RAM de 64 Gbit, o que dobra a memória e acomoda as necessidades crescentes do banco de dados.
+Considere um exemplo de que o tipo de instância do nó de serviço é _m5.2xlarge_ com 32 Gb de RAM. Um serviço, como o banco de dados, usa uma quantidade considerável de memória (30 Gb). O dimensionamento para o próximo tamanho de instância disponível _m5.4xlarge_ fornece RAM de 64 Gbit, o que dobra a memória e acomoda as necessidades crescentes do banco de dados.
 
 Você pode otimizar ainda mais o desempenho da camada de serviço, roteando o tráfego com base no tipo de nó. Por padrão, o nó do banco de dados é isolado do tráfego da Web. Como exemplo, você pode optar por veicular o tráfego da Web no nó do banco de dados.
 
 ### Camada da Web
 
-Há três nós da Web para processar solicitações e tráfego da Web: **php-fpm** e **NGINX**. Além do dimensionamento vertical ao aumentar a potência e a memória, a camada da Web pode ser dimensionada horizontalmente ao adicionar servidores da Web a um cluster existente quando constrito no nível do PHP. Consulte [Dimensionamento automático](autoscaling.md) para saber como os nós da web são dimensionados automaticamente.
+Há três nós da Web para processar solicitações e tráfego da Web: **php-fpm** e **NGINX**. Além do dimensionamento vertical ao aumentar a potência e a memória, a camada da Web pode ser dimensionada horizontalmente ao adicionar servidores da Web a um cluster existente quando constrito no nível do PHP. Consulte [Escalonamento automático](autoscaling.md) para saber como os nós da Web são dimensionados automaticamente.
 
-![Escalonamento no nível da Web](../../assets/scaling-web.png)
+![Escalonamento da camada da Web](../../assets/scaling-web.png)
 
 Isso complementa o dimensionamento vertical fornecido pela camada de serviço. À medida que o nível de serviço é dimensionado em tamanho e capacidade para acomodar um banco de dados e uso de serviço cada vez maiores, o nível da Web é dimensionado em tamanho, energia e instâncias para acomodar um aumento nas solicitações de processo e requisitos de tráfego mais altos.
 
-Considere um exemplo de que o tipo de instância do nó da Web é _C5.2xlarge com oito CPUs e 16 Gb de RAM_. O número de solicitações ao site aumentou bastante. Você pode adicionar um nó C5.2xlarge para lidar com o aumento nos processos php-fpm ou pode alterar cada tipo de instância para _C5.4xlarge com 16 CPUs e 32 Gb de RAM_. A adição de um nó reduz o risco de capacidade insuficiente de sobretensão.
+Considere um exemplo de que o tipo de instância do nó da Web é _C5.2xlarge com oito CPUs e 16 Gbit RAM_. O número de solicitações ao site aumentou bastante. Você pode adicionar um nó C5.2xlarge para lidar com o aumento nos processos php-fpm ou pode alterar cada tipo de instância para _C5.4xlarge com 16 CPUs e 32 Gb de RAM_. A adição de um nó reduz o risco de capacidade insuficiente de sobretensão.
 
 ## Estrutura de projeto
 
@@ -50,11 +50,11 @@ No mínimo, os projetos Pro com arquitetura Scaled têm seis nós disponíveis.
 
 - 3 nós de serviço m5.2xlarge (8 CPUs, 32 Gb RAM)
 
-Entretanto, cada projeto é exclusivo e requer o monitoramento do desempenho para analisar adequadamente o gerenciamento de recursos. Cada conta inclui a variável [serviço New Relic](../monitor/new-relic-service.md), que se conecta automaticamente aos dados de aplicativos e à análise de desempenho para fornecer monitoramento dinâmico do servidor. Especificamente, você pode usar o serviço New Relic para monitorar a utilização da CPU e da RAM para determinar quais nós exigem recursos adicionais. À medida que um recurso atinge a capacidade ou você nota uma degradação no desempenho com base na análise, é possível criar uma solicitação para dimensionar sua infraestrutura para atender à demanda.
+Entretanto, cada projeto é exclusivo e requer o monitoramento do desempenho para analisar adequadamente o gerenciamento de recursos. Cada conta inclui o [serviço New Relic](../monitor/new-relic-service.md), que se conecta automaticamente aos dados do aplicativo e à análise de desempenho para fornecer monitoramento dinâmico do servidor. Especificamente, você pode usar o serviço New Relic para monitorar a utilização da CPU e da RAM para determinar quais nós exigem recursos adicionais. À medida que um recurso atinge a capacidade ou você nota uma degradação no desempenho com base na análise, é possível criar uma solicitação para dimensionar sua infraestrutura para atender à demanda.
 
 ### Acesso SSH
 
-Determinados arquivos e logs, como o `/app/<project-id>/var/log` não são compartilhados entre nós. Cada nó tem um acesso SSH exclusivo. Você não pode usar o `magento-cloud` CLI para fazer logon nos nós da Web ou do serviço, mas você pode encontrar os endereços de nó na lista de Acesso SSH na [!DNL Cloud Console].
+Determinados arquivos e logs, como o diretório `/app/<project-id>/var/log`, não são compartilhados entre nós. Cada nó tem um acesso SSH exclusivo. Você não pode usar a CLI do `magento-cloud` para fazer logon nos nós de serviço ou da Web, mas pode encontrar os endereços de nó na lista de Acesso SSH no [!DNL Cloud Console].
 
 ```bash
 ssh <node>.<project-ID>-<environment>-<user-ID>@ssh.<region>.magento.com
@@ -62,13 +62,13 @@ ssh <node>.<project-ID>-<environment>-<user-ID>@ssh.<region>.magento.com
 
 - `node` 1 a 3 — Endereços para acessar os nós de serviço
 
-- `node` 4 a _n_—Endereços para acessar os nós da Web
+- `node` 4 a _n_ — Endereços para acessar os nós da Web
 
 >[!TIP]
 >
->Depois de fazer logon, é possível confirmar a ID do servidor e a função: nós de serviço usam a _unificado_ e os nós da Web usam a função _web_ função.
+>Depois de fazer logon, você pode confirmar a ID do servidor e a função: os nós de serviço usam a função _unificada_, e os nós da Web usam a função _web_.
 
-Exemplo de resposta ao fazer logon em uma **nó de serviço** inclui o _unificado_ função:
+O exemplo de resposta ao fazer logon em um **nó de serviço** inclui a função _unificada_:
 
 ```terminal
  __  __                   _          ___ _             _
@@ -84,7 +84,7 @@ Exemplo de resposta ao fazer logon em uma **nó de serviço** inclui o _unificad
 project-id@server-id:~$
 ```
 
-Exemplo de resposta ao fazer logon em uma **nó da web** inclui o _web_ função:
+O exemplo de resposta ao fazer logon em um **nó da Web** inclui a função _web_:
 
 ```terminal
  __  __                   _          ___ _             _
@@ -102,6 +102,6 @@ project-id@server-id:~$
 
 ### Locais de log
 
-Os locais dos logs variam um pouco dependendo do nó. Por exemplo, um log de banco de dados, como o **Log de erros do MySQL**, está disponível em um nó de serviço (`/var/log/mysql/mysql-error.log`), mas não está disponível em um nó da Web.
+Os locais dos logs variam um pouco dependendo do nó. Por exemplo, um log de banco de dados, como o **log de erros do MySQL**, está disponível em um nó de serviço (`/var/log/mysql/mysql-error.log`), mas não está disponível em um nó da Web.
 
-Cada conta Pro inclui a variável [Serviço de logs do New Relic](../monitor/new-relic-service.md), que se conecta automaticamente aos dados de registro do aplicativo para fornecer gerenciamento dinâmico de registros. Os dados de log agregados de todos os nós são exibidos no aplicativo de Logs do New Relic para que você possa solucionar problemas de desempenho em nós específicos de um único painel.
+Cada conta Pro inclui o [serviço de Logs do New Relic](../monitor/new-relic-service.md), que se conecta automaticamente com dados de log do aplicativo para fornecer gerenciamento de log dinâmico. Os dados de log agregados de todos os nós são exibidos no aplicativo de Logs do New Relic para que você possa solucionar problemas de desempenho em nós específicos de um único painel.

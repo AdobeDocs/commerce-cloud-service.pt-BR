@@ -12,39 +12,39 @@ ht-degree: 0%
 
 # Arquitetura inicial
 
-Sua arquitetura inicial do Adobe Commerce na infraestrutura em nuvem suporta até **quatro** ambientes, incluindo uma `master` ambiente que contém o código inicial do projeto, o ambiente de preparo e até dois ambientes de integração.
+Sua arquitetura inicial do Adobe Commerce na infraestrutura em nuvem aceita até **quatro** ambientes, incluindo um ambiente `master` que contenha o código inicial do projeto, o ambiente de preparo e até dois ambientes de integração.
 
 Todos os ambientes estão em contêineres PaaS (Platform as a service). Esses contêineres são implantados em contêineres altamente restritos em uma grade de servidores. Esses ambientes são somente leitura, aceitando alterações de código implantado de ramificações enviadas do espaço de trabalho local. Cada ambiente fornece um banco de dados e um servidor da Web.
 
-Você pode usar qualquer metodologia de desenvolvimento e ramificação que desejar. Ao obter acesso inicial ao seu projeto, crie uma `staging` do ambiente `master` ambiente. Em seguida, crie o `integration` ambiente ao ramificar de `staging`.
+Você pode usar qualquer metodologia de desenvolvimento e ramificação que desejar. Ao obter acesso inicial ao seu projeto, crie um ambiente `staging` do ambiente `master`. Em seguida, crie o ambiente `integration` ramificando de `staging`.
 
 ## Arquitetura do ambiente inicial
 
 O diagrama a seguir mostra as relações hierárquicas dos ambientes iniciais.
 
-![Visualização de alto nível do projeto inicial](../../assets/starter/architecture.png)
+![Modo de exibição de alto nível do projeto inicial](../../assets/starter/architecture.png)
 
 ## Ambiente de produção
 
-O ambiente de produção fornece o código-fonte para implantar o Adobe Commerce na infraestrutura da nuvem que executa suas vitrines para um ou vários sites. O ambiente de produção usa o código do `master` ramificação para configurar e habilitar o servidor Web, o banco de dados, os serviços configurados e o código do aplicativo.
+O ambiente de produção fornece o código-fonte para implantar o Adobe Commerce na infraestrutura da nuvem que executa suas vitrines para um ou vários sites. O ambiente de produção usa o código da ramificação `master` para configurar e habilitar o servidor Web, o banco de dados, os serviços configurados e o código do aplicativo.
 
-Como a variável `production` O ambiente é somente leitura, use o `integration` para fazer alterações no código, implante na arquitetura a partir do `integration` para `staging`e, por fim, para o `production` ambiente. Consulte [Implante sua loja](../deploy/staging-production.md) e [Lançamento do site](../launch/overview.md).
+Como o ambiente `production` é somente leitura, use o ambiente `integration` para fazer alterações de código, implante na arquitetura do `integration` para o `staging` e, finalmente, no ambiente `production`. Consulte [Implantar armazenamento](../deploy/staging-production.md) e [Inicialização do site](../launch/overview.md).
 
-O Adobe recomenda que você realize testes completos em seu `staging` ramificação antes de enviar para a `master` que é implantada na `production` ambiente.
+A Adobe recomenda testar completamente na ramificação `staging` antes de enviar para a ramificação `master`, que é implantada no ambiente `production`.
 
 ## Ambiente de preparo
 
-O Adobe recomenda criar uma ramificação chamada `staging` de `master`. A variável `staging` a ramificação implanta código no ambiente de preparo para fornecer um ambiente de pré-produção para testar código, módulos e extensões, gateways de pagamento, envio, dados de produtos e muito mais. Esse ambiente fornece a configuração de todos os serviços para corresponder ao ambiente de produção, incluindo o Fastly, o New Relic APM e a pesquisa.
+A Adobe recomenda criar uma ramificação chamada `staging` de `master`. A ramificação `staging` implanta código no ambiente de preparo para fornecer um ambiente de pré-produção para testar código, módulos e extensões, gateways de pagamento, envio, dados de produtos e muito mais. Esse ambiente fornece a configuração de todos os serviços para corresponder ao ambiente de produção, incluindo o Fastly, o New Relic APM e a pesquisa.
 
 Seções adicionais neste guia fornecem instruções para implantações de código final e testes de interações no nível de produção em um ambiente de preparo seguro. Para melhor desempenho e teste de recursos, replique o banco de dados no ambiente de preparo.
 
 >[!WARNING]
 >
->A Adobe recomenda testar cada interação do comerciante e do cliente no ambiente de preparo antes de implantar no ambiente de produção. Consulte [Implante sua loja](../deploy/staging-production.md) e [Testar implantação](../test/staging-and-production.md).
+>A Adobe recomenda testar cada interação do comerciante e do cliente no ambiente de preparo antes de implantar no ambiente de produção. Consulte [Implantar seu armazenamento](../deploy/staging-production.md) e [Testar implantação](../test/staging-and-production.md).
 
 ## Ambiente de integração
 
-Os desenvolvedores usam o `integration` ambiente para desenvolver, implantar e testar:
+Os desenvolvedores usam o ambiente `integration` para desenvolver, implantar e testar:
 
 - código de aplicativo do Adobe Commerce
 
@@ -70,7 +70,7 @@ Para obter o melhor desempenho no ambiente de integração, siga estas práticas
 
 - Desative os trabalhos cron e execute manualmente conforme necessário
 
-Você pode ter até **dois** Ambientes de integração ativos. Crie um ambiente de Integração ao criar uma ramificação na `staging` filial. Ao criar um ambiente de integração, o nome do ambiente corresponde ao nome da ramificação. Um ambiente de integração inclui um servidor Web e um banco de dados. Ela não inclui todos os serviços, por exemplo, o Fastly CDN e o New Relic não estão disponíveis.
+Você pode ter até **dois** ambientes de Integração ativos. Você cria um Ambiente de integração criando uma ramificação a partir da ramificação `staging`. Ao criar um ambiente de integração, o nome do ambiente corresponde ao nome da ramificação. Um ambiente de integração inclui um servidor Web e um banco de dados. Ela não inclui todos os serviços, por exemplo, o Fastly CDN e o New Relic não estão disponíveis.
 
 Você pode ter um número ilimitado de ramificações inativas para armazenamento de código. Para acessar, exibir e testar uma ramificação inativa, é necessário ativá-la
 
@@ -78,7 +78,7 @@ Você pode ter um número ilimitado de ramificações inativas para armazenament
 
 ## Pilha de tecnologia de produção e preparo
 
-Os ambientes de produção e de preparo incluem as seguintes tecnologias. Você pode modificar e configurar essas tecnologias por meio da [`.magento.app.yaml`](../application/configure-app-yaml.md) arquivo.
+Os ambientes de produção e de preparo incluem as seguintes tecnologias. Você pode modificar e configurar essas tecnologias por meio do arquivo [`.magento.app.yaml`](../application/configure-app-yaml.md).
 
 - Fastly para cache HTTP e CDN
 - Servidor Web Nginx falando com PHP-FPM, uma instância com vários workers
@@ -89,7 +89,7 @@ Os ambientes de produção e de preparo incluem as seguintes tecnologias. Você 
 
 ### Serviços
 
-O Adobe Commerce na infraestrutura em nuvem é compatível atualmente com os seguintes serviços: PHP, MySQL (MariaDB), Elasticsearch (Adobe Commerce 2.2 para 2.4.3-p2), OpenSearch (2.3.7-p3, 2.4.3-p2, 2.4.4 e posterior), Redis e [!DNL RabbitMQ].
+O Adobe Commerce na infraestrutura em nuvem oferece suporte aos seguintes serviços no momento: PHP, MySQL (MariaDB), Elasticsearch (Adobe Commerce 2.2 a 2.4.3-p2), OpenSearch (2.3.7-p3, 2.4.3-p2, 2.4.4 e posterior), Redis e [!DNL RabbitMQ].
 
 Cada serviço é executado em um contêiner seguro e separado. Os containers são gerenciados juntos no projeto. Alguns serviços são padrão, como os seguintes:
 
@@ -117,7 +117,7 @@ O Adobe Commerce na infraestrutura em nuvem usa o sistema operacional Debian GNU
 
 - [OpenSearch](../services/opensearch.md)
 
-Nos ambientes de preparo e produção, use o Fastly para CDN e armazenamento em cache. A versão mais recente da extensão CDN do Fastly é instalada durante o provisionamento inicial do projeto. Você pode atualizar a extensão do para obter as correções de erros e melhorias mais recentes. Consulte [Módulo Fastly CDN para Magento 2](https://github.com/fastly/fastly-magento2). Além disso, você tem acesso a [New Relic](../monitor/account-management.md) para monitoramento de desempenho.
+Nos ambientes de preparo e produção, use o Fastly para CDN e armazenamento em cache. A versão mais recente da extensão CDN do Fastly é instalada durante o provisionamento inicial do projeto. Você pode atualizar a extensão do para obter as correções de erros e melhorias mais recentes. Consulte [Módulo Fastly CDN para o Magento 2](https://github.com/fastly/fastly-magento2). Além disso, você tem acesso ao [New Relic](../monitor/account-management.md) para monitoramento de desempenho.
 
 Use os arquivos a seguir para configurar as versões de software que deseja usar na implementação.
 
@@ -137,11 +137,11 @@ O fluxo de trabalho a seguir resume o processo para ramificar o código, desenvo
 
 1. Configurar o ambiente local
 
-1. Clonar o `master` ramificar para o ambiente local
+1. Clonar a ramificação `master` no ambiente local
 
-1. Criar um `staging` ramificar de `master`
+1. Criar uma ramificação `staging` de `master`
 
-1. Criar ramificações para desenvolvimento a partir de `staging`
+1. Criar ramificações para desenvolvimento de `staging`
 
 1. Enviar código para o Git, que cria e implanta em um ambiente para testes
 
@@ -149,7 +149,7 @@ Consulte as seções a seguir para obter instruções detalhadas e apresentaçõ
 
 - [Fluxo de trabalho inicial de desenvolvimento e implantação](starter-develop-deploy-workflow.md)
 
-- [Desenvolvimento de docker](../dev-tools/cloud-docker.md) (ambiente de desenvolvimento local ativado pelo Cloud Docker for Commerce)
+- [Desenvolvimento do Docker](../dev-tools/cloud-docker.md) (ambiente de desenvolvimento local habilitado pelo Cloud Docker para Commerce)
 
 - [Gerenciar ramificações](../project/console-branches.md)
 

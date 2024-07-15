@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # Manipuladores de log
 
-Você pode configurar manipuladores de log para enviar mensagens a um servidor de log remoto. Um manipulador de log envia registros de criação e implantação para outros sistemas, de forma semelhante à maneira como você envia registros para o Slack e email. Você pode ativar um _syslog_ manipulador, que é ideal para registrar mensagens relacionadas ao hardware, ou um manipulador GELF (Extended Log Format) de Graylog, que é ideal para registrar mensagens de aplicativos de software.
+Você pode configurar manipuladores de log para enviar mensagens a um servidor de log remoto. Um manipulador de log envia registros de criação e implantação para outros sistemas, de forma semelhante à maneira como você envia registros para o Slack e email. Você pode habilitar um manipulador _syslog_, que é ideal para registrar mensagens relacionadas ao hardware, ou um manipulador GELF (Formato de Log Estendido) Graylog, que é ideal para registrar mensagens de aplicativos de software.
 
-O exemplo a seguir configura esses dois manipuladores adicionando a configuração ao `.magento.env.yaml` arquivo. Para o nível mínimo de registro (`min_level`), consulte [Níveis de log](#log-levels).
+O exemplo a seguir configura esses dois manipuladores adicionando a configuração ao arquivo `.magento.env.yaml`. Para obter os valores de nível de log mínimo (`min_level`), consulte [Níveis de log](#log-levels).
 
 ```yaml
 log:
@@ -56,13 +56,13 @@ log:
 
 ## Níveis de log
 
-Os níveis de log determinam o nível de detalhes nas mensagens de notificação. As seguintes categorias de nível de log incluem todos os níveis de log abaixo dele. Por exemplo, uma variável `debug` O nível inclui o registro de cada nível, enquanto uma `alert` nível mostra apenas alertas e emergências.
+Os níveis de log determinam o nível de detalhes nas mensagens de notificação. As seguintes categorias de nível de log incluem todos os níveis de log abaixo dele. Por exemplo, um nível `debug` inclui logs de todos os níveis, enquanto um nível `alert` mostra apenas alertas e emergências.
 
-- **depurar**— detailed debug information
-- **informações**—eventos interessantes, como um login de usuário ou log SQL
-- **aviso**— eventos normais, mas significativos
+- **depurar**—informações detalhadas sobre a depuração
+- **info** — eventos interessantes, como logon de usuário ou log SQL
+- **aviso**—eventos normais, mas significativos
 - **aviso**—ocorrências excepcionais que não sejam erros, como o uso de uma API obsoleta ou o uso inadequado de uma API
-- **erro**—erros de tempo de execução que não exigem ação imediata
-- **crítico**— condições críticas, como um componente indisponível do aplicativo ou uma exceção inesperada
-- **alerta**—ação imediata necessária — como um site inativo ou o banco de dados indisponível — que aciona um alerta de SMS
-- **emergência**— system está inutilizável
+- **erro**—erros de tempo de execução que não requerem ação imediata
+- **crítico**—condições críticas, como um componente de aplicativo indisponível ou uma exceção inesperada
+- **alerta**—ação imediata necessária—como um site estar desativado ou o banco de dados não estar disponível—que dispara um alerta de SMS
+- **emergência**—o sistema não pode ser usado

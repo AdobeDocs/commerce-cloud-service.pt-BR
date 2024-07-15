@@ -12,25 +12,25 @@ ht-degree: 0%
 
 # Exibir e gerenciar logs
 
-Os logs do Adobe Commerce em projetos de infraestrutura em nuvem são úteis para solucionar problemas relacionados a [criar e implantar ganchos](../application/hooks-property.md), serviços em nuvem e o aplicativo do Adobe Commerce.
+Os logs do Adobe Commerce em projetos de infraestrutura em nuvem são úteis para solucionar problemas relacionados à [criação e implantação de ganchos](../application/hooks-property.md), aos serviços em nuvem e ao aplicativo do Adobe Commerce.
 
-Você pode visualizar os registros do sistema de arquivos, a variável [!DNL Cloud Console], e o `magento-cloud` CLI.
+Você pode exibir os logs do sistema de arquivos, do [!DNL Cloud Console] e da CLI do `magento-cloud`.
 
-- **Sistema de arquivos**—O `/var/log` o diretório do sistema contém logs para todos os ambientes. A variável `var/log/` O diretório contém logs específicos do aplicativo exclusivos a um ambiente específico. Esses diretórios não são compartilhados entre nós em um cluster. Em ambientes de produção e preparo profissionais, você deve verificar os registros em cada nó.
+- **Sistema de arquivos** — O diretório de sistema `/var/log` contém logs para todos os ambientes. O diretório `var/log/` contém logs específicos do aplicativo exclusivos a um ambiente específico. Esses diretórios não são compartilhados entre nós em um cluster. Em ambientes de produção e preparo profissionais, você deve verificar os registros em cada nó.
 
-- **[!DNL Cloud Console]**— você pode ver as informações de log de criação, implantação e pós-implantação no ambiente _messages_ lista.
+- **[!DNL Cloud Console]** — Você pode ver informações de log de compilação, implantação e pós-implantação na lista de _mensagens_ do ambiente.
 
-- **CLI da nuvem**— É possível visualizar registros de ambientes locais usando o `magento-cloud log` ou registros de ambiente remoto usando o `magento-cloud ssh` comando.
+- **CLI da Nuvem**—Você pode exibir logs de ambiente local usando o comando `magento-cloud log` ou logs de ambiente remoto usando o comando `magento-cloud ssh`.
 
 ## Locais de log
 
 Os registros do sistema são armazenados nos seguintes locais:
 
 - Integração: `/var/log/<log-name>.log`
-- Estágios profissionais: `/var/log/platform/<project-ID>_stg/<log-name>.log`
+- Estágios Profissionais: `/var/log/platform/<project-ID>_stg/<log-name>.log`
 - Produção Pro: `/var/log/platform/<project-ID>/<log-name>.log`
 
-O valor de `<project-ID>` depende do projeto e se o ambiente é de Preparo ou Produção. Por exemplo, com uma ID de projeto de `yw1unoukjcawe`, o usuário do ambiente de preparo é `yw1unoukjcawe_stg` e o usuário do ambiente de produção for `yw1unoukjcawe`.
+O valor de `<project-ID>` depende do projeto e se o ambiente é de Preparo ou de Produção. Por exemplo, com a ID de projeto `yw1unoukjcawe`, o usuário do ambiente de Preparo é `yw1unoukjcawe_stg` e o usuário do ambiente de Produção é `yw1unoukjcawe`.
 
 Usando esse exemplo, o log de implantação é: `/var/log/platform/yw1unoukjcawe_stg/deploy.log`
 
@@ -62,7 +62,7 @@ Exemplo para Pro:
 ssh 1.ent-project-environment-id@ssh.region.magento.cloud "ls var/log | grep error"
 ```
 
-**Para ver um registro remoto**:
+**Para exibir um log remoto**:
 
 ```bash
 magento-cloud ssh -e <environment-ID> "cat var/log/cron.log"
@@ -76,11 +76,11 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 >[!TIP]
 >
->Para ambientes Pro de armazenamento temporário e produção, a rotação, compactação e remoção automáticas de registros são ativadas para arquivos de registro com um nome de arquivo fixo. Cada tipo de arquivo de log tem um padrão rotativo e uma duração. Os ambientes iniciais não têm rotação de log. Detalhes completos sobre a rotação de logs do ambiente e a duração de logs compactados podem ser encontrados em: `/etc/logrotate.conf` e `/etc/logrotate.d/<various>`. A rotação de logs não pode ser configurada em ambientes Pro Integration. Para a Integração Pro, você deve implementar uma solução/script personalizados e [configurar seu cron](../application/crons-property.md) para executar o script conforme necessário.
+>Para ambientes Pro de armazenamento temporário e produção, a rotação, compactação e remoção automáticas de registros são ativadas para arquivos de registro com um nome de arquivo fixo. Cada tipo de arquivo de log tem um padrão rotativo e uma duração. Os ambientes iniciais não têm rotação de log. Detalhes completos sobre a rotação de logs e a duração de logs compactados do ambiente podem ser encontrados em: `/etc/logrotate.conf` e `/etc/logrotate.d/<various>`. A rotação de logs não pode ser configurada em ambientes Pro Integration. Para a Integração Pro, você deve implementar uma solução/script personalizado e [configurar seu cron](../application/crons-property.md) para executar o script conforme necessário.
 
 ## Criar e implantar logs
 
-Depois de enviar as alterações para o ambiente, você pode revisar o registro de cada gancho na `var/log/cloud.log` arquivo. O log contém mensagens de início e parada para cada gancho. No exemplo a seguir, as mensagens são &quot;`Starting post-deploy.`&quot; e &quot;`Post-deploy is complete.`&quot;
+Depois de enviar as alterações para o ambiente, você pode revisar o log de cada gancho no arquivo `var/log/cloud.log`. O log contém mensagens de início e parada para cada gancho. No exemplo a seguir, as mensagens são &quot;`Starting post-deploy.`&quot; e &quot;`Post-deploy is complete.`&quot;
 
 Verifique os carimbos de data e hora nas entradas do log e localize os logs para uma implantação específica. Este é um exemplo condensado de saída de log que você pode usar para solução de problemas:
 
@@ -101,7 +101,7 @@ Re-deploying environment project-integration-ID
 
 >[!TIP]
 >
->Ao configurar o ambiente em nuvem, é possível definir [Slack baseado em log e notificações por email](../environment/set-up-notifications.md) para criar e implantar ações.
+>Ao configurar o ambiente de nuvem, você pode configurar [Slack baseado em log e notificações por email](../environment/set-up-notifications.md) para criar e implantar ações.
 
 Os seguintes logs têm um local comum para todos os projetos na nuvem:
 
@@ -113,15 +113,15 @@ Os seguintes logs têm um local comum para todos os projetos na nuvem:
 - **Log de suporte**: `var/log/support_report.log`
 - **Relatórios**: `var/report/`
 
-Embora o `cloud.log` O arquivo contém feedback de cada estágio do processo de implantação. Os logs criados pelo gancho de implantação são exclusivos de cada ambiente. O log de implantação específico do ambiente está nos seguintes diretórios:
+Embora o arquivo `cloud.log` contenha comentários de cada estágio do processo de implantação, os logs criados pelo gancho de implantação são exclusivos de cada ambiente. O log de implantação específico do ambiente está nos seguintes diretórios:
 
 - **Integração Starter e Pro**: `/var/log/deploy.log`
-- **Estágio Pro**: `/var/log/platform/<project-ID>_stg/deploy.log`
-- **Produção Pro**: `/var/log/platform/<project-ID>/deploy.log`
+- **Estágios Profissionais**: `/var/log/platform/<project-ID>_stg/deploy.log`
+- **Produção Profissional**: `/var/log/platform/<project-ID>/deploy.log`
 
 ### Implantar log
 
-O log de cada implantação concatena com a variável `deploy.log` arquivo. O exemplo a seguir imprime o log de implantação do ambiente atual no terminal:
+O log de cada implantação se concatena com o arquivo `deploy.log` específico. O exemplo a seguir imprime o log de implantação do ambiente atual no terminal:
 
 ```bash
 magento-cloud log -e <environment-ID> deploy
@@ -143,9 +143,9 @@ Reading log file projectID-branchname-ID--mymagento@ssh.zone.magento.cloud:/var/
 
 ### Log de erros
 
-Mensagens de erro e de aviso geradas durante o processo de implantação são gravadas em ambos `var/log/cloud.log` e a variável `var/log/cloud.error.log` arquivos. O arquivo de log de erros da nuvem contém apenas erros e avisos da implantação mais recente. Um arquivo vazio indica uma implantação bem-sucedida sem erros.
+Mensagens de erro e aviso geradas durante o processo de implantação são gravadas nos arquivos `var/log/cloud.log` e `var/log/cloud.error.log`. O arquivo de log de erros da nuvem contém apenas erros e avisos da implantação mais recente. Um arquivo vazio indica uma implantação bem-sucedida sem erros.
 
-Você pode exibir o arquivo de log usando o [SSH da CLI da nuvem](#view-remote-environment-logs)ou você pode usar ECE-Tools para mostrar os erros com sugestões:
+Você pode exibir o arquivo de log usando a [CLI de nuvem SSH](#view-remote-environment-logs) ou pode usar as ECE-Tools para mostrar os erros com sugestões:
 
 ```bash
 magento-cloud ssh -e <environment-ID> "./vendor/bin/ece-tools error:show"
@@ -178,7 +178,7 @@ title: The configured state is not ideal
 type: warning
 ```
 
-A maioria das mensagens de erro contém uma descrição e uma ação sugerida. Use o [Referência da mensagem de erro para ECE-Tools](../dev-tools/error-reference.md) para consultar o código de erro e obter mais orientações. Para obter mais orientações, use o [Solução de problemas de implantação do Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/deployment/magento-deployment-troubleshooter.html).
+A maioria das mensagens de erro contém uma descrição e uma ação sugerida. Use a [Referência da mensagem de erro para ECE-Tools](../dev-tools/error-reference.md) para consultar o código de erro para obter mais orientações. Para obter mais orientações, use a [Solução de problemas de implantação do Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/deployment/magento-deployment-troubleshooter.html).
 
 ## Logs do aplicativo
 
@@ -186,29 +186,29 @@ Assim como os logs de implantação, os logs de aplicativos são exclusivos para
 
 | Arquivo de log | Integração do Starter e do Pro | Descrição |
 | ------------------- | --------------------------- | ------------------------------------------------- |
-| **Implantar log** | `/var/log/deploy.log` | Atividade de [gancho de implantação](../application/hooks-property.md). |
-| **Log pós-implantação** | `/var/log/post_deploy.log` | Atividade de [gancho pós-implantação](../application/hooks-property.md). |
+| **Log de implantação** | `/var/log/deploy.log` | Atividade do [gancho de implantação](../application/hooks-property.md). |
+| **log de implantação do Post** | `/var/log/post_deploy.log` | Atividade do [gancho pós-implantação](../application/hooks-property.md). |
 | **Log do Cron** | `/var/log/cron.log` | Saída de trabalhos cron. |
 | **Log de acesso do Nginx** | `/var/log/access.log` | Na inicialização do Nginx, erros de HTTP para diretórios ausentes e tipos de arquivos excluídos. |
 | **Log de erros do Nginx** | `/var/log/error.log` | Mensagens de inicialização úteis para depurar erros de configuração associados ao Nginx. |
-| **Log de acesso do PHP** | `/var/log/php.access.log` | Solicitações para o serviço PHP. |
-| **Log FPM do PHP** | `/var/log/app.log` | |
+| **log de acesso ao PHP** | `/var/log/php.access.log` | Solicitações para o serviço PHP. |
+| **log do FPM do PHP** | `/var/log/app.log` | |
 
-Para ambientes de preparo e produção Pro, os logs de implantação, pós-implantação e cron estão disponíveis somente no primeiro nó do cluster:
+Para ambientes de preparo e produção Pro, os registros de implantação, implantação do Post e Cron estão disponíveis somente no primeiro nó do cluster:
 
 | Arquivo de log | Estágio Pro | Produção Pro |
 | ------------------- | --------------------------------------------------- | ----------------------------------------------- |
-| **Implantar log** | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>_stg/deploy.log` | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>/deploy.log` |
-| **Log pós-implantação** | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
+| **Log de implantação** | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>_stg/deploy.log` | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>/deploy.log` |
+| **log de implantação do Post** | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
 | **Log do Cron** | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>_stg/cron.log` | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>/cron.log` |
 | **Log de acesso do Nginx** | `/var/log/platform/<project-ID>_stg/access.log` | `/var/log/platform/<project-ID>/access.log` |
 | **Log de erros do Nginx** | `/var/log/platform/<project-ID>_stg/error.log` | `/var/log/platform/<project-ID>/error.log` |
-| **Log de acesso do PHP** | `/var/log/platform/<project-ID>_stg/php.access.log` | `/var/log/platform/<project-ID>/php.access.log` |
-| **Log FPM do PHP** | `/var/log/platform/<project-ID>_stg/php5-fpm.log` | `/var/log/platform/<project-ID>/php5-fpm.log` |
+| **log de acesso ao PHP** | `/var/log/platform/<project-ID>_stg/php.access.log` | `/var/log/platform/<project-ID>/php.access.log` |
+| **log do FPM do PHP** | `/var/log/platform/<project-ID>_stg/php5-fpm.log` | `/var/log/platform/<project-ID>/php5-fpm.log` |
 
 ### Arquivos de log arquivados
 
-Os registros de aplicativos são compactados e arquivados uma vez por dia e mantidos por um ano. Os logs compactados são nomeados usando uma ID exclusiva que corresponde à `Number of Days Ago + 1`. Por exemplo, em ambientes de produção Pro, um log de acesso do PHP para 21 dias no passado é armazenado e nomeado da seguinte maneira:
+Os registros de aplicativos são compactados e arquivados uma vez por dia e mantidos por um ano. Os logs compactados são nomeados usando uma ID exclusiva que corresponde ao `Number of Days Ago + 1`. Por exemplo, em ambientes de produção Pro, um log de acesso do PHP para 21 dias no passado é armazenado e nomeado da seguinte maneira:
 
 ```terminal
 /var/log/platform/<project-ID>/php.access.log.22.gz
@@ -218,7 +218,7 @@ Os arquivos de log arquivados são sempre armazenados no diretório onde o arqui
 
 >[!NOTE]
 >
->**Implantar** e **Pós-implantação** os arquivos de registro não são rotacionados e arquivados. Todo o histórico de implantação é gravado nesses arquivos de log.
+>Os arquivos de log **Implantar** e **Post-implantar** não são girados e arquivados. Todo o histórico de implantação é gravado nesses arquivos de log.
 
 ## Logs de serviço
 
@@ -230,16 +230,16 @@ Como cada serviço é executado em um contêiner separado, os logs do serviço n
 - **Log de email**: `/var/log/mail.log`
 - **Log de erros do MySQL**: `/var/log/mysql/mysql-error.log`
 - **Log lento do MySQL**: `/var/log/mysql/mysql-slow.log`
-- **Log do RabbitMQ**: `/var/log/rabbitmq/rabbit@host1.log`
+- **log do RabbitMQ**: `/var/log/rabbitmq/rabbit@host1.log`
 
 Os logs de serviço são arquivados e salvos por períodos diferentes, dependendo do tipo de log. Por exemplo, os registros MySQL têm o tempo de vida mais curto, removido após sete dias.
 
 >[!TIP]
 >
->Os locais do arquivo de log na arquitetura dimensionada dependem do tipo de nó. Consulte [Registra locais na arquitetura dimensionada](../architecture/scaled-architecture.md#log-locations) tópico.
+>Os locais do arquivo de log na arquitetura dimensionada dependem do tipo de nó. Consulte o tópico [Locais de log na arquitetura em escala](../architecture/scaled-architecture.md#log-locations).
 
 ## Dados de log para produção e preparo profissionais
 
-Em ambientes de produção e preparo profissionais, use [Gerenciamento de logs do New Relic](../monitor/log-management.md) integrado ao seu projeto para gerenciar dados de log agregados de todos os logs associados ao seu projeto do Adobe Commerce na nuvem.
+Em ambientes de Produção e Preparo Pro, use o [gerenciamento de logs do New Relic](../monitor/log-management.md) integrado ao seu projeto para gerenciar dados de logs agregados de todos os logs associados ao seu projeto de infraestrutura do Adobe Commerce na nuvem.
 
-O aplicativo de logs do New Relic fornece um painel de gerenciamento de log centralizado para solucionar problemas e monitorar o Adobe Commerce em ambientes de produção e preparo de infraestrutura em nuvem. O painel também fornece acesso aos dados de log para os serviços Fastly CDN, Image Otimization e Web application firewall (WAF). Consulte [Serviços da New Relic](../monitor/new-relic-service.md).
+O aplicativo de logs do New Relic fornece um painel de gerenciamento de log centralizado para solucionar problemas e monitorar o Adobe Commerce em ambientes de produção e preparo de infraestrutura em nuvem. O painel também fornece acesso aos dados de log para os serviços Fastly CDN, Image Otimization e Web application firewall (WAF). Consulte [serviços da New Relic](../monitor/new-relic-service.md).

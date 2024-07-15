@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # Configurar rotas
 
-A variável `routes.yaml` arquivo no `.magento/routes.yaml` O diretório define rotas para o Adobe Commerce em ambientes de integração, preparo e produção de infraestrutura em nuvem. As rotas determinam como o aplicativo processa solicitações HTTP e HTTPS recebidas.
+O arquivo `routes.yaml` no diretório `.magento/routes.yaml` define as rotas do Adobe Commerce nos ambientes de Integração, Preparo e Produção da infraestrutura em nuvem. As rotas determinam como o aplicativo processa solicitações HTTP e HTTPS recebidas.
 
-O padrão `routes.yaml` O arquivo especifica os modelos de rota para processar solicitações HTTP como HTTPS em projetos que têm um único domínio padrão e em projetos configurados para vários domínios:
+O arquivo padrão `routes.yaml` especifica os modelos de rota para processar solicitações HTTP como HTTPS em projetos que têm um único domínio padrão e em projetos configurados para vários domínios:
 
 ```yaml
 "http://{default}/":
@@ -25,7 +25,7 @@ O padrão `routes.yaml` O arquivo especifica os modelos de rota para processar s
     upstream: "mymagento:http"
 ```
 
-Use o `magento-cloud` CLI para exibir uma lista das rotas configuradas:
+Use a CLI `magento-cloud` para exibir uma lista das rotas configuradas:
 
 ```bash
 magento-cloud environment:routes
@@ -43,11 +43,11 @@ magento-cloud environment:routes
 
 ## Modelos de roteiro
 
-A variável `routes.yaml` file é uma lista de rotas com modelos e suas configurações. Você pode usar os seguintes espaços reservados em modelos de rota:
+O arquivo `routes.yaml` é uma lista de rotas com modelos e suas configurações. Você pode usar os seguintes espaços reservados em modelos de rota:
 
-- A variável `{default}` o espaço reservado representa o nome de domínio qualificado configurado como padrão para o projeto.
+- O espaço reservado `{default}` representa o nome de domínio qualificado configurado como padrão para o projeto.
 
-  Por exemplo, um projeto com o domínio padrão `example.com` e os seguintes modelos de roteiro:
+  Por exemplo, um projeto com o domínio padrão `example.com` e os seguintes modelos de rota:
 
   ```text
   https://www.{default}/
@@ -61,9 +61,9 @@ A variável `routes.yaml` file é uma lista de rotas com modelos e suas configur
   https://example.com/blog
   ```
 
-- A variável `{all}` o espaço reservado representa todos os nomes de domínio configurados para o projeto.
+- O espaço reservado `{all}` representa todos os nomes de domínio configurados para o projeto.
 
-  Por exemplo, um projeto com `example.com` e `example1.com` domínios com os seguintes modelos de rota:
+  Por exemplo, um projeto com domínios `example.com` e `example1.com` com os seguintes modelos de rota:
 
   ```text
   https://www.{all}/
@@ -83,17 +83,17 @@ A variável `routes.yaml` file é uma lista de rotas com modelos e suas configur
   https://example1.com/blog
   ```
 
-  A variável `{all}` o espaço reservado é útil para projetos configurados para vários domínios. Em uma ramificação de não produção, `{all}` é substituída pela ID do projeto e pela ID do ambiente para cada domínio.
+  O espaço reservado `{all}` é útil para projetos configurados para vários domínios. Em uma ramificação de não produção, `{all}` é substituído pela ID do projeto e pela ID do ambiente para cada domínio.
 
-  Se um projeto não tiver domínios configurados, o que é comum durante o desenvolvimento, a variável `{all}` o espaço reservado se comporta da mesma maneira que a `{default}` espaço reservado.
+  Se um projeto não tiver domínios configurados, o que é comum durante o desenvolvimento, o espaço reservado `{all}` se comporta da mesma forma que o espaço reservado `{default}`.
 
-O Adobe Commerce também gera rotas para cada ambiente de integração ativo. Para ambientes de integração, a variável `{default}` o espaço reservado é substituído pelo seguinte nome de domínio:
+O Adobe Commerce também gera rotas para cada ambiente de integração ativo. Para ambientes de integração, o espaço reservado `{default}` é substituído pelo seguinte nome de domínio:
 
 ```text
 [branch]-[per-environment-random-string]-[project-id].[region].magentosite.cloud
 ```
 
-Por exemplo, a variável `refactorcss` ramificação para a `mswy7hzcuhcjw` projeto hospedado na `us` o cluster tem o seguinte domínio:
+Por exemplo, a ramificação `refactorcss` do projeto `mswy7hzcuhcjw` hospedado no cluster `us` tem o seguinte domínio:
 
 ```text
 https://refactorcss-oy3m2pq-mswy7hzcuhcjw.us.magentosite.cloud/
@@ -101,11 +101,11 @@ https://refactorcss-oy3m2pq-mswy7hzcuhcjw.us.magentosite.cloud/
 
 >[!NOTE]
 >
->Se o projeto na nuvem der suporte a vários armazenamentos, siga as instruções de configuração de rota para [vários sites ou lojas](../store/multiple-sites.md).
+>Se o projeto na nuvem tiver suporte para vários armazenamentos, siga as instruções de configuração de rota para [vários sites ou armazenamentos](../store/multiple-sites.md).
 
 ### Barra à direita
 
-As definições de rota contêm uma barra à direita para indicar uma pasta ou diretório; no entanto, o mesmo conteúdo pode ser distribuído com ou sem uma barra à direita. Os seguintes URLs resolvem o mesmo, mas podem ser interpretados como _dois diferentes_ URLs:
+As definições de rota contêm uma barra à direita para indicar uma pasta ou diretório; no entanto, o mesmo conteúdo pode ser distribuído com ou sem uma barra à direita. As seguintes URLs resolvem o mesmo, mas podem ser interpretadas como _duas URLs_ diferentes:
 
 ```text
 https://www.example.com/blog/
@@ -115,7 +115,7 @@ https://www.example.com/blog
 
 >[!TIP]
 >
->É uma prática recomendada usar uma barra à direita para diretórios, mas seja qual for o método escolhido, é importante **mantenha-se consistente** para evitar a geração de dois locais.
+>É uma prática recomendada usar uma barra à direita para diretórios, mas seja qual for o método escolhido, é importante **permanecer consistente** para evitar a geração de dois locais.
 
 ## Protocolos de rota
 
@@ -123,7 +123,7 @@ Todos os ambientes são compatíveis com HTTP e HTTPS automaticamente.
 
 - Se a configuração especificar apenas a rota HTTP, as rotas HTTPS serão criadas automaticamente, permitindo que o site seja distribuído a partir de HTTP e HTTPS sem exigir redirecionamentos.
 
-  Por exemplo, um projeto com o domínio padrão `example.com` e o seguinte modelo de roteiro:
+  Por exemplo, um projeto com o domínio padrão `example.com` e o seguinte modelo de rota:
 
   ```text
   http://{default}/
@@ -139,7 +139,7 @@ Todos os ambientes são compatíveis com HTTP e HTTPS automaticamente.
 
 - Se a configuração especificar apenas a rota HTTPS, todas as solicitações HTTP serão redirecionadas para HTTPS.
 
-  Por exemplo, um projeto com o domínio padrão `example.com` com o seguinte modelo de roteiro:
+  Por exemplo, um projeto com o domínio padrão `example.com` com o seguinte modelo de rota:
 
   ```text
   https://{default}/
@@ -157,7 +157,7 @@ Todos os ambientes são compatíveis com HTTP e HTTPS automaticamente.
 
 Servir todas as páginas por TLS. Para essa configuração, você deve configurar redirecionamentos para todas as solicitações não criptografadas para o equivalente TLS usando um dos seguintes métodos:
 
-- Altere o protocolo para HTTPS no `routes.yaml` arquivo.
+- Altere o protocolo para HTTPS no arquivo `routes.yaml`.
 
   ```yaml
   "https://{default}/":
@@ -168,7 +168,7 @@ Servir todas as páginas por TLS. Para essa configuração, você deve configura
       upstream: "mymagento:http"
   ```
 
-- Para ambientes de armazenamento temporário e produção, ative a opção [Forçar TLS no Fastly](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/redirect-http-to-https-for-all-pages-on-cloud-force-tls.html) na interface do usuário do Administrador. Quando você usa essa opção, o Fastly lida com o redirecionamento para HTTPS, para que você não precise atualizar o `routes.yaml` configuração.
+- Para ambientes de Preparo e Produção, habilite a opção [Forçar TLS no Fastly](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/redirect-http-to-https-for-all-pages-on-cloud-force-tls.html) na interface do Administrador. Quando você usa essa opção, o Fastly lida com o redirecionamento para HTTPS, para que você não precise atualizar a configuração `routes.yaml`.
 
 ## Opções de roteiro
 
@@ -176,15 +176,15 @@ Configure cada rota separadamente usando as seguintes propriedades:
 
 | Propriedade | Descrição |
 | ---------------- | ----------- |
-| `type: upstream` | Serve um aplicativo. Além disso, tem um `upstream` que especifica o nome do aplicativo (conforme definido na seção `.magento.app.yaml`) seguido pelo `:http` terminal. |
-| `type: redirect` | Redireciona para outra rota. É seguido pelo `to` propriedade, que é um redirecionamento HTTP para outra rota identificada por seu template. |
-| `cache:` | Controles [armazenamento em cache para a rota](caching.md). |
-| `redirects:` | Controles [regras de redirecionamento](redirects.md). |
-| `ssi:` | Controles habilitando de [O lado do servidor inclui](server-side-includes.md). |
+| `type: upstream` | Serve um aplicativo. Além disso, tem uma propriedade `upstream` que especifica o nome do aplicativo (conforme definido em `.magento.app.yaml`) seguido pelo ponto de extremidade `:http`. |
+| `type: redirect` | Redireciona para outra rota. Ela é seguida pela propriedade `to`, que é um redirecionamento HTTP para outra rota identificada por seu modelo. |
+| `cache:` | Controla o [armazenamento em cache para a rota](caching.md). |
+| `redirects:` | Controla [regras de redirecionamento](redirects.md). |
+| `ssi:` | Habilitação de controles de [Server Side Includes](server-side-includes.md). |
 
 ## Rotas simples
 
-Nos exemplos a seguir, a configuração de rota roteia o domínio apex e o `www` subdomínio para o `mymagento` aplicação. Essa rota não redireciona solicitações HTTPS.
+Nos exemplos a seguir, a configuração de rota roteia o domínio apex e o subdomínio `www` para o aplicativo `mymagento`. Essa rota não redireciona solicitações HTTPS.
 
 **Exemplo 1:**
 
@@ -206,7 +206,7 @@ Neste exemplo, o roteamento de solicitações segue estas regras:
   http://example.com/path
   ```
 
-- O servidor emite um erro _redirecionamento 301_ para solicitações com o seguinte padrão de URL:
+- O servidor emite um _redirecionamento_ de 301 para solicitações com o seguinte padrão de URL:
 
   ```text
   http://www.example.com/mypath
@@ -249,7 +249,7 @@ Você pode rotear para um sistema que não esteja mapeado para um domínio usand
 
 **Exemplo:**
 
-Um projeto com um `add-theme` A ramificação encaminha para o seguinte URL:
+Um projeto com uma ramificação `add-theme` é roteado para a seguinte URL:
 
 ```text
 http://add-theme-projectID.us.magento.com/
@@ -284,7 +284,7 @@ http://foo.add-theme-projectID.us.magentosite.cloud/
 http://bar.add-theme-projectID.us.magentosite.cloud/
 ```
 
-Você pode visualizar o padrão de rota para domínios não mapeados estabelecendo uma conexão SSH com o ambiente e usando o `magento-cloud` CLI para listar as rotas:
+Você pode visualizar o padrão de rota para domínios não mapeados estabelecendo uma conexão SSH com o ambiente e usando a CLI `magento-cloud` para listar as rotas:
 
 ```terminal
 web@mymagento.0:~$ vendor/bin/ece-tools env:config:show routes
@@ -315,7 +315,7 @@ Magento Cloud Routes:
 
 ## Redirecionamentos e armazenamento em cache
 
-Tal como analisado em mais pormenor no [Redirecionamentos](redirects.md), é possível gerenciar regras de redirecionamento complexas, como _redirecionamentos parciais_ e especificar regras para baseado em rota [armazenamento em cache](caching.md):
+Conforme discutido com mais detalhes em [Redirecionamentos](redirects.md), você pode gerenciar regras de redirecionamento complexas, como _redirecionamentos parciais_, e especificar regras para o [armazenamento em cache](caching.md) baseado em rota:
 
 ```yaml
 https://www.{default}/:

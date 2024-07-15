@@ -1,6 +1,6 @@
 ---
 title: Configurações do PHP
-description: Saiba mais sobre as configurações ideais do PHP para a configuração de aplicativos do Commerce na infraestrutura em nuvem.
+description: Saiba mais sobre as configurações ideais do PHP para a configuração de aplicativos do Commerce na infraestrutura de nuvem.
 feature: Cloud, Configuration, Extensions
 exl-id: b4180265-f7a1-48e4-8c23-27835253e171
 source-git-commit: 94c1e16a07567471d446478e3bd2a33977247ef3
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Configurações do PHP
 
-Você pode escolher qual [versão do PHP](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) para executar no seu `.magento.app.yaml` arquivo:
+Você pode escolher qual [versão do PHP](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) executar em seu arquivo `.magento.app.yaml`:
 
 ```yaml
 name: mymagento
@@ -21,13 +21,13 @@ type: php:<version>
 
 >[!TIP]
 >
->Se estiver atualizando para o PHP 8.1 e posterior, remova o JSON do [`runtime: extensions:` propriedade](properties.md#runtime) no `.magento.app.yaml` arquivo e reimplantar. A extensão JSON vem instalada no ambiente de nuvem desde o PHP 8.0.
+>Se estiver atualizando para o PHP 8.1 e posterior, remova o JSON da propriedade [`runtime: extensions:` ](properties.md#runtime) no arquivo `.magento.app.yaml` e reimplante. A extensão JSON vem instalada no ambiente de nuvem desde o PHP 8.0.
 
 ## Configurar PHP
 
-Você pode personalizar as configurações do PHP para o seu ambiente usando um `php.ini` arquivo anexado à configuração mantida pelo Adobe Commerce.
+Você pode personalizar as configurações do PHP para o seu ambiente usando um arquivo `php.ini` anexado à configuração mantida pelo Adobe Commerce.
 
-No repositório, adicione o `php.ini` para a raiz do aplicativo (a raiz do repositório).
+Em seu repositório, adicione o arquivo `php.ini` à raiz do aplicativo (a raiz do repositório).
 
 >[!TIP]
 >
@@ -35,7 +35,7 @@ No repositório, adicione o `php.ini` para a raiz do aplicativo (a raiz do repos
 
 ### Aumentar limite de memória do PHP
 
-Para aumentar o limite de memória do PHP, adicione a seguinte configuração ao `php.ini` arquivo:
+Para aumentar o limite de memória do PHP, adicione a seguinte configuração ao arquivo `php.ini`:
 
 ```ini
 memory_limit = 1G
@@ -45,7 +45,7 @@ Para depuração, aumente o valor para 2G.
 
 ### Otimizar a configuração do realpath_cache
 
-Defina o seguinte `realpath_cache` para melhorar o desempenho dos aplicativos.
+Defina as seguintes configurações de `realpath_cache` para melhorar o desempenho do aplicativo.
 
 ```conf
 ;
@@ -63,11 +63,11 @@ Essas configurações permitem que processos PHP armazenem em cache caminhos par
 
 >[!NOTE]
 >
->Para obter uma lista das definições de configuração do PHP recomendadas, consulte [Configurações necessárias do PHP](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html) no _Guia de instalação_.
+>Para obter uma lista das definições de configuração do PHP recomendadas, consulte [Configurações do PHP necessárias](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html) no _Guia de instalação_.
 
 ### Verificar configurações personalizadas de PHP
 
-Depois de pressionar o `php.ini` alterações no ambiente da nuvem, você pode verificar se a configuração personalizada do PHP foi adicionada ao seu ambiente. Por exemplo, use SSH para fazer logon no ambiente remoto e exibir o arquivo usando algo semelhante ao seguinte:
+Depois de enviar as alterações de `php.ini` para o ambiente em nuvem, você pode verificar se a configuração personalizada do PHP foi adicionada ao ambiente. Por exemplo, use SSH para fazer logon no ambiente remoto e exibir o arquivo usando algo semelhante ao seguinte:
 
 ```bash
 cat /etc/php/<php-version>/fpm/php.ini
@@ -75,17 +75,17 @@ cat /etc/php/<php-version>/fpm/php.ini
 
 >[!WARNING]
 >
->Se você usar o Cloud Docker for Commerce para desenvolvimento local, consulte [Contêineres de serviço do Docker](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#fpm-container) para obter informações sobre como usar um personalizado `php.ini` em um ambiente Docker.
+>Se você usa o Cloud Docker para Commerce para desenvolvimento local, consulte [Contêineres de serviço do Docker](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#fpm-container) para obter informações sobre como usar um arquivo `php.ini` personalizado em um ambiente do Docker.
 
 ## Habilitar extensões
 
-Você pode ativar ou desativar extensões PHP no `runtime:extension` seção. Além disso, as extensões especificadas ficam disponíveis nos contêineres PHP do Docker.
+Você pode ativar ou desativar extensões PHP na seção `runtime:extension`. Além disso, as extensões especificadas ficam disponíveis nos contêineres PHP do Docker.
 
 >[!IMPORTANT]
 >
 >Antes de habilitar extensões, é importante entender que a versão do PHP deve ser compatível com o sistema operacional que hospeda o projeto. Seu ambiente de projeto pode exigir uma atualização do SO pela equipe de infraestrutura antes de você poder continuar.
 
-Exemplo em `.magento.app.yaml` arquivo:
+Exemplo no arquivo `.magento.app.yaml`:
 
 ```yaml
 runtime:
@@ -106,13 +106,13 @@ Use SSH para fazer login em um ambiente e listar as extensões do PHP.
 php -m
 ```
 
-Para obter detalhes sobre uma extensão específica do PHP, consulte [Lista de extensões do PHP](https://www.php.net/manual/en/extensions.alphabetical.php).
+Para obter detalhes sobre uma extensão específica do PHP, consulte a [Lista de Extensões do PHP](https://www.php.net/manual/en/extensions.alphabetical.php).
 
 A tabela a seguir mostra as extensões compatíveis do PHP ao implantar o Adobe Commerce na plataforma na nuvem.
 
 {{$include /help/_includes/templated/php-extensions-cloud.md}}
 
-Os requisitos do módulo do PHP estão vinculados à versão do Adobe Commerce. Consulte [Requisitos do PHP](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html).
+Os requisitos do módulo do PHP estão vinculados à versão do Adobe Commerce. Consulte [requisitos do PHP](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html).
 
 ### Suporte à extensão
 
@@ -120,17 +120,17 @@ Para projetos Pro, as seguintes extensões exigem suporte adicional para instala
 
 - `sourceguardian`
 
-Por exemplo, para configurar o PHP para executar somente scripts protegidos pelo SourceGuardian em todos os ambientes, a seguinte opção deve ser configurada na variável `php.ini` arquivo:
+Por exemplo, para configurar o PHP para executar somente scripts protegidos pelo SourceGuardian em todos os ambientes, a seguinte opção deve ser definida no arquivo `php.ini`:
 
 ```ini
 [SourceGuardian]
 sourceguardian.restrict_unencoded = "1"
 ```
 
-Consulte [seção 3.5 da documentação do SourceGuardian](https://sourceguardian.com/demofiles/files/SourceGuardian%20for%20Linux%20User%20Manual.pdf). _Este é um link para um PDF_.
+Consulte a [seção 3.5 da documentação do SourceGuardian](https://sourceguardian.com/demofiles/files/SourceGuardian%20for%20Linux%20User%20Manual.pdf). _Este é um link para um PDF_.
 
-[Enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para obter ajuda com a instalação dessas extensões PHP em todos os ambientes de produção e ambientes de preparo profissional. Inclua o atualizado `.magento/services.yaml` arquivo, `.magento.app.yaml` arquivo com a versão atualizada do PHP e quaisquer extensões adicionais do PHP. Para alterações em um ambiente de Produção em tempo real, você deve fornecer um aviso mínimo de 48 horas. Pode levar até 48 horas para a equipe de infraestrutura da nuvem atualizar seu projeto.
+[Envie um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para obter ajuda sobre como instalar essas extensões PHP em todos os ambientes de Produção e de Pro Staging. Inclua seu arquivo atualizado `.magento/services.yaml`, arquivo `.magento.app.yaml` com a versão atualizada do PHP e quaisquer extensões adicionais do PHP. Para alterações em um ambiente de Produção em tempo real, você deve fornecer um aviso mínimo de 48 horas. Pode levar até 48 horas para a equipe de infraestrutura da nuvem atualizar seu projeto.
 
 >[!WARNING]
 >
->O PHP compilado com debug não é suportado e o teste pode entrar em conflito com [!DNL XDebug] ou [!DNL XHProf]. Desative essas extensões ao ativar o teste. O teste entra em conflito com algumas extensões PHP como [!DNL Pinba] ou IonCube.
+>Não há suporte para o PHP compilado com depuração e a Investigação pode entrar em conflito com [!DNL XDebug] ou [!DNL XHProf]. Desative essas extensões ao ativar o teste. O Probe está em conflito com algumas extensões PHP como [!DNL Pinba] ou IonCube.

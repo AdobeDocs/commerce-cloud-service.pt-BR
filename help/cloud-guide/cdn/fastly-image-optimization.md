@@ -32,26 +32,26 @@ Ative a otimização de imagem do Fastly (Fastly IO) no painel Admin fazendo upl
 - Instalar ou atualizar para o módulo Fastly versão 1.2.62 ou posterior
 - [Configuração do escudo Fastly Origin e back-end](fastly-custom-cache-configuration.md#configure-back-ends-and-origin-shielding)
 
-**Para ativar o Fastly IO**:
+**Para habilitar o Fastly IO**:
 
-1. Fazer logon no local [Admin](../../get-started/onboarding.md#access-your-admin-panel) como administrador.
+1. Faça logon como administrador no painel [Administrador](../../get-started/onboarding.md#access-your-admin-panel) local.
 
-1. Selecionar **Lojas** > **Configurações** > **Configuração** > **Avançado** > **Sistema**.
+1. Selecione **Lojas** > **Configurações** > **Configuração** > **Avançadas** > **Sistema**.
 
 1. No painel direito, expanda **Cache de Página Inteira**.
 
-1. Selecionar **Configuração do Fastly** > **Otimização de imagem** para especificar as definições de configuração.
+1. Selecione **Configuração do Fastly** > **Otimização de Imagem** para especificar as definições de configuração.
 
-1. No _Fastly IO_ selecione **Ativar/desativar**.
+1. No campo _Fastly IO_, selecione **Enable/Disable**.
 
 1. Carregue o trecho Fastly IO:
 
-   - Selecionar **Opções de configuração de E/S padrão** para abrir a página Opções de configuração padrão da otimização de imagem.
-   - Selecionar **Carregar** para carregar o trecho VCL no servidor.
+   - Selecione **Opções de configuração de E/S padrão** para abrir a página Opções de configuração padrão de otimização de imagem.
+   - Selecione **Carregar** para carregar o trecho de VCL para o servidor.
 
 ## Configurar o Fastly IO
 
-Revise e atualize as definições de configuração de E/S padrão para otimização de imagem, conforme necessário. Por exemplo, talvez você queira alterar os níveis de qualidade de WebP e JPEG para formatos com perdas ou alterar o formato para veiculação de imagens JPEG para _Progressivo_ ou _Linha de base_. Além disso, você pode usar o Fastly IO para obter recursos de otimização de imagem mais granulares, como:
+Revise e atualize as definições de configuração de E/S padrão para otimização de imagem, conforme necessário. Por exemplo, você pode querer alterar os níveis de qualidade WebP e JPEG para formatos com perdas, ou alterar o formato para veicular imagens JPEG para _Progressivo_ ou _Linha de Base_. Além disso, você pode usar o Fastly IO para obter recursos de otimização de imagem mais granulares, como:
 
 - Forçar conversão com perdas
 - Otimização profunda de imagem
@@ -59,48 +59,48 @@ Revise e atualize as definições de configuração de E/S padrão para otimiza�
 
 **Para atualizar o Fastly IO**:
 
-1. No _Configuração do Fastly_ página no _Opções de configuração de E/S padrão_ selecione **Configurar**.
+1. Na página _Configuração do Fastly_ no campo _Opções de configuração de E/S Padrão_, selecione **Configurar**.
 
-   ![Exibir as definições de configuração do Fastly IO](../../assets/cdn/fastly-io-default-config.png)
+   ![Exibir as configurações do Fastly IO](../../assets/cdn/fastly-io-default-config.png)
 
-1. Revise e atualize as configurações do Fastly IO no _Opções de configuração padrão de otimização de imagem_ página:
+1. Revise e atualize as definições de configuração do Fastly IO na página _Opções de configuração padrão de otimização de imagem_:
 
    ![Revisar a configuração do Fastly IO](../../assets/cdn/fastly-io-config-options.png)
 
-   - **Auto WebP?**—deixe a configuração padrão (`Yes`) para converter imagens no formato WebP em navegadores compatíveis. Se você alterar a configuração para **Não**, O Fastly usa o tipo de arquivo de imagem em vez de converter a imagem para o formato WebP.
+   - **WebP Automático?**—deixe a configuração padrão (`Yes`) para converter imagens para o formato WebP nos navegadores que suportam esse formato. Se você alterar a configuração para **Não**, o Fastly usará o tipo de arquivo de imagem, em vez de converter a imagem para o formato WebP.
 
-   - **Qualidade padrão do WebP (com perda)**—deixe a configuração padrão (`85`) ou digite o nível de compactação para imagens formatadas em arquivos com perdas. Você pode especificar qualquer número inteiro de 1 a 100.
+   - **Qualidade padrão de WebP (com perdas)**—deixe a configuração padrão (`85`) ou digite o nível de compactação para imagens formatadas em arquivo com perdas. Você pode especificar qualquer número inteiro de 1 a 100.
 
-   - **Controles de formato de JPEG padrão** — deixe a configuração padrão (`Auto`) ou selecione o tipo de JPEG a ser usado ao veicular uma imagem. Se o valor for definido como o valor de _Automático_, O Fastly entrega imagens com o tipo de saída correspondente ao tipo de entrada. Selecionar _Linha de base_ para exibir imagens linha por linha, começando pelo canto superior esquerdo e indo até o canto inferior direito. Selecionar _Progressivo_ para exibir uma imagem indefinida que fica nítida durante o carregamento.
+   - **Controles de formato de JPEG padrão** — mantenha a configuração padrão (`Auto`) ou selecione o tipo de JPEG a ser usado ao veicular uma imagem. Se o valor for definido como _Auto_, o Fastly entrega imagens com o tipo de saída correspondente ao tipo de entrada. Selecione _Linha de Base_ para exibir imagens linha por linha, começando pela parte superior esquerda e indo até a parte inferior direita. Selecione _Progressivo_ para exibir uma imagem borrada que ficará clara durante o carregamento.
 
    - **Qualidade de JPEG padrão**—deixe a configuração padrão (`85`) ou digite o nível de compactação para obter a qualidade dos formatos de arquivo com perdas. Especifique qualquer número inteiro de 1 a 100.
 
-   - **Permitir upscaling?**— leave configuração padrão (`No`) ou selecione `Yes` para retornar imagens maiores que o arquivo de origem original para que elas possam se ajustar às dimensões solicitadas.
+   - **Permitir upscaling?**—deixe a configuração padrão (`No`) ou selecione `Yes` para retornar imagens maiores que o arquivo de origem original para que elas possam caber nas dimensões solicitadas.
 
    - **Redimensionar filtro**—deixe a configuração padrão (`Lancsoz3`) ou selecione uma alternativa. Essa configuração especifica o filtro usado para fornecer uma imagem redimensionada. Dependendo do filtro selecionado, a imagem redimensionada pode ter um número de pixels maior ou menor.
 
-      - `Lanczos3` (padrão) — Fornece a imagem de melhor qualidade. Ele aumenta a capacidade de detectar bordas e recursos lineares em uma imagem e usa _[!DNL sinc]_reamostragem para fornecer a melhor reconstrução possível.
-      - `Lanczos2`— Usa o mesmo filtro que `Lancsoz3` mas com uma aproximação menos precisa da _[!DNL sinc]_função de reamostragem.
-      - `Bicubic`- Tem um efeito de nitidez natural ao tornar uma imagem menor.
-      - `Bilinear`—Tem um efeito de suavização natural ao tornar uma imagem maior.
-      - `Nearest`—Tem um efeito de pixelização natural ao redimensionar a arte em pixels.
+      - `Lanczos3` (padrão) — Fornece a imagem de melhor qualidade. Ele aumenta a capacidade de detectar bordas e recursos lineares em uma imagem e usa a reamostragem de _[!DNL sinc]_para fornecer a melhor reconstrução possível.
+      - `Lanczos2` — Usa o mesmo filtro que `Lancsoz3`, mas com uma aproximação menos precisa da função de reamostragem _[!DNL sinc]_.
+      - `Bicubic` — Tem um efeito de nitidez natural ao tornar uma imagem menor.
+      - `Bilinear` — Tem um efeito de suavização natural ao tornar uma imagem maior.
+      - `Nearest` — Tem um efeito de pixelização natural ao redimensionar a arte de pixels.
 
-1. Depois de especificar as definições de configuração de E/S para o serviço Fastly, selecione **Cancelar** para retornar às configurações do Fastly.
+1. Depois de especificar as definições de configuração de E/S para o serviço Fastly, selecione **Cancelar** para retornar às definições de configuração do Fastly.
 
-1. Na configuração da Otimização de imagem _Ativar otimização de imagens profundas_ selecione **Sim** para ativar a otimização de imagens profundas.
+1. No campo Configuração de otimização de imagem _Habilitar otimização de imagem profunda_, selecione **Sim** para ativar a otimização de imagem profunda.
 
-   ![Habilitar a otimização profunda de imagens do Fastly IO](../../assets/cdn/fastly-io-deep-image-config.png)
+   ![Habilitar a otimização de imagem profunda do Fastly IO](../../assets/cdn/fastly-io-deep-image-config.png)
 
-   A otimização de imagem profunda está desativada por padrão. Quando esse recurso está ativado, o recurso de redimensionamento integrado no Adobe Commerce é desativado e o trabalho de redimensionamento é descarregado para o serviço Fastly IO. A otimização de imagem se aplica somente a imagens de produtos. As imagens CMS não são redimensionadas. Consulte a [Documentação do Fastly](#deep-image-optimization).
+   A otimização de imagem profunda está desativada por padrão. Quando esse recurso está ativado, o recurso de redimensionamento integrado no Adobe Commerce é desativado e o trabalho de redimensionamento é descarregado para o serviço Fastly IO. A otimização de imagem se aplica somente a imagens de produtos. As imagens CMS não são redimensionadas. Consulte a [documentação do Fastly](#deep-image-optimization).
 
-1. Depois de ativar a otimização de imagens profundas, ative a opção [proporções de pixel adaptáveis](#adaptive-pixel-ratios) recurso para gerar imagens otimizadas para uso em sites responsivos.
+1. Depois de habilitar a otimização de imagens profundas, habilite o recurso [proporções de pixel adaptáveis](#adaptive-pixel-ratios) para gerar imagens otimizadas para uso em sites responsivos.
 
-   ![Ativar proporções de pixel adaptáveis do Fastly IO](../../assets/cdn/fastly-io-config-adaptive-pixel.png)
+   ![Habilitar proporções de pixel adaptáveis do Fastly IO](../../assets/cdn/fastly-io-config-adaptive-pixel.png)
 
-   - No _Ativar proporções de pixel do dispositivo adaptável_ selecione **Sim**.
-   - No _Taxas de pixels do dispositivo_ , aceite a configuração padrão ou selecione a **Entrada do sistema** para remover a configuração. Em seguida, selecione a proporção desejada. Uma configuração de proporção de pixels de dispositivo mais alta oferece imagens maiores.
+   - No campo _Habilitar proporções de pixel do dispositivo adaptável_, selecione **Sim**.
+   - No campo _Taxas de pixels do dispositivo_, aceite a configuração padrão ou marque a caixa de seleção **Entrada do sistema** para remover a configuração. Em seguida, selecione a proporção desejada. Uma configuração de proporção de pixels de dispositivo mais alta oferece imagens maiores.
 
-1. Selecionar **Salvar configuração**.
+1. Selecione **Salvar Configuração**.
 
 ### Forçar conversão com perdas
 
@@ -111,12 +111,12 @@ Por exemplo, usando o formato JPEG ou WEBp em vez de PNG, o tamanho pode ser red
 
 Dependendo do nível de qualidade selecionado para otimização de imagem, você pode perceber diferenças visuais nas imagens. Por exemplo, o canal/transparências de Alpha são removidos e substituídos por um plano de fundo branco, a menos que você use a Otimização de imagem profunda, que usa a cor do plano de fundo do seu tema.
 
-Se você desativar a conversão com perdas (`WebP Auto? = No`), o Fastly IO altera apenas imagens JPEG para o formato WEBP para navegadores compatíveis. Nenhum outro tipo de imagem foi alterado. Por exemplo, se a imagem original for PNG, a saída do serviço Fastly IO será PNG.
+Se você desativar a conversão com perdas (`WebP Auto? = No`), o Fastly IO alterará apenas imagens JPEG para o formato WEBP para navegadores compatíveis. Nenhum outro tipo de imagem foi alterado. Por exemplo, se a imagem original for PNG, a saída do serviço Fastly IO será PNG.
 
 ### Otimização profunda de imagem
 
 A otimização de imagem profunda está desativada por padrão. Habilitar essa opção desativa o redimensionamento interno do Adobe Commerce e o descarrega completamente no serviço Fastly IO.
-Este recurso só redimensiona _produto_ imagens. As imagens CMS não são redimensionadas.
+Este recurso redimensiona apenas imagens do _produto_. As imagens CMS não são redimensionadas.
 
 A ativação da otimização de imagens profundas adiciona uma definição de cor de plano de fundo a cada imagem, conforme definido no seu tema. Como resultado, as imagens WebP são trocadas de WebP sem perdas para WebP com perdas. Uma das principais diferenças entre sem perda e com perda é que as perdas descartam o canal alfa de imagens PNG, que fornece imagens muito menores. No entanto, imagens com transparências podem parecer estranhas em páginas de produtos e campanhas que usam um plano de fundo diferente.
 
@@ -142,9 +142,9 @@ Quando o recurso de otimização de imagem Fastly IO Deep está habilitado, o c�
 
 ### Taxas de pixels adaptáveis
 
-O recurso proporções de pixel adaptáveis é útil para otimizar imagens para aplicativos web progressivos. Ele permite que você forneça vários tamanhos de imagem e resoluções de um arquivo de origem de imagem adicionando um `srcset` para cada imagem do produto.
+O recurso proporções de pixel adaptáveis é útil para otimizar imagens para aplicativos web progressivos. Ele permite que você forneça vários tamanhos e resoluções de imagem de um arquivo de origem de imagem, adicionando um `srcset` para cada imagem de produto.
 
-Quando o recurso proporções de pixel adaptáveis está ativado, o serviço Fastly IO fornece uma imagem de largura fixa que pode se adaptar a dimensões variáveis `device-pixel-ratios`.
+Quando o recurso proporções de pixel adaptáveis está habilitado, o serviço Fastly IO fornece uma imagem de largura fixa que pode se adaptar a `device-pixel-ratios` variados.
 Por exemplo, o serviço modifica a definição da imagem do produto conforme mostrado no exemplo a seguir:
 
 ```html

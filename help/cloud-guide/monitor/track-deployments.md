@@ -14,24 +14,24 @@ ht-degree: 0%
 
 # Rastrear implantações
 
-Você pode ativar o New Relic _Rastrear alterações_ recurso para monitorar eventos de implantação no seu projeto do Commerce na infraestrutura em nuvem.
+Você pode habilitar o recurso _Rastrear alterações_ da New Relic para monitorar eventos de implantação no seu projeto do Commerce na infraestrutura em nuvem.
 
-A coleta de dados de Implantações ajuda a analisar o impacto das alterações de implantação no desempenho geral, como CPU, memória, tempo de resposta e muito mais. Consulte [Rastrear alterações usando o NerdGraph](https://docs.newrelic.com/docs/change-tracking/change-tracking-graphql/) no _Documentação do New Relic_.
+A coleta de dados de Implantações ajuda a analisar o impacto das alterações de implantação no desempenho geral, como CPU, memória, tempo de resposta e muito mais. Consulte [Controlar alterações usando o NerdGraph](https://docs.newrelic.com/docs/change-tracking/change-tracking-graphql/) na _documentação do New Relic_.
 
 >[!PREREQUISITES]
 >
->- `NR_API_URL`: endpoint da API do New Relic, neste caso o URL da API NerdGraph `https://api.newrelic.com/graphql`
->- `NR_API_KEY`: para criar uma chave de usuário, consulte [Chaves de API do New Relic](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys) no _New Relic_ documentação.
->- `NR_APP_GUID`: uma entidade que relata dados para o New Relic tem uma ID exclusiva (GUID). Como exemplo, para ativar em um ambiente de preparo, ajuste o ambiente de preparo `NR_APP_GUID` variável de nuvem com o _GUID da entidade de preparo_ do New Relic. Consulte a [Saiba mais sobre entidades do New Relic](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/) e [Tutorial do NerdGraph: exibir dados da entidade](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-entities-api-tutorial/) no _New Relic_ documentação.
+>- `NR_API_URL`: endpoint da API New Relic, neste caso URL da API NerdGraph `https://api.newrelic.com/graphql`
+>- `NR_API_KEY`: Crie uma chave de usuário, consulte [Chaves de API do New Relic](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys) na documentação do _New Relic_.
+>- `NR_APP_GUID`: uma entidade que relata dados para o New Relic tem um identificador exclusivo (GUID). Por exemplo, para habilitar em um ambiente de Preparo, ajuste a variável de nuvem do ambiente de Preparo `NR_APP_GUID` com o _GUID da entidade de preparo_ da New Relic. Consulte o [Tutorial Saiba mais sobre entidades do New Relic](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/) e [NerdGraph: Exibir dados da entidade](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-entities-api-tutorial/) na documentação do _New Relic_.
 
 ## Ativar Rastrear implantações
 
-Acompanhe os eventos de implantação de projeto do Commerce no New Relic criando uma _script_ integração.
+Acompanhe os eventos de implantação do seu projeto do Commerce no New Relic criando uma integração do _script_.
 
-**Para ativar as implantações de rastreamento**:
+**Para habilitar as implantações de rastreamento**:
 
 1. Na estação de trabalho local, altere para o diretório do projeto.
-1. Criar um `action-integration.js` arquivo. Copie o código a seguir e cole-o no `action-integration.js` arquivo e salvar:
+1. Criar um arquivo `action-integration.js`. Copie o código a seguir e cole-o no arquivo `action-integration.js` e salve:
 
    ```javascript
    function trackDeployments() {
@@ -91,7 +91,7 @@ Acompanhe os eventos de implantação de projeto do Commerce no New Relic criand
    trackDeployments();
    ```
 
-1. Criar um _script_ integração usando o `magento-cloud` Comando da CLI e referência a `action-integration.js` arquivo.
+1. Crie uma integração de _script_ usando o comando da CLI `magento-cloud` e referencie o arquivo `action-integration.js`.
 
    ```bash
    magento-cloud integration:add --type script --events='environment.restore, environment.push, environment.branch, environment.activate, environment.synchronize, environment.initialize, environment.merge, environment.redeploy, environment.variable.create, environment.variable.delete, environment.variable.update' --file ./action-integration.js --project=<YOUR_PROJECT_ID> --environments=<YOUR_ENVIRONMENT_ID>
@@ -191,7 +191,7 @@ Acompanhe os eventos de implantação de projeto do Commerce no New Relic criand
    Created integration 767u4hathojjw (type: script)
    ```
 
-   Como opção, verifique a integração e observe a ID de integração usando: `magento-cloud integration:list`
+   Opcionalmente, você pode verificar a integração e anotar a ID de integração usando: `magento-cloud integration:list`
 
 1. Crie a variável de ambiente usando os pré-requisitos.
 
@@ -220,7 +220,7 @@ Acompanhe os eventos de implantação de projeto do Commerce no New Relic criand
    {"data":{"changeTrackingCreateDeployment":{"deploymentId":"some-deployment-id","entityGuid":"SomeGUIDhere"}}}
    ```
 
-1. Faça logon no [Conta do New Relic](https://login.newrelic.com/login).
+1. Faça logon em sua [conta do New Relic](https://login.newrelic.com/login).
 
 1. No menu de navegação do Explorer, clique em **[!UICONTROL APM & Services]**. Selecione seu ambiente [!UICONTROL Name] e [!UICONTROL Account].
 

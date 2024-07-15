@@ -12,19 +12,19 @@ ht-degree: 0%
 
 # Atualizar projeto para usar o pacote ECE-Tools
 
-Adobe descontinuou o `magento/magento-cloud-configuration` e `magento/ece-patches` pacotes a favor do `ece-tools` que simplifica muitos processos na nuvem. Se você usar um projeto mais antigo do Adobe Commerce na infraestrutura em nuvem que não _não_ contém o `ece-tools` pacote, você deverá executar um procedimento único, manual _atualização_ para o seu projeto.
+O Adobe substituiu os pacotes `magento/magento-cloud-configuration` e `magento/ece-patches` em favor do pacote `ece-tools`, o que simplifica muitos processos de nuvem. Se você usar um projeto mais antigo do Adobe Commerce na infraestrutura em nuvem que contém _não_ o pacote `ece-tools`, será necessário executar um processo único e manual de _atualização_ para o seu projeto.
 
 >[!WARNING]
 >
->Se o seu projeto contiver a variável `ece-tools` pacote, você pode ignorar a atualização a seguir. Para verificar, recupere a variável [!DNL Commerce] versão usando o `php vendor/bin/ece-tools -V` no diretório raiz do projeto local.
+>Se o seu projeto contiver o pacote `ece-tools`, você poderá ignorar a atualização a seguir. Para verificar, recupere a versão [!DNL Commerce] usando o comando `php vendor/bin/ece-tools -V` no diretório raiz do projeto local.
 
-Este processo de atualização de projeto requer que você atualize o `magento/magento-cloud-metapackage` restrição de versão no `composer.json` no diretório raiz. Essa restrição permite atualizações para o Adobe Commerce em metapackages de infraestrutura em nuvem, incluindo a remoção de pacotes obsoletos, sem atualizar a versão atual do Adobe Commerce.
+Este processo de atualização de projeto requer que você atualize a restrição de versão `magento/magento-cloud-metapackage` no arquivo `composer.json`, no diretório raiz. Essa restrição permite atualizações para o Adobe Commerce em metapackages de infraestrutura em nuvem, incluindo a remoção de pacotes obsoletos, sem atualizar a versão atual do Adobe Commerce.
 
 {{upgrade-tip}}
 
 ## Remover pacotes obsoletos
 
-Antes de executar uma atualização para usar o `ece-tools` pacote, verifique a `composer.lock` arquivo para os seguintes pacotes obsoletos:
+Antes de executar uma atualização para usar o pacote `ece-tools`, verifique o arquivo `composer.lock` quanto aos seguintes pacotes obsoletos:
 
 - `magento/magento-cloud-configuration`
 - `magento/ece-patches`
@@ -40,7 +40,7 @@ Cada versão do Adobe Commerce exige uma restrição diferente com base no segui
 - Para `current_version`, especifique a versão do Adobe Commerce a ser instalada.
 - Para `next_version`, especifique a próxima versão de patch após o valor especificado em `current_version`.
 
-Se você deseja instalar o Adobe Commerce `2.3.5-p2`, definir `current_version` para `2.3.5` e a variável `next_version` para `2.3.6`. A restrição `">=2.3.5 <2.3.6"` instala o pacote mais recente disponível para a versão 2.3.5.
+Para instalar o Adobe Commerce `2.3.5-p2`, defina `current_version` como `2.3.5` e `next_version` como `2.3.6`. A restrição `">=2.3.5 <2.3.6"` instala o pacote disponível mais recente para a versão 2.3.5.
 
 Você sempre pode encontrar a restrição do metapackage mais recente no [`magento-cloud` modelo](https://github.com/magento/magento-cloud/blob/master/composer.json).
 
@@ -54,11 +54,11 @@ O exemplo a seguir coloca uma restrição para o metapackage do Adobe Commerce n
 
 ## Atualizar o projeto
 
-Para atualizar seu projeto para usar o `ece-tools` pacote, você deve atualizar o metapackage e o `.magento.app.yaml` conecta as propriedades e executa uma atualização do Composer.
+Para atualizar seu projeto para usar o pacote `ece-tools`, você deve atualizar o metapackage e as propriedades de ganchos `.magento.app.yaml` e executar uma atualização do Composer.
 
-**Para atualizar o projeto para usar as ferramentas ece**:
+**Para atualizar o projeto para usar ece-tools**:
 
-1. Atualize o `magento/magento-cloud-metapackage` restrição de versão no `composer.json` arquivo.
+1. Atualizar a restrição de versão `magento/magento-cloud-metapackage` no arquivo `composer.json`.
 
    ```bash
    composer require "magento/magento-cloud-metapackage":">=2.4.7 <2.4.8" --no-update
@@ -70,7 +70,7 @@ Para atualizar seu projeto para usar o `ece-tools` pacote, você deve atualizar 
    composer update magento/magento-cloud-metapackage
    ```
 
-1. Modifique os comandos de gancho no `magento.app.yaml` arquivo.
+1. Modifique os comandos hook no arquivo `magento.app.yaml`.
 
    ```yaml
    hooks:
@@ -87,7 +87,7 @@ Para atualizar seu projeto para usar o `ece-tools` pacote, você deve atualizar 
            php ./vendor/bin/ece-tools run scenario/post-deploy.xml
    ```
 
-1. Verifique e remova o [pacotes obsoletos](#remove-deprecated-packages). Os pacotes obsoletos podem impedir uma atualização bem-sucedida.
+1. Verifique e remova os [pacotes obsoletos](#remove-deprecated-packages). Os pacotes obsoletos podem impedir uma atualização bem-sucedida.
 
    ```bash
    composer remove magento/magento-cloud-configuration
@@ -97,7 +97,7 @@ Para atualizar seu projeto para usar o `ece-tools` pacote, você deve atualizar 
    composer remove magento/ece-patches
    ```
 
-1. Pode ser necessário atualizar a `ece-tools` pacote.
+1. Talvez seja necessário atualizar o pacote `ece-tools`.
 
    ```bash
    composer update magento/ece-tools
@@ -111,7 +111,7 @@ Para atualizar seu projeto para usar o `ece-tools` pacote, você deve atualizar 
    composer.lock
    ```
 
-1. Enviar as alterações de código para o servidor remoto e mesclar esta ramificação com o `integration` filial.
+1. Envie alterações de código por push ao servidor remoto e mescle esta ramificação com a ramificação `integration`.
 
    ```bash
    git push origin <branch-name>

@@ -10,12 +10,12 @@ ht-degree: 0%
 <!-- The template to render with above values -->
 **Versão**: 1.46.1
 
-Esta referência contém 119 comandos disponíveis através do `magento-cloud` ferramenta de linha de comando.
-A lista inicial é gerada automaticamente usando o `magento-cloud list` comando no Adobe Commerce na infraestrutura em nuvem.
+Esta referência contém 119 comandos disponíveis através da ferramenta de linha de comando `magento-cloud`.
+A lista inicial é gerada automaticamente usando o comando `magento-cloud list` no Adobe Commerce na infraestrutura em nuvem.
 
 >[!NOTE]
 >
->Essa referência é gerada a partir da base de código do aplicativo. Para alterar o conteúdo, você pode atualizar o código-fonte para a implementação do comando correspondente no [codebase](https://github.com/magento/magento-cloud-cli) repositório e enviar suas alterações para revisão. Outra maneira é _Envie seus comentários_ (localize o link no canto superior direito). Para obter diretrizes de contribuição, consulte [Contribuições de código](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
+>Essa referência é gerada a partir da base de código do aplicativo. Para alterar o conteúdo, você pode atualizar o código-fonte para a implementação de comando correspondente no repositório [codebase](https://github.com/magento/magento-cloud-cli) e enviar suas alterações para revisão. Outra maneira é _Fornecer comentários_ (localizar o link no canto superior direito). Para obter as diretrizes de contribuição, consulte [Contribuições de código](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
 
 ## `clear-cache`
 
@@ -7136,7 +7136,7 @@ Não faça perguntas interativas; aceite valores padrão. Equivalente ao uso da 
 
 ## `operation:list`
 
-BETA Lista as operações de tempo de execução em um ambiente
+Operações de tempo de execução de lista do Beta em um ambiente
 
 ```bash
 magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -8670,7 +8670,7 @@ magento-cloud mongo [--eval EVAL] [-r|--relationship RELATIONSHIP] [-i|--identit
 
 ### `--eval`
 
-Passar um fragmento de JavaScript para o shell
+Passar um fragmento do JavaScript para o shell
 
 - Requer um valor
 
@@ -9417,7 +9417,7 @@ Forçar a atualização do certificado
 
 ### `--new-key`
 
-[Obsoleto] Em vez disso, use — new
+[Obsoleto] Use — new
 
 - Padrão: `false`
 - Não aceita um valor
@@ -10811,7 +10811,7 @@ A ID do ambiente. Use &quot;.&quot; para selecionar o ambiente padrão do projet
 
 ### `--pipe`
 
-[Opção obsoleta] Gerar somente o valor da variável
+[Opção obsoleta] Gera apenas o valor da variável
 
 - Padrão: `false`
 - Não aceita um valor

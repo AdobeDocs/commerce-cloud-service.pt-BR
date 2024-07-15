@@ -28,9 +28,9 @@ Se uma vulnerabilidade crítica for detectada em seu aplicativo, ele rejeitará 
 
 Há dois tipos de blocos que são executados:
 
-1. **Concluir bloqueio**—para sites de desenvolvimento. A mensagem de erro que acompanha `git push` O fornece informações detalhadas sobre a vulnerabilidade.
+1. **Concluir bloco**—para sites de desenvolvimento. A mensagem de erro que acompanha o `git push` fornece informações detalhadas sobre a vulnerabilidade.
 
-1. **Bloqueio parcial**— para sites de produção, o que permite que o site fique principalmente online. Dependendo da natureza da vulnerabilidade, partes de uma solicitação, como uma sequência de consulta, cookies ou qualquer cabeçalho adicional, podem ser removidas das solicitações do GET. Todas as outras solicitações podem ser totalmente bloqueadas, como logon, envio de formulário ou check-out do produto.
+1. **Bloqueio parcial**—para sites de produção, o que permite que o site permaneça online. Dependendo da natureza da vulnerabilidade, partes de uma solicitação, como uma sequência de consulta, cookies ou qualquer cabeçalho adicional, podem ser removidas das solicitações do GET. Todas as outras solicitações podem ser totalmente bloqueadas, como logon, envio de formulário ou check-out do produto.
 
 O desbloqueio é automatizado após a resolução do risco de segurança. O bloco é removido logo após a aplicação de uma atualização de segurança que remove a vulnerabilidade.
 

@@ -12,15 +12,15 @@ ht-degree: 0%
 
 # Atualize o pacote ECE-Tools
 
-Uma atualização do `ece-tools` O pacote também atualiza o outro [Pacote de ferramentas na nuvem para pacotes do Commerce](../release-notes/cloud-tools-suite.md), que são dependências de `ece-tools`. Portanto, você deve usar uma versão do Adobe Commerce na infraestrutura em nuvem compatível com `ece-tools` pacote.
+Uma atualização do pacote `ece-tools` também atualiza o outro [Conjunto de Ferramentas da Nuvem para pacotes do Commerce](../release-notes/cloud-tools-suite.md), que são dependências para `ece-tools`. Portanto, você deve usar uma versão do Adobe Commerce na infraestrutura em nuvem compatível com o pacote `ece-tools`.
 
 {{ece-tools-package}}
 
 **Pré-requisitos**:
 
-- Antes de atualizar `ece-tools`, revise a [Notas de versão do Cloud Tools Suite for Commerce](../release-notes/cloud-tools-suite.md).
-- Se estiver atualizando a partir de `ece-tools` 2002.0.22 ou anterior a 2002.1.0, analisar [Alterações incompatíveis com versões anteriores](../release-notes/backward-incompatible-changes.md) e faça as alterações necessárias no projeto de infraestrutura do Adobe Commerce na nuvem.
-- Revisão [Atualizações e patches](../development/commerce-version.md#upgrade-from-older-versions) para determinar as versões das ECE-Tools compatíveis com o seu projeto Adobe Commerce na infraestrutura em nuvem.
+- Antes de atualizar o `ece-tools`, reveja as [notas de versão do Conjunto de Ferramentas da Nuvem para Commerce](../release-notes/cloud-tools-suite.md).
+- Se você estiver atualizando do `ece-tools` 2002.0.22 ou anterior para o 2002.1.0, revise as [alterações incompatíveis com versões anteriores](../release-notes/backward-incompatible-changes.md) e faça as alterações necessárias no projeto de infraestrutura do Adobe Commerce na nuvem.
+- Revise [Atualizações e patches](../development/commerce-version.md#upgrade-from-older-versions) para determinar as versões das Ferramentas ECE compatíveis com seu projeto do Adobe Commerce na infraestrutura em nuvem.
 
 {{upgrade-tip}}
 
@@ -34,7 +34,7 @@ Uma atualização do `ece-tools` O pacote também atualiza o outro [Pacote de fe
 
    >[!NOTE]
    >
-   >Se não for possível atualizar além de `ece-tools` versão 2002.0.8, consulte [Atualizar projeto para usar o pacote ECE-Tools](install-package.md).
+   >Se não for possível atualizar além da versão `ece-tools` 2002.0.8, consulte [Atualizar projeto para usar o pacote ECE-Tools](install-package.md).
 
 1. Adicionar, confirmar e enviar alterações de código.
 

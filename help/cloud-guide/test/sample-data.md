@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Se você precisar de alguns dados de exemplo ao desenvolver sua loja, poderá instalar dados de amostra. Esses dados simulam uma loja ativa do Adobe Commerce com clientes, produtos e outros dados. Esses dados de amostra funcionam melhor com uma nova instalação do Adobe Commerce no modelo de infraestrutura em nuvem.
 
-Como prática recomendada, instale dados de amostra em ambientes de desenvolvimento e integração. Se você usar dados de amostra no armazenamento temporário ou na produção, será necessário [remover](#reset-or-uninstall-sample-data) as informações e os produtos antes da ativação.
+Como prática recomendada, instale dados de amostra em ambientes de desenvolvimento e integração. Se você usar dados de amostra no Armazenamento temporário ou na Produção, será necessário [remover](#reset-or-uninstall-sample-data) as informações e os produtos antes de entrar em produção.
 
 ## Instalar dados de amostra
 
@@ -41,7 +41,7 @@ Para instalar dados de amostra:
 
 1. Aguarde a implantação do projeto.
 
-1. Verifique se a instalação foi bem-sucedida acessando a página inicial da loja no ambiente de integração. É possível localizar o link do URL para a loja por meio da [!DNL Cloud Console].
+1. Verifique se a instalação foi bem-sucedida acessando a página inicial da loja no ambiente de integração. Você pode localizar o link da URL para a loja através de [!DNL Cloud Console].
 
 1. Tirar um instantâneo do seu ambiente:
 

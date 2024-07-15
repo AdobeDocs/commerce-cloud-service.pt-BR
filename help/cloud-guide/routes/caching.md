@@ -18,7 +18,7 @@ Você pode ativar o armazenamento em cache no ambiente do projeto de infraestrut
 
 ## Configurar armazenamento em cache
 
-Ative o armazenamento em cache para sua aplicação configurando as regras de cache na `.magento/routes.yaml` do seguinte modo:
+Habilite o cache para o aplicativo configurando as regras de cache no arquivo `.magento/routes.yaml` da seguinte maneira:
 
 ```yaml
 http://{default}/:
@@ -61,24 +61,24 @@ O exemplo anterior armazena em cache as seguintes rotas:
 - `http://{default}/path/more/`
 - `http://{default}/path/more/etc/`
 
-E as seguintes rotas são **não** em cache:
+E as seguintes rotas estão **não** armazenadas em cache:
 
 - `http://{default}/path/`
 - `http://{default}/path/etc/`
 
 >[!NOTE]
 >
->As expressões regulares em rotas são **não** compatível.
+>Expressões regulares em rotas **não** são suportadas.
 
 ## Duração do cache
 
-A duração do cache é determinada pelo parâmetro `Cache-Control` valor do cabeçalho de resposta. Se não `Cache-Control` estiver na resposta, o cabeçalho `default_ttl` é usada.
+A duração do cache é determinada pelo valor do cabeçalho de resposta `Cache-Control`. Se nenhum cabeçalho `Cache-Control` estiver na resposta, a chave `default_ttl` será usada.
 
 ## Chave do cache
 
-Para decidir como armazenar uma resposta em cache, o Adobe Commerce cria uma chave de cache que depende de vários fatores e armazena a resposta associada a essa chave. Quando uma solicitação vem com a mesma chave de cache, a resposta é reutilizada. Sua finalidade é semelhante ao HTTP [`Vary` cabeçalho](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44).
+Para decidir como armazenar uma resposta em cache, o Adobe Commerce cria uma chave de cache que depende de vários fatores e armazena a resposta associada a essa chave. Quando uma solicitação vem com a mesma chave de cache, a resposta é reutilizada. Sua finalidade é semelhante ao cabeçalho HTTP [`Vary`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44).
 
-Os parâmetros `headers` e `cookies` As chaves permitem alterar essa chave do cache.
+As chaves de parâmetros `headers` e `cookies` permitem alterar essa chave de cache.
 
 O valor padrão para essas chaves é o seguinte:
 
@@ -99,7 +99,7 @@ Quando definido como `true`, habilite o cache para esta rota. Quando definido co
 
 Define de quais valores a chave do cache deve depender.
 
-Por exemplo, se a variável `headers` a chave é a seguinte:
+Por exemplo, se a chave `headers` for a seguinte:
 
 ```yaml
 cache:
@@ -107,11 +107,11 @@ cache:
     headers: ["Accept"]
 ```
 
-Em seguida, o Adobe Commerce armazena em cache uma resposta diferente para cada valor do `Accept` cabeçalho HTTP.
+Em seguida, o Adobe Commerce armazena em cache uma resposta diferente para cada valor do cabeçalho HTTP `Accept`.
 
 ### `cookies`
 
-A variável `cookies` A chave define de quais valores a chave de cache deve depender.
+A chave `cookies` define de quais valores a chave de cache deve depender.
 
 Por exemplo:
 
@@ -121,19 +121,19 @@ cache:
     cookies: ["value"]
 ```
 
-A chave do cache depende do valor da variável `value` cookie na solicitação.
+A chave do cache depende do valor do cookie `value` na solicitação.
 
-Existe um caso especial se a `cookies` a chave tem o `["*"]` valor. Esse valor significa que qualquer solicitação com um cookie ignora o cache. Este é o valor padrão.
+Existe um caso especial se a chave `cookies` tiver o valor `["*"]`. Esse valor significa que qualquer solicitação com um cookie ignora o cache. Este é o valor padrão.
 
 >[!NOTE]
 >
->Não é possível usar curingas no nome do cookie. Use um nome de cookie preciso ou corresponda a todos os cookies com um asterisco (`*`). Por exemplo, `SESS*` ou `~SESS` estão atualmente **não** valores válidos.
+>Não é possível usar curingas no nome do cookie. Use um nome de cookie preciso ou faça a correspondência de todos os cookies com um asterisco (`*`). Por exemplo, `SESS*` ou `~SESS` atualmente são **valores inválidos**.
 
 Os cookies têm as seguintes restrições:
 
-- É possível definir o máximo de **50 cookies** no sistema. Caso contrário, o aplicativo lança um `Unable to send the cookie. Maximum number of cookies would be exceeded` exceção.
-- Um tamanho máximo de cookie é **4.096 bytes**. Caso contrário, o aplicativo lança um `Unable to send the cookie. Size of '%name' is %size bytes` exceção.
+- Você pode definir no máximo **50 cookies** no sistema. Caso contrário, o aplicativo acionará uma exceção `Unable to send the cookie. Maximum number of cookies would be exceeded`.
+- Um tamanho máximo de cookie é de **4096 bytes**. Caso contrário, o aplicativo acionará uma exceção `Unable to send the cookie. Size of '%name' is %size bytes`.
 
 ### `default_ttl`
 
-Se a resposta não tiver um `Cache-Control` cabeçalho, a variável `default_ttl` A chave é usada para definir a duração do cache, em segundos. O valor padrão é `0`, o que significa que nada é armazenado em cache.
+Se a resposta não tiver um cabeçalho `Cache-Control`, a chave `default_ttl` será usada para definir a duração do cache, em segundos. O valor padrão é `0`, o que significa que nada está armazenado em cache.

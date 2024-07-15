@@ -23,7 +23,7 @@ ht-degree: 7%
    + [Fluxo de trabalho Pro](architecture/pro-develop-deploy-workflow.md)
    + [Arquitetura dimensionada](architecture/scaled-architecture.md)
    + [Dimensionamento automático](architecture/autoscaling.md)
-+ [Comece já](https://experienceleague.adobe.com/docs/commerce-cloud-service/start/overview.html)
++ [Introdução](https://experienceleague.adobe.com/docs/commerce-cloud-service/start/overview.html)
 + Notas de versão {#release-notes}
    + [Conjunto de ferramentas da nuvem](release-notes/cloud-tools-suite.md)
    + [Pacote ECE-Tools](release-notes/ece-tools-package.md)
@@ -118,7 +118,7 @@ ht-degree: 7%
          + [Global](environment/variables-global.md)
          + [Build](environment/variables-build.md)
          + [Implantar](environment/variables-deploy.md)
-         + [Pós-implantação](environment/variables-post-deploy.md)
+         + [Post-deploy](environment/variables-post-deploy.md)
       + Configurar notificações {#log}
          + [Notificação](environment/set-up-notifications.md)
          + [Manipuladores de log](environment/log-handlers.md)
@@ -134,9 +134,9 @@ ht-degree: 7%
       + [OpenSearch](services/opensearch.md)
       + [RabbitMQ](services/rabbitmq.md)
       + [Redis](services/redis.md)
-+ Serviços Fastly {#cdn}
++ Fastly services {#cdn}
    + [Visão geral](cdn/fastly.md)
-   + Configuração do Fastly {#setup-fastly}
+   + Instalação do Fastly {#setup-fastly}
       + [Configurar os serviços do Fastly](cdn/fastly-configuration.md)
       + [Personalizar configuração do cache](cdn/fastly-custom-cache-configuration.md)
       + [Personalizar páginas de erro e manutenção](cdn/fastly-custom-response.md)
@@ -150,7 +150,7 @@ ht-degree: 7%
       + [INCLUIR NA LISTA DE BLOQUEIOS IP](cdn/fastly-vcl-blocking.md)
       + [Ignorar cache Fastly](cdn/fastly-vcl-bypass-to-origin.md)
    + [Solução de problemas rápida](cdn/fastly-troubleshooting.md)
-+ Configurações da loja {#configure-store}
++ Configurações de armazenamento {#configure-store}
    + [Visão geral](store/overview.md)
    + [Práticas recomendadas](store/best-practices.md)
    + [Tema personalizado](store/custom-theme.md)
@@ -160,13 +160,13 @@ ht-degree: 7%
    + [Mapa do site e robôs de mecanismo de pesquisa](store/robots-sitemap.md)
    + [Métodos de pagamento do PayPal](store/paypal.md)
    + [Gerenciamento de configuração](store/store-settings.md)
-+ Site de lançamento {#launch}
++ Site de inicialização {#launch}
    + [Visão geral](launch/overview.md)
    + [Lista de verificação de inicialização](launch/checklist.md)
    + [Etapas de inicialização](launch/steps.md)
 + Monitorar site {#monitor}
    + [Desempenho](monitor/performance.md)
-   + serviço New Relic {#new-relic}
+   + Serviço New Relic {#new-relic}
       + [Visão geral do New Relic](monitor/new-relic-service.md)
       + [Gerenciamento de contas e usuários](monitor/account-management.md)
       + Investigar o desempenho {#investigate}

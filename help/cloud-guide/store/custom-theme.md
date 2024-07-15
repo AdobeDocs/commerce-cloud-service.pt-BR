@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Tema personalizado
 
-Você pode instalar um ou vários temas para usar em uma ou todas as lojas e sites do projeto. Os temas incluem vários arquivos estáticos, incluindo imagens, fontes, CSS, JavaScript, PHP e muito mais, para projetar completamente suas lojas. Você pode adicionar o tema extraindo seu código para o sistema de arquivos ou usando o Composer.
+Você pode instalar um ou vários temas para usar em uma ou todas as lojas e sites do projeto. Os temas incluem vários arquivos estáticos, incluindo imagens, fontes, CSS, JavaScript, PHP e muito mais para projetar completamente suas lojas. Você pode adicionar o tema extraindo seu código para o sistema de arquivos ou usando o Composer.
 
 ## Instalar um tema manualmente
 
@@ -36,7 +36,7 @@ Para instalar um tema manualmente, você deve ter o código do tema em um arquiv
 
 **Para instalar um tema manualmente**:
 
-1. Copie o código do tema em `<Project root dir>/app/design/frontend` para um tema de vitrine ou `<Project root dir>/app/design/adminhtml` para um tema de Administrador. Verifique se o diretório de nível superior está `<VendorName>`; caso contrário, o tema não será instalado corretamente.
+1. Copie o código do tema em `<Project root dir>/app/design/frontend` para um tema de vitrine ou `<Project root dir>/app/design/adminhtml` para um tema de Administrador. Verifique se o diretório de nível superior é `<VendorName>`; caso contrário, o tema não será instalado corretamente.
 
    ```bash
    cp -r ExampleTheme <project-root>/app/design/frontend
@@ -107,4 +107,4 @@ Para instalar um tema usando o Composer:
 
 ## Vários temas
 
-Ao usar vários temas, como temas diferentes por localidade, revise a `SCD_MATRIX` variável de ambiente para personalizar a implantação do tema. Consulte a [build](../environment/variables-build.md#scd_matrix) ou [implantar](../environment/variables-deploy.md#scd_matrix) etapas no [configuração do ambiente](../environment/configure-env-yaml.md).
+Ao usar vários temas, como temas diferentes por localidade, revise a variável de ambiente `SCD_MATRIX` para personalizar a implantação do tema. Consulte os estágios [compilação](../environment/variables-build.md#scd_matrix) ou [implantação](../environment/variables-deploy.md#scd_matrix) na [configuração de ambiente](../environment/configure-env-yaml.md).

@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Ao gravar em um banco de dados, pode ser útil executar a criação de perfil para identificar o impacto dessas alterações. A criação de perfil mantém um log de consultas ao banco de dados e aumenta a precisão do tempo de execução.
 
-**Para ativar a criação de perfil de consulta de banco de dados**:
+**Para habilitar a definição de perfil de consulta do banco de dados**:
 
 1. [Fazer logon no banco de dados](../services/mysql.md#connect-to-the-database).
 

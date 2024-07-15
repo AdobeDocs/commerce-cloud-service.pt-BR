@@ -1,6 +1,6 @@
 ---
 title: Propriedades
-description: Use a lista de propriedades como referência ao configurar o [!DNL Commerce] aplicativo para criação e implantação na infraestrutura em nuvem.
+description: Use a lista de propriedades como referência ao configurar o aplicativo  [!DNL Commerce]  para compilação e implantação na infraestrutura de nuvem.
 feature: Cloud, Configuration, Build, Deploy, Roles/Permissions, Storage
 exl-id: 58a86136-a9f9-4519-af27-2f8fa4018038
 source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Propriedades para configuração de aplicativo
 
-A variável `.magento.app.yaml` O arquivo usa propriedades para gerenciar o suporte ao ambiente para o [!DNL Commerce] aplicação.
+O arquivo `.magento.app.yaml` usa propriedades para gerenciar o suporte ao ambiente para o aplicativo [!DNL Commerce].
 
 | Nome | Descrição | Padrão | Obrigatório |
 | ------ | --------------------------------- | ------- | -------- |
@@ -25,7 +25,7 @@ A variável `.magento.app.yaml` O arquivo usa propriedades para gerenciar o supo
 | [`mounts`](#mounts) | Definir caminhos | Caminhos:<ul><li>`"var": "shared:files/var"`</li><li>`"app/etc": "shared:files/etc"`</li><li>`"pub/media": "shared:files/media"`</li><li>`"pub/static": "shared:files/static"`</li></ul> | Não |
 | [`name`](#name) | Definir o nome do aplicativo | `mymagento` | Sim |
 | [`relationships`](#relationships) | Serviços de mapa | Serviços:<ul><li>`database: "mysql:mysql"`</li><li>`redis: "redis:redis"`</li><li>`opensearch: "opensearch:opensearch"`</li></ul> | Não |
-| [`runtime`](#runtime) | A propriedade de tempo de execução inclui extensões exigidas pelo [!DNL Commerce] aplicação. | Extensões:<ul><li>`xsl`</li><li>`newrelic`</li><li>`sodium`</li></ul> | Sim |
+| [`runtime`](#runtime) | A propriedade de tempo de execução inclui extensões exigidas pelo aplicativo [!DNL Commerce]. | Extensões:<ul><li>`xsl`</li><li>`newrelic`</li><li>`sodium`</li></ul> | Sim |
 | [`type`](#type-and-build) | Definir a imagem base do contêiner | `php:8.3` | Sim |
 | [`variables`](variables-property.md) | Aplicação de uma variável de ambiente para uma versão específica do Commerce | — | Não |
 | [`web`](web-property.md) | Lidar com solicitações externas | — | Sim |
@@ -35,7 +35,7 @@ A variável `.magento.app.yaml` O arquivo usa propriedades para gerenciar o supo
 
 ## `name`
 
-A variável `name` fornece o nome do aplicativo usado na variável [`routes.yaml`](../routes/routes-yaml.md) arquivo para definir o upstream de HTTP (por padrão, `mymagento:http`). Por exemplo, se o valor de `name` é `app`, você deve usar `app:http` no campo upstream.
+A propriedade `name` fornece o nome do aplicativo usado no arquivo [`routes.yaml`](../routes/routes-yaml.md) para definir o upstream de HTTP (por padrão, `mymagento:http`). Por exemplo, se o valor de `name` for `app`, você deverá usar `app:http` no campo de upstream.
 
 >[!WARNING]
 >
@@ -43,15 +43,15 @@ A variável `name` fornece o nome do aplicativo usado na variável [`routes.yaml
 
 ## `type` e `build`
 
-A variável `type`  e `build` as propriedades fornecem informações sobre a imagem base do contêiner para construir e executar o projeto.
+As propriedades `type` e `build` fornecem informações sobre a imagem de contêiner base para compilar e executar o projeto.
 
-O compatível `type` a linguagem é PHP. Especifique a versão do PHP da seguinte maneira:
+A linguagem `type` com suporte é PHP. Especifique a versão do PHP da seguinte maneira:
 
 ```yaml
 type: php:<version>
 ```
 
-A variável `build` determina o que acontece por padrão ao criar o projeto. A variável `flavor` especifica um conjunto padrão de tarefas de compilação a serem executadas. O exemplo a seguir mostra a configuração padrão para `type` e `build` de `magento-cloud/.magento.app.yaml`:
+A propriedade `build` determina o que acontece por padrão ao compilar o projeto. O `flavor` especifica um conjunto padrão de tarefas de compilação a serem executadas. O exemplo a seguir mostra a configuração padrão para `type` e `build` de `magento-cloud/.magento.app.yaml`:
 
 ```yaml
 # The toolstack used to build the application.
@@ -66,13 +66,13 @@ dependencies:
 
 ### Instalação e uso do Composer 2
 
-A variável `build: flavor:` A propriedade não é usada para o Composer 2.x; portanto, você deve instalar o Composer manualmente durante a fase de criação. Para instalar e usar o Composer 2.x em seus projetos Starter e Pro, você deve fazer três alterações nos `.magento.app.yaml` configuração:
+A propriedade `build: flavor:` não é usada para o Composer 2.x; portanto, você deve instalar o Composer manualmente durante a fase de compilação. Para instalar e usar o Composer 2.x em seus projetos Starter e Pro, você deve fazer três alterações na configuração do `.magento.app.yaml`:
 
-1. Remover `composer` como o `build: flavor:` e adicionar `none`. Essa alteração impede que a Cloud use a versão 1.x padrão do Composer para executar tarefas de build.
-1. Adicionar `composer/composer: '^2.0'` as a `php` dependência para instalar o Composer 2.x.
-1. Adicione o `composer` criar tarefas em um `build` gancho para executar as tarefas de criação usando o Composer 2.x.
+1. Remover `composer` como `build: flavor:` e adicionar `none`. Essa alteração impede que a Cloud use a versão 1.x padrão do Composer para executar tarefas de build.
+1. Adicione `composer/composer: '^2.0'` como uma dependência `php` para instalar o Composer 2.x.
+1. Adicione as tarefas de compilação `composer` a um gancho `build` para executar as tarefas de compilação usando o Composer 2.x.
 
-Use os fragmentos de configuração a seguir em seu próprio `.magento.app.yaml` configuração:
+Usar os seguintes fragmentos de configuração na sua própria configuração do `.magento.app.yaml`:
 
 ```yaml
 # 1. Change flavor to none.
@@ -103,7 +103,7 @@ O Adobe Commerce oferece suporte a dependências nos seguintes idiomas:
 - Ruby
 - Node.js
 
-Essas dependências são independentes das eventuais dependências do aplicativo e estão disponíveis no `PATH`, durante o processo de criação e no ambiente de tempo de execução do aplicativo.
+Essas dependências são independentes das eventuais dependências do aplicativo e estão disponíveis no `PATH`, durante o processo de compilação e no ambiente de tempo de execução do aplicativo.
 
 Você pode especificar essas dependências da seguinte maneira:
 
@@ -126,7 +126,7 @@ runtime:
         - sodium
 ```
 
-Consulte [Configurações do PHP](php-settings.md) para obter detalhes sobre como ativar extensões.
+Consulte [configurações do PHP](php-settings.md) para obter detalhes sobre como habilitar extensões.
 
 ## `disk`
 
@@ -140,13 +140,13 @@ O tamanho de disco mínimo recomendado é de 256 MB. Se você vir o erro `UserEr
 
 >[!NOTE]
 >
->Para ambientes de preparo e produção profissionais, você deve [Enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para atualizar o `mounts` e `disk` configuração do seu aplicativo. Ao enviar o ticket, indique as alterações de configuração necessárias e inclua uma versão atualizada de seu `.magento.app.yaml` arquivo.
+>Para ambientes de Preparo e Produção Profissionais, você deve [Enviar um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para atualizar a configuração `mounts` e `disk` para o seu aplicativo. Ao enviar o tíquete, indique as alterações de configuração necessárias e inclua uma versão atualizada do arquivo `.magento.app.yaml`.
 
 ## `relationships`
 
 Define o mapeamento de serviços no aplicativo.
 
-A relação `name` está disponível para o aplicativo no `MAGENTO_CLOUD_RELATIONSHIPS` variável de ambiente. A variável `<service-name>:<endpoint-name>` O relacionamento mapeia para os valores de nome e tipo definidos na variável `.magento/services.yaml` arquivo.
+A relação `name` está disponível para o aplicativo na variável de ambiente `MAGENTO_CLOUD_RELATIONSHIPS`. A relação `<service-name>:<endpoint-name>` mapeia para os valores name e type definidos no arquivo `.magento/services.yaml`.
 
 ```yaml
 relationships:
@@ -163,11 +163,11 @@ relationships:
     rabbitmq: "rabbitmq:rabbitmq"
 ```
 
-Consulte [Serviços](../services/services-yaml.md) para obter uma lista completa dos tipos de serviço e endpoints aceitos no momento.
+Consulte [Serviços](../services/services-yaml.md) para obter uma lista completa dos tipos de serviços e pontos de extremidade atualmente com suporte.
 
 ## `mounts`
 
-Um objeto cujas chaves são caminhos relativos à raiz do aplicativo. A montagem é uma área gravável no disco para arquivos. Veja a seguir uma lista padrão de montagens configuradas no `magento.app.yaml` arquivo usando o `volume_id[/subpath]` sintaxe:
+Um objeto cujas chaves são caminhos relativos à raiz do aplicativo. A montagem é uma área gravável no disco para arquivos. Esta é uma lista padrão de montagens configuradas no arquivo `magento.app.yaml` usando a sintaxe `volume_id[/subpath]`:
 
 ```yaml
  # The mounts that will be performed when the package is deployed.
@@ -184,28 +184,28 @@ O formato para adicionar sua montagem a esta lista é o seguinte:
 "/public/sites/default/files": "shared:files/files"
 ```
 
-- `shared`— compartilha um volume entre seus aplicativos em um ambiente.
-- `disk`—Define o tamanho disponível para o volume compartilhado.
+- `shared` — Compartilha um volume entre seus aplicativos dentro de um ambiente.
+- `disk` — Define o tamanho disponível para o volume compartilhado.
 
 >[!NOTE]
 >
->Para ambientes de preparo e produção profissionais, você deve [Enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para atualizar o `mounts` e `disk` configuração do seu aplicativo. Ao enviar o ticket, indique as alterações de configuração necessárias e inclua uma versão atualizada de seu `.magento.app.yaml` arquivo.
+>Para ambientes de Preparo e Produção Profissionais, você deve [Enviar um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para atualizar a configuração `mounts` e `disk` para o seu aplicativo. Ao enviar o tíquete, indique as alterações de configuração necessárias e inclua uma versão atualizada do arquivo `.magento.app.yaml`.
 
-Você pode tornar a montagem da Web acessível adicionando-a à [`web`](web-property.md) bloco de locais.
+Você pode tornar a montagem da Web acessível adicionando-a ao bloco de locais [`web`](web-property.md).
 
 >[!WARNING]
 >
->Depois que o site tiver dados, não altere o `subpath` parte do nome da montagem. Esse valor é o identificador exclusivo do `files` área. Se você alterar esse nome, perderá todos os dados do site armazenados no local antigo.
+>Depois que o site tiver dados, não altere a parte `subpath` do nome de montagem. Este valor é o identificador exclusivo da área `files`. Se você alterar esse nome, perderá todos os dados do site armazenados no local antigo.
 
 ## `access`
 
-A variável `access` indica um nível mínimo de função de usuário que tem acesso SSH aos ambientes. As funções de usuário disponíveis são:
+A propriedade `access` indica um nível mínimo de função de usuário que tem acesso SSH permitido aos ambientes. As funções de usuário disponíveis são:
 
-- `admin`—Pode alterar configurações e executar ações no ambiente; tem _colaborador_ e _visualizador_ direitos.
-- `contributor`— pode enviar código para esse ambiente e ramificar-se dele; tem _visualizador_ direitos.
-- `viewer`— Pode visualizar somente o ambiente.
+- `admin` — Pode alterar configurações e executar ações no ambiente; tem direitos de _colaborador_ e _visualizador_.
+- `contributor` — Pode enviar código para este ambiente e ramificar do ambiente; tem direitos de _visualizador_.
+- `viewer` — Pode exibir somente o ambiente.
 
-A função de usuário padrão é `contributor`, que restringe o acesso SSH de usuários somente com _visualizador_ direitos. Você pode alterar a função de usuário para `viewer` para permitir o acesso SSH somente a usuários com _visualizador_ direitos:
+A função de usuário padrão é `contributor`, que restringe o acesso SSH de usuários com apenas direitos de _visualizador_. Você pode alterar a função de usuário para `viewer` para permitir acesso SSH a usuários com direitos de apenas _visualizador_:
 
 ```yaml
 access:

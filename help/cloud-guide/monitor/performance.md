@@ -15,11 +15,11 @@ ht-degree: 0%
 
 Você pode usar os seguintes serviços para monitorar o desempenho dos ambientes de nuvem:
 
-- [Notificações de integridade](../integrations/health-notifications.md)— uma integração que fornece um alerta de espaço em disco nos ambientes de integração Starter e Pro.
-- [Guia de observação do Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-operations/tools/observation-for-adobe-commerce/intro.html)— monitoramento abrangente para todos os sites do Commerce que combina dados de registro de várias origens para ajudá-lo a gerenciar melhor o desempenho do site da Adobe Commerce e diagnosticar problemas.
+- [Notificações de integridade](../integrations/health-notifications.md)—Uma integração que fornece um alerta de espaço em disco nos ambientes de integração Starter e Pro.
+- [Guia de Observação para Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-operations/tools/observation-for-adobe-commerce/intro.html) — monitoramento abrangente para todos os sites do Commerce que combina dados de log de várias fontes para ajudá-lo a gerenciar melhor o desempenho do site do Adobe Commerce e diagnosticar problemas.
 
 ## serviço New Relic
 
-Monitore o desempenho do Adobe Commerce em ambientes de preparo e produção usando o [Serviço New Relic para monitoramento de desempenho](new-relic-service.md).
+Monitore o desempenho do Adobe Commerce em ambientes de Preparo e Produção usando o [serviço New Relic para monitoramento do desempenho](new-relic-service.md).
 
-- [Política de Alertas Gerenciados Adobe](investigate-performance.md#monitor-performance-with-managed-alerts)— uma política que rastreia diferentes métricas de desempenho e inclui uma coleção de alertas que definem limites para acionar avisos e notificações críticas quando problemas na infraestrutura do local ou nos aplicativos afetam o desempenho.
+- [Política de Alertas Gerenciados Adobe](investigate-performance.md#monitor-performance-with-managed-alerts) — Uma política que rastreia diferentes métricas de desempenho e inclui uma coleção de alertas que definem limites para disparar notificações de aviso e críticas quando problemas de infraestrutura do site ou de aplicativos afetarem o desempenho.

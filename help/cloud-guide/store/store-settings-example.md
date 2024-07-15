@@ -14,11 +14,11 @@ ht-degree: 0%
 
 Este exemplo mostra como usar o gerenciamento de configurações para manter as configurações de armazenamento consistentes em todos os ambientes.
 
-O exemplo usa o seguinte procedimento definido em [Configurações da loja](store-settings.md):
+O exemplo usa o seguinte procedimento definido em [Configurações de armazenamento](store-settings.md):
 
 1. Insira suas configurações no Admin do armazenamento do ambiente de integração.
-1. Criar um `config.php` e transfira-o para sua estação de trabalho local.
-1. Push `config.php` ao ambiente de integração remota.
+1. Crie um arquivo `config.php` e transfira-o para sua estação de trabalho local.
+1. Encaminhar `config.php` para o ambiente de integração remota.
 1. Verifique se as suas configurações não são editáveis no Admin.
 1. Faça as modificações necessárias:
 
@@ -29,17 +29,17 @@ O exemplo usa o seguinte procedimento definido em [Configurações da loja](stor
 
 Por exemplo, talvez você queira definir as seguintes configurações:
 
-* Desativar [localidade](https://glossary.magento.com/locale) e configurações de otimização de arquivos estáticos no seu ambiente de integração
+* Desabilite a [localidade](https://glossary.magento.com/locale) e as configurações de otimização de arquivo estático em seu ambiente de integração
 * Permitir otimização de arquivos estáticos em ambientes de preparo e produção
 * Configure o Fastly no Preparo e na Produção com credenciais específicas para cada
 
-_Otimização de arquivo estático_ significa mesclar e minificar JavaScript e folhas de estilos em cascata e minificar modelos de HTML. Consulte [Estratégias de implantação de conteúdo estático](../deploy/static-content.md).
+_Otimização de arquivo estático_ significa mesclar e minificar folhas de estilos em cascata e JavaScript e minificar modelos de HTML. Consulte [Estratégias de implantação de conteúdo estático](../deploy/static-content.md).
 
 ## Pré-requisitos
 
 Para concluir essas tarefas de gerenciamento de configuração, você precisa do seguinte:
 
-* Função de leitor de projeto com [ambiente &quot;admin&quot;](../project/user-access.md) privilégios
+* Função de leitor de projeto com [privilégios de &quot;administrador&quot;](../project/user-access.md) de ambiente
 * URL do administrador e credenciais para ambientes de integração, preparo e produção
 
 ## Configurar o administrador do Commerce
@@ -48,22 +48,22 @@ No ambiente de integração, é possível fazer logon no Administrador para modi
 
 **Para alterar as configurações de otimização de local e arquivo estático**:
 
-1. Faça logon no Admin do ambiente de integração. Você pode acessar esse URL por meio da variável [[!DNL Cloud Console]](../project/overview.md).
+1. Faça logon no Admin do ambiente de integração. Você pode acessar esta URL por meio do [[!DNL Cloud Console]](../project/overview.md).
 1. Navegue até **Lojas** > Configurações > **Configuração** > Geral > **Geral**.
-1. Na navegação da página, expanda **Opções de localidade**.
-1. No **Localidade** , altere o local. Você pode alterá-la novamente mais tarde.
+1. Na navegação da página, expanda **Opções de Local**.
+1. Na lista **Localidade**, altere a localidade. Você pode alterá-la novamente mais tarde.
 
    ![Alterar localidade](../../assets/locale-options.png)
 
 1. Clique em **Salvar configuração**.
-1. Se solicitado, [liberar o cache](https://docs.magento.com/user-guide/system/cache-management.html).
+1. Se solicitado, [limpe o cache](https://docs.magento.com/user-guide/system/cache-management.html).
 1. Faça logout do Administrador.
 
 ## Exportar valores e transferir config.php para o seu sistema local
 
-Esta etapa cria e transfere o `config.php` arquivo de configuração no ambiente de integração usando um comando executado no computador local.
+Esta etapa cria e transfere o arquivo de configuração do `config.php` no ambiente de integração usando um comando executado na máquina local.
 
-Este procedimento corresponde à etapa 2 do [procedimento recomendado](store-settings.md). Depois de criar `config.php`, transfira-o para o sistema local para que você possa adicioná-lo ao Git.
+Este procedimento corresponde à etapa 2 no [procedimento recomendado](store-settings.md). Depois de criar `config.php`, transfira-o para o sistema local para poder adicioná-lo ao Git.
 
 **Para criar e transferir`config.php`**:
 
@@ -81,7 +81,7 @@ Este procedimento corresponde à etapa 2 do [procedimento recomendado](store-set
    magento-cloud db:dump
    ```
 
-O seguinte trecho de `config.php` A mostra um exemplo de alteração da localidade padrão para `en_GB` e alteração das configurações de otimização de arquivo estático:
+O trecho a seguir de `config.php` mostra um exemplo de alteração da localidade padrão para `en_GB` e das configurações de otimização de arquivo estático:
 
 ```php?start_inline=1
 'general' => [
@@ -112,54 +112,54 @@ O seguinte trecho de `config.php` A mostra um exemplo de alteração da localida
 
 ## Enviar e implantar config.php em ambientes
 
-Agora que você criou `config.php` e o transferiu para seu sistema local, confirme-o no Git e envie-o para seus ambientes. Este procedimento corresponde às etapas 3 e 4 do [procedimento recomendado](store-settings.md).
+Agora que você criou o `config.php` e o transferiu para o sistema local, confirme-o no Git e envie-o por push para seus ambientes. Este procedimento corresponde às etapas 3 e 4 no [procedimento recomendado](store-settings.md).
 
-O comando a seguir adiciona, confirma e envia para o `master` filial:
+O comando a seguir adiciona, confirma e envia para a ramificação `master`:
 
 ```bash
 git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
 ```
 
-Implantação completa de código para preparo e produção. Para começar, você envia para `staging` e `master` filiais. Para obter detalhes sobre comandos de implantação, consulte [Implante sua loja](../deploy/staging-production.md).
+Implantação completa de código para preparo e produção. Para começar, você envia por push para `staging` e `master` ramificações. Para obter detalhes sobre comandos de implantação, consulte [Implantar armazenamento](../deploy/staging-production.md).
 
 Aguarde a conclusão da implantação em todos os ambientes.
 
 ## Verifique as alterações de configuração
 
-Depois que você pressionar `config.php` para seus ambientes, qualquer valor alterado deve ser somente leitura no Administrador. Neste exemplo, as configurações modificadas de localidade padrão e otimização de arquivo estático não devem ser editáveis no Admin. Essas definições de configuração são definidas em `config.php`.
+Depois de enviar `config.php` para seus ambientes por push, todos os valores alterados devem ser somente leitura no Administrador. Neste exemplo, as configurações modificadas de localidade padrão e otimização de arquivo estático não devem ser editáveis no Admin. Estas configurações estão definidas em `config.php`.
 
 Para verificar as alterações de configuração:
 
 1. Faça logout do Administrador em um dos ambientes.
 1. Faça logon novamente no Administrador.
 1. Clique em **Lojas** > Configurações > **Configuração** > Geral > **Geral**.
-1. No painel direito, expanda **Opções de localidade**.
+1. No painel direito, expanda **Opções de Local**.
 
-   Observe que vários campos não podem ser editados, como mostrado no exemplo a seguir. Essas definições de configuração são mantidas pela `config.php`.
+   Observe que vários campos não podem ser editados, como mostrado no exemplo a seguir. Estas configurações são mantidas por `config.php`.
 
-   ![Determinados valores não são mais editáveis no Admin](../../assets/locale-options-disabled.png)
+   ![Determinados valores não são mais editáveis no Administrador](../../assets/locale-options-disabled.png)
 
 1. Faça logout do Administrador.
 
 ## Alterar e atualizar definições de configuração específicas do sistema
 
-Se você precisar modificar qualquer uma dessas configurações, modifique a variável `config.php` arquivo manualmente com um editor de texto. Depois de concluir as edições ou remoções, você pode confirmar e enviar para o ambiente remoto seguindo as etapas anteriores.
+Se você precisar modificar qualquer uma dessas configurações, modifique o arquivo `config.php` manualmente com um editor de texto. Depois de concluir as edições ou remoções, você pode confirmar e enviar para o ambiente remoto seguindo as etapas anteriores.
 
 Para adicionar configurações, modifique o ambiente de integração e execute o comando novamente para gerar o arquivo. Todas as novas configurações são anexadas ao código no arquivo. Encaminhe-o para o Git seguindo as etapas anteriores.
 
-Para este exemplo, modifique as configurações de otimização de arquivo estático e adicione uma nova configuração para JavaScript.
+Para este exemplo, modifique as configurações de otimização de arquivo estático e adicione uma nova configuração para o JavaScript.
 
 ### Adicionar configurações na integração
 
-Para adicionar valores de configuração no Admin do ambiente de integração. Este exemplo mescla arquivos JavaScript.
+Para adicionar valores de configuração no Admin do ambiente de integração. Este exemplo mescla arquivos do JavaScript.
 
 1. Faça logoff do Administrador de integração.
 1. Faça logon novamente no Administrador de integração.
 1. Clique em **Lojas** > Configurações > **Configuração** > **Avançado** > **Desenvolvedor**.
 1. No painel direito, expanda **Configurações do JavaScript**.
-1. No **Mesclar arquivos JavaScript** clique em **Sim**.
+1. Na lista **Mesclar arquivos do JavaScript**, clique em **Sim**.
 1. Clique em **Salvar configuração**.
-1. Se solicitado, [liberar o cache](https://docs.magento.com/user-guide/system/cache-management.html).
+1. Se solicitado, [limpe o cache](https://docs.magento.com/user-guide/system/cache-management.html).
 1. Faça logout do Administrador.
 
 Ao executar o comando dump novamente, a nova configuração é anexada ao arquivo.
@@ -170,7 +170,7 @@ magento-cloud db:dump
 
 ### Editar config.php com novas configurações
 
-No local, use um editor de texto para editar o `app/etc/config.php` arquivo. Edite essas configurações para ativar a minificação para arquivos JavaScript, HTML e CSS.
+No local, use um editor de texto para editar o arquivo `app/etc/config.php` atualizado. Edite essas configurações para ativar a minificação para arquivos JavaScript, HTML e CSS.
 
 ```php?start_inline=1
  'dev' => [
@@ -192,7 +192,7 @@ No local, use um editor de texto para editar o `app/etc/config.php` arquivo. Edi
      ],
 ```
 
-Para modificar as configurações para permitir minificação, edite `'0'` para `'1'` para `'minify_html'` e cada `'minify_files'` opção:
+Para modificar as configurações para permitir minificação, edite de `'0'` a `'1'` para `'minify_html'` e cada opção `'minify_files'`:
 
 ```php?start_inline=1
  'dev' => [

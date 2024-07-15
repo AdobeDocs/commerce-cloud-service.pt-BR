@@ -12,18 +12,18 @@ ht-degree: 0%
 
 # Implantação baseada em cenário
 
-Com `ece-tools` 2002.1.0 e versões posteriores, você pode usar o recurso de implantação baseada em cenário para personalizar o comportamento de implantação padrão.
+Com o `ece-tools` 2002.1.0 e versões posteriores, você pode usar o recurso de implantação baseada em cenário para personalizar o comportamento de implantação padrão.
 Este recurso usa **cenários** e **etapas** na configuração:
 
-- **Configuração de cenário**-Cada gancho de implantação é um *cenário*, que é um arquivo de configuração XML que descreve a sequência e os parâmetros de configuração para concluir tarefas de disponibilização. Você configura os cenários na variável `hooks` seção do `.magento.app.yaml` arquivo.
+- **Configuração do cenário**-Cada gancho de implantação é um *cenário*, que é um arquivo de configuração XML que descreve a sequência e os parâmetros de configuração para concluir tarefas de implantação. Configure os cenários na seção `hooks` do arquivo `.magento.app.yaml`.
 
-- **Configuração da etapa**-Cada cenário usa uma sequência de *etapas* que descrevem programaticamente as operações necessárias para concluir as tarefas de implantação. Você configura as etapas em um arquivo de configuração de cenário baseado em XML.
+- **Configuração de etapa** - Cada cenário usa uma sequência de *etapas* que descrevem programaticamente as operações necessárias para concluir as tarefas de implantação. Você configura as etapas em um arquivo de configuração de cenário baseado em XML.
 
-O Adobe Commerce na infraestrutura em nuvem fornece um conjunto de [cenários padrão](https://github.com/magento/ece-tools/tree/2002.1/scenario) e [etapas padrão](https://github.com/magento/ece-tools/tree/2002.1/src/Step) no `ece-tools` pacote. Você pode personalizar o comportamento de implantação criando arquivos de configuração XML personalizados para substituir ou personalizar a configuração padrão. Você também pode usar cenários e etapas para executar código de módulos personalizados.
+A infraestrutura do Adobe Commerce na nuvem fornece um conjunto de [cenários padrão](https://github.com/magento/ece-tools/tree/2002.1/scenario) e [etapas padrão](https://github.com/magento/ece-tools/tree/2002.1/src/Step) no pacote `ece-tools`. Você pode personalizar o comportamento de implantação criando arquivos de configuração XML personalizados para substituir ou personalizar a configuração padrão. Você também pode usar cenários e etapas para executar código de módulos personalizados.
 
 ## Adicionar cenários usando ganchos de criação e implantação
 
-Adicione os cenários para criação e implantação do Adobe Commerce à `hooks` seção do `.magento.app.yaml` arquivo. Cada gancho especifica os cenários a serem executados durante cada fase. O exemplo a seguir mostra a configuração do cenário padrão.
+Você adiciona os cenários para compilação e implantação do Adobe Commerce à seção `hooks` do arquivo `.magento.app.yaml`. Cada gancho especifica os cenários a serem executados durante cada fase. O exemplo a seguir mostra a configuração do cenário padrão.
 
 > `magento.app.yaml` ganchos
 
@@ -41,11 +41,11 @@ hooks:
 
 >[!NOTE]
 >
->Com o lançamento do `ece-tools` 2002.1.x, há uma nova [configuração de ganchos](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/hooks-property.html) formato. O formato herdado de `ece-tools` As versões 2002.0.x ainda são compatíveis. No entanto, é necessário atualizar para o novo formato para usar o recurso de implantação baseada em cenário.
+>Com o lançamento do `ece-tools` 2002.1.x, há um novo formato de [configuração de ganchos](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/hooks-property.html). O formato herdado das versões do `ece-tools` 2002.0.x ainda é suportado. No entanto, é necessário atualizar para o novo formato para usar o recurso de implantação baseada em cenário.
 
 ## Revisar etapas do cenário
 
-Na configuração de gancho, cada cenário é um arquivo XML que contém etapas para executar tarefas de criação, implantação ou pós-implantação. Por exemplo, a variável `scenario/transfer` O arquivo inclui três etapas: `compress-static-content`, `clear-init-directory`, e `backup-data`
+Na configuração de gancho, cada cenário é um arquivo XML que contém etapas para executar tarefas de criação, implantação ou pós-implantação. Por exemplo, o arquivo `scenario/transfer` inclui três etapas: `compress-static-content`, `clear-init-directory` e `backup-data`
 
 > `scenario/transfer.xml`
 
@@ -90,9 +90,9 @@ Durante a implantação, os cenários personalizados são mesclados com o cenár
 
 ### Remover etapas padrão
 
-Você remove etapas de cenários padrão usando o `skip` parâmetro.
+Você remove etapas dos cenários padrão usando o parâmetro `skip`.
 
-Por exemplo, para ignorar o `enable-maintenance-mode` e `set-production-mode` etapas no cenário de implantação padrão, crie um arquivo de configuração que inclua a seguinte configuração.
+Por exemplo, para ignorar as etapas `enable-maintenance-mode` e `set-production-mode` no cenário de implantação padrão, crie um arquivo de configuração que inclua a seguinte configuração.
 
 > `vendor/vendor-name/module-name/deploy-custom-mode-config.xml`
 
@@ -104,7 +104,7 @@ Por exemplo, para ignorar o `enable-maintenance-mode` e `set-production-mode` et
 </scenario>
 ```
 
-Para usar o arquivo de configuração personalizado, atualize o padrão `.magento.app.yaml` arquivo.
+Para usar o arquivo de configuração personalizado, atualize o arquivo `.magento.app.yaml` padrão.
 
 > `.magento.app.yaml` com cenário de implantação personalizado
 
@@ -124,13 +124,13 @@ hooks:
 
 Os cenários personalizados podem substituir etapas padrão para fornecer implementação personalizada. Para fazer isso, use o nome de etapa padrão como o nome da etapa personalizada.
 
-Por exemplo, na variável [cenário de implantação padrão] o `enable-maintenance-mode` a etapa executa o padrão [Script PHP EnableMaintenanceMode].
+Por exemplo, no [cenário de implantação padrão], a etapa `enable-maintenance-mode` executa o script PHP [EnableMaintenanceMode] padrão.
 
 ```xml
 <step name="enable-maintenance-mode" type="Magento\MagentoCloud\Step\EnableMaintenanceMode" priority="300"/>
 ```
 
-Para substituir esta etapa, crie um arquivo de configuração de cenário personalizado para executar um script diferente quando a `enable-maintenance-mode` a etapa é executada.
+Para substituir esta etapa, crie um arquivo de configuração de cenário personalizado para executar um script diferente quando a etapa `enable-maintenance-mode` for executada.
 
 ```xml
 <?xml version="1.0"?>
@@ -142,7 +142,7 @@ Para substituir esta etapa, crie um arquivo de configuração de cenário person
 
 ### Alterar a prioridade da etapa
 
-Os cenários personalizados podem alterar a prioridade das etapas padrão. A etapa a seguir altera a prioridade do `enable-maintenance-mode` etapa de `300` para `10` para que a etapa seja executada anteriormente no cenário de implantação.
+Os cenários personalizados podem alterar a prioridade das etapas padrão. A etapa a seguir altera a prioridade da etapa `enable-maintenance-mode` de `300` para `10` de forma que a etapa seja executada anteriormente no cenário de implantação.
 
 ```xml
 <?xml version="1.0"?>
@@ -152,16 +152,16 @@ Os cenários personalizados podem alterar a prioridade das etapas padrão. A eta
 </scenario>
 ```
 
-Neste exemplo, a variável `enable-maintenance-mode` a etapa é movida para o início do cenário porque tem uma prioridade mais baixa do que todas as outras etapas no cenário de implantação padrão.
+Neste exemplo, a etapa `enable-maintenance-mode` se move para o início do cenário porque tem uma prioridade mais baixa do que todas as outras etapas no cenário de implantação padrão.
 
 ### Exemplo: estender o cenário de implantação
 
 O exemplo a seguir personaliza o [cenário de implantação padrão] com as seguintes alterações:
 
-- Substitui o `remove-deploy-failed-flag` etapa com uma etapa personalizada
-- Ignora o `clean-redis-cache` subetapa na etapa de pré-implantação
-- Ignora o `unlock-cron-jobs` etapa
-- Ignora o `validate-config` etapa para desativar validadores críticos
+- Substitui a etapa `remove-deploy-failed-flag` por uma etapa personalizada
+- Ignora a subetapa `clean-redis-cache` na etapa de pré-implantação
+- Ignora a etapa `unlock-cron-jobs`
+- Ignora a etapa `validate-config` para desabilitar validadores críticos
 - Adiciona uma nova etapa de pré-implantação
 
 > `vendor/vendor-name/module-name/deploy-extended.xml`
@@ -203,7 +203,7 @@ O exemplo a seguir personaliza o [cenário de implantação padrão] com as segu
 </scenario>
 ```
 
-Para usar esse script em seu projeto, adicione a seguinte configuração à `.magento.app.yaml` arquivo para seu projeto do Adobe Commerce na infraestrutura em nuvem:
+Para usar esse script em seu projeto, adicione a seguinte configuração ao arquivo `.magento.app.yaml` para seu projeto do Adobe Commerce na infraestrutura em nuvem:
 
 ```yaml
 hooks:
@@ -219,23 +219,23 @@ hooks:
 
 >[!TIP]
 >
->Você pode revisar a variável [cenários padrão](https://github.com/magento/ece-tools/tree/2002.1/scenario) e [configuração padrão da etapa](https://github.com/magento/ece-tools/tree/2002.1/src/Step) no `ece-tools` Repositório GitHub para determinar quais cenários e etapas personalizar para as tarefas de compilação, implantação e pós-implantação do seu projeto.
+>Você pode revisar os [cenários padrão](https://github.com/magento/ece-tools/tree/2002.1/scenario) e a [configuração de etapa padrão](https://github.com/magento/ece-tools/tree/2002.1/src/Step) no repositório GitHub `ece-tools` para determinar quais cenários e etapas personalizar para as tarefas de compilação, implantação e pós-implantação do seu projeto.
 
 ## Adicionar um módulo personalizado para estender `ece-tools`
 
-A variável `ece-tools` O pacote de fornece interfaces de API padrão que seguem os padrões de Versão semântica. Todas as interfaces de API estão marcadas com **@api** anotação. Você pode substituir a implementação da API padrão pela sua própria, criando um módulo personalizado e modificando o código padrão conforme necessário.
+O pacote `ece-tools` fornece interfaces de API padrão que seguem os padrões de Versão Semântica. Todas as interfaces de API estão marcadas com a anotação **@api**. Você pode substituir a implementação da API padrão pela sua própria, criando um módulo personalizado e modificando o código padrão conforme necessário.
 
-Para usar o módulo personalizado com o Adobe Commerce na infraestrutura em nuvem, você deve registrar seu módulo na lista de extensões para o `ece-tools` pacote. O processo de registro é semelhante ao processo usado para registrar módulos no Adobe Commerce.
+Para usar o módulo personalizado com o Adobe Commerce na infraestrutura em nuvem, você deve registrar seu módulo na lista de extensões do pacote `ece-tools`. O processo de registro é semelhante ao processo usado para registrar módulos no Adobe Commerce.
 
 **Para registrar um módulo com o `ece-tools` pacote**:
 
-1. Criar ou estender o `registration.php` na raiz do módulo.
+1. Crie ou estenda o arquivo `registration.php` na raiz do módulo.
 
    ```php?start_inline=1
    \Magento\MagentoCloud\ExtensionRegistrar::register('module-name', __DIR__);
    ```
 
-1. Atualize o `autoload` para que o arquivo de configuração do módulo inclua a variável `registration.php` arquivo no qual carregar automaticamente os arquivos do módulo `composer.json`.
+1. Atualize a seção `autoload` do arquivo de configuração do módulo para incluir o arquivo `registration.php` para carregar automaticamente os arquivos do módulo em `composer.json`.
 
    ```json
    {
@@ -253,7 +253,7 @@ Para usar o módulo personalizado com o Adobe Commerce na infraestrutura em nuve
    }
    ```
 
-1. Adicione o `config/services.xml` no módulo. Essa configuração é mesclada `config/services.xml` de `ece-tools` pacote.
+1. Adicione o arquivo `config/services.xml` ao módulo. Esta configuração foi mesclada com `config/services.xml` do pacote `ece-tools`.
 
    ```xml
    <?xml version="1.0" encoding="UTF-8" ?>
@@ -271,7 +271,7 @@ Para usar o módulo personalizado com o Adobe Commerce na infraestrutura em nuve
    </container>
    ```
 
-Para saber mais sobre a injeção de dependência, consulte [Injeção de dependência do Symfony](https://symfony.com/doc/current/components/dependency_injection.html).
+Para saber mais sobre a injeção de dependência, consulte [Injeção de dependência Symfony](https://symfony.com/doc/current/components/dependency_injection.html).
 
 <!-- link definitions -->
 

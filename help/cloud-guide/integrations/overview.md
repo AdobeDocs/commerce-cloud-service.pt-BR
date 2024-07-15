@@ -22,7 +22,7 @@ As integrações são úteis para usar serviços externos, como hospedagem do Gi
 
 >[!TAB CLI]
 
-**Para adicionar uma integração usando a CLI da nuvem**:
+**Para adicionar uma integração usando a CLI da Nuvem**:
 
 O comando a seguir inicia prompts interativos para selecionar o tipo e as opções da nova integração.
 
@@ -54,7 +54,7 @@ Exemplo de resposta:
 
 **Para adicionar uma integração usando o[!DNL Cloud Console]**:
 
-1. Entrada _Configurações do projeto_, clique em **[!UICONTROL Integrations]**.
+1. Em _Configurações do projeto_, clique em **[!UICONTROL Integrations]**.
 
 1. Clique em um tipo de integração ou clique em **[!UICONTROL Add integration]**.
 
@@ -64,26 +64,26 @@ Exemplo de resposta:
 
 >[!ENDTABS]
 
-## Webinários do Commerce
+## Webhooks do Commerce
 
-Você pode configurar webhooks do Commerce no seu projeto na nuvem com o [variável global ENABLE_WEBHOOKS](../environment/variables-global.md#enable_webhooks). Os webhooks do Commerce enviam solicitações para um servidor externo em resposta a eventos gerados pelo Commerce. A variável [_Guia do Webhooks_](https://developer.adobe.com/commerce/extensibility/webhooks) A descreve esse recurso detalhadamente.
+Você pode configurar webhooks do Commerce no seu projeto na nuvem com a [variável global ENABLE_WEBHOOKS](../environment/variables-global.md#enable_webhooks). Os webhooks do Commerce enviam solicitações para um servidor externo em resposta a eventos gerados pelo Commerce. O [_Guia de Webhooks_](https://developer.adobe.com/commerce/extensibility/webhooks) descreve esse recurso detalhadamente.
 
 ## Webhooks genéricos
 
-Você pode capturar e relatar eventos do repositório e da infraestrutura da nuvem usando uma integração de webhook personalizada para `POST` Mensagens JSON para um _webhook_ URL.
+Você pode capturar e relatar eventos de repositório e infraestrutura da nuvem usando uma integração de webhook personalizada para `POST` mensagens JSON para uma URL de _webhook_.
 
-**Para adicionar um URL de webhook, use a seguinte sintaxe**:
+**Para adicionar uma URL de webhook, use a seguinte sintaxe**:
 
 ```bash
 magento-cloud integration:add --type=webhook --url=https://hook-url.example.com
 ```
 
-- `type`—Especifique a `webhook` tipo de integração.
-- `url`—Fornece o URL do webhook que pode receber mensagens JSON.
+- `type` — Especifique o tipo de integração `webhook`.
+- `url` — Forneça o URL do webhook que pode receber mensagens JSON.
 
 O exemplo de resposta mostra uma série de prompts que fornecem uma oportunidade de personalizar a integração. Usar a resposta padrão (em branco) envia mensagens sobre todos os eventos em todos os ambientes em um projeto.
 
-Você pode personalizar a integração para criar relatórios específicos [events](#events-to-report), como enviar o código para uma ramificação. Por exemplo, você pode especificar a variável `environment.push` evento para enviar uma mensagem quando um usuário envia código para uma ramificação:
+Você pode personalizar a integração para relatar [eventos](#events-to-report) específicos, como o envio de código para uma ramificação. Por exemplo, você pode especificar o evento `environment.push` para enviar uma mensagem quando um usuário envia código para uma ramificação:
 
 ```terminal
 Events to report (--events)
@@ -93,7 +93,7 @@ Enter comma-separated values (or leave this blank)
 >
 ```
 
-Você pode optar por relatar eventos em um `pending`, `in_progress`ou `complete` estado:
+Você pode optar por relatar eventos em um estado `pending`, `in_progress` ou `complete`:
 
 ```terminal
 States to report (--states)
@@ -103,7 +103,7 @@ Enter comma-separated values (or leave this blank)
 >
 ```
 
-E você pode _include_ ou _excluir_ mensagens para ambientes específicos:
+E você pode _incluir_ ou _excluir_ mensagens para ambientes específicos:
 
 ```terminal
 Included environments (--environments)
@@ -171,14 +171,14 @@ Integration integration-ID (webhook) updated
 | `environment.branch` | Uma ramificação foi criada usando o console de gerenciamento |
 | `environment.deactivate` | Uma ramificação foi &quot;desativada&quot;. O código ainda está lá, mas o ambiente foi destruído |
 | `environment.delete` | Uma filial foi excluída |
-| `environment.initialize` | A variável `master` ramificação do projeto inicializada com uma primeira confirmação |
+| `environment.initialize` | A ramificação `master` do projeto foi inicializada com uma primeira confirmação |
 | `environment.merge` | Uma ramificação ativa foi mesclada usando o console de gerenciamento ou a API |
 | `environment.push` | Um usuário enviou o código a uma ramificação |
 | `environment.restore` | Um usuário restaurou um instantâneo |
 | `environment.route.create` | Uma rota foi criada usando o console de gerenciamento |
 | `environment.route.delete` | Uma rota foi excluída usando o console de gerenciamento |
 | `environment.route.update` | Uma rota foi modificada usando o console de gerenciamento |
-| `environment.subscription.update` | A variável `master` O ambiente foi redimensionado porque a assinatura foi alterada, mas não há alterações de conteúdo |
+| `environment.subscription.update` | O ambiente `master` foi redimensionado porque a assinatura foi alterada, mas não há alterações de conteúdo |
 | `environment.synchronize` | Um ambiente teve dados ou código copiado novamente de seu ambiente pai |
 | `environment.update.http_access` | As regras de acesso HTTP para um ambiente foram modificadas |
 | `environment.update.restrict_robots` | O recurso de bloquear todos os robôs foi ativado ou desativado |

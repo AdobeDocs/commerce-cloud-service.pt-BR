@@ -17,48 +17,48 @@ ht-degree: 0%
 
 Os projetos do Adobe Commerce em infraestrutura em nuvem usam acesso com base em funções. Há duas funções disponíveis no nível do projeto:
 
-- **Administrador do projeto**—Acesso de gravação a todos os ambientes de projeto e gerenciamento de usuários, código de push e atualização das configurações do projeto.
-- **Visualizador de projetos**— acesso somente para visualização a todos os ambientes de projeto.
+- **Administrador do projeto**—Grava acesso a todos os ambientes do projeto e pode gerenciar usuários, código de push e atualizar configurações do projeto.
+- **Visualizador do projeto** — Acesso somente para visualização a todos os ambientes do projeto.
 
 Visualizadores de projeto não podem executar tarefas em nenhum ambiente; no entanto, você pode conceder aos visualizadores do projeto acesso de gravação a um tipo de ambiente específico.
 
-O acesso no nível do ambiente é baseado no tipo de ambiente: produção, preparo e desenvolvimento. Conceder um usuário _visualizador_ permissão para _desenvolvimento_ ambientes significa que eles podem visualizar **all** ambientes de desenvolvimento no projeto. A tabela a seguir esclarece as habilidades concedidas a cada nível de permissão:
+O acesso no nível do ambiente é baseado no tipo de ambiente: produção, preparo e desenvolvimento. Conceder a um usuário _visualizador_ permissão para _ambientes de desenvolvimento_ significa que ele pode exibir **todos** ambientes de desenvolvimento no projeto. A tabela a seguir esclarece as habilidades concedidas a cada nível de permissão:
 
 | Nível de permissão | Access | Acesso SSH |
 | ------------------ | ----------- | :----------: |
-| **Admin** | Executar tarefas de administrador, como alterar configurações, enviar código, executar tarefas e gerenciamento de ramificações, incluindo mesclagem com o ambiente pai | Sim |
+| **Administrador** | Executar tarefas de administrador, como alterar configurações, enviar código, executar tarefas e gerenciamento de ramificações, incluindo mesclagem com o ambiente pai | Sim |
 | **Colaborador** | Enviar código e ramificar o ambiente; não é possível alterar as configurações ou executar ações | Sim |
 | **Visualizador** | Acesso somente para visualização ao tipo de ambiente | Não |
 | **Sem acesso** | Sem acesso ao tipo de ambiente | Não |
 
 {style="table-layout:auto"}
 
-É possível adicionar usuários e atribuir funções usando a `magento-cloud` CLI ou o [!DNL Cloud Console].
+Você pode adicionar usuários e atribuir funções usando a CLI do `magento-cloud` ou o [!DNL Cloud Console].
 
 >[!BEGINSHADEBOX]
 
 **Pré-requisitos:**
 
-- Um usuário registrado com uma Adobe ID. Um usuário deve [registrar-se para uma conta Adobe](https://account.adobe.com) e depois [inicializar a conta da nuvem](https://console.adobecommerce.com) antes de adicioná-los a um projeto na nuvem.
-- Um usuário atribuiu a **Admin** A função não pode gerenciar usuários com o `magento-cloud` CLI. Somente os usuários que recebem a função **Proprietário da conta** A função pode gerenciar usuários.
+- Um usuário registrado com uma Adobe ID. Um usuário deve [se registrar para uma conta Adobe](https://account.adobe.com) e depois [inicializar sua conta da nuvem](https://console.adobecommerce.com) para poder adicioná-lo a um projeto da nuvem.
+- Um usuário com a função de **Administrador** atribuída não pode gerenciar usuários com a CLI `magento-cloud`. Somente usuários com a função **Proprietário da conta** podem gerenciar usuários.
 
 >[!ENDSHADEBOX]
 
 ## Gerenciar usuários com a CLI
 
-Use o `magento-cloud` CLI para gerenciar usuários e integrar a sistemas automatizados:
+Use a CLI do `magento-cloud` para gerenciar usuários e integrar a sistemas automatizados:
 
-- `magento-cloud user:add`- adicionar um usuário ao projeto
-- `magento-cloud user:delete`- excluir um usuário
-- `magento-cloud user:list [users]`-listar usuários de projeto
-- `magento-cloud user:role`-exibir ou alterar a função de usuário
-- `magento-cloud user:update`- atualizar a função do usuário em um projeto
+- `magento-cloud user:add`-adicionar um usuário ao projeto
+- `magento-cloud user:delete`-excluir um usuário
+- `magento-cloud user:list [users]` usuários da lista de projetos
+- `magento-cloud user:role`-visualizar ou alterar a função de usuário
+- `magento-cloud user:update` - atualizar função de usuário em um projeto
 
-Os exemplos a seguir usam o `magento-cloud` CLI para adicionar um usuário, configurar funções, modificar atribuições de projetos e atribuir funções de usuário.
+Os exemplos a seguir usam a CLI do `magento-cloud` para adicionar um usuário, configurar funções, modificar atribuições de projetos e atribuir funções de usuário.
 
 **Para adicionar um usuário e atribuir funções**:
 
-1. Use o `magento-cloud` CLI para adicionar o usuário.
+1. Use a CLI do `magento-cloud` para adicionar o usuário.
 
    ```bash
    magento-cloud user:add
@@ -66,7 +66,7 @@ Os exemplos a seguir usam o `magento-cloud` CLI para adicionar um usuário, conf
 
    >[!IMPORTANT]
    >
-   >O usuário deve ter uma Adobe ID; consulte a [pré-requisitos](#add-users-and-manage-access).
+   >O usuário deve ter uma Adobe ID; consulte os [pré-requisitos](#add-users-and-manage-access).
 
 1. Siga as instruções: especifique o endereço de email do usuário, defina as funções de projeto e de ambiente e adicione o usuário.
 
@@ -113,7 +113,7 @@ Current role(s) of User (alice@example.com) on Production (project_id):
 
 ### Adicionar um usuário a vários ambientes
 
-Para adicionar um usuário como `viewer` em um `Production` ambiente e como um `contributor` em um `Integration` ambiente:
+Para adicionar um usuário como `viewer` em um ambiente `Production` e como `contributor` em um ambiente `Integration`:
 
 ```bash
 magento-cloud user:add alice@example.com -r production:v -r integration:c
@@ -121,43 +121,43 @@ magento-cloud user:add alice@example.com -r production:v -r integration:c
 
 ### Atualizar permissões de ambiente do usuário
 
-Para atualizar as permissões de ambiente do usuário para `admin` no `Production` ambiente:
+Para atualizar as permissões do ambiente do usuário para `admin` no ambiente `Production`:
 
 ```bash
 magento-cloud user:update alice@example.com -r production:a
 ```
 
-## Gerenciar usuários no [!DNL Cloud Console]
+## Gerenciar usuários do [!DNL Cloud Console]
 
-Você pode usar o [[!DNL Cloud Console]](../../get-started/cloud-console.md) para adicionar permissões e usar o _Editar_ recurso para modificar permissões de um usuário existente.
+Você pode usar o [[!DNL Cloud Console]](../../get-started/cloud-console.md) para adicionar permissões e usar o recurso _Editar_ para modificar permissões para um usuário existente.
 
 >[!IMPORTANT]
 >
->O usuário deve ter uma Adobe ID; consulte a [pré-requisitos](#add-users-and-manage-access).
+>O usuário deve ter uma Adobe ID; consulte os [pré-requisitos](#add-users-and-manage-access).
 
 ### Adicionar um usuário ao projeto
 
 1. Faça logon no [[!DNL Cloud Console]](https://console.adobecommerce.com/).
 
-1. Selecione um projeto na lista _Todos os projetos_ lista.
+1. Selecione um projeto na lista _Todos os projetos_.
 
 1. No painel Projeto, clique no ícone de configuração no canto superior direito.
 
 1. Em _Configurações do projeto_, clique em **[!UICONTROL Access]**.
 
-1. No _Access_ clique em **[!UICONTROL Add]**.
+1. No modo de exibição _Acesso_, clique em **[!UICONTROL Add]**.
 
-1. Conclua o _[!UICONTROL Add User]_formulário:
+1. Preencha o formulário _[!UICONTROL Add User]_:
 
    - Insira o endereço de email do usuário.
 
-   - **[!UICONTROL Project admin]**—concede direitos de administrador a todas as configurações e tipos de ambiente.
+   - **[!UICONTROL Project admin]**—conceda direitos de Administrador a todos os tipos de configurações e ambientes.
 
-   - **[!UICONTROL Environment types and permissions]**—conceder acesso e níveis de permissão específicos a determinados tipos de ambientes. _Sem acesso_, _Admin_ (alterar configurações, executar ação, mesclar código), _Colaborador_ (código push) ou _Visualizador_ (exibir apenas).
+   - **[!UICONTROL Environment types and permissions]** — conceder acesso e níveis de permissão específicos a determinados tipos de ambientes. _Sem acesso_, _Administrador_ (alterar configurações, executar ação, mesclar código), _Colaborador_ (código de push) ou _Visualizador_ (somente exibição).
 
    >[!TIP]
    >
-   >Somente um **Administrador do projeto** O pode gerenciar usuários em qualquer ambiente. Para conceder a um usuário acesso ao **Access** guia, outro **Administrador do projeto** ou o **Proprietário da conta** deve atribuir a esse usuário a função **Administrador do projeto** função.
+   >Somente um **Administrador do projeto** pode gerenciar usuários em qualquer ambiente. Para conceder a um usuário acesso à guia **Acesso**, outro **Administrador de projeto** ou o **Proprietário da conta** deve atribuir a esse usuário a função de **Administrador de projeto**.
 
 1. Clique em **[!UICONTROL Add User]**.
 
@@ -177,11 +177,11 @@ Quando a imposição de MFA é habilitada em um projeto de infraestrutura do Ado
 
 Depois de adicionar um usuário a um projeto na nuvem, peça para o usuário revisar as configurações de segurança da conta e adicionar as seguintes configurações de segurança, conforme necessário:
 
-- **Ativar TFA**— atenda aos padrões de segurança e conformidade configurando a autenticação de dois fatores. Projetos configurados com [Imposição de MFA](multi-factor-authentication.md) exigir o TFA em contas que usam SSH para acessar os projetos.
+- **Habilitar TFA**—Atenda aos padrões de segurança e conformidade configurando a autenticação de dois fatores. Projetos configurados com [imposição de MFA](multi-factor-authentication.md) exigem o TFA em contas que usam SSH para acessar os projetos.
 
-- **Habilitar chaves SSH**— Os usuários que exigem acesso ao Adobe Commerce em repositórios de código-fonte de infraestrutura em nuvem devem habilitar chaves SSH em suas contas. Consulte [Conexões seguras](../development/secure-connections.md).
+- **Habilitar chaves SSH** — Os usuários que exigem acesso ao Adobe Commerce em repositórios de código-fonte de infraestrutura em nuvem devem habilitar chaves SSH em suas contas. Consulte [Conexões seguras](../development/secure-connections.md).
 
-- **Criar um token de API**—Os usuários devem gerar um token de API usado para acessar SSH a um ambiente. Você precisa do token para habilitar fluxos de trabalho de autenticação para processos automatizados.
+- **Criar um token de API** — Os usuários devem gerar um token de API que seja usado para acesso SSH a um ambiente. Você precisa do token para habilitar fluxos de trabalho de autenticação para processos automatizados.
 
   Em projetos com imposição de MFA ativada, você deve usar o token da API para autenticar solicitações de acesso SSH de contas automatizadas. O token permite que processos automatizados ignorem workflows de autenticação que exigem o TFA.
 
@@ -194,15 +194,15 @@ O Adobe Commerce na infraestrutura em nuvem é compatível com o TFA usando qual
 - [FreeOTP (Android)](https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp)
 - [GAuth Authenticator (Firefox OS, desktop, outros)](https://github.com/gbraad-apps/gauth)
 
-As instruções para instalar o aplicativo autenticador e habilitar o TFA estão disponíveis no _Configurações da conta_ página no [!DNL Cloud Console].
+As instruções para instalar o aplicativo autenticador e habilitar o TFA estão disponíveis na página _Configurações de conta_ em [!DNL Cloud Console].
 
 **Para habilitar o TFA em sua conta de usuário**:
 
-1. Efetue logon no [sua conta](https://console.adobecommerce.com).
+1. Faça logon em [sua conta](https://console.adobecommerce.com).
 
 1. No menu de conta superior direito, clique em **[!UICONTROL My Profile]**.
 
-1. No _Segurança_ clique em **[!UICONTROL Set up application]**.
+1. Na guia _Segurança_, clique em **[!UICONTROL Set up application]**.
 
 1. Se você não tiver um aplicativo autenticador aprovado no dispositivo móvel, use as instruções vinculadas para instalar um.
 
@@ -210,13 +210,13 @@ As instruções para instalar o aplicativo autenticador e habilitar o TFA estão
 
    - No dispositivo móvel, abra o aplicativo autenticador. Em seguida, adicione o código de configuração ao aplicativo.
 
-   - No [!UICONTROL **[!UICONTROL TFA set up - Application]**] digite o código TFA do seu dispositivo móvel na caixa **[!UICONTROL Application verification code]** campo.
+   - Na página [!UICONTROL **[!UICONTROL TFA set up - Application]**], digite o código do TFA de seu dispositivo móvel no campo **[!UICONTROL Application verification code]**.
 
    - Clique em **[!UICONTROL Verify and save]**.
 
      Se o código for válido, o Adobe enviará uma notificação ao endereço de email da conta confirmando que a conta agora tem o TFA.
 
-1. Opcional. Ativar _Navegador confiável_ configurações para armazenar o código de autenticação em cache no navegador por 30 dias.
+1. Opcional. Habilite as configurações do _Navegador confiável_ para armazenar em cache o código de autenticação no navegador por 30 dias.
 
    Essa configuração reduz o número de desafios de autenticação durante o logon no projeto.
 
@@ -224,15 +224,15 @@ As instruções para instalar o aplicativo autenticador e habilitar o TFA estão
 
 1. Salve os códigos de recuperação.
 
-   - No _Configuração do TFA - Recuperação_ página de códigos, copie e salve os códigos de recuperação para poder fazer logon no projeto do Adobe Commerce na infraestrutura em nuvem quando não for possível acessar o dispositivo móvel ou o aplicativo de autenticação.
+   - Na página _Configuração do TFA - Recuperação_ códigos, copie e salve os códigos de recuperação para poder fazer logon no projeto Adobe Commerce na infraestrutura em nuvem quando não for possível acessar o dispositivo móvel ou o aplicativo de autenticação.
 
    - Copie os códigos de recuperação para outro local ou anote-os caso perca o acesso ao dispositivo ou ao aplicativo de autenticação.
 
-   - Clique em **Salvar** para salvar os códigos em sua conta de modo que você possa visualizá-los e gerenciá-los nas configurações de segurança da conta.
+   - Clique em **Salvar** para salvar os códigos em sua conta para que você possa exibi-los e gerenciá-los nas configurações de segurança da conta.
 
      >[!WARNING]
      >
-     >Se você perder o acesso a uma conta com o TFA e não tiver a lista de códigos de recuperação, entre em contato com o administrador do projeto ou [Enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para redefinir o aplicativo TFA.
+     >Se você perder o acesso a uma conta com TFA e não tiver a lista de códigos de recuperação, entre em contato com o administrador do projeto ou [Envie um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para redefinir o aplicativo TFA.
 
 1. Após concluir a configuração do TFA, clique em **Salvar** para atualizar sua conta.
 
@@ -240,17 +240,17 @@ As instruções para instalar o aplicativo autenticador e habilitar o TFA estão
 
    - Faça logout da sua conta.
    - Faça logon com seu nome de usuário e senha.
-   - Quando solicitado, insira o código TFA para a variável `accounts.magento.cloud` entrada do aplicativo autenticador no dispositivo móvel.
+   - Quando solicitado, insira o código TFA para a entrada `accounts.magento.cloud` do aplicativo autenticador em seu dispositivo móvel.
 
 ### Gerenciar códigos de configuração e recuperação do TFA
 
-Você pode gerenciar a configuração do TFA para uma conta do Adobe Commerce na infraestrutura em nuvem na _Segurança_ seção no _Meu perfil_ página.
+Você pode gerenciar a configuração de TFA para uma conta Adobe Commerce na infraestrutura em nuvem na seção _Segurança_ da página _Meu perfil_.
 
-1. Efetue logon no [sua conta](https://console.adobecommerce.com).
+1. Faça logon em [sua conta](https://console.adobecommerce.com).
 
 1. No menu de conta superior direito, clique em **[!UICONTROL My Profile]**.
 
-1. No _Meu perfil_ clique no link **[!UICONTROL Security]** guia.
+1. Na página _Meu perfil_, clique na guia **[!UICONTROL Security]**.
 
 1. Use os links disponíveis para atualizar as configurações do TFA para sua conta do Adobe Commerce na infraestrutura em nuvem:
 
@@ -271,13 +271,13 @@ Em projetos que têm a imposição de MFA habilitada, você deve ter um token de
 
 **Para criar um token de API**:
 
-1. Efetue logon no [sua conta](https://console.adobecommerce.com).
+1. Faça logon em [sua conta](https://console.adobecommerce.com).
 
 1. No menu de conta superior direito, clique em **[!UICONTROL My Profile]**.
 
-1. No _Meu perfil_ clique no link **[!UICONTROL API tokens]** guia.
+1. Na página _Meu perfil_, clique na guia **[!UICONTROL API tokens]**.
 
-1. Clique em **[!UICONTROL Create API token]** e insira um nome, por exemplo, especifique um nome que corresponda ao usuário do computador ou ao processo automatizado que usa o token da API.
+1. Clique em **[!UICONTROL Create API token]** e digite um nome, por exemplo, especifique um nome que corresponda ao usuário da máquina ou ao processo automatizado que usa o token de API.
 
    ![Tokens de API](../../assets/api-token-name.png)
 

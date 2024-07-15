@@ -9,18 +9,18 @@ ht-degree: 0%
 
 ## Excluir o trecho de VCL personalizado
 
-1. [Fazer logon](/help/get-started/onboarding.md#access-your-admin-panel) para o Administrador.
+1. [Faça logon](/help/get-started/onboarding.md#access-your-admin-panel) no Administrador.
 
-1. Clique em **Lojas** > **Configurações** > **Configuração** > **Avançado** > **Sistema**.
+1. Clique em **Lojas** > **Configurações** > **Configuração** > **Avançadas** > **Sistema**.
 
-1. Expandir **Cache de Página Inteira** > **Configuração do Fastly** > **Trechos de VCL Personalizados**.
+1. Expanda **Cache de Página Inteira** > **Configuração Rápida** > **Trechos de VCL Personalizados**.
 
    ![Gerenciar trechos de VCL personalizados](/help/assets/cdn/fastly-manage-snippets.png)
 
-1. No _Ação_ clique no ícone de lixeira ao lado do trecho a ser excluído.
+1. Na coluna _Ação_, clique no ícone de lixeira ao lado do trecho a ser excluído.
 
-1. Na próxima janela modal, clique em **DELETE** e ativar uma nova versão.
+1. Na próxima janela modal, clique em **DELETE** e ative uma nova versão.
 
 >[!WARNING]
 >
->A variável _Trechos de VCL personalizados_ A opção da interface do usuário mostra apenas os trechos adicionados pelo Administrador do Adobe Commerce. Se você adicionar trechos usando a API Fastly, use a API para [gerenciá-los](/help/cloud-guide/cdn/fastly-vcl-custom-snippets.md#manage-vcl-using-the-api).
+>A opção _Custom VCL snippets_ UI mostra apenas os trechos adicionados pelo Administrador do Adobe Commerce. Se você adicionar trechos usando a API Fastly, use a API para [gerenciá-los](/help/cloud-guide/cdn/fastly-vcl-custom-snippets.md#manage-vcl-using-the-api).

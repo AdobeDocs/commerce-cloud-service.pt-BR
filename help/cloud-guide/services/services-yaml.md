@@ -12,13 +12,13 @@ ht-degree: 0%
 
 # Configurar serviços
 
-A variável `services.yaml` O arquivo define os serviços compatíveis e usados pelo Adobe Commerce na infraestrutura em nuvem, como MySQL, Redis e Elasticsearch ou OpenSearch. Não é necessário assinar provedores de serviços externos. Este arquivo está no estado `.magento` diretório do seu projeto.
+O arquivo `services.yaml` define os serviços com suporte e usados pelo Adobe Commerce na infraestrutura em nuvem, como MySQL, Redis e Elasticsearch ou OpenSearch. Não é necessário assinar provedores de serviços externos. Este arquivo está no diretório `.magento` do seu projeto.
 
-O script de implantação usa os arquivos de configuração no `.magento` diretório para provisionar o ambiente com os serviços configurados. Um serviço se torna disponível para o seu aplicativo se estiver incluído na [`relationships`](../application/properties.md#relationships) propriedade do `.magento.app.yaml` arquivo. A variável `services.yaml` o arquivo contém o _type_ e _disco_ valores. O tipo de serviço define o serviço _name_ e _version_.
+O script de implantação usa os arquivos de configuração no diretório `.magento` para provisionar o ambiente com os serviços configurados. Um serviço ficará disponível para o aplicativo se for incluído na propriedade [`relationships`](../application/properties.md#relationships) do arquivo `.magento.app.yaml`. O arquivo `services.yaml` contém os valores de _tipo_ e _disco_. O tipo de serviço define o serviço _nome_ e _versão_.
 
 Alterar uma configuração de serviço faz com que uma implantação provisione o ambiente com os serviços atualizados, o que afeta os seguintes ambientes:
 
-- Todos os ambientes iniciais, incluindo ambientes de produção `master`
+- Todos os ambientes iniciais, incluindo Produção `master`
 - Ambientes de integração Pro
 
 {{pro-update-service}}
@@ -33,7 +33,7 @@ A infraestrutura em nuvem é compatível com os seguintes serviços e os implant
 - [Elasticsearch](elasticsearch.md)
 - [OpenSearch](opensearch.md)
 
-É possível exibir versões padrão e valores de disco na versão atual, [padrão `services.yaml` arquivo](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). A amostra a seguir mostra a `mysql`, `redis`, `opensearch` ou `elasticsearch`, e `rabbitmq` serviços definidos na `services.yaml` arquivo de configuração:
+Você pode exibir versões padrão e valores de disco no [arquivo `services.yaml` padrão](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml) atual. A amostra a seguir mostra os serviços `mysql`, `redis`, `opensearch` ou `elasticsearch` e `rabbitmq` definidos no arquivo de configuração `services.yaml`:
 
 ```yaml
 mysql:
@@ -54,7 +54,7 @@ rabbitmq:
 
 ## Valores de serviço
 
-Você deve fornecer a ID de serviço e a configuração do tipo de serviço `type: <name>:<version>`. Se o serviço usar armazenamento persistente, você deverá fornecer um valor de disco.
+Você deve fornecer a ID de serviço e a configuração de tipo de serviço `type: <name>:<version>`. Se o serviço usar armazenamento persistente, você deverá fornecer um valor de disco.
 
 Usar o seguinte formato:
 
@@ -66,9 +66,9 @@ Usar o seguinte formato:
 
 ### `service-id`
 
-A variável `service-id` value identifica o serviço no projeto. Você só pode usar caracteres alfanuméricos em minúsculas: `a` para `z` e `0` para `9`, como `redis`.
+O valor `service-id` identifica o serviço no projeto. Você só pode usar caracteres alfanuméricos minúsculos: `a` a `z` e `0` a `9`, como `redis`.
 
-Este _service-id_ o valor é usado no [`relationships`](../application/properties.md#relationships) propriedade do `.magento.app.yaml` arquivo de configuração:
+O valor _service-id_ é usado na propriedade [`relationships`](../application/properties.md#relationships) do arquivo de configuração `.magento.app.yaml`:
 
 ```yaml
 relationships:
@@ -85,14 +85,14 @@ redis2:
     type: redis:<version>
 ```
 
-Renomear um serviço no `services.yaml` arquivo **remove permanentemente** o seguinte:
+Renomear um serviço no arquivo `services.yaml` **remove permanentemente** o seguinte:
 
 - O serviço existente antes de criar um serviço com o novo nome especificado.
-- Todos os dados existentes para o serviço são removidos. A Adobe recomenda que você [fazer backup do ambiente inicial](../storage/snapshots.md) antes de alterar o nome de um serviço existente.
+- Todos os dados existentes para o serviço são removidos. A Adobe recomenda que você [faça backup de seu ambiente de Início](../storage/snapshots.md) antes de alterar o nome de um serviço existente.
 
 ### `type`
 
-A variável `type` value especifica o nome e a versão do serviço. Por exemplo:
+O valor `type` especifica o nome e a versão do serviço. Por exemplo:
 
 ```yaml
 mysql:
@@ -101,7 +101,7 @@ mysql:
 
 ### `disk`
 
-A variável `disk` value especifica o tamanho do armazenamento de disco persistente (em MB) a ser alocado para o serviço. Os serviços que usam armazenamento persistente, como o MySQL, devem fornecer um valor de disco. Os serviços que usam memória em vez de armazenamento persistente, como Redis, não exigem um valor de disco.
+O valor `disk` especifica o tamanho do armazenamento de disco persistente (em MB) a ser alocado para o serviço. Os serviços que usam armazenamento persistente, como o MySQL, devem fornecer um valor de disco. Os serviços que usam memória em vez de armazenamento persistente, como Redis, não exigem um valor de disco.
 
 ```yaml
 mysql:
@@ -113,9 +113,9 @@ A quantidade de armazenamento padrão atual por projeto é de 5 GB ou 512 0 MB. 
 
 ## Relacionamentos de serviço
 
-Em projetos de infraestrutura em nuvem do Adobe Commerce, o [relacionamentos](../application/properties.md#relationships) configurado no `.magento.app.yaml` determinam quais serviços estão disponíveis para o seu aplicativo.
+Em projetos de infraestrutura na nuvem do Adobe Commerce, as [relações](../application/properties.md#relationships) do serviço configuradas no arquivo `.magento.app.yaml` determinam quais serviços estão disponíveis para o seu aplicativo.
 
-Você pode recuperar os dados de configuração de todos os relacionamentos de serviço do [`$MAGENTO_CLOUD_RELATIONSHIPS`](../environment/variables-cloud.md) variável de ambiente. Os dados de configuração incluem o nome, o tipo e a versão do serviço, juntamente com todos os detalhes de conexão necessários, como o número da porta e as credenciais de logon.
+Você pode recuperar os dados de configuração de todas as relações de serviço da variável de ambiente [`$MAGENTO_CLOUD_RELATIONSHIPS`](../environment/variables-cloud.md). Os dados de configuração incluem o nome, o tipo e a versão do serviço, juntamente com todos os detalhes de conexão necessários, como o número da porta e as credenciais de logon.
 
 **Para verificar relações no ambiente local**:
 
@@ -125,7 +125,7 @@ Você pode recuperar os dados de configuração de todos os relacionamentos de s
    magento-cloud relationships
    ```
 
-1. Confirme a `service` e `type` da resposta. A resposta fornece informações de conexão, como endereço IP e número da porta.
+1. Confirme os `service` e `type` da resposta. A resposta fornece informações de conexão, como endereço IP e número da porta.
 
    >Resposta de amostra abreviada
 
@@ -147,7 +147,7 @@ Você pode recuperar os dados de configuração de todos os relacionamentos de s
            port: 3306
    ```
 
-**Para verificar relacionamentos em ambientes remotos**:
+**Para verificar relações em ambientes remotos**:
 
 1. Use o SSH para fazer logon no ambiente remoto.
 
@@ -157,44 +157,44 @@ Você pode recuperar os dados de configuração de todos os relacionamentos de s
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
    ```
 
-   ou use o seguinte `ece-tools` comando para exibir relacionamentos:
+   ou use o seguinte comando `ece-tools` para exibir relações:
 
    ```bash
    php ./vendor/bin/ece-tools env:config:show services
    ```
 
-1. Confirme a `service` e `type` da resposta. A resposta fornece informações de conexão, como endereço IP e número da porta, além de quaisquer credenciais de nome de usuário e senha necessárias.
+1. Confirme os `service` e `type` da resposta. A resposta fornece informações de conexão, como endereço IP e número da porta, além de quaisquer credenciais de nome de usuário e senha necessárias.
 
 ## Versões de serviço
 
-O suporte à versão do serviço e à compatibilidade do Adobe Commerce na infraestrutura em nuvem é determinado pelas versões implantadas e testadas na infraestrutura em nuvem e, às vezes, difere das versões compatíveis com implantações locais do Adobe Commerce. Consulte [Requisitos do sistema](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) no _Instalação_ guia para obter uma lista de dependências de software de terceiros que o Adobe testou com versões específicas do Adobe Commerce e do Magento Open Source.
+O suporte à versão do serviço e à compatibilidade do Adobe Commerce na infraestrutura em nuvem é determinado pelas versões implantadas e testadas na infraestrutura em nuvem e, às vezes, difere das versões compatíveis com implantações locais do Adobe Commerce. Consulte [Requisitos do sistema](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) no guia _Instalação_ para obter uma lista de dependências de software de terceiros que o Adobe testou com versões específicas do Adobe Commerce e do Magento Open Source.
 
 ### Verificações de EOL de software
 
-Durante o processo de implantação, a variável `ece-tools` O pacote verifica as versões de serviço instaladas em relação às datas de fim da vida útil (EOL) de cada serviço.
+Durante o processo de implantação, o pacote `ece-tools` verifica as versões de serviço instaladas em relação às datas de fim da vida útil (EOL) de cada serviço.
 
 - Se uma versão do serviço estiver dentro de três meses da data EOL, uma notificação será exibida no log de implantação.
 - Se a data EOL estiver no passado, uma notificação de aviso será exibida.
 
-Para manter a segurança da loja, atualize as versões de software instaladas antes que elas atinjam o fim da vida útil. É possível revisar as datas de EOL na [ece-tools `eol.yaml` arquivo](https://github.com/magento/ece-tools/blob/develop/config/eol.yaml).
+Para manter a segurança da loja, atualize as versões de software instaladas antes que elas atinjam o fim da vida útil. Você pode examinar as datas de fim de vida útil no [arquivo de `eol.yaml` das ferramentas ece](https://github.com/magento/ece-tools/blob/develop/config/eol.yaml).
 
 ### Migrar para o OpenSearch
 
 {{elasticsearch-support}}
 
-Para a versão 2.4.4 e posterior do Adobe Commerce, consulte [Configurar o serviço OpenSearch](opensearch.md).
+Para o Adobe Commerce versão 2.4.4 e posterior, consulte [Configurar o serviço OpenSearch](opensearch.md).
 
 ## Alterar versão do serviço
 
 É possível atualizar a versão do serviço instalada para compatibilidade com a versão do Adobe Commerce implantada no ambiente de nuvem.
 
-Não é possível fazer o downgrade da versão de serviço de um serviço instalado diretamente. No entanto, é possível criar um serviço com a versão necessária. Consulte [Fazer downgrade da versão do serviço](#downgrade-version).
+Não é possível fazer o downgrade da versão de serviço de um serviço instalado diretamente. No entanto, é possível criar um serviço com a versão necessária. Consulte [Rebaixar versão de serviço](#downgrade-version).
 
 ### Atualizar versão do serviço instalado
 
-Você pode atualizar a versão do serviço instalado atualizando a configuração do serviço no `services.yaml` arquivo.
+Você pode atualizar a versão do serviço instalado atualizando a configuração do serviço no arquivo `services.yaml`.
 
-1. Altere o [`type`](#type) valor do serviço na `.magento/services.yaml` arquivo:
+1. Alterar o valor [`type`](#type) do serviço no arquivo `.magento/services.yaml`:
 
    > Definição do serviço original
 
@@ -234,19 +234,19 @@ Não é possível fazer o downgrade de um serviço instalado diretamente. Você 
 
 1. Crie um serviço e salve os dados do serviço existente.
 
-Ao alterar a versão do serviço, você deve atualizar a configuração do serviço no `services.yaml` e atualize os relacionamentos na variável `.magento.app.yaml` arquivo.
+Ao alterar a versão do serviço, você deve atualizar a configuração do serviço no arquivo `services.yaml` e atualizar as relações no arquivo `.magento.app.yaml`.
 
-**Para fazer downgrade de uma versão de serviço renomeando um serviço existente**:
+**Para fazer o downgrade de uma versão de serviço renomeando um serviço existente**:
 
-1. Renomeie o serviço existente na `.magento/services.yaml` e altere a versão.
+1. Renomeie o serviço existente no arquivo `.magento/services.yaml` e altere a versão.
 
    >[!WARNING]
    >
    >A renomeação de um serviço existente o substitui e exclui todos os dados. Se precisar manter os dados, crie um serviço em vez de renomear o existente.
 
-   Por exemplo, para fazer o downgrade da versão do MariaDB para o _mysql_ serviço da versão 10.4 para 10.3, altere a versão existente _service-id_ e _type_ configuração.
+   Por exemplo, para baixar a versão do MariaDB para o serviço _mysql_ da versão 10.4 para 10.3, altere a configuração existente do _service-id_ e do _type_.
 
-   > Original `services.yaml` definição
+   > Definição original de `services.yaml`
 
    ```yaml
    mysql:
@@ -254,7 +254,7 @@ Ao alterar a versão do serviço, você deve atualizar a configuração do servi
        disk: 5120
    ```
 
-   > Novo `services.yaml` definição
+   > Nova definição `services.yaml`
 
    ```yaml
    mysql2:
@@ -262,16 +262,16 @@ Ao alterar a versão do serviço, você deve atualizar a configuração do servi
         disk: 5120
    ```
 
-1. Atualizar as relações no `.magento.app.yaml` arquivo.
+1. Atualizar as relações no arquivo `.magento.app.yaml`.
 
-   > Original `.magento.app.yaml` configuração
+   > Configuração original de `.magento.app.yaml`
 
    ```yaml
    relationships:
        database: "mysql:mysql"
    ```
 
-   > Atualizado `.magento.app.yaml` configuração
+   > Atualização da configuração `.magento.app.yaml`
 
    ```yaml
    relationships:
@@ -280,9 +280,9 @@ Ao alterar a versão do serviço, você deve atualizar a configuração do servi
 
 1. Adicionar, confirmar e enviar por push as alterações de código.
 
-**Para fazer downgrade de um serviço criando um serviço**:
+**Para fazer o downgrade de um serviço criando um serviço**:
 
-1. Adicione uma definição de serviço à `services.yaml` para o seu projeto com a especificação de versão rebaixada. Consulte _mysql2_ no exemplo a seguir:
+1. Adicione uma definição de serviço ao arquivo `services.yaml` para seu projeto com a especificação de versão rebaixada. Consulte _mysql2_ no seguinte exemplo:
 
    > services.yaml
 
@@ -295,16 +295,16 @@ Ao alterar a versão do serviço, você deve atualizar a configuração do servi
        disk: 5120
    ```
 
-1. Altere a configuração de relacionamentos na variável `.magento.app.yaml` arquivo para usar o novo serviço.
+1. Altere a configuração de relações no arquivo `.magento.app.yaml` para usar o novo serviço.
 
-   > Original `.magento.app.yaml` configuração
+   > Configuração original de `.magento.app.yaml`
 
    ```yaml
    relationships:
        database: "mysql:mysql"
    ```
 
-   > Novo `.magento.app.yaml` configuração
+   > Nova configuração `.magento.app.yaml`
 
    ```yaml
    relationships:

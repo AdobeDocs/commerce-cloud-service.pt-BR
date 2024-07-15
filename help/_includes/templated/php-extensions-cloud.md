@@ -58,18 +58,18 @@ ht-degree: 0%
                 filtro<br>
                 ftp<br>
                 hash<br>
-                iconv<br>
+                Iconv<br>
                 json<br>
                 mbstring<br>
                 mysqlnd<br>
                 openssl<br>
                 pcre<br>
-                dop<br>
+                pdo<br>
                 pdo_sqlite<br>
                 phar<br>
                 posix<br>
-                readline<br>
-                session<br>
+                linha de leitura<br>
+                sessão<br>
                 sqlite3<br>
                 tokenizer<br>
                 xml<br>
@@ -90,14 +90,14 @@ ht-degree: 0%
                 oauth<br>
                 pdo_mysql<br>
                 propro<br>
-                soletração<br>
+                soletrar<br>
                 raphf<br>
                 recode<br>
                 redis<br>
-                shmop sockets<br>
+                soquetes para lojas<br>
                 sódio<br>
                 ssh2<br>
-                arrumado<br>
+                arrumar<br>
                 xdebug<br>
                 xmlrpc<br>
                 xsl<br>

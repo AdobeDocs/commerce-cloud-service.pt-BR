@@ -1,6 +1,6 @@
 ---
 title: Definir cache para arquivos estáticos
-description: Saiba como definir opções de armazenamento em cache no [!DNL Commerce] arquivo de configuração do aplicativo.
+description: Saiba como definir opções de armazenamento em cache no arquivo de configuração do aplicativo  [!DNL Commerce] .
 feature: Cloud, Configuration, Cache, SCD
 exl-id: ca6db004-47fc-45ea-b8db-c0ecc3c2136b
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -12,15 +12,15 @@ ht-degree: 0%
 
 # Definir cache para arquivos estáticos
 
-O TTL (time-to-live) do cache para sua mídia e arquivos estáticos é definido no `.magento.app.yaml` arquivo de configuração usando o `expires` chave.
+O TTL (tempo de vida útil) de cache para seus arquivos de mídia e estáticos está definido no arquivo de configuração `.magento.app.yaml` usando a chave `expires`.
 
 >[!NOTE]
 >
->Antes de atualizar o ambiente de Produção, é importante testar as alterações no ambiente de Preparo. [Enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para obter ajuda com a atualização da configuração nesses ambientes.
+>Antes de atualizar o ambiente de Produção, é importante testar as alterações no ambiente de Preparo. [Envie um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para obter ajuda para atualizar a configuração nesses ambientes.
 
-1. Especifique o tempo de TTL (em segundos) no [`web` propriedade](web-property.md) do `.magento.app.yaml` arquivo. Você pode adicionar o `expires` chave em `locations` ou sob `"/media"` e `"/static"`.
+1. Especifique o tempo de TTL (em segundos) na propriedade [`web` ](web-property.md) do arquivo `.magento.app.yaml`. Você pode adicionar a chave `expires` em `locations` ou em `"/media"` e `"/static"`.
 
-   Para evitar que o cache expire, use o `expires: -1` par de valor-chave. Consulte o exemplo a seguir:
+   Para evitar que o cache expire, use o par de valor-chave `expires: -1`. Consulte o exemplo a seguir:
 
    ```yaml
    # The configuration of app when it is exposed to the web.

@@ -11,31 +11,31 @@ ht-degree: 0%
 
 # Configurar emails de saída
 
-Você pode ativar e desativar os emails de saída para cada ambiente do [!DNL Cloud Console] ou na linha de comando. Permita que os emails de saída de ambientes de integração e de preparo enviem emails de autenticação de dois fatores ou redefinam senhas para usuários do projeto na nuvem.
+Você pode habilitar e desabilitar emails de saída para cada ambiente do [!DNL Cloud Console] ou da linha de comando. Permita que os emails de saída de ambientes de integração e de preparo enviem emails de autenticação de dois fatores ou redefinam senhas para usuários do projeto na nuvem.
 
-Por padrão, os emails de saída são ativados nos ambientes de Produção e Preparo. No entanto, [!UICONTROL Enable outgoing emails] pode parecer desativado nas configurações do ambiente até que você defina a variável `enable_smtp` propriedade por meio da [linha de comando](#enable-emails-in-the-cli) ou [Cloud Console](outgoing-emails.md#enable-emails-in-the-cloud-console).
+Por padrão, os emails de saída são ativados nos ambientes de Produção e Preparo. No entanto, [!UICONTROL Enable outgoing emails] pode parecer desabilitado nas configurações do ambiente até que você defina a propriedade `enable_smtp` por meio da [linha de comando](#enable-emails-in-the-cli) ou do [Console da Nuvem](outgoing-emails.md#enable-emails-in-the-cloud-console).
 
-Atualização do [!UICONTROL enable_smtp] valor da propriedade por [linha de comando](#enable-emails-in-the-cli) também altera a [!UICONTROL Enable outgoing emails] configuração de valor para esse ambiente no Cloud Console.
+A atualização do valor da propriedade [!UICONTROL enable_smtp] pela [linha de comando](#enable-emails-in-the-cli) também altera o valor da configuração [!UICONTROL Enable outgoing emails] desse ambiente no Console da Nuvem.
 
 {{redeploy-warning}}
 
 ## Ativar emails no Cloud Console
 
-Use o **[!UICONTROL Outgoing emails]** alternar no _Configurar ambiente_ exibir para ativar ou desativar o suporte por email.
+Use o botão **[!UICONTROL Outgoing emails]** no modo de exibição _Configurar ambiente_ para habilitar ou desabilitar o suporte por email.
 
-Se os emails de saída precisarem ser desativados ou reativados nos ambientes de Produção Pro ou de Preparo, você poderá enviar um [Tíquete de suporte do Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide).
+Se os emails de saída precisarem ser desativados ou reativados nos ambientes de Produção Pro ou de Preparo, você poderá enviar um [tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide).
 
 >[!TIP]
 >
->O status do email de saída pode não ser refletido para ambientes Pro no Cloud Console. Use o botão [linha de comando](#enable-emails-in-the-cli) para ativar e testar os emails de saída.
+>O status do email de saída pode não ser refletido para ambientes Pro no Cloud Console. Em vez disso, use a [linha de comando](#enable-emails-in-the-cli) para habilitar e testar emails de saída.
 
 **Para gerenciar o suporte de email do[!DNL Cloud Console]**:
 
 1. Faça logon no [[!DNL Cloud Console]](https://console.adobecommerce.com).
-1. Selecione um projeto na lista _Todos os projetos_ lista.
+1. Selecione um projeto na lista _Todos os projetos_.
 1. No painel Projeto, clique no ícone de configuração no canto superior direito.
 1. Clique em **[!UICONTROL Environments]** e selecione um ambiente específico na lista.
-1. Para ativar ou desativar os emails de saída, alterne _Ativar emails de saída_ **Ligado** ou **Desligado**.
+1. Para habilitar ou desabilitar emails de saída, alterne _Habilitar emails de saída_ **Ativado** ou **Desativado**.
 
    ![Habilitar configuração de email de saída](../../assets/outgoing-emails.png)
 
@@ -43,7 +43,7 @@ Depois de alterar a configuração, o ambiente é criado e implantado com a nova
 
 ## Habilitar emails na CLI
 
-Você pode alterar a configuração de email de um ambiente ativo usando o `magento-cloud` CLI `environment:info` comando para definir o `enable_smtp` propriedade. Habilitar o SMTP atualiza o `MAGENTO_CLOUD_SMTP_HOST` com o endereço IP do host SMTP para enviar e-mails.
+Você pode alterar a configuração de email de um ambiente ativo usando o comando `environment:info` da CLI `magento-cloud` para definir a propriedade `enable_smtp`. Habilitar o SMTP atualiza a variável de ambiente `MAGENTO_CLOUD_SMTP_HOST` com o endereço IP do host SMTP para enviar emails.
 
 **Para gerenciar suporte a email na linha de comando**:
 
@@ -55,7 +55,7 @@ Você pode alterar a configuração de email de um ambiente ativo usando o `mage
    magento-cloud environment:info -e <environment-id> | grep enable_smtp
    ```
 
-1. Altere a configuração de suporte por email definindo o `enable_smtp` variável de ambiente para `true` ou `false`.
+1. Altere a configuração de suporte de email definindo a variável de ambiente `enable_smtp` como `true` ou `false`.
 
    ```bash
    magento-cloud environment:info --refresh -e <environment-id> enable_smtp true

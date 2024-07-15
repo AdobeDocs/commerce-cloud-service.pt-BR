@@ -10,12 +10,12 @@ ht-degree: 0%
 <!-- The template to render with above values -->
 **Versão**: 2002.1.18
 
-Esta referência contém 34 comandos disponíveis através do `ece-tools` ferramenta de linha de comando.
-A lista inicial é gerada automaticamente usando o `ece-tools list` comando no Adobe Commerce na infraestrutura em nuvem.
+Esta referência contém 34 comandos disponíveis através da ferramenta de linha de comando `ece-tools`.
+A lista inicial é gerada automaticamente usando o comando `ece-tools list` no Adobe Commerce na infraestrutura em nuvem.
 
 >[!NOTE]
 >
->Essa referência é gerada a partir da base de código do aplicativo. Para alterar o conteúdo, você pode atualizar o código-fonte para a implementação do comando correspondente no [codebase](https://github.com/magento/magento-cloud-cli) repositório e enviar suas alterações para revisão. Outra maneira é _Envie seus comentários_ (localize o link no canto superior direito). Para obter diretrizes de contribuição, consulte [Contribuições de código](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
+>Essa referência é gerada a partir da base de código do aplicativo. Para alterar o conteúdo, você pode atualizar o código-fonte para a implementação de comando correspondente no repositório [codebase](https://github.com/magento/magento-cloud-cli) e enviar suas alterações para revisão. Outra maneira é _Fornecer comentários_ (localizar o link no canto superior direito). Para obter as diretrizes de contribuição, consulte [Contribuições de código](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
 
 ## `_complete`
 
@@ -243,7 +243,7 @@ ece-tools db-dump [-d|--remove-definers] [-a|--dump-directory DUMP-DIRECTORY] [-
 
 ### `databases`
 
-Bancos de dados para backup. Valores Disponíveis: [vendas da cotação principal]. Se o valor do argumento não for especificado, os backups do banco de dados serão criados usando as credenciais armazenadas na `MAGENTO_CLOUD_RELATIONSHIP` variável de ambiente ou/e a variável `stage.deploy.DATABASE_CONFIGURATION` propriedade do arquivo de configuração .magento.env.yaml.
+Bancos de dados para backup. Valores Disponíveis: [vendas da cotação principal]. Se o valor do argumento não for especificado, os backups do banco de dados serão criados usando as credenciais armazenadas na variável de ambiente `MAGENTO_CLOUD_RELATIONSHIP` ou/e a propriedade `stage.deploy.DATABASE_CONFIGURATION` do arquivo de configuração .magento.env.yaml.
 
 - Padrão: `[]`
 
@@ -955,7 +955,7 @@ Não faça nenhuma pergunta interativa
 
 ## `cloud:config:create`
 
-Cria um `.magento.env.yaml` com a configuração de variável de build, implantação e pós-implantação especificada. Substitui qualquer existente `.magento,.env.yaml` arquivo.
+Cria um arquivo `.magento.env.yaml` com a configuração de variável de compilação, implantação e pós-implantação especificada. Substitui qualquer arquivo `.magento,.env.yaml` existente.
 
 ```bash
 ece-tools cloud:config:create <configuration>
@@ -1019,7 +1019,7 @@ Não faça nenhuma pergunta interativa
 
 ## `cloud:config:update`
 
-Atualiza o existente `.magento.env.yaml` com a configuração especificada. Cria `.magento.env.yaml` arquivo se ele não existir.
+Atualiza o arquivo `.magento.env.yaml` existente com a configuração especificada. Cria o arquivo `.magento.env.yaml` se ele não existir.
 
 ```bash
 ece-tools cloud:config:update <configuration>
@@ -1083,7 +1083,7 @@ Não faça nenhuma pergunta interativa
 
 ## `cloud:config:validate`
 
-Valida `.magento.env.yaml` arquivo de configuração
+Valida o arquivo de configuração `.magento.env.yaml`
 
 ```bash
 ece-tools cloud:config:validate

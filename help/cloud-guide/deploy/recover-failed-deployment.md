@@ -21,9 +21,9 @@ Você pode se recuperar de uma implantação com falha de qualquer uma das segui
 
 ## Limpeza, remoção e reimplantação
 
-Para limpar da implantação anterior, identifique o componente que foi adicionado ou atualizado e remova-o. Primeiro, faça logon no ambiente remoto e limpe manualmente o conteúdo do `var` diretório. Remova o componente da `composer.json` e reimplantar o ambiente.
+Para limpar da implantação anterior, identifique o componente que foi adicionado ou atualizado e remova-o. Primeiro, faça logon no ambiente remoto e limpe manualmente o conteúdo do diretório `var`. Em seguida, remova o componente do arquivo `composer.json` e reimplante o ambiente.
 
-**Para limpar o `var` diretórios**:
+**Para limpar os `var` diretórios**:
 
 1. Na estação de trabalho local, altere para o diretório do projeto.
 
@@ -33,7 +33,7 @@ Para limpar da implantação anterior, identifique o componente que foi adiciona
    magento-cloud ssh
    ```
 
-1. Limpe a `var` diretórios.
+1. Limpar os diretórios `var`.
 
    ```shell
    rm -rf var/*
@@ -51,7 +51,7 @@ Para limpar da implantação anterior, identifique o componente que foi adiciona
    composer clear-cache
    ```
 
-1. Remova o componente da `composer.json` arquivo.
+1. Remover o componente do arquivo `composer.json`.
 
    ```bash
    composer remove <component-name>:<version>
@@ -81,6 +81,6 @@ Para limpar da implantação anterior, identifique o componente que foi adiciona
 
 {{redeploy-warning}}
 
-Saiba mais sobre como restaurar um ambiente sem um backup no [Restaurar um ambiente](../development/restore-environment.md).
+Veja mais sobre como restaurar um ambiente sem um backup em [Restaurar um ambiente](../development/restore-environment.md).
 
 {{stuck-deployment-tip}}

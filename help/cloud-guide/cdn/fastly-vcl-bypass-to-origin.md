@@ -24,13 +24,13 @@ Você pode configurar o trecho para ignorar o cache rápido de solicitações de
 
 {{$include /help/_includes/vcl-snippet-prerequisites.md}}
 
-**Para ignorar o cache do Fastly com base no endereço IP ou no URL**:
+**Para ignorar o cache do Fastly com base no endereço IP ou na URL**:
 
 {{admin-login-step}}
 
 1. Clique em **Lojas** > Configurações > **Configuração** > **Avançado** > **Sistema**.
 
-1. Expandir **Cache de Página Inteira** > **Configuração do Fastly** > **Trechos de VCL Personalizados**.
+1. Expanda **Cache de Página Inteira** > **Configuração Rápida** > **Trechos de VCL Personalizados**.
 
 1. Clique em **Criar trecho personalizado**.
 
@@ -58,13 +58,13 @@ Você pode configurar o trecho para ignorar o cache rápido de solicitações de
      if (req.url ~ "/media/feeds/GoogleShoppingHiVisNew.xml") {  return (pass);}
      ```
 
-     Para uma correspondência exata de URL, use o `==` operador em vez de `~` operador. Consulte a [Referência do Fastly VCL] para obter detalhes.
+     Para uma correspondência exata de URL, use o operador `==` em vez do operador `~`. Consulte a [Referência de VCL do Fastly] para obter detalhes.
 
 1. Clique em **Criar**.
 
-   ![Criar trecho Fastly Bypass VCL](/help/assets/cdn/fastly-create-bypass-snippet.png)
+   ![Criar/Ignorar Fastly no trecho do VCL](/help/assets/cdn/fastly-create-bypass-snippet.png)
 
-1. Depois que a página for recarregada, clique em **Carregar VCL para Fastly** no *Configuração do Fastly* seção.
+1. Depois que a página for recarregada, clique em **Carregar VCL para Fastly** na seção *Configuração Fastly*.
 
 1. Depois que o upload for concluído, atualize o cache de acordo com a notificação na parte superior da página.
 

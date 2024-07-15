@@ -22,11 +22,11 @@ Cada um dos comandos do assistente inteligente fornece uma resposta de verifica�
 
 | Comando | Descrição |
 | ------- | ------------|
-| `wizard:ideal-state` | Verifique se o SCD está no estado _build_ estágio, a variável `SKIP_HTML_MINIFICATION` é `true`e o gancho post_deploy configurado no ambiente de nuvem. Não utilizar no ambiente de desenvolvimento local. |
-| `wizard:master-slave` | Verifique se `REDIS_USE_SLAVE_CONNECTION` e a variável `MYSQL_USE_SLAVE_CONNECTION` é `true`. |
-| `wizard:scd-on-demand` | Verifique se `SCD_ON_DEMAND` a variável de ambiente global é `true`. |
-| `wizard:scd-on-build` | Verifique se `SCD_ON_DEMAND` a variável de ambiente global é `false` e a variável `SKIP_SCD` a variável de ambiente é `false` para o _build_ estágio. Verifica se `config.php` o arquivo contém informações de lojas, grupos de lojas e sites. |
-| `wizard:scd-on-deploy` | Verifique se `SCD_ON_DEMAND` a variável de ambiente global é `false` e a variável `SKIP_SCD` a variável de ambiente é `false` para o _implantar_ estágio. Verifica se `config.php` o arquivo faz _NOT_ contém a lista de lojas, grupos de lojas e sites com informações relacionadas. |
+| `wizard:ideal-state` | Verifique se o SCD está no estágio _build_, a variável `SKIP_HTML_MINIFICATION` é `true` e o gancho post_deploy configurado no ambiente de nuvem. Não utilizar no ambiente de desenvolvimento local. |
+| `wizard:master-slave` | Verifique se as variáveis `REDIS_USE_SLAVE_CONNECTION` e `MYSQL_USE_SLAVE_CONNECTION` são `true`. |
+| `wizard:scd-on-demand` | Verifique se a variável de ambiente global `SCD_ON_DEMAND` é `true`. |
+| `wizard:scd-on-build` | Verifique se a variável de ambiente global `SCD_ON_DEMAND` é `false` e a variável de ambiente `SKIP_SCD` é `false` para o estágio _build_. Verifica se o arquivo `config.php` contém informações de lojas, grupos de lojas e sites. |
+| `wizard:scd-on-deploy` | Verifique se a variável de ambiente global `SCD_ON_DEMAND` é `false` e a variável de ambiente `SKIP_SCD` é `false` para o estágio _deploy_. Verifica se o arquivo `config.php` contém _NOT_ a lista de lojas, grupos de lojas e sites com informações relacionadas. |
 
 Como exemplo, você pode verificar se a sua configuração ativa corretamente o recurso SCD sob demanda:
 
@@ -48,7 +48,7 @@ SCD on-demand is disabled
 
 ## Verificar uma configuração ideal
 
-A variável _ideal_ A configuração do seu projeto na nuvem ajuda a minimizar o tempo de inatividade da implantação, aquecendo o cache e gerando conteúdo estático quando solicitado pelo usuário. Este assistente é executado automaticamente durante o processo de implantação. Se a nuvem não estiver configurada para esse _estado ideal_, você receberá uma mensagem semelhante à seguinte:
+A configuração _ideal_ para o projeto na nuvem ajuda a minimizar o tempo de inatividade da implantação, aquecendo o cache e gerando conteúdo estático quando solicitado pelo usuário. Este assistente é executado automaticamente durante o processo de implantação. Se a Nuvem não estiver configurada para este _estado ideal_, você receberá uma mensagem semelhante à seguinte:
 
 ```terminal
 - SCD on build is not configured
@@ -79,7 +79,7 @@ Com base na saída, você precisa fazer as seguintes correções na sua configur
            php ./vendor/bin/ece-tools post-deploy
    ```
 
-1. Envie alterações de código e execute o teste novamente. Quando sua configuração é _ideal_, você receberá a seguinte mensagem.
+1. Envie alterações de código e execute o teste novamente. Quando sua configuração for _ideal_, você receberá a seguinte mensagem.
 
    ```terminal
    Ideal state is configured

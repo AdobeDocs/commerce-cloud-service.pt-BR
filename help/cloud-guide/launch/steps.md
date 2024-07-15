@@ -35,9 +35,9 @@ O valor alterado de Tempo de vida útil é importante para verificar o domínio 
 
 ## Testar o armazenamento ativo
 
-Conclua alguns testes UAT na loja ao vivo para confirmar se tudo está carregando e as ações estão concluídas corretamente. Para obter uma lista de testes, consulte [Testar implantação](../test/staging-and-production.md#complete-uat-testing).
+Conclua alguns testes UAT na loja ao vivo para confirmar se tudo está carregando e as ações estão concluídas corretamente. Para obter uma lista de testes, consulte [Implantação de teste](../test/staging-and-production.md#complete-uat-testing).
 
-## Pós-lançamento
+## Post-Launch
 
 O Adobe verifica e monitora o site para garantir que todos os serviços e acessos estejam em verde. Permanecemos disponíveis conforme necessário para verificar se todos os registros do sistema, serviços, armazenamento em cache e funções estão funcionando conforme você e seus clientes precisam.
 

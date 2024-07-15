@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Endereços IP regionais
 
-As tabelas a seguir listam os endereços IP de entrada e saída usados pelo Adobe Commerce na infraestrutura em nuvem [ambientes de integração](../architecture/pro-architecture.md#integration-environment). Esses endereços IP são estáveis, mas podem mudar. O Adobe notifica os clientes antes de fazer qualquer alteração no endereço IP.
+As tabelas a seguir listam os endereços IP de entrada e saída usados pelo Adobe Commerce em [ambientes de integração](../architecture/pro-architecture.md#integration-environment) da infraestrutura em nuvem. Esses endereços IP são estáveis, mas podem mudar. O Adobe notifica os clientes antes de fazer qualquer alteração no endereço IP.
 
 A sintaxe para lidar com os ambientes de integração é a seguinte:
 
@@ -19,11 +19,11 @@ A sintaxe para lidar com os ambientes de integração é a seguinte:
 <branch>-<unique-ID>-<project-ID>.<region>.magentosite.cloud
 ```
 
-- **Identificador exclusivo** = 7 caracteres alfanuméricos aleatórios
-- **ID do projeto** = ID de projeto de 13 caracteres
+- **Identificação exclusiva** = 7 caracteres alfanuméricos aleatórios
+- **ID do projeto** = ID do projeto com 13 caracteres
 - **Região** = nome da região do AWS ou Azure
 
-Você pode usar o `ping` para recuperar o endereço IP de entrada:
+Você pode usar o comando `ping` para recuperar o endereço IP de entrada:
 
 ```bash
 ping integration-abcd123-abcd78910.us-3.magentosite.cloud

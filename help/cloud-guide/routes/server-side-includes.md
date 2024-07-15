@@ -31,7 +31,7 @@ Você pode ativar ou desativar o SSI por rota no `.magento/routes.yaml`; por exe
             enabled: true
 ```
 
-O SSI permite incluir em sua resposta HTML diretivas que fazem com que o servidor preencha partes do HTML, respeitando quaisquer [configuração de armazenamento em cache](caching.md).
+O SSI permite incluir em suas diretivas de resposta HTML que fazem com que o servidor preencha partes do HTML, respeitando qualquer [configuração de cache](caching.md) existente.
 
 O exemplo a seguir mostra como inserir um controle de data dinâmico na parte superior de uma página e outro controle de data na parte inferior, que é atualizado a cada 600 segundos:
 
@@ -42,7 +42,7 @@ echo date(DATE_RFC2822);
 <!--#include virtual="time.php" -->
 ```
 
-Adicione o seguinte a `time.php`:
+Adicionar o seguinte a `time.php`:
 
 ```php?start_inline=1
 header("Cache-Control: max-age=600");

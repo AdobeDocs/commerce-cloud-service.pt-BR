@@ -11,26 +11,26 @@ ht-degree: 0%
 
 # Configurar Xdebug
 
-[!DNL Xdebug] é uma extensão para depurar seu PHP. Embora você possa usar um IDE de sua escolha, o seguinte explica como configurar [!DNL Xdebug] e [!DNL PhpStorm] para depurar no ambiente local.
+[!DNL Xdebug] é uma extensão para depurar seu PHP. Embora você possa usar um IDE de sua escolha, o seguinte explica como configurar o [!DNL Xdebug] e o [!DNL PhpStorm] para depurar em seu ambiente local.
 
 >[!NOTE]
 >
->Você pode configurar [!DNL Xdebug] para ser executado no ambiente do Cloud Docker para depuração local sem alterar a configuração do projeto do Adobe Commerce na infraestrutura em nuvem. Consulte [Configurar Xdebug para Docker](https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/).
+>Você pode configurar o [!DNL Xdebug] para ser executado no ambiente do Cloud Docker para depuração local sem alterar a configuração do projeto do Adobe Commerce na infraestrutura em nuvem. Consulte [Configurar Xdebug para Docker](https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/).
 
-Para habilitar [!DNL Xdebug], você deve configurar um arquivo no repositório Git, configurar o IDE e configurar o encaminhamento de portas. É possível definir algumas configurações no `magento.app.yaml` arquivo. Após a edição, insira as alterações do Git em todos os ambientes de inicialização e integração Pro para habilitar [!DNL Xdebug]. [!DNL Xdebug] O já está disponível em ambientes de preparo e produção profissionais.
+Para habilitar [!DNL Xdebug], você deve configurar um arquivo no repositório Git, configurar o IDE e configurar o encaminhamento de portas. Você pode definir algumas configurações no arquivo `magento.app.yaml`. Após a edição, envie as alterações do Git por push em todos os ambientes de Iniciação e integração Pro para habilitar o [!DNL Xdebug]. O [!DNL Xdebug] já está disponível em ambientes de Preparo e Produção Profissionais.
 
-Depois de configurado, você pode depurar comandos CLI, solicitações da Web e código. Lembre-se de que todos os ambientes de infraestrutura em nuvem são somente leitura. Clonar o código no ambiente de desenvolvimento local para executar a depuração. Para ambientes de preparo e produção profissionais, consulte [instruções adicionais](#debug-for-pro-staging-and-production) para [!DNL Xdebug].
+Depois de configurado, você pode depurar comandos CLI, solicitações da Web e código. Lembre-se de que todos os ambientes de infraestrutura em nuvem são somente leitura. Clonar o código no ambiente de desenvolvimento local para executar a depuração. Para ambientes de Produção e Preparo Pro, consulte [instruções adicionais](#debug-for-pro-staging-and-production) para [!DNL Xdebug].
 
 ## Requisitos
 
-Para executar e usar o [!DNL Xdebug], é necessário o URL SSH para o ambiente. Você pode localizar as informações por meio da [[!DNL Cloud Console]](../project/overview.md) ou seu [!DNL Cloud Onboarding UI].
+Para executar e usar o [!DNL Xdebug], você precisa da URL SSH do ambiente. Você pode localizar as informações por meio do [[!DNL Cloud Console]](../project/overview.md) ou do seu [!DNL Cloud Onboarding UI].
 
 ## Configurar Xdebug
 
-Para configurar [!DNL Xdebug], siga estas etapas:
+Para configurar o [!DNL Xdebug], siga estas etapas:
 
 - [Trabalhe em uma ramificação para enviar atualizações de arquivo](#get-started-with-a-branch)
-- [Ativar [!DNL Xdebug] para ambientes](#enable-xdebug-in-your-environment)
+- [Habilitar [!DNL Xdebug] para ambientes](#enable-xdebug-in-your-environment)
 - [Configurar o IDE](#configure-phpstorm)
 - [Configurar encaminhamento de porta](#set-up-port-forwarding)
 
@@ -40,15 +40,15 @@ Para adicionar [!DNL Xdebug], o Adobe recomenda trabalhar em [uma ramificação 
 
 ### Ativar o Xdebug no seu ambiente
 
-Você pode ativar [!DNL Xdebug] diretamente para todos os ambientes de Início e integração Pro. Essa etapa de configuração não é necessária para ambientes de produção e preparo profissionais. Consulte [Depuração para preparo e produção profissionais](#debug-for-pro-staging-and-production).
+Você pode habilitar o [!DNL Xdebug] diretamente para todos os ambientes de inicialização e integração Pro. Essa etapa de configuração não é necessária para ambientes de produção e preparo profissionais. Consulte [Depuração para Preparo e Produção Profissionais](#debug-for-pro-staging-and-production).
 
-Para habilitar [!DNL Xdebug] para o seu projeto, adicione `xdebug` para o `runtime:extensions` seção do `.magento.app.yaml` arquivo.
+Para habilitar [!DNL Xdebug] para o seu projeto, adicione `xdebug` à seção `runtime:extensions` do arquivo `.magento.app.yaml`.
 
-**Para ativar o Xdebug**:
+**Para habilitar Xdebug**:
 
-1. No terminal local, abra o `.magento.app.yaml` em um editor de texto.
+1. No terminal local, abra o arquivo `.magento.app.yaml` em um editor de texto.
 
-1. No `runtime` seção, em `extensions`, adicionar `xdebug`. Por exemplo:
+1. Na seção `runtime`, em `extensions`, adicione `xdebug`. Por exemplo:
 
    ```yaml
    runtime:
@@ -60,7 +60,7 @@ Para habilitar [!DNL Xdebug] para o seu projeto, adicione `xdebug` para o `runti
            - xdebug
    ```
 
-1. Salve as alterações no `.magento.app.yaml` e saia do editor de texto.
+1. Salve as alterações no arquivo `.magento.app.yaml` e saia do editor de texto.
 
 1. Adicione, confirme e envie as alterações para reimplantar o ambiente.
 
@@ -76,54 +76,54 @@ Para habilitar [!DNL Xdebug] para o seu projeto, adicione `xdebug` para o `runti
    git push origin <environment-ID>
    ```
 
-Quando implantados em ambientes iniciais e ambientes de integração Pro, [!DNL Xdebug] O agora está disponível. Continue configurando seu IDE. Para o PhpStorm, consulte [Configurar o PhpStorm](#configure-phpstorm).
+Quando implantado em ambientes iniciais e ambientes de integração Pro, o [!DNL Xdebug] agora está disponível. Continue configurando seu IDE. Para PhpStorm, consulte [Configurar PhpStorm](#configure-phpstorm).
 
 ### Configurar o PhpStorm
 
-A variável [PhpStorm](https://www.jetbrains.com/phpstorm/) O IDE deve ser configurado para funcionar corretamente com [!DNL Xdebug].
+O IDE [PhpStorm](https://www.jetbrains.com/phpstorm/) deve ser configurado para funcionar corretamente com [!DNL Xdebug].
 
 **Para configurar o PhpStorm para funcionar com o Xdebug**:
 
-1. No projeto PhpStorm, abra o **Configurações** painel.
+1. No projeto PhpStorm, abra o painel **Configurações**.
 
-   - _macOS_— Select **PhpStorm** > **Preferências**.
-   - _Windows/Linux_— Select **Arquivo** > **Configurações**.
+   - _macOS_—Selecione **PhpStorm** > **Preferências**.
+   - _Windows/Linux_—Selecione **Arquivo** > **Configurações**.
 
-1. No _Configurações_ , expanda e localize o **Idiomas e estruturas** > **PHP** > **Servidores** seção.
+1. No painel _Configurações_, expanda e localize a seção **Idiomas e Estruturas** > **PHP** > **Servidores**.
 
-1. Clique em **+** para adicionar uma configuração do servidor. O nome do projeto está em cinza na parte superior.
+1. Clique em **+** para adicionar uma configuração de servidor. O nome do projeto está em cinza na parte superior.
 
-1. [Opcional] Defina as seguintes configurações para a nova configuração do servidor. Consulte [Nenhum servidor de depuração configurado](https://www.jetbrains.com/help/phpstorm/troubleshooting-php-debugging.html#no-debug-server-is-configured) no _PHPStorm_ documentação.
+1. [Opcional] Defina as seguintes configurações para a nova configuração do servidor. Consulte [Nenhum servidor de depuração configurado](https://www.jetbrains.com/help/phpstorm/troubleshooting-php-debugging.html#no-debug-server-is-configured) na documentação do _PHPStorm_.
 
-   - **Nome**—Digite o mesmo que o nome do host. Este valor deve corresponder ao valor do `PHP_IDE_CONFIG` variável em [Comandos CLI de depuração](#debug-cli-commands) para usar a CLI para depuração.
-   - **Host**—Digite o nome do host.
-   - **Porta**— Enter `443`.
-   - **Depurador**— Select `Xdebug`.
+   - **Nome** — Insira o mesmo que o nome de host. Este valor deve corresponder ao valor da variável `PHP_IDE_CONFIG` em [Comandos CLI de Depuração](#debug-cli-commands) para usar a CLI para depuração.
+   - **Host** — Digite o nome do host.
+   - **Porta** — Digite `443`.
+   - **Depurador**—Selecione `Xdebug`.
 
-1. Selecionar **Usar mapeamentos de caminho**. No _Arquivo/Diretório_ painel, a raiz do projeto para a variável `serverName` é exibido.
+1. Selecione **Usar mapeamentos de caminho**. No painel _Arquivo/Diretório_, a raiz do projeto para `serverName` é exibida.
 
-1. No **Caminho absoluto no servidor** clique no link **Editar** e adicione uma configuração com base no ambiente.
+1. Na coluna **Caminho absoluto no servidor**, clique no ícone **Editar** e adicione uma configuração com base no ambiente.
 
-   - Para todos os ambientes iniciais e de integração Pro, o caminho remoto é `/app`.
+   - Para todos os ambientes Starter e Pro integration, o caminho remoto é `/app`.
    - Para ambientes de preparo e produção profissionais:
 
       - Produção: `/app/<project_code>/`
-      - Estágios:  `/app/<project_code>_stg/`
+      - Estágios: `/app/<project_code>_stg/`
 
-1. Altere o [!DNL Xdebug] para 9000 no **Idiomas e estruturas** > **PHP** > **Depurar** > **Xdebug** > **Porta de depuração** painel.
+1. Altere a porta [!DNL Xdebug] para 9000 no painel **Languages &amp; Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port**.
 
 1. Clique em **Aplicar**.
 
 ### Configurar encaminhamento de porta
 
-Mapeie o `XDEBUG` conexão do servidor ao seu sistema local. Para fazer qualquer tipo de depuração, você deve encaminhar a porta 9000 do Adobe Commerce no servidor de infraestrutura em nuvem para o computador local. Consulte uma das seguintes seções:
+Mapeie a conexão `XDEBUG` do servidor para o sistema local. Para fazer qualquer tipo de depuração, você deve encaminhar a porta 9000 do Adobe Commerce no servidor de infraestrutura em nuvem para o computador local. Consulte uma das seguintes seções:
 
 - [Encaminhamento de portas no Mac ou UNIX](#port-forwarding-on-mac-or-unix)
 - [Encaminhamento de porta no Windows](#port-forwarding-on-windows)
 
 #### Encaminhamento de portas no Mac ou UNIX®
 
-**Para configurar o encaminhamento de portas em um Mac ou em um ambiente UNIX®**:
+**Para configurar o encaminhamento de portas em um ambiente Mac ou UNIX®**:
 
 1. Abra um terminal.
 
@@ -133,7 +133,7 @@ Mapeie o `XDEBUG` conexão do servidor ao seu sistema local. Para fazer qualquer
    ssh -R 9000:localhost:9000 <ssh url>
    ```
 
-   Use o `-v` (verboso) para que sempre que um soquete for conectado à porta que está sendo encaminhada ele seja exibido no terminal.
+   Use a opção `-v` (detalhada) para que sempre que um soquete for conectado à porta que está sendo encaminhada ele seja exibido no terminal.
 
    Se um erro &quot;não é possível conectar&quot; ou &quot;não foi possível escutar a porta no remoto&quot; for exibido, pode haver outra sessão SSH ativa persistindo no servidor que está ocupando a porta 9000. Se essa conexão não estiver sendo usada, você poderá encerrá-la.
 
@@ -145,11 +145,11 @@ Mapeie o `XDEBUG` conexão do servidor ao seu sistema local. Para fazer qualquer
 
 1. Visualizar sessões SSH existentes por usuário. Tenha cuidado para não afetar um usuário que não seja você mesmo!
 
-   - integração: os nomes de usuários são semelhantes ao `dd2q5ct7mhgus`
-   - Estágios: os nomes de usuários são semelhantes aos `dd2q5ct7mhgus_stg`
-   - Produção: nomes de usuário semelhantes a `dd2q5ct7mhgus`
+   - integração: usuários com nomes semelhantes a `dd2q5ct7mhgus`
+   - Estágios: os nomes de usuários são semelhantes a `dd2q5ct7mhgus_stg`
+   - Produção: nomes de usuários semelhantes a `dd2q5ct7mhgus`
 
-1. Para uma sessão de usuário mais antiga que a sua, localize o valor do pseudoterminal (PTS), como `pts/0`.
+1. Para uma sessão de usuário mais antiga que a sua, localize o valor do pseudo-terminal (PTS), como `pts/0`.
 
 1. Elimine a ID de processo (PID) correspondente ao valor PTS.
 
@@ -174,42 +174,42 @@ Mapeie o `XDEBUG` conexão do servidor ao seu sistema local. Para fazer qualquer
 
 Para configurar o encaminhamento de portas (encapsulamento SSH) no Windows, você deve configurar o aplicativo de terminal do Windows. Este exemplo passa pela criação de um túnel SSH usando [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). Você pode usar outros aplicativos, como o Cygwin. Para obter mais informações sobre outros aplicativos, consulte a documentação do fornecedor fornecida com esses aplicativos.
 
-**Para configurar um túnel SSH no Windows usando o Putty**:
+**Para configurar um túnel SSH no Windows usando Putty**:
 
 1. Se ainda não tiver feito isso, baixe [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
 1. Comece o Putty.
 
-1. No painel Categoria, clique em **Session**.
+1. No painel Categoria, clique em **Sessão**.
 
 1. Insira as seguintes informações:
 
-   - **Nome do host (ou endereço IP)** campo: insira o [URL SSH](../development/secure-connections.md#connect-to-a-remote-environment) para o servidor do Cloud
-   - **Porta** campo: insira `22`
+   - Campo **Nome do host (ou endereço IP)**: insira a [URL do SSH](../development/secure-connections.md#connect-to-a-remote-environment) para o seu servidor na nuvem
+   - Campo **Porta**: Digite `22`
 
    ![Configurar Putty](../../assets/xdebug/putty-session.png)
 
-1. No _Categoria_ clique em **Conexão** > **SSH** > **Túneis**.
+1. No painel _Categoria_, clique em **Conexão** > **SSH** > **Túneis**.
 
 1. Insira as seguintes informações:
 
-   - **Porta de origem** campo: insira `9000`
-   - **Destino** campo: insira `127.0.0.1:9000`
+   - Campo **Porta do Source**: Digite `9000`
+   - Campo **Destino**: Digite `127.0.0.1:9000`
    - Clique em **Remoto**
 
 1. Clique em **Adicionar**.
 
    ![Criar um túnel SSH no Putty](../../assets/xdebug/putty-tunnels.png)
 
-1. No _Categoria_ clique em **Session**.
+1. No painel _Categoria_, clique em **Sessão**.
 
-1. No **Sessões Salvas** insira um nome para este túnel SSH.
+1. No campo **Sessões Salvas**, digite um nome para esse túnel SSH.
 
 1. Clique em **Salvar**.
 
-   ![Salve o túnel SSH](../../assets/xdebug/putty-session-save.png)
+   ![Salve seu túnel SSH](../../assets/xdebug/putty-session-save.png)
 
-1. Para testar o túnel SSH, clique em **Carregar** e, em seguida, clique em **Abertura**.
+1. Para testar o túnel SSH, clique em **Carregar** e em **Abrir**.
 
    Se um erro &quot;não é possível conectar&quot; for exibido, verifique o seguinte:
 
@@ -218,15 +218,15 @@ Para configurar o encaminhamento de portas (encapsulamento SSH) no Windows, voc�
 
 ## Acesso SSH a ambientes Xdebug
 
-Para iniciar a depuração, executar a configuração e muito mais, você precisa dos comandos SSH para acessar os ambientes. Você pode obter essas informações por meio da [[!DNL Cloud Console]](../development/secure-connections.md#use-an-ssh-command) e a planilha do projeto.
+Para iniciar a depuração, executar a configuração e muito mais, você precisa dos comandos SSH para acessar os ambientes. Você pode obter essas informações por meio do [[!DNL Cloud Console]](../development/secure-connections.md#use-an-ssh-command) e da planilha do seu projeto.
 
-Para ambientes iniciais e de integração Pro, é possível usar o seguinte `magento-cloud` Comando da CLI para SSH nesses ambientes:
+Para ambientes Starter e ambientes de integração Pro, você pode usar o seguinte comando da CLI `magento-cloud` para SSH nesses ambientes:
 
 ```bash
 magento-cloud environment:ssh --pipe -e <environment-ID>
 ```
 
-Para usar [!DNL Xdebug], SSH para o ambiente da seguinte forma:
+Para usar [!DNL Xdebug], SSH conecta o ambiente da seguinte maneira:
 
 ```bash
 ssh -R <xdebug listen port>:<host>:<xdebug listen port> <SSH-URL>
@@ -242,22 +242,22 @@ ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 
 >[!NOTE]
 >
->Em ambientes de preparo e produção profissionais, [!DNL Xdebug] está sempre disponível, pois esses ambientes têm uma configuração especial para [!DNL Xdebug]. Todas as solicitações normais da Web são roteadas para um processo PHP dedicado que não tem [!DNL Xdebug]. Portanto, essas solicitações são processadas normalmente e não estão sujeitas à degradação do desempenho quando [!DNL Xdebug] está carregado. Quando uma solicitação da Web é enviada com o [!DNL Xdebug] chave, ela é roteada para um processo PHP separado que tem [!DNL Xdebug] carregado.
+>Em ambientes de Preparo e Produção Profissionais, o [!DNL Xdebug] está sempre disponível, pois esses ambientes têm uma configuração especial para o [!DNL Xdebug]. Todas as requisições normais da web são roteadas para um processo PHP dedicado que não tem [!DNL Xdebug]. Portanto, essas solicitações são processadas normalmente e não estão sujeitas à degradação de desempenho quando [!DNL Xdebug] é carregado. Quando uma solicitação da Web enviada com a chave [!DNL Xdebug] é roteada para um processo PHP separado que tem [!DNL Xdebug] carregado.
 
 Para usar [!DNL Xdebug] especificamente no ambiente de preparo e produção do plano Pro, você cria um túnel SSH separado e uma sessão da Web somente para os quais tem acesso. Esse uso difere do acesso típico, fornecendo acesso apenas a você e não a todos os usuários.
 
 Você precisa do seguinte:
 
-- Comandos SSH para acessar os ambientes. Você pode obter essas informações por meio da [[!DNL Cloud Console]](../project/overview.md) ou seu [!DNL Cloud Onboarding UI].
-- A variável `xdebug_key` valor definido ao configurar os ambientes de Preparo e Pro.
+- Comandos SSH para acessar os ambientes. Você pode obter essas informações por meio do [[!DNL Cloud Console]](../project/overview.md) ou do seu [!DNL Cloud Onboarding UI].
+- O valor `xdebug_key` definido ao configurar os ambientes de Preparo e Pro.
 
-  A variável `xdebug_key` O pode ser encontrado usando SSH para fazer logon no nó primário e executando:
+  O `xdebug_key` pode ser encontrado usando SSH para fazer logon no nó primário e executando:
 
   ```bash
   cat /etc/platform/*/nginx.conf | grep xdebug.sock | head -n1
   ```
 
-**Para configurar um túnel SSH para um ambiente de preparo ou produção**:
+**Para configurar um túnel SSH para um ambiente de Preparo ou de Produção**:
 
 1. Abra um terminal.
 
@@ -273,19 +273,19 @@ Você precisa do seguinte:
    ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
    ```
 
-**Para iniciar a depuração usando o URL do ambiente**:
+**Para iniciar a depuração usando a URL de ambiente**:
 
-1. Ativar depuração remota; visite o site no navegador e anexe o seguinte ao URL em que `KEY` é valor de `xdebug_key`.
+1. Habilitar depuração remota; visite o site no navegador e anexe o seguinte à URL em que `KEY` é o valor de `xdebug_key`.
 
    ```http
    ?XDEBUG_SESSION_START=KEY
    ```
 
-   Esta etapa define o cookie que envia solicitações do navegador para acionar [!DNL Xdebug].
+   Esta etapa define o cookie que envia solicitações do navegador para o disparador [!DNL Xdebug].
 
-1. Conclua a depuração com [!DNL Xdebug].
+1. Conclua sua depuração com [!DNL Xdebug].
 
-1. Quando estiver pronto para encerrar a sessão, use o seguinte comando para remover o cookie e finalizar a depuração pelo navegador, onde `KEY` é valor de `xdebug_key`.
+1. Quando estiver pronto para encerrar a sessão, use o seguinte comando para remover o cookie e finalizar a depuração pelo navegador, onde `KEY` é o valor de `xdebug_key`.
 
    ```http
    ?XDEBUG_SESSION_STOP=KEY
@@ -293,7 +293,7 @@ Você precisa do seguinte:
 
    >[!NOTE]
    >
-   >A variável `XDEBUG_SESSION_START` passado por `POST` não são compatíveis.
+   >Não há suporte para o `XDEBUG_SESSION_START` passado por `POST` solicitações.
 
 ## Comandos CLI de depuração
 
@@ -324,7 +324,7 @@ Você pode adicionar opções de tempo de execução, por exemplo:
    php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 bin/magento cache:clean
    ```
 
-   Em ambientes de preparo e produção profissionais, você deve especificar o caminho para a [!DNL Xdebug] O arquivo de configuração do PHP ao depurar comandos da CLI, por exemplo:
+   Em ambientes de preparo e produção Pro, você deve especificar o caminho para o arquivo de configuração PHP [!DNL Xdebug] ao depurar comandos CLI, por exemplo:
 
    ```bash
    php -c /etc/platform/USERNAME/php.xdebug.ini bin/magento cache:clean
@@ -334,41 +334,41 @@ Você pode adicionar opções de tempo de execução, por exemplo:
 
 As etapas a seguir ajudam a depurar solicitações da Web.
 
-1. No _Extensão_ clique em **Depurar** para ativar.
+1. No menu _Extensão_, clique em **Depurar** para habilitar.
 
-1. Clique com o botão direito do mouse, selecione o menu de opções e defina a chave do IDE como **PHPSTORM**.
+1. Clique com o botão direito do mouse, selecione o menu de opções e defina a chave IDE como **PHPSTORM**.
 
-1. Instale o [!DNL Xdebug] cliente no navegador. Configure e ative-o.
+1. Instale o cliente [!DNL Xdebug] no navegador. Configure e ative-o.
 
 ### Exemplo: configuração do Chrome
 
-Esta seção discute como usar [!DNL Xdebug] no Chrome usando o [!DNL Xdebug] Extensão auxiliar. Para obter informações sobre [!DNL Xdebug] para outros navegadores, consulte a documentação do navegador.
+Esta seção discute como usar o [!DNL Xdebug] no Chrome usando a extensão Auxiliar do [!DNL Xdebug]. Para obter informações sobre as ferramentas do [!DNL Xdebug] para outros navegadores, consulte a documentação do navegador.
 
-**Para usar o Xdebug Helper com o Chrome**:
+**Para usar o Auxiliar Xdebug com o Chrome**:
 
-1. Criar um [Túnel SSH](#ssh-access-to-xdebug-environments) ao servidor da nuvem.
+1. Crie um [túnel SSH](#ssh-access-to-xdebug-environments) para o servidor na nuvem.
 
-1. Instale o [Extensão Auxiliar Do Xdebug](https://chromewebstore.google.com/detail/eadndfjplgieldjbigjakmdgkmoaaaoc) na loja Chrome.
+1. Instale a [Extensão auxiliar do Xdebug](https://chromewebstore.google.com/detail/eadndfjplgieldjbigjakmdgkmoaaaoc) do armazenamento do Chrome.
 
-1. Ative a extensão no Chrome conforme mostrado na figura a seguir.
+1. Ative a extensão no Chrome como mostrado na figura a seguir.
 
-   ![Ativar a extensão Xdebug no Chrome](../../assets/xdebug/enable-chrome-ext.png)
+   ![Habilitar a extensão Xdebug no Chrome](../../assets/xdebug/enable-chrome-ext.png)
 
 1. No Chrome, clique com o botão direito do mouse no ícone verde auxiliar na barra de ferramentas do Chrome.
 
-1. No menu pop-up, clique em **Opções**.
+1. No menu suspenso, clique em **Opções**.
 
-1. No _Chave IDE_ clique em **PhpStorm**.
+1. Na lista _Chave IDE_, clique em **PhpStorm**.
 
 1. Clique em **Salvar**.
 
-   ![Opções do assistente do Xdebug](../../assets/xdebug/helper-options.png)
+   ![Opções do Auxiliar de Depuração](../../assets/xdebug/helper-options.png)
 
 1. Abra o projeto PhpStorm.
 
-1. Na barra de navegação superior, clique na guia **Iniciar escuta** ícone.
+1. Na barra de navegação superior, clique no ícone **Iniciar escuta**.
 
-   Se a barra de navegação não for exibida, clique em **Exibir** > **Barra de navegação**.
+   Se a barra de navegação não for exibida, clique em **Exibir** > **Barra de Navegação**.
 
 1. No painel de navegação do PhpStorm, clique duas vezes no arquivo PHP para testar.
 
@@ -380,15 +380,15 @@ O método que você escolher depende de você. Você tem as seguintes opções:
 
 - Confira o código do Git e execute `composer install`
 
-  Este método funciona a menos que `composer.json` O faz referência a packages em repositórios privados aos quais você não tem acesso. Este método resulta na obtenção de toda a base de código do Adobe Commerce.
+  Este método funciona a menos que `composer.json` faça referência a pacotes em repositórios privados aos quais você não tem acesso. Este método resulta na obtenção de toda a base de código do Adobe Commerce.
 
-- Copie o `vendor`, `app`, `pub`, `lib`, e `setup` diretórios
+- Copiar os diretórios `vendor`, `app`, `pub`, `lib` e `setup`
 
   Esse método resulta em ter todos os códigos que você pode testar. Dependendo de quantos ativos estáticos você tem, isso pode resultar em uma longa transferência com um grande volume de arquivos.
 
-- Copie o `vendor` somente diretório
+- Copiar somente o diretório `vendor`
 
-  Como a maioria do código está no estado `vendor` , esse método provavelmente resultará em um bom teste, embora não estejam testando toda a base de código.
+  Como a maioria do código está no diretório `vendor`, esse método provavelmente resultará em um bom teste, embora não esteja testando toda a base de código.
 
 **Para compactar arquivos e copiá-los no computador local**:
 
@@ -400,7 +400,7 @@ O método que você escolher depende de você. Você tem as seguintes opções:
    tar -czf /tmp/<file-name>.tgz <directory list>
    ```
 
-   Por exemplo, para compactar o `vendor` somente diretório:
+   Por exemplo, para compactar somente o diretório `vendor`:
 
    ```bash
    tar -czf /tmp/vendor.tgz vendor

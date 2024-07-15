@@ -15,8 +15,8 @@ ht-degree: 0%
 
 O Adobe fornece um Conjunto de ferramentas da nuvem para o Commerce, que inclui pacotes projetados para implantar e gerenciar instalações e atualizações do Adobe Commerce na plataforma da nuvem.
 
-- [CLI da nuvem](cloud-cli-overview.md)— gerencie projetos e ambientes em nuvem, execute rotinas e execute tarefas de automação com `magento-cloud` CLI.
-- [Cloud Docker for Commerce](cloud-docker.md)— implante o Adobe Commerce em um ambiente Docker para realizar tarefas locais de desenvolvimento, teste e automação.
-- [Patches da nuvem](../development/apply-patches.md)—Aplique patches para integrar versões do Commerce a ambientes em nuvem e fornecer correções essenciais rapidamente.
-- [Pacote ECE-Tools](package-overview.md)— gerencie configurações, crie e implante o aplicativo Adobe Commerce nos ambientes de nuvem remotos.
-- [Integrações](../integrations/overview.md)— integre ferramentas de desenvolvimento comuns, como notificações, webhooks e serviços baseados em Git.
+- [CLI da Nuvem](cloud-cli-overview.md) — Gerencie projetos e ambientes da Nuvem, execute rotinas e execute tarefas de automação com a CLI do `magento-cloud`.
+- [Cloud Docker para Commerce](cloud-docker.md) — Implante o Adobe Commerce em um ambiente do Docker para tarefas locais de desenvolvimento, teste e automação.
+- [Patches da Nuvem](../development/apply-patches.md)—Aplique patches para integrar versões do Commerce com ambientes na Nuvem e fornecer correções críticas rapidamente.
+- [Pacote ECE-Tools](package-overview.md) — gerencie configurações, compile e implante o aplicativo Adobe Commerce nos ambientes de nuvem remotos.
+- [Integrações](../integrations/overview.md)—Integre ferramentas de desenvolvimento comuns, como notificações, webhooks e serviços baseados em Git.

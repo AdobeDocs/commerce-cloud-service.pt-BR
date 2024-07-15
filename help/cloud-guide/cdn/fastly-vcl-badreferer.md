@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Bloquear spam de referência
 
-O exemplo a seguir mostra como configurar [Dicionário Fastly Edge](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) com um trecho de VCL personalizado para bloquear spam de referência do seu site do Adobe Commerce na infraestrutura em nuvem.
+O exemplo a seguir mostra como configurar o [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) com um trecho de VCL personalizado para bloquear o spam de referência do seu Adobe Commerce no site de infraestrutura na nuvem.
 
 >[!NOTE]
 >
@@ -26,29 +26,29 @@ O exemplo a seguir mostra como configurar [Dicionário Fastly Edge](https://docs
 
 ## Criar um incluo na lista de bloqueios referenciador
 
-Os Dicionários de borda criam pares de valores chave acessíveis a funções de VCL durante o processamento de trechos de VCL. Neste exemplo, você cria um dicionário de borda que fornece a lista de sites referenciadores a serem bloqueados.
+Os Edge Dictionaries criam pares de valores-chave acessíveis a funções de VCL durante o processamento de trechos de VCL. Neste exemplo, você cria um dicionário de borda que fornece a lista de sites referenciadores a serem bloqueados.
 
 {{admin-login-step}}
 
-1. Clique em **Lojas** > **Configurações** > **Configuração** > **Avançado** > **Sistema**.
+1. Clique em **Lojas** > **Configurações** > **Configuração** > **Avançadas** > **Sistema**.
 
-1. Expandir **Cache de Página Inteira** > **Configuração do Fastly** > **Dicionários de borda**.
+1. Expanda **Cache de Página Inteira** > **Configuração Rápida** > **dicionários Edge**.
 
 1. Crie o contêiner Dicionário:
 
-   - Clique em **Adicionar contêiner**.
+   - Clique em **Adicionar container**.
 
-   - No *Container* insira um **Nome do dicionário**—`referrer_blocklist`.
+   - Na página *Contêiner*, digite um **Nome do dicionário**—`referrer_blocklist`.
 
-   - Selecionar **Ativar após a alteração** para implantar as alterações na versão da configuração do serviço Fastly que está editando.
+   - Selecione **Ativar após a alteração** para implantar suas alterações na versão da configuração do serviço Fastly que você está editando.
 
-   - Clique em **Carregar** para anexar o dicionário à sua configuração do serviço Fastly.
+   - Clique em **Carregar** para anexar o dicionário à configuração do serviço Fastly.
 
-1. Adicione a lista de nomes de domínio a serem bloqueados à `referrer_blocklist` dicionário:
+1. Adicione a lista de nomes de domínio a serem bloqueados ao dicionário `referrer_blocklist`:
 
-   - Clique no ícone Configurações para a `referrer_blocklist` dicionário.
+   - Clique no ícone Configurações do dicionário `referrer_blocklist`.
 
-   - Adicione e salve pares de valores chave no novo dicionário. Neste exemplo, each **Chave** é o nome de domínio de um URL de referenciador a ser bloqueado e **Valor** é `true`.
+   - Adicione e salve pares de valores chave no novo dicionário. Neste exemplo, cada **Chave** é o nome de domínio de uma URL de referenciador a ser bloqueada e o **Valor** é `true`.
 
      ![Adicionar itens incorretos do dicionário do referenciador](../../assets/cdn/fastly-referrer-blocklist-dictionary.png)
 
@@ -58,11 +58,11 @@ Os Dicionários de borda criam pares de valores chave acessíveis a funções de
 
 1. Atualize o cache de acordo com a notificação na parte superior da página.
 
-Para obter mais informações sobre Dicionários de borda, consulte [Criação e uso de dicionários de borda](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) e [trechos de VCL personalizados](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) na documentação do Fastly.
+Para obter mais informações sobre Dicionários Edge, consulte [Criação e uso de Dicionários Edge](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) e [trechos de VCL personalizados](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) na documentação do Fastly.
 
 ## Criar um trecho de VCL personalizado para bloquear spam do referenciador
 
-O seguinte código de trecho de VCL personalizado (formato JSON) mostra a lógica para verificar e bloquear solicitações. O trecho VCL captura o host de um site referenciador em um cabeçalho e compara o nome do host à lista de URLs no `referrer_blocklist` dicionário. Se o nome do host corresponder, a solicitação será bloqueada com uma `403 Forbidden` erro.
+O seguinte código de trecho de VCL personalizado (formato JSON) mostra a lógica para verificar e bloquear solicitações. O trecho VCL captura o host de um site referenciador em um cabeçalho e compara o nome do host à lista de URLs no dicionário `referrer_blocklist`. Se o nome do host corresponder, a solicitação será bloqueada com um erro `403 Forbidden`.
 
 ```json
 {
@@ -78,19 +78,19 @@ Antes de criar um trecho com base neste exemplo, revise os valores para determin
 
 - `name` — Nome do trecho VCL. Neste exemplo, usamos `block_bad_referrer`.
 
-- `dynamic` — O valor 0 indica a [trecho regular](https://docs.fastly.com/en/guides/using-regular-vcl-snippets) para carregar no VCL com versão para a configuração do Fastly.
+- `dynamic` — O valor 0 indica um [trecho regular](https://docs.fastly.com/en/guides/using-regular-vcl-snippets) para carregar no VCL com versão para a configuração Fastly.
 
-- `priority` — Determina quando o trecho VCL é executado. A prioridade é `5` para executar esse código de trecho antes de qualquer um dos trechos de VCL do Magento padrão (`magentomodule_*`) atribuíram uma prioridade de 50. Defina a prioridade para cada trecho personalizado acima ou abaixo de 50, dependendo de quando você deseja que seu trecho seja executado. Os trechos com números de prioridade mais baixa são executados primeiro.
+- `priority` — Determina quando o trecho VCL é executado. A prioridade é `5` para executar este código de trecho antes que qualquer trecho de VCL de Magento padrão (`magentomodule_*`) receba uma prioridade de 50. Defina a prioridade para cada trecho personalizado acima ou abaixo de 50, dependendo de quando você deseja que seu trecho seja executado. Os trechos com números de prioridade mais baixa são executados primeiro.
 
-- `type` — Especifica um local para inserir o trecho na versão do VCL. Neste exemplo, o trecho VCL é um `recv` trecho. Quando o trecho é inserido na versão do VCL, ele é adicionado à variável `vcl_recv` sub-rotina, abaixo do código padrão do Fastly VCL e acima de qualquer objeto.
+- `type` — Especifica um local para inserir o trecho na versão do VCL. Neste exemplo, o trecho VCL é um trecho `recv`. Quando o trecho é inserido na versão do VCL, ele é adicionado à sub-rotina `vcl_recv`, abaixo do código padrão do Fastly VCL e acima de qualquer objeto.
 
-- `content` — O trecho do código VCL a ser executado em uma linha, sem quebras de linha.
+- `content` — O trecho de código VCL a ser executado em uma linha, sem quebras de linha.
 
 Depois de revisar e atualizar o código do seu ambiente, use um dos métodos a seguir para adicionar o trecho de VCL personalizado à configuração do serviço Fastly:
 
-- [Adicionar o trecho de VCL personalizado do Administrador](#add-the-custom-vcl-snippet). Esse método é recomendado se você puder acessar o Administrador. (Exige [Versão 1.2.58 do Fastly](fastly-configuration.md#upgrade) ou posteriormente.)
+- [Adicionar o trecho de VCL personalizado do Administrador](#add-the-custom-vcl-snippet). Esse método é recomendado se você puder acessar o Administrador. (Exige o [Fastly versão 1.2.58](fastly-configuration.md#upgrade) ou posterior.)
 
-- Salve o exemplo de código JSON em um arquivo (por exemplo, `allowlist.json`) e [fazer upload usando a API Fastly](fastly-vcl-custom-snippets.md#manage-custom-vcl-snippets-using-the-api). Use esse método se não conseguir acessar o Administrador.
+- Salve o exemplo de código JSON em um arquivo (por exemplo, `allowlist.json`) e [carregue-o usando a API Fastly](fastly-vcl-custom-snippets.md#manage-custom-vcl-snippets-using-the-api). Use esse método se não conseguir acessar o Administrador.
 
 ## Adicionar o trecho de VCL personalizado
 
@@ -98,7 +98,7 @@ Depois de revisar e atualizar o código do seu ambiente, use um dos métodos a s
 
 1. Clique em **Lojas** > Configurações > **Configuração** > **Avançado** > **Sistema**.
 
-1. Expandir **Cache de Página Inteira** > **Configuração do Fastly** > **Trechos de VCL Personalizados**.
+1. Expanda **Cache de Página Inteira** > **Configuração Rápida** > **Trechos de VCL Personalizados**.
 
 1. Clique em **Criar trecho personalizado**.
 
@@ -122,9 +122,9 @@ Depois de revisar e atualizar o código do seu ambiente, use um dos métodos a s
 
 1. Clique em **Criar**.
 
-   ![Criar trecho de VCL de bloco de referenciador personalizado](/help/assets/cdn/fastly-create-referrer-block-snippet.png)
+   ![Criar trecho VCL de bloco de referenciador personalizado](/help/assets/cdn/fastly-create-referrer-block-snippet.png)
 
-1. Depois que a página for recarregada, clique em **Carregar VCL para Fastly** no *Configuração do Fastly* seção.
+1. Depois que a página for recarregada, clique em **Carregar VCL para Fastly** na seção *Configuração Fastly*.
 
 1. Depois que o upload for concluído, atualize o cache de acordo com a notificação na parte superior da página.
 

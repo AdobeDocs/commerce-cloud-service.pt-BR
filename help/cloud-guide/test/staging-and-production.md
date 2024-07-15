@@ -15,11 +15,11 @@ Após uma migração bem-sucedida de código, arquivos e dados para armazenament
 
 ## Arquivos de log
 
-Se você encontrar erros na implantação ou outros problemas ao testar o, verifique os arquivos de log. Os arquivos de registro estão localizados no `var/log` diretório.
+Se você encontrar erros na implantação ou outros problemas ao testar o, verifique os arquivos de log. Arquivos de log localizados no diretório `var/log`.
 
-O log de implantação está em `/var/log/platform/<prodject-ID>/deploy.log`. O valor de `<project-ID>` depende da ID do projeto e se o ambiente é de Preparo ou Produção. Por exemplo, com uma ID de projeto de `yw1unoukjcawe`, o usuário de Preparo é `yw1unoukjcawe_stg` e o usuário de Produção for `yw1unoukjcawe`.
+O log de implantação está em `/var/log/platform/<prodject-ID>/deploy.log`. O valor de `<project-ID>` depende da ID do projeto e se o ambiente é de Preparo ou de Produção. Por exemplo, com a ID de projeto `yw1unoukjcawe`, o usuário de Preparo é `yw1unoukjcawe_stg` e o usuário de Produção é `yw1unoukjcawe`.
 
-Ao acessar logs em ambientes de produção ou de preparo, use o SSH para fazer logon em cada um dos três nós para localizar os logs. Ou você pode usar [Gerenciamento de logs do New Relic](../monitor/log-management.md) para exibir e consultar dados de log agregados de todos os nós. Consulte [Exibir logs](log-locations.md#application-logs).
+Ao acessar logs em ambientes de produção ou de preparo, use o SSH para fazer logon em cada um dos três nós para localizar os logs. Ou você pode usar o [gerenciamento de logs do New Relic](../monitor/log-management.md) para exibir e consultar dados de log agregados de todos os nós. Consulte [Exibir logs](log-locations.md#application-logs).
 
 ## Verifique a base de código
 
@@ -27,23 +27,23 @@ Verifique se a base de código foi implantada corretamente nos ambientes de prep
 
 ## Verificar definições de configuração
 
-Verifique as definições de configuração por meio do painel Admin, incluindo o URL base, URL de administração base, configurações de vários sites e muito mais. Se você precisar fazer alterações adicionais, conclua as edições na ramificação Git local e envie para o `master` ramificação em Integração, Preparo e Produção.
+Verifique as definições de configuração por meio do painel Admin, incluindo o URL base, URL de administração base, configurações de vários sites e muito mais. Se você precisar fazer alterações adicionais, conclua as edições na ramificação Git local e envie por push para a ramificação `master` em Integração, Preparo e Produção.
 
 ## Verificar armazenamento em cache rápido
 
-[Configuração do Fastly](../cdn/fastly-configuration.md) requer atenção especial aos detalhes: usar a ID de serviço correta do Fastly e os tokens da API do Fastly, fazer upload do código VCL do Fastly, atualizar a configuração do DNS e aplicar os certificados SSL/TLS aos seus ambientes. Após concluir essas tarefas de configuração, você pode verificar o armazenamento em cache rápido em ambientes de preparo e produção.
+[A configuração do Fastly](../cdn/fastly-configuration.md) requer atenção aos detalhes: usar as credenciais corretas de ID do Fastly Service e do token da API do Fastly, carregar o código VCL do Fastly, atualizar a configuração do DNS e aplicar os certificados SSL/TLS aos seus ambientes. Após concluir essas tarefas de configuração, você pode verificar o armazenamento em cache rápido em ambientes de preparo e produção.
 
 **Para verificar a configuração do serviço Fastly**:
 
-1. Faça logon no Administrador para Preparo e produção usando o URL com `/admin`ou a variável [URL do administrador atualizado](../environment/variables-admin.md#admin-url).
+1. Faça logon no Administrador para Preparo e Produção usando a URL com `/admin` ou a [URL de Administrador atualizada](../environment/variables-admin.md#admin-url).
 
-1. Navegue até **Lojas** > **Configurações** > **Configuração** > **Avançado** > **Sistema**. Role e clique **Cache de Página Inteira**.
+1. Navegue até **Lojas** > **Configurações** > **Configuração** > **Avançadas** > **Sistema**. Role e clique em **Cache de Página Inteira**.
 
-1. Certifique-se de que o **Aplicativo de cache** o valor está definido como _Fastly CDN_ .
+1. Verifique se o valor de **Aplicativo de cache** está definido como _Fastly CDN_.
 
 1. Teste as credenciais do Fastly.
 
-   - Clique em **Configuração do Fastly**.
+   - Clique em **Fastly Configuration**.
 
    - Verifique os valores das credenciais de token da ID de serviço do Fastly e da API do Fastly. Consulte [Obter credenciais do Fastly](/help/cloud-guide/cdn/fastly-configuration.md#get-fastly-credentials).
 
@@ -55,24 +55,24 @@ Verifique as definições de configuração por meio do painel Admin, incluindo 
 
 **Para verificar o comportamento de cache do Fastly**:
 
-1. Verifique se há cabeçalhos usando o `dig` utilitário de linha de comando para obter informações sobre a configuração do site.
+1. Verifique os cabeçalhos usando o utilitário de linha de comando `dig` para obter informações sobre a configuração do site.
 
-   Você pode usar qualquer URL com a variável `dig` comando. Os exemplos a seguir usam Pro URLs:
+   Você pode usar qualquer URL com o comando `dig`. Os exemplos a seguir usam Pro URLs:
 
    - Estágios: `dig https://mcstaging.<your-domain>.com`
    - Produção: `dig https://mcprod.<your-domain>.com`
 
-   Para obter `dig` testes, consulte Fastly [Teste antes de alterar o DNS](https://docs.fastly.com/en/guides/working-with-domains).
+   Para ver testes `dig` adicionais, consulte [Testes do Fastly antes de alterar o DNS](https://docs.fastly.com/en/guides/working-with-domains).
 
-1. Uso `cURL` para verificar as informações do cabeçalho de resposta.
+1. Use `cURL` para verificar as informações do cabeçalho de resposta.
 
    ```bash
    curl https://mcstaging.<your-domain>.com -H "host: mcstaging.<your-domain.com>" -k -vo /dev/null -H Fastly-Debug:1
    ```
 
-   Consulte [Verificar cabeçalhos de resposta](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers) para obter detalhes sobre a verificação dos cabeçalhos.
+   Consulte [Verificar cabeçalhos de resposta](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers) para obter detalhes sobre como verificar os cabeçalhos.
 
-1. Após entrar em funcionamento, use `cURL` para verificar seu site ativo.
+1. Depois que você estiver online, use o `cURL` para verificar seu site online.
 
    ```bash
    curl https://<your-domain> -k -vo /dev/null -H Fastly-Debug:1
@@ -198,15 +198,15 @@ Antes de iniciar, é melhor executar testes abrangentes de tráfego e desempenho
 
 Antes de começar a testar, insira um tíquete com suporte, avisando os ambientes que você está testando, quais ferramentas está usando e o intervalo de tempo. Atualize o ticket com resultados e informações para acompanhar o desempenho. Ao concluir os testes, adicione os resultados atualizados e a observação no tíquete, onde o teste é concluído com data e hora.
 
-Revise o [Kit de ferramentas de desempenho](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) como parte do processo de preparação para o pré-lançamento.
+Revise as opções do [Kit de Ferramentas de Desempenho](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) como parte de seu processo de preparação de pré-lançamento.
 
 Para obter melhores resultados, use as seguintes ferramentas:
 
-- [Teste de desempenho do aplicativo](../environment/variables-post-deploy.md#ttfb_tested_pages)— testa o desempenho dos aplicativos configurando o `TTFB_TESTED_PAGES` variável de ambiente para testar o tempo de resposta do site.
-- [Cerco](https://www.joedog.org/siege-home/)—Software de modelagem e teste de tráfego para levar sua loja ao limite. Acesse seu site com um número configurável de clientes simulados. O Cerco é compatível com autenticação básica, cookies, HTTP, HTTPS e protocolos FTP.
-- [Jmeter](https://jmeter.apache.org)—Excelente teste de carga para ajudar a medir o desempenho de tráfego pontiagudo, como em vendas de flash. Crie testes personalizados para executar no site.
-- [New Relic](../monitor/new-relic-service.md) (fornecido) — Ajuda a localizar processos e áreas do site que causam desempenho lento com o tempo rastreado gasto por ação, como transmitir dados, consultas, Redis e muito mais.
-- [WebPageTest](https://www.webpagetest.org) e [PKingdom](https://www.pingdom.com)—Análise em tempo real do tempo de carregamento das páginas do site com locais de origem diferentes. A PKingdom pode exigir uma taxa. WebPageTest é uma ferramenta gratuita.
+- [Teste de desempenho de aplicativo](../environment/variables-post-deploy.md#ttfb_tested_pages) — teste o desempenho de aplicativo configurando a variável de ambiente `TTFB_TESTED_PAGES` para testar o tempo de resposta do site.
+- [Cerco](https://www.joedog.org/siege-home/)—Modelagem de tráfego e software de teste para levar sua loja ao limite. Acesse seu site com um número configurável de clientes simulados. O Cerco é compatível com autenticação básica, cookies, HTTP, HTTPS e protocolos FTP.
+- [Jmeter](https://jmeter.apache.org)—Excelente teste de carga para ajudar a medir o desempenho para tráfego pontiagudo, como para vendas de flash. Crie testes personalizados para executar no site.
+- [New Relic](../monitor/new-relic-service.md) (fornecido) — Ajuda a localizar processos e áreas do site que causam desempenho lento com o tempo rastreado gasto por ação, como transmissão de dados, consultas, Redis e muito mais.
+- [WebPageTest](https://www.webpagetest.org) e [PKingdom](https://www.pingdom.com)—A análise em tempo real do tempo de carregamento das páginas do site com locais de origem diferentes. A PKingdom pode exigir uma taxa. WebPageTest é uma ferramenta gratuita.
 
 ## Teste funcional
 
@@ -214,4 +214,4 @@ Você pode usar a Estrutura de teste funcional (MFTF) do Magento para concluir o
 
 ## Configurar a ferramenta Verificação de segurança
 
-Há uma Ferramenta de Verificação de Segurança gratuita para seus sites. Para adicionar sites e executar a ferramenta, consulte [Ferramenta de verificação de segurança](../launch/overview.md#set-up-the-security-scan-tool).
+Há uma Ferramenta de Verificação de Segurança gratuita para seus sites. Para adicionar seus sites e executar a ferramenta, consulte [Ferramenta de Verificação de Segurança](../launch/overview.md#set-up-the-security-scan-tool).

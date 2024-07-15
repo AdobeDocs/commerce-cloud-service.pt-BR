@@ -13,10 +13,10 @@ ht-degree: 0%
 
 # Restaurar um ambiente
 
-Se encontrar problemas no ambiente de integração e não tiver um [backup válido](../storage/snapshots.md), tente restaurar o ambiente usando um dos seguintes métodos:
+Se você encontrar problemas no ambiente de integração e não tiver um [backup válido](../storage/snapshots.md), tente restaurar seu ambiente usando um dos seguintes métodos:
 
 - Redefinir ou reverter o código na ramificação Git
-- Desinstale o [!DNL Commerce] aplicativo
+- Desinstalar o aplicativo [!DNL Commerce]
 - Forçar uma reimplantação
 - Redefinir manualmente o banco de dados
 
@@ -26,11 +26,11 @@ Se encontrar problemas no ambiente de integração e não tiver um [backup váli
 
 Redefinir a ramificação Git reverte o código para um estado estável no passado.
 
-**Para redefinir a ramificação**:
+**Para redefinir sua ramificação**:
 
 1. Na estação de trabalho local, altere para o diretório do projeto.
 
-1. Revise o histórico de Git commit. Uso `--oneline` para mostrar confirmações abreviadas em uma linha:
+1. Revise o histórico de Git commit. Use `--oneline` para mostrar confirmações abreviadas em uma linha:
 
    ```bash
    git log --oneline
@@ -65,13 +65,13 @@ Redefinir a ramificação Git reverte o código para um estado estável no passa
 
 ## Desinstalar o Commerce
 
-Desinstalando o [!DNL Commerce] O aplicativo retorna o ambiente ao estado original restaurando o banco de dados, removendo a configuração de implantação e limpando o `var/` subdiretórios. Esta orientação também redefine a ramificação Git para um estado estável anterior. Se você não tiver um backup recente, mas puder acessar o ambiente remoto usando SSH, siga estas etapas para restaurar seu ambiente:
+A desinstalação do aplicativo [!DNL Commerce] retorna o ambiente ao estado original restaurando o banco de dados, removendo a configuração de implantação e limpando os subdiretórios `var/`. Esta orientação também redefine a ramificação Git para um estado estável anterior. Se você não tiver um backup recente, mas puder acessar o ambiente remoto usando SSH, siga estas etapas para restaurar seu ambiente:
 
 - Desabilitar gerenciamento de configuração
 - Desinstalar o Adobe Commerce
 - Redefinir a ramificação Git
 
-A desinstalação do software Adobe Commerce remove e restaura o banco de dados, remove a configuração de implantação e limpa a `var/` subdiretórios. É importante desativar o [Gerenciamento de configuração](../store/store-settings.md) para que ele não aplique automaticamente as definições de configuração anteriores durante a próxima implantação. Verifique se o seu `app/etc/` o diretório não contém o `config.php` arquivo.
+A desinstalação do software Adobe Commerce remove e restaura o banco de dados, remove a configuração da implantação e limpa os subdiretórios `var/`. É importante desabilitar o [Gerenciamento de configuração](../store/store-settings.md) para que ele não aplique automaticamente as definições de configuração anteriores durante a próxima implantação. Verifique se o diretório `app/etc/` não contém o arquivo `config.php`.
 
 **Para desinstalar o software Adobe Commerce**:
 
@@ -110,7 +110,7 @@ A desinstalação do software Adobe Commerce remove e restaura o banco de dados,
    [SUCCESS]: Magento uninstallation complete.
    ```
 
-1. Limpe a `var/` subdiretórios.
+1. Limpar os subdiretórios `var/`.
 
    ```bash
    rm -rf var/*
@@ -154,13 +154,13 @@ Se você tentou desinstalar o Adobe Commerce e o comando falhou ou não pôde se
    mysql -h database.internal
    ```
 
-1. Solte o `main` banco de dados.
+1. Descartar o banco de dados `main`.
 
    ```shell
    drop database main;
    ```
 
-1. Criar um vazio `main` banco de dados.
+1. Criar um banco de dados `main` vazio.
 
    ```shell
    create database main;

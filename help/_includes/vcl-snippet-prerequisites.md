@@ -9,10 +9,10 @@ ht-degree: 0%
 
 <!-- Prerequisites section inserted in tutorials for customizing the Fastly service configuration with custom VCL snippets. -->
 
-- Seu ambiente deve ser configurado para usar o Fastly CDN. Consulte [Configurar os serviços do Fastly](/help/cloud-guide/cdn/fastly-configuration.md).
+- Seu ambiente deve ser configurado para usar o Fastly CDN. Consulte [Configurar serviços do Fastly](/help/cloud-guide/cdn/fastly-configuration.md).
 
-- Verifique se você está executando a versão mais recente do módulo CDN Fastly para o Magento 2. Consulte [Atualizar o módulo Fastly](/help/cloud-guide/cdn/fastly-configuration.md#upgrade-fastly-module).
+- Verifique se você está executando a versão mais recente do módulo CDN Fastly para o Magento 2. Consulte [Atualizar o Módulo Fastly](/help/cloud-guide/cdn/fastly-configuration.md#upgrade-fastly-module).
 
-- Verifique a configuração do ambiente para o serviço Fastly. Consulte [Verificar armazenamento em cache rápido](/help/cloud-guide/launch/checklist.md#verify-fastly-caching).
+- Verifique a configuração do ambiente para o serviço Fastly. Consulte [Verificar cache rápido](/help/cloud-guide/launch/checklist.md#verify-fastly-caching).
 
 - Você deve ter credenciais de Administrador para acessar os ambientes de Preparo e Produção.

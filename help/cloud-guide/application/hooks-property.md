@@ -1,6 +1,6 @@
 ---
 title: Propriedade de ganchos
-description: Consulte exemplos sobre como configurar a propriedade de ganchos na [!DNL Commerce] arquivo de configuração do aplicativo.
+description: Veja exemplos de como configurar a propriedade de ganchos no arquivo de configuração do aplicativo  [!DNL Commerce] .
 feature: Cloud, Configuration, Build, Deploy
 exl-id: d9561f09-5129-4b72-978e-2e3873e8efae
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -12,15 +12,15 @@ ht-degree: 0%
 
 # Propriedade de ganchos
 
-Use o `hooks` seção para executar comandos do shell durante as fases de criação, implantação e pós-implantação:
+Use a seção `hooks` para executar comandos de shell durante as fases de compilação, implantação e pós-implantação:
 
-- **`build`**— Execute comandos _antes_ empacotando seu aplicativo. Serviços, como o banco de dados ou Redis, não estão disponíveis, pois o aplicativo ainda não foi implantado. Adicionar comandos personalizados _antes_ o padrão `php ./vendor/bin/ece-tools` para que o conteúdo gerado de forma personalizada continue até a fase de implantação.
+- **`build`**—Execute comandos _antes_ empacotando seu aplicativo. Serviços, como o banco de dados ou Redis, não estão disponíveis, pois o aplicativo ainda não foi implantado. Adicione comandos personalizados _antes_ do comando `php ./vendor/bin/ece-tools` padrão para que o conteúdo gerado de forma personalizada continue na fase de implantação.
 
-- **`deploy`**— Execute comandos _após_ empacotando e implantando seu aplicativo. Você pode acessar outros serviços neste ponto. Como o padrão `php ./vendor/bin/ece-tools` copia a variável `app/etc` no local correto, você deve adicionar comandos personalizados _após_ o comando deploy para evitar a falha de comandos personalizados.
+- **`deploy`**—Execute comandos _após_ empacotando e implantando seu aplicativo. Você pode acessar outros serviços neste ponto. Como o comando `php ./vendor/bin/ece-tools` padrão copia o diretório `app/etc` para o local correto, você deve adicionar comandos personalizados _após_ o comando de implantação para evitar a falha de comandos personalizados.
 
-- **`post_deploy`**— Execute comandos _após_ implantação do aplicativo e _após_ o contêiner começa a aceitar conexões. A variável `post_deploy` O hook limpa o cache e pré-carrega (aquece) o cache. É possível personalizar a lista de páginas usando o `WARM_UP_PAGES` na variável [Estágio de pós-implantação](../environment/variables-post-deploy.md). Embora não seja obrigatório, isso funciona em conjunto com a `SCD_ON_DEMAND` variável de ambiente.
+- **`post_deploy`**—Execute os comandos _após_ a implantação do aplicativo e _após_ o contêiner começa a aceitar conexões. O gancho `post_deploy` limpa o cache e pré-carrega (aquece) o cache. Você pode personalizar a lista de páginas usando a variável `WARM_UP_PAGES` no [estágio de implantação do Post](../environment/variables-post-deploy.md). Embora não seja obrigatório, isso funciona em conjunto com a variável de ambiente `SCD_ON_DEMAND`.
 
-O exemplo a seguir mostra a configuração padrão na variável `.magento.app.yaml` arquivo. Adicione comandos da CLI em `build`, `deploy`ou `post_deploy` seções _antes_ o `ece-tools` comando:
+O exemplo a seguir mostra a configuração padrão no arquivo `.magento.app.yaml`. Adicione comandos CLI nas seções `build`, `deploy` ou `post_deploy` _antes_ do comando `ece-tools`:
 
 ```yaml
 hooks:
@@ -38,7 +38,7 @@ hooks:
         php ./vendor/bin/ece-tools run scenario/post-deploy.xml
 ```
 
-Além disso, é possível personalizar ainda mais a fase de criação usando o `generate` e `transfer` comandos para executar ações adicionais ao criar ou mover arquivos especificamente.
+Além disso, é possível personalizar ainda mais a fase de compilação usando os comandos `generate` e `transfer` para executar ações adicionais ao compilar ou mover arquivos especificamente.
 
 ```yaml
 hooks:
@@ -50,11 +50,11 @@ hooks:
         php ./vendor/bin/ece-tools build:transfer
 ```
 
-- `set -e`—faz com que os ganchos falhem no primeiro comando com falha, em vez do comando final com falha.
-- `build:generate`—aplica patches, valida a configuração, gera ID e gera conteúdo estático se o SCD estiver habilitado para a fase de criação.
-- `build:transfer`—transfere o código gerado e o conteúdo estático para o destino final.
+- `set -e` — faz com que os ganchos falhem no primeiro comando com falha, em vez do comando final com falha.
+- `build:generate` — aplica patches, valida a configuração, gera ID e gera conteúdo estático se o SCD estiver habilitado para a fase de compilação.
+- `build:transfer` — transfere o código gerado e o conteúdo estático para o destino final.
 
-Os comandos são executados no aplicativo (`/app`). Você pode usar o `cd` comando para alterar o diretório. Os ganchos falharão se o comando final neles falhar. Para causar falha no primeiro comando com falha, adicione `set -e` até ao início do gancho.
+Os comandos são executados do diretório do aplicativo (`/app`). Você pode usar o comando `cd` para alterar o diretório. Os ganchos falharão se o comando final neles falhar. Para fazer com que falhem no primeiro comando com falha, adicione `set -e` ao início do gancho.
 
 **Para compilar arquivos Sass usando grunt**:
 
@@ -74,6 +74,6 @@ hooks:
         php ./vendor/bin/ece-tools build
 ```
 
-Compilar arquivos Sass usando `grunt` antes da implantação de conteúdo estático, o que acontece durante a build. Coloque o `grunt` antes do comando `build` comando.
+Compilar arquivos Sass usando `grunt` antes da implantação de conteúdo estático, o que acontece durante a compilação. Coloque o comando `grunt` antes do comando `build`.
 
 {{scenarios}}

@@ -12,48 +12,48 @@ ht-degree: 0%
 
 # Adicionar mapa do site e robôs de mecanismo de pesquisa
 
-Uma tentativa de gerar e gravar a variável `sitemap.xml` ao diretório raiz resulta no seguinte erro:
+Uma tentativa de gerar e gravar o arquivo `sitemap.xml` no diretório raiz resulta no seguinte erro:
 
 ```terminal
 Please make sure that "/" is writable by the web-server.
 ```
 
-Com o Adobe Commerce na infraestrutura em nuvem, você só pode gravar em diretórios específicos, como `var`, `pub/media`, `pub/static`ou `app/etc`. Ao gerar a variável `sitemap.xml` usando o painel Admin, você deve especificar o `/media/` caminho.
+Com o Adobe Commerce na infraestrutura de nuvem, você só pode gravar em diretórios específicos, como `var`, `pub/media`, `pub/static` ou `app/etc`. Ao gerar o arquivo `sitemap.xml` usando o painel Administrador, você deve especificar o caminho `/media/`.
 
-Não é necessário gerar um `robots.txt` arquivo porque gera a variável `robots.txt` conteúdo sob demanda e o armazena no banco de dados. Você pode exibir o conteúdo no seu navegador com o `<domain.your.project>/robots.txt` ou `<domain.your.project>/robots` link.
+Você não precisa gerar um arquivo `robots.txt` porque ele gera o conteúdo `robots.txt` sob demanda e o armazena no banco de dados. Você pode exibir o conteúdo em seu navegador com o link `<domain.your.project>/robots.txt` ou `<domain.your.project>/robots`.
 
-Isso requer o ECE-Tools versão 2002.0.12 e posterior com uma atualização `.magento.app.yaml` arquivo. Veja um exemplo dessas regras na [repositório da magento-cloud](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49).
+Isso requer o ECE-Tools versão 2002.0.12 e posterior com um arquivo `.magento.app.yaml` atualizado. Veja um exemplo dessas regras no [repositório magento-cloud](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49).
 
-**Para gerar uma `sitemap.xml` arquivo na versão 2.2 e posterior**:
+**Para gerar um arquivo `sitemap.xml` na versão 2.2 e posterior**:
 
 1. Acesse o Admin.
-1. No _Marketing_ clique em **Mapa do site** no _SEO e pesquisa_ seção.
-1. No _Mapa do site_ clique em **Adicionar mapa do site**.
-1. No _Novo mapa de sites_ digite os seguintes valores:
+1. No menu _Marketing_, clique em **Mapa do Site** na seção _SEO e Pesquisa_.
+1. Na exibição _Mapa do Site_, clique em **Adicionar Mapa do Site**.
+1. Na exibição _Novo Mapa de Site_, insira os seguintes valores:
 
    - **Nome do arquivo**:`sitemap.xml`
    - **Caminho**:`/media/`
 
-1. Clique em **Salvar e gerar**. O novo mapa do site fica disponível no _Mapa do site_ grade.
-1. Clique no caminho no campo _Link para o Google_ coluna.
+1. Clique em **Salvar e gerar**. O novo mapa do site fica disponível na grade _Mapa do Site_.
+1. Clique no caminho na coluna _Link for Google_.
 
-**Para adicionar conteúdo à `robots.txt` arquivo**:
+**Para adicionar conteúdo ao `robots.txt` arquivo**:
 
 1. Acesse o Admin.
-1. No _Conteúdo_ clique em **Configuração** no _Design_ seção.
-1. No _Configuração de design_ clique em **Editar** para o site na _Ação_ coluna.
-1. No _Site principal_ clique em **Robôs do mecanismo de pesquisa**.
-1. Atualize o **Editar instrução personalizada de robots.txt** campo.
+1. No menu _Conteúdo_, clique em **Configuração** na seção _Design_.
+1. No modo de exibição _Configuração de Design_, clique em **Editar** para o site na coluna _Ação_.
+1. Na exibição _Site Principal_, clique em **Robôs do Mecanismo de Pesquisa**.
+1. Atualize a **Editar instrução personalizada do campo robots.txt**.
 1. Clique em **Salvar configuração**.
-1. Verifique se `<domain.your.project>/robots.txt` arquivo ou `<domain.your.project>/robots` URL no seu navegador.
+1. Verifique o arquivo `<domain.your.project>/robots.txt` ou a URL `<domain.your.project>/robots` no navegador.
 
 >[!NOTE]
 >
->Se a variável `<domain.your.project>/robots.txt` arquivo gera um `404 error`, [Enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para remover o redirecionamento de `/robots.txt` para `/media/robots.txt`.
+>Se o arquivo `<domain.your.project>/robots.txt` gerar um `404 error`, [Envie um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para remover o redirecionamento de `/robots.txt` para `/media/robots.txt`.
 
 ## Regravar usando o trecho Fastly VCL
 
-Se você tiver domínios diferentes e precisar de mapas de site separados, poderá criar uma VCL para rotear para o mapa de site apropriado. Gerar o `sitemap.xml` no painel Admin, conforme descrito acima, crie um trecho Fastly VCL personalizado para gerenciar o redirecionamento. Consulte [Trechos de VCL Fastly personalizados](../cdn/fastly-vcl-custom-snippets.md).
+Se você tiver domínios diferentes e precisar de mapas de site separados, poderá criar uma VCL para rotear para o mapa de site apropriado. Gere o arquivo `sitemap.xml` no painel Admin como descrito acima e crie um trecho Fastly VCL personalizado para gerenciar o redirecionamento. Consulte [Fragmentos de VCL personalizados](../cdn/fastly-vcl-custom-snippets.md).
 
 >[!NOTE]
 >
@@ -61,7 +61,7 @@ Se você tiver domínios diferentes e precisar de mapas de site separados, poder
 
 ### Use um trecho Fastly VCL para redirecionar
 
-Criar um trecho de VCL personalizado para substituir o caminho por `sitemap.xml` para `/media/sitemap.xml` usando o `type` e `content` pares de valor-chave.
+Crie um trecho de VCL personalizado para reescrever o caminho de `sitemap.xml` para `/media/sitemap.xml` usando os pares de valores-chave `type` e `content`.
 
 ```json
 {
@@ -73,7 +73,7 @@ Criar um trecho de VCL personalizado para substituir o caminho por `sitemap.xml`
 }
 ```
 
-O exemplo a seguir demonstra como reescrever o caminho para `robots.txt` e `sitemap.xml` para `/media/robots.txt` e `/media/sitemap.xml`
+O exemplo a seguir demonstra como reescrever o caminho de `robots.txt` e `sitemap.xml` para `/media/robots.txt` e `/media/sitemap.xml`
 
 ```json
 {
@@ -87,7 +87,7 @@ O exemplo a seguir demonstra como reescrever o caminho para `robots.txt` e `site
 
 **Para usar um trecho de VCL do Fastly para um redirecionamento de domínio específico**:
 
-Criar um `pub/media/domain_robots.txt` arquivo, onde o domínio é `domain.com`e use o próximo trecho VCL:
+Crie um arquivo `pub/media/domain_robots.txt`, onde o domínio seja `domain.com`, e use o próximo trecho VCL:
 
 ```json
 {
@@ -99,9 +99,9 @@ Criar um `pub/media/domain_robots.txt` arquivo, onde o domínio é `domain.com`e
 }
 ```
 
-As rotas de trecho do VCL `http://domain.com/robots.txt` e apresenta o `pub/media/domain_robots.txt` arquivo.
+O trecho VCL roteia `http://domain.com/robots.txt` e apresenta o arquivo `pub/media/domain_robots.txt`.
 
-Para configurar um redirecionamento para `robots.txt` e `sitemap.xml` em um único trecho, crie `pub/media/domain_robots.txt` e `pub/media/domain_sitemap.xml` arquivos, onde o domínio é `domain.com` e use o próximo trecho VCL:
+Para configurar um redirecionamento para `robots.txt` e `sitemap.xml` em um único trecho, crie arquivos `pub/media/domain_robots.txt` e `pub/media/domain_sitemap.xml`, em que o domínio seja `domain.com`, e use o próximo trecho VCL:
 
 ```json
 {
@@ -113,14 +113,14 @@ Para configurar um redirecionamento para `robots.txt` e `sitemap.xml` em um úni
 }
 ```
 
-No `sitemap` admin config, você deve especificar o local do arquivo usando `pub/media/` em vez de `/`.
+Na configuração do administrador `sitemap`, você deve especificar o local do arquivo usando `pub/media/` em vez de `/`.
 
 ### Configurar indexação por mecanismo de pesquisa
 
-Para ativar `robots.txt` personalizações, você deve ativar o **A indexação por mecanismos de pesquisa está Ativada para`<environment-name>`** nas configurações do projeto.
+Para ativar as personalizações do `robots.txt`, você deve habilitar a opção **A indexação por mecanismos de pesquisa está ativada para`<environment-name>`** nas configurações do projeto.
 
-![Use o [!DNL Cloud Console] para gerenciar ambientes](../../assets/robots-indexing-by-search-engine.png)
+![Usar o [!DNL Cloud Console] para gerenciar ambientes](../../assets/robots-indexing-by-search-engine.png)
 
 >[!NOTE]
 >
->Se você estiver usando o PWA Studio e não conseguir acessar o sistema `robots.txt` arquivo, adicionar `robots.txt` para o [Nome da frente ➡ Incluir na lista de permissões](https://github.com/magento/magento2-upward-connector#front-name-allowlist) em **Lojas** > Configuração > **Geral** > **Web** > Configuração de PWA ASCENDENTE.
+>Se você estiver usando o PWA Studio e não puder acessar o arquivo `robots.txt` configurado, adicione `robots.txt` ao [Incluo na lista de permissões de Nome principal](https://github.com/magento/magento2-upward-connector#front-name-allowlist) em **Lojas** > Configuração > **Geral** > **Web** > Configuração de PWA ASCENDENTE.

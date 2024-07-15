@@ -25,7 +25,7 @@ Recomendamos testar nos ambientes de integração, armazenamento temporário e p
 
 - Os ambientes de integração não são compatíveis com alguns serviços disponíveis em Preparo e Produção, como o Fastly e o New Relic.
 
-- [Teste completo](../test/guidance.md) seu site com várias ferramentas em Preparo para carga, stress, desempenho e ativos do site.
+- [Teste completamente](../test/guidance.md) seu site com várias ferramentas em Preparo para carga, stress, desempenho e ativos do site.
 
 - Como os ambientes de integração só podem ter bancos de dados preenchidos com dados de teste, não correspondendo a um ambiente de produção, você pode encontrar erros adicionais ou comportamento inesperado ao testar em ambientes de preparo ou produção.
 
@@ -39,11 +39,11 @@ Você precisa das seguintes informações e recursos para se preparar para o lan
 
 - Certificado SSL/TLS
 
-Como parte da assinatura do Adobe Commerce na infraestrutura em nuvem, o Adobe fornece um certificado SSL/TLS validado pelo domínio, emitido pela Let&#39;s Encrypt. Cada produção profissional, preparo e produção inicial (`master`) tem um certificado exclusivo que cobre todos os domínios e subdomínios nesse ambiente. Esses certificados são provisionados e carregados no site automaticamente após a atualização da configuração DNS para desenvolvimento e produção. Consulte [Provisionar certificados SSL/TLS](../cdn/fastly-configuration.md#provision-ssltls-certificates).
+Como parte da assinatura do Adobe Commerce na infraestrutura em nuvem, o Adobe fornece um certificado SSL/TLS validado pelo domínio, emitido pela Let&#39;s Encrypt. Cada ambiente Pro Production, Staging e Starter Production (`master`) tem um certificado exclusivo que cobre todos os domínios e subdomínios nesse ambiente. Esses certificados são provisionados e carregados no site automaticamente após a atualização da configuração DNS para desenvolvimento e produção. Consulte [Provisionar certificados SSL/TLS](../cdn/fastly-configuration.md#provision-ssltls-certificates).
 
 >[!NOTE]
 >
->Se você quiser implantar seu próprio certificado SSL de Validação Estendida para sua empresa em vez de usar o certificado Let&#39;s Encrypt, entre em contato com seu CTA ou [Enviar um tíquete de suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).
+>Se você quiser implantar seu próprio certificado SSL de Validação Estendida para sua empresa, em vez de usar o certificado Let&#39;s Encrypt, entre em contato com seu CTA ou [Envie um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).
 
 ## Configurar a ferramenta Verificação de segurança
 
@@ -59,13 +59,13 @@ Como parte da assinatura do Adobe Commerce na infraestrutura em nuvem, o Adobe f
 >
 >Incluir na lista de permissões Adicione esses endereços IP a uma pesquisa no arquivo de regras de firewall da rede para permitir que a ferramenta verifique seu site. A ferramenta publica solicitações somente para as portas 80 e 443.
 
-A Ferramenta de Verificação de Segurança permite que você monitore regularmente os sites da loja e receba atualizações de riscos de segurança conhecidos, malware e software desatualizado. Essa ferramenta é um serviço gratuito disponível para todas as implementações e versões do Adobe Commerce na infraestrutura em nuvem. Você acessa a ferramenta por meio de [conta Commerce Marketplace](https://account.magento.com/customer/account/login).
+A Ferramenta de Verificação de Segurança permite que você monitore regularmente os sites da loja e receba atualizações de riscos de segurança conhecidos, malware e software desatualizado. Essa ferramenta é um serviço gratuito disponível para todas as implementações e versões do Adobe Commerce na infraestrutura em nuvem. Você acessa a ferramenta por meio de sua [conta Commerce Marketplace](https://account.magento.com/customer/account/login).
 
 - Monitorar o status de segurança de seus sites e as atualizações de segurança aplicadas
 
 - Receber atualizações de segurança e notificações específicas do site
 
-Consulte a [Guia do usuário](https://docs.magento.com/user-guide/magento/security-scan.html) para obter informações sobre como configurar e usar a ferramenta de verificação de segurança. Normalmente, você começa a usar essa ferramenta ao iniciar o teste de aceitação de usuários (UAT).
+Consulte o [Guia do Usuário](https://docs.magento.com/user-guide/magento/security-scan.html) para obter informações sobre a configuração e o uso da ferramenta de verificação de segurança. Normalmente, você começa a usar essa ferramenta ao iniciar o teste de aceitação de usuários (UAT).
 
 Cada site examinado deve ser registrado por meio da guia Security Scan (Verificação de segurança). Durante o processo de registro, você deve aceitar a isenção de responsabilidade antes de começar a verificar. Você controla o agendamento e autoriza o usuário a receber notificações quando cada verificação é concluída. Você pode programar varreduras para uma data e hora específicas e recorrentes, ou executar uma varredura sob demanda, conforme necessário.
 
@@ -80,17 +80,17 @@ Visbot/2.0 (+http://www.visvo.com/en/webmasters.jsp;bot@visvo.com)
 
 ## Verificar seu site
 
-1. Acessar o [conta Commerce Marketplace](https://account.magento.com/customer/account/login).
+1. Acesse sua [conta Commerce Marketplace](https://account.magento.com/customer/account/login).
 
-1. Clique na guia Verificação de segurança e selecione **Ir para Verificação de Segurança**.
+1. Clique na guia Verificação de Segurança e selecione **Ir para Verificação de Segurança**.
 
-1. No _Ações_ para o site, selecione **Executar verificação**. Um status de notificação exibe a verificação agendada.
+1. Na coluna _Ações_ do site, selecione **Executar Verificação**. Um status de notificação exibe a verificação agendada.
 
 ### Para revisar o relatório:
 
 1. Quando o relatório for concluído, uma notificação será exibida.
 
-1. Na linha do site, selecione o relatório que deseja exibir na **Relatórios** coluna. O pedido é do mais recente ao mais antigo.
+1. Na linha do site, selecione o relatório que deseja exibir na coluna **Relatórios**. O pedido é do mais recente ao mais antigo.
 
 O relatório lista problemas que incluem verificações com falha, resultados não identificados e verificações bem-sucedidas. Cada entrada fornece informações detalhadas para a verificação, uma lista de problemas a serem investigados e as ações a serem tomadas. Algumas dessas ações podem exigir o download e a instalação de patches de segurança. Adicione os patches necessários a uma ramificação de desenvolvimento na estação de trabalho local antes de adicioná-los à ramificação de produção.
 
