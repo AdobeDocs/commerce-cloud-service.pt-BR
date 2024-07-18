@@ -3,7 +3,7 @@ title: Gerenciamento de configuração de armazenamento
 description: Saiba como gerenciar e sincronizar configurações de armazenamento em todos os ambientes de infraestrutura em nuvem do Adobe Commerce.
 feature: Cloud, Configuration, SCD
 exl-id: f2dd876d-24ee-4d47-b9ac-44fcf77b61b5
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1439'
 ht-degree: 0%
@@ -162,7 +162,7 @@ Quando você modifica seu ambiente por meio do Administrador e executa o comando
 
 Cópias dos arquivos `app/etc/env.php` e `app/etc/config.php` originais foram criadas durante o processo de implantação e armazenadas na mesma pasta. O código a seguir mostra o BAK (arquivos de backup) e o PHP (arquivos originais) na mesma pasta `app/etc`:
 
-```terminal
+```
 ...
 config.php.bak
 di.xml
@@ -192,7 +192,7 @@ Configurações mais antigas usaram o arquivo `app/etc/config.local.php`. Consul
 
    Exemplo de resposta:
 
-   ```terminal
+   ```
    The list of backup files:
    app/etc/env.php
    app/etc/config.php

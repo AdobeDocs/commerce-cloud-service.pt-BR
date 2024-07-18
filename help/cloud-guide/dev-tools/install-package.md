@@ -3,7 +3,7 @@ title: Atualizar projeto para usar ECE-Tools
 description: Saiba como atualizar seu projeto Adobe Commerce na infraestrutura em nuvem para usar o pacote ECE-Tools e aproveitar as correções e os recursos mais recentes.
 feature: Cloud, Install
 exl-id: 820cca84-2817-4881-829f-ebb78400d8c7
-source-git-commit: bcdb59f0d2a17e55e8b0479ee69fac06c710638f
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '365'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Antes de executar uma atualização para usar o pacote `ece-tools`, verifique o 
 
 Cada versão do Adobe Commerce exige uma restrição diferente com base no seguinte:
 
-```terminal
+```
 >=current_version <next_version
 ```
 
@@ -105,7 +105,7 @@ Para atualizar seu projeto para usar o pacote `ece-tools`, você deve atualizar 
 
 1. Adicione e confirme as alterações de código. Neste exemplo, os seguintes arquivos foram atualizados:
 
-   ```terminal
+   ```
    .magento.app.yaml
    composer.json
    composer.lock

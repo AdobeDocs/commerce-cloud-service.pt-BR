@@ -3,7 +3,7 @@ title: Configurar serviço Elasticsearch
 description: Saiba como habilitar o serviço Elasticsearch para Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Search, Services
 exl-id: ac559cbb-342a-4756-ade5-49eba4827965
-source-git-commit: 8147b43b26370d9305c3c7dc47865ddcbae1904d
+source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
 workflow-type: tm+mt
 source-wordcount: '798'
 ht-degree: 0%
@@ -110,7 +110,7 @@ O suporte à versão do serviço e à compatibilidade do Adobe Commerce na infra
 
    Na resposta, verifique a versão instalada na propriedade `versions`.
 
-   ```terminal
+   ```
    name     : elasticsearch/elasticsearch
    descrip. : PHP Client for Elasticsearch
    keywords : client, elasticsearch, search
@@ -135,7 +135,7 @@ O suporte à versão do serviço e à compatibilidade do Adobe Commerce na infra
 
    Na resposta, localize o endereço IP do ponto final do serviço Elasticsearch:
 
-   ```terminal
+   ```
    | elasticsearch:                                                                                                  |
    +------------------------------------------+----------------------------------------------------------------------+
    | username                                 | null                                                                 |
@@ -162,7 +162,7 @@ O suporte à versão do serviço e à compatibilidade do Adobe Commerce na infra
    curl -XGET <elasticsearch-service-endpoint-ip-address>:9200/
    ```
 
-   ```terminal
+   ```json
    {
       "name" : "-AqGi9D",
       "cluster_name" : "elasticsearch",

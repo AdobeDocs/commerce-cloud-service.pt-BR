@@ -3,7 +3,7 @@ title: Atualizar versão do Commerce
 description: Saiba como atualizar a versão do Adobe Commerce no projeto de infraestrutura em nuvem.
 feature: Cloud, Upgrade
 exl-id: 87821007-4979-4a20-940b-aa3c82c192d8
-source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1439'
 ht-degree: 0%
@@ -381,7 +381,7 @@ A Adobe recomenda que você atualize seu ambiente de Produção _antes_, incluin
 
 Se a atualização falhar, você receberá uma mensagem de erro no navegador indicando que não é possível acessar sua loja ou o painel Administrador:
 
-```terminal
+```
 There has been an error processing your request
 Exception printing is disabled by default for security reasons.
   Error log record number: <error-number>

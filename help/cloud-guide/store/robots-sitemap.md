@@ -3,7 +3,7 @@ title: Adicionar mapa do site e robôs de mecanismo de pesquisa
 description: Saiba como adicionar o mapa do site e os robôs do mecanismo de pesquisa ao Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Configuration, Search, Site Navigation
 exl-id: b98f43fa-1878-466d-8ea0-1e7207af8b60
-source-git-commit: ee1db75c73c086e0ea54e1a7591ca7f2b4d2b36d
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Uma tentativa de gerar e gravar o arquivo `sitemap.xml` no diretório raiz resulta no seguinte erro:
 
-```terminal
+```
 Please make sure that "/" is writable by the web-server.
 ```
 

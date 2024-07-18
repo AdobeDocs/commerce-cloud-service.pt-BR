@@ -1,18 +1,18 @@
 ---
-title: Variáveis de implantação do Post
+title: Variáveis pós-implantação
 description: Consulte a lista de variáveis de ambiente que controlam ações na fase de pós-implantação do Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Configuration, Cache
 recommendations: noDisplay, catalog
 role: Developer
 exl-id: e460335f-cd2b-4c98-b1ff-32504599b33d
-source-git-commit: 8b02757591c4e8f607e936de4eda74d76953d9b7
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '511'
 ht-degree: 0%
 
 ---
 
-# Variáveis de implantação do Post
+# Variáveis pós-implantação
 
 As variáveis _pós-implantação_ a seguir controlam ações na fase de pós-implantação e podem herdar e substituir valores das [Variáveis globais](variables-global.md). Insira estas variáveis no estágio `post-deploy` do arquivo `.magento.env.yaml`:
 
@@ -45,7 +45,7 @@ stage:
 
 Depois que você especificar as páginas para testar e confirmar suas alterações, o teste _Tempo até o Primeiro Byte_ será executado durante a fase de pós-implantação e publicará os resultados para cada caminho no log de nuvem:
 
-```terminal
+```
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.313s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/customer/account/create","status":200}
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.408s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/checkout/cart","status":200}
 ```
@@ -93,7 +93,7 @@ Personalize a lista de páginas usadas para pré-carregar o cache no estágio `p
 
 - **várias páginas** — Use o formato a seguir para armazenar em cache várias páginas de acordo com um padrão de expressão regular específico:
 
-  ```terminal
+  ```
   <entity_type>:<pattern|url|product_sku>:<store_id|store_code>
   ```
 

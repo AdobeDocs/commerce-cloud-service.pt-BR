@@ -4,7 +4,7 @@ description: Saiba como gerenciar as ramificações de ambiente para o Adobe Com
 role: Developer
 feature: Cloud, Install
 exl-id: a871c7e2-4506-4a05-8fc2-fc5ef2afe609
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '676'
 ht-degree: 0%
@@ -164,14 +164,14 @@ Ao excluir um ambiente, ele é definido como _inativo_. O código ainda está di
 
 1. Responda às solicitações para excluir o ambiente local e o ambiente remoto correspondente.
 
-   ```terminal
+   ```
    The environment <environment-ID> is currently active: deleting it will delete all associated data.
    Are you sure you want to delete the environment <environment-ID>? [Y/n]
    ```
 
    A exclusão do ambiente o coloca em um estado _inativo_.
 
-   ```terminal
+   ```
    Delete the remote Git branch too? [Y/n]
    ```
 
@@ -179,7 +179,7 @@ Ao excluir um ambiente, ele é definido como _inativo_. O código ainda está di
 
 1. Aguarde a exclusão do ambiente.
 
-   ```terminal
+   ```
    Deleting environment <environment-ID>
    Waiting for the activity...
      Deleting environment <project-id>-<environment-ID>-xxxxxx

@@ -3,7 +3,7 @@ title: Propriedade do firewall
 description: Consulte exemplos sobre como configurar a propriedade de firewall no arquivo de configuração do aplicativo do Commerce.
 feature: Cloud, Configuration, Security
 exl-id: f169c008-c62a-41b7-a98d-cccd81c7291a
-source-git-commit: 74d88560db3b65294673a1e1827f9cea098d707a
+source-git-commit: a8ecebc87bfae5deaf0fc7ff3e7dd3b255fe3f24
 workflow-type: tm+mt
 source-wordcount: '844'
 ht-degree: 0%
@@ -32,7 +32,7 @@ magento-cloud p:curl --project PROJECT_ID /settings | grep -i outbound
 
 A menos que você tenha solicitado `deny` para sua política, o comando deve mostrar sua política definida como `allow`:
 
-```terminal
+```json
 "outbound_restrictions_default_policy": "allow"
 ```
 
@@ -157,7 +157,7 @@ A opção `ips` permite uma lista de endereços IP na notação CIDR. Você pode
 
 Para especificar um único endereço IP, adicione o prefixo CIDR `/32` ao final do seu endereço IP:
 
-```terminal
+```
 172.217.11.174/32  # google.com
 ```
 
@@ -189,7 +189,7 @@ awk '($5 ~/query/)' /var/log/dns.log | awk '{print $6}' | sort | uniq -c | sort 
 
 Esse comando também mostra solicitações DNS que foram feitas, mas bloqueadas, por suas regras de filtragem de saída. A saída não mostra quais domínios foram bloqueados, somente se as solicitações foram feitas. A saída não mostra solicitações feitas usando um endereço IP.
 
-```terminal
+```
 Example output:
 
 97 magento.com

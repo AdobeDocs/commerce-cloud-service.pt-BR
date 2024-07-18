@@ -3,7 +3,7 @@ title: Assistentes inteligentes
 description: Saiba como usar assistentes inteligentes para avaliar se o projeto do Adobe Commerce na infraestrutura em nuvem está seguindo as práticas recomendadas de implantação.
 feature: Cloud, Build, Deploy, SCD
 exl-id: eb79431c-8835-4ae4-b453-9c4932c5d5ac
-source-git-commit: 225fba1acfd8b3ce4d7ce989c7851e7b0b218680
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 0%
@@ -36,13 +36,13 @@ Como exemplo, você pode verificar se a sua configuração ativa corretamente o 
 
 Uma configuração bem-sucedida retorna:
 
-```terminal
+```
 SCD on-demand is enabled
 ```
 
 Uma configuração com falha retorna:
 
-```terminal
+```
 SCD on-demand is disabled
 ```
 
@@ -50,7 +50,7 @@ SCD on-demand is disabled
 
 A configuração _ideal_ para o projeto na nuvem ajuda a minimizar o tempo de inatividade da implantação, aquecendo o cache e gerando conteúdo estático quando solicitado pelo usuário. Este assistente é executado automaticamente durante o processo de implantação. Se a Nuvem não estiver configurada para este _estado ideal_, você receberá uma mensagem semelhante à seguinte:
 
-```terminal
+```
 - SCD on build is not configured
 - Post-deploy hook is not configured
 - Skip HTML minification is disabled
@@ -81,6 +81,6 @@ Com base na saída, você precisa fazer as seguintes correções na sua configur
 
 1. Envie alterações de código e execute o teste novamente. Quando sua configuração for _ideal_, você receberá a seguinte mensagem.
 
-   ```terminal
+   ```
    Ideal state is configured
    ```

@@ -3,7 +3,7 @@ title: Gerenciar extensões
 description: Saiba como instalar e gerenciar extensões no Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Extensions, Upgrade
 exl-id: 9c6e98ca-85da-4342-8402-d576eb382ba2
-source-git-commit: f8fb9d4d43c85f91ff87686160bcddb7cd417635
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '646'
 ht-degree: 0%
@@ -98,7 +98,7 @@ A Adobe recomenda trabalhar em uma ramificação de desenvolvimento ao adicionar
 
    Exemplo de resposta:
 
-   ```terminal
+   ```
    Module is enabled
    ```
 

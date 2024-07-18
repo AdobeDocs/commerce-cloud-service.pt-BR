@@ -3,7 +3,7 @@ title: Configurar vários sites ou lojas
 description: Saiba como configurar vários sites ou lojas para o Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Configuration, Routes, Site Navigation
 exl-id: 16e932ef-f083-44d7-977f-0c78899e151a
-source-git-commit: 85aa54af10e7ea44adde5403b69ff03d4a0c622f
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1013'
 ht-degree: 0%
@@ -22,14 +22,14 @@ O processo para configurar vários armazenamentos depende da sua escolha entre u
 
 Vários armazenamentos com domínios exclusivos:
 
-```terminal
+```
 https://first.store.com/
 https://second.store.com/
 ```
 
 Vários armazenamentos com o mesmo domínio:
 
-```terminal
+```
 https://store.com/first/
 https://store.com/second/
 ```

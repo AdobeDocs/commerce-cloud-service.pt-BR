@@ -4,7 +4,7 @@ description: Saiba como desinstalar o aplicativo do Adobe Commerce de um projeto
 role: Developer
 topic: Development
 exl-id: b76bd6c3-986e-4adc-abd0-5b27db0d8a3b
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '480'
 ht-degree: 0%
@@ -38,7 +38,7 @@ Redefinir a ramificação Git reverte o código para um estado estável no passa
 
    Exemplo de resposta:
 
-   ```terminal
+   ```
    6bf9f45 (HEAD -> master, magento/master, magento/develop, magento/HEAD, develop) Create composer.lock
    34d7434 2.4.6 upgrade
    b69803c Update composer.lock
@@ -106,7 +106,7 @@ A desinstalação do software Adobe Commerce remove e restaura o banco de dados,
 
    A seguinte mensagem é exibida para confirmar uma desinstalação bem-sucedida:
 
-   ```terminal
+   ```
    [SUCCESS]: Magento uninstallation complete.
    ```
 

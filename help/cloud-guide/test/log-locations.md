@@ -3,7 +3,7 @@ title: Exibir e gerenciar logs
 description: Entenda os tipos de arquivos de log disponíveis na infraestrutura da nuvem e onde encontrá-los.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 86af69eed16e8fe464de93bd0f33cfbfd4ed8f49
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -44,7 +44,7 @@ magento-cloud ssh -p <project-ID> -e <environment-ID> --all
 
 Exemplo de resposta:
 
-```terminal
+```
 1.ent-project-environment-id@ssh.region.magento.cloud
 2.ent-project-environment-id@ssh.region.magento.cloud
 3.ent-project-environment-id@ssh.region.magento.cloud
@@ -84,7 +84,7 @@ Depois de enviar as alterações para o ambiente, você pode revisar o log de ca
 
 Verifique os carimbos de data e hora nas entradas do log e localize os logs para uma implantação específica. Este é um exemplo condensado de saída de log que você pode usar para solução de problemas:
 
-```terminal
+```
 Re-deploying environment project-integration-ID
   Executing post deploy hook for service `mymagento`
     [2019-01-03 19:44:11] NOTICE: Starting post-deploy.
@@ -129,7 +129,7 @@ magento-cloud log -e <environment-ID> deploy
 
 Exemplo de resposta:
 
-```terminal
+```
 Reading log file projectID-branchname-ID--mymagento@ssh.zone.magento.cloud:/var/log/'deploy.log'
 
 [2023-04-24 18:58:03.080678] Launching command 'b'php ./vendor/bin/ece-tools run scenario/deploy.xml\n''.
@@ -153,7 +153,7 @@ magento-cloud ssh -e <environment-ID> "./vendor/bin/ece-tools error:show"
 
 Exemplo de resposta:
 
-```terminal
+```
 errorCode: 1001
 stage: build
 step: validate-config
@@ -187,19 +187,19 @@ Assim como os logs de implantação, os logs de aplicativos são exclusivos para
 | Arquivo de log | Integração do Starter e do Pro | Descrição |
 | ------------------- | --------------------------- | ------------------------------------------------- |
 | **Log de implantação** | `/var/log/deploy.log` | Atividade do [gancho de implantação](../application/hooks-property.md). |
-| **log de implantação do Post** | `/var/log/post_deploy.log` | Atividade do [gancho pós-implantação](../application/hooks-property.md). |
+| **Log pós-implantação** | `/var/log/post_deploy.log` | Atividade do [gancho pós-implantação](../application/hooks-property.md). |
 | **Log do Cron** | `/var/log/cron.log` | Saída de trabalhos cron. |
 | **Log de acesso do Nginx** | `/var/log/access.log` | Na inicialização do Nginx, erros de HTTP para diretórios ausentes e tipos de arquivos excluídos. |
 | **Log de erros do Nginx** | `/var/log/error.log` | Mensagens de inicialização úteis para depurar erros de configuração associados ao Nginx. |
 | **log de acesso ao PHP** | `/var/log/php.access.log` | Solicitações para o serviço PHP. |
 | **log do FPM do PHP** | `/var/log/app.log` | |
 
-Para ambientes de preparo e produção Pro, os registros de implantação, implantação do Post e Cron estão disponíveis somente no primeiro nó do cluster:
+Para ambientes de preparo e produção Pro, os logs de implantação, pós-implantação e cron estão disponíveis somente no primeiro nó do cluster:
 
 | Arquivo de log | Estágio Pro | Produção Pro |
 | ------------------- | --------------------------------------------------- | ----------------------------------------------- |
 | **Log de implantação** | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>_stg/deploy.log` | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>/deploy.log` |
-| **log de implantação do Post** | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
+| **Log pós-implantação** | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
 | **Log do Cron** | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>_stg/cron.log` | Somente o primeiro nó:<br>`/var/log/platform/<project-ID>/cron.log` |
 | **Log de acesso do Nginx** | `/var/log/platform/<project-ID>_stg/access.log` | `/var/log/platform/<project-ID>/access.log` |
 | **Log de erros do Nginx** | `/var/log/platform/<project-ID>_stg/error.log` | `/var/log/platform/<project-ID>/error.log` |
@@ -210,7 +210,7 @@ Para ambientes de preparo e produção Pro, os registros de implantação, impla
 
 Os registros de aplicativos são compactados e arquivados uma vez por dia e mantidos por um ano. Os logs compactados são nomeados usando uma ID exclusiva que corresponde ao `Number of Days Ago + 1`. Por exemplo, em ambientes de produção Pro, um log de acesso do PHP para 21 dias no passado é armazenado e nomeado da seguinte maneira:
 
-```terminal
+```
 /var/log/platform/<project-ID>/php.access.log.22.gz
 ```
 

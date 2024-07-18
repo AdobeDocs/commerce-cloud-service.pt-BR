@@ -2,7 +2,7 @@
 title: Serviço de email SendGrid
 description: Saiba mais sobre o serviço de email SendGrid para Adobe Commerce na infraestrutura em nuvem e como você pode testar sua configuração de DNS.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: 2b106edcaaacb63c0e785f094b7e1b755885abd0
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1090'
 ht-degree: 0%
@@ -104,7 +104,7 @@ Após a configuração da autenticação de domínio, o SendGrid manipula automa
 
 Para testar a configuração do DNS:
 
-```terminal
+```
 dig CNAME em.domain_name
 dig CNAME s1._domainkey.domain_name
 dig CNAME s2._domainkey.domain_name
