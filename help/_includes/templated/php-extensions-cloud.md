@@ -1,5 +1,5 @@
 ---
-source-git-commit: 13e500e2a9fd27a3e8070d1969f4b432e9ea4d44
+source-git-commit: b6701a50414655937f30ea9ef7d1f86f36694107
 workflow-type: tm+mt
 source-wordcount: '96'
 ht-degree: 0%
@@ -34,7 +34,6 @@ ht-degree: 0%
                 libxml<br>
                 mysqli<br>
                 opcache<br>
-                openswoole<br>
                 pcntl<br>
                 pdo_mysql<br>
                 Reflexo<br>
@@ -42,6 +41,7 @@ ht-degree: 0%
                 soquetes<br>
                 SPL<br>
                 padrão<br>
+                swoole<br>
                 sysvmsg<br>
                 sistema<br>
                 sysvshm<br>
