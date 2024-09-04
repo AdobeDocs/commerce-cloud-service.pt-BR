@@ -4,7 +4,7 @@ description: Saiba como preparar um Adobe Customer Technical Advisor para provis
 recommendations: noDisplay, catalog
 role: Admin
 exl-id: cfb354b0-c255-4b6e-94aa-c5a6bf7230d6
-source-git-commit: 374cbe4a119b43ab446905fd6b9e51840094ce61
+source-git-commit: da1dec76b9389244f9d5a65428e09f1bc897fa5f
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Exemplos para domínios de produção e de preparo:
 
 Consulte [Configurar vários sites ou lojas](../cloud-guide/store/multiple-sites.md) no guia _Commerce na Infraestrutura na Nuvem_ para obter mais orientações sobre domínios múltiplos ou exclusivos.
 
-Consulte [Várias contas do Fastly e domínios atribuídos](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/cdn/fastly#multiple-fastly-accounts-and-assigned-domains) se você tiver uma conta do Fastly existente que vincula o mesmo ápice e subdomínios usados no site do Adobe Commerce.
+Consulte [Várias contas do Fastly e domínios atribuídos](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/cdn/fastly#multiple-fastly-accounts-and-assigned-domains){target="_blank"} se você tiver uma conta do Fastly existente que vincula o mesmo ápice e subdomínios usados no site do Adobe Commerce.
 
 ## Domínio de email transacional
 
