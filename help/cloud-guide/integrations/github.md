@@ -4,9 +4,9 @@ description: Saiba como integrar seu projeto do Adobe Commerce na infraestrutura
 feature: Cloud, Integration
 last-substantial-update: 2023-05-25T00:00:00Z
 exl-id: 5305452f-4c8d-438c-ac78-e2e1ec2f8cd9
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: b162faadf114423a7da23ecf94c96eccbcaeb72b
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '949'
 ht-degree: 0%
 
 ---
@@ -108,7 +108,7 @@ Você pode optar por percorrer os prompts da CLI usando o `magento-cloud integra
 
 | Opção | Obrigatório? | Descrição |
 | ----------------------- | --------- | --------------------------------- |
-| `--base-url` | Sim | A URL de base da instalação do servidor, que pode ser `https://github.com/` ou um personalizado. Omita esta opção se seu repositório estiver hospedado com GitHub público. |
+| `--base-url` | Sim | A URL de base da instalação do servidor, que pode ser `https://github.com/` ou um personalizado. Omita esta opção se seu repositório estiver hospedado com GitHub público ou se não estiver hospedado em servidores privados. Omita esta opção se a URL do repositório for semelhante a `https://github.com/{account}/{repository-name}`. Isso pode causar erros como `Unable to connect to GitHub: repository not found`. |
 | `--token` | Sim | O token de acesso pessoal gerado para o GitHub |
 | `--repository` | Sim | O nome do repositório: `owner-or-organisation/repository` |
 | `--build-pull-requests` | Opcional | Instrui o Adobe Commerce na infraestrutura de nuvem a implantar depois de mesclar uma solicitação de pull (`true` por padrão) |
