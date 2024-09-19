@@ -4,9 +4,9 @@ description: Saiba mais sobre os ambientes compatíveis com a arquitetura Pro.
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 95b033ba430cb5dc74fa654b9d519dfcd5b6d319
+source-git-commit: eccf69d792f5f8bbd32fb24ac731fffa1eeb91ba
 workflow-type: tm+mt
-source-wordcount: '1472'
+source-wordcount: '1511'
 ht-degree: 0%
 
 ---
@@ -66,7 +66,9 @@ Os ambientes de integração são projetados para testes e desenvolvimento limit
 
 Para obter o melhor desempenho no ambiente de integração, siga estas práticas recomendadas:
 
-- Restringir tamanho do catálogo
+- Restringir o tamanho do catálogo - Para referência, os Dados de amostra contêm cerca de 2.048 produtos. Tente reduzir o tamanho do catálogo para cerca de 4.000 a 5.000 produtos.
+
+- Reduzir o número de grupos de clientes - ter muitos grupos de clientes pode afetar o desempenho da indexação e o desempenho geral.
 
 - Limitar o uso a um ou dois usuários simultâneos
 
