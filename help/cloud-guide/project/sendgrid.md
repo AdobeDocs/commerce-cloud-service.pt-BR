@@ -2,9 +2,9 @@
 title: Serviço de email SendGrid
 description: Saiba mais sobre o serviço de email SendGrid para Adobe Commerce na infraestrutura em nuvem e como você pode testar sua configuração de DNS.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: 1226be333deb1b1da402b4c0d2e141f9be1eb93b
+source-git-commit: 34d1895592c83fa27b52d0f2e0f38445294b3782
 workflow-type: tm+mt
-source-wordcount: '1128'
+source-wordcount: '1136'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ O DKIM é uma tecnologia de autenticação de email que permite aos Provedores d
 
 >[!WARNING]
 >
->As assinaturas DKIM do SendGrid e o suporte à autenticação de domínio só estão disponíveis para projetos Pro e não para projetos Starter. Como resultado, os emails transacionais de saída provavelmente serão sinalizados por filtros de spam. Usar DKIM melhora a taxa de entrega como um remetente de email autenticado. Para melhorar a taxa de delivery de mensagens, você pode atualizar do Starter para o Pro ou usar seu próprio servidor SMTP ou provedor de serviços de delivery de email. Consulte [Configurar conexões de email](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) no _guia de Sistemas de Administração_.
+>O suporte às assinaturas DKIM do SendGrid e à autenticação de domínio só está disponível nos ambientes de Produção e Preparo para projetos Pro, mas não para todos os ambientes de Início. Como resultado, os emails transacionais de saída provavelmente serão sinalizados por filtros de spam. Usar DKIM melhora a taxa de entrega como um remetente de email autenticado. Para melhorar a taxa de delivery de mensagens, você pode atualizar do Starter para o Pro ou usar seu próprio servidor SMTP ou provedor de serviços de delivery de email. Consulte [Configurar conexões de email](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) no _guia de Sistemas de Administração_.
 
 ### Autenticação de remetente e domínio
 
