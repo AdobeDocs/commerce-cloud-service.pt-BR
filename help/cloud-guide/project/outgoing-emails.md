@@ -2,20 +2,20 @@
 title: Configurar emails de saída
 description: Saiba como habilitar emails de saída para o Adobe Commerce na infraestrutura em nuvem.
 exl-id: 814fe2a9-15bf-4bcb-a8de-ae288fd7f284
-source-git-commit: 59f82d891bb7b1953c1e19b4c1d0a272defb89c1
+source-git-commit: ec9192caa5daa1cd25a3eec6095c2c3cf8fbefb4
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '373'
 ht-degree: 0%
 
 ---
 
 # Configurar emails de saída
 
-Você pode habilitar e desabilitar emails de saída para cada ambiente do [!DNL Cloud Console] ou da linha de comando. Permita que os emails de saída de ambientes de integração e de preparo enviem emails de autenticação de dois fatores ou redefinam senhas para usuários do projeto na nuvem.
+Você pode habilitar e desabilitar emails de saída para cada ambiente do [!DNL Cloud Console] ou da linha de comando. Ative emails de saída para ambientes de integração (e de preparo somente para o Starter) para enviar emails de autenticação de dois fatores ou redefinir emails de senha para usuários do projeto na nuvem.
 
-Por padrão, os emails de saída são ativados nos ambientes de Produção e Preparo. No entanto, [!UICONTROL Enable outgoing emails] pode parecer desabilitado nas configurações do ambiente até que você defina a propriedade `enable_smtp` por meio da [linha de comando](#enable-emails-in-the-cli) ou do [Console da Nuvem](outgoing-emails.md#enable-emails-in-the-cloud-console).
+Por padrão, os emails de saída são ativados nos ambientes de Produção e Preparo (somente Pro). No entanto, a configuração **[!UICONTROL Enable outgoing emails]** pode parecer desabilitada nas configurações do ambiente independentemente do status até que você defina a propriedade `enable_smtp` por meio da [linha de comando](#enable-emails-in-the-cli) ou do [Console da Nuvem](outgoing-emails.md#enable-emails-in-the-cloud-console).
 
-A atualização do valor da propriedade [!UICONTROL enable_smtp] pela [linha de comando](#enable-emails-in-the-cli) também altera o valor da configuração [!UICONTROL Enable outgoing emails] desse ambiente no Console da Nuvem.
+A atualização do valor da propriedade `enable_smtp` pela [linha de comando](#enable-emails-in-the-cli) também altera o valor da configuração [!UICONTROL Enable outgoing emails] desse ambiente no Console da Nuvem.
 
 {{redeploy-warning}}
 
