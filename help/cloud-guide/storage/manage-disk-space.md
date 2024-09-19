@@ -3,7 +3,7 @@ title: Gerenciar espaço em disco
 description: Saiba como gerenciar o espaço em disco usando a interface de linha de comando.
 feature: Cloud, Storage
 exl-id: 480cb33b-ac83-441d-946e-5b4de09ad84e
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 0cc0b8e49e2cccf4266ecf84ef935f24fde1c7a4
 workflow-type: tm+mt
 source-wordcount: '714'
 ht-degree: 0%
@@ -93,7 +93,7 @@ df -h
 
 A opção `-h` exibe o relatório usando um formato legível (KB, MB ou GB).
 
-Na seguinte resposta de exemplo, a montagem `/mnt/shared` mostra o espaço em disco para mídia e a montagem `/data/mysql/` mostra o espaço em disco para o banco de dados:
+Na seguinte resposta de exemplo, a montagem `/data/exports` mostra o espaço em disco para mídia e a montagem `/data/mysql/` mostra o espaço em disco para o banco de dados:
 
 ```
 Filesystem                                    Size  Used Avail Use% Mounted on
