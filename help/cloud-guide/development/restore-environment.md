@@ -4,16 +4,16 @@ description: Saiba como desinstalar o aplicativo do Adobe Commerce de um projeto
 role: Developer
 topic: Development
 exl-id: b76bd6c3-986e-4adc-abd0-5b27db0d8a3b
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 9e4e58d2470b73b221168c182c7d563ce6f6502f
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
 
 # Restaurar um ambiente
 
-Se você encontrar problemas no ambiente de integração e não tiver um [backup válido](../storage/snapshots.md), tente restaurar seu ambiente usando um dos seguintes métodos:
+Se você encontrar problemas no ambiente de integração e não tiver um [backup válido](../storage/snapshots.md) ou quiser redefinir o ambiente para uma folha em branco, poderá restaurar/redefinir o ambiente usando um dos seguintes métodos:
 
 - Redefinir ou reverter o código na ramificação Git
 - Desinstalar o aplicativo [!DNL Commerce]
