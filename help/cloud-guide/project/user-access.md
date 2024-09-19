@@ -6,9 +6,9 @@ feature: Cloud, Roles/Permissions
 last-substantial-update: 2023-06-27T00:00:00Z
 topic: Security
 exl-id: 3357a3ea-bf86-4a65-95d1-6b24f1152248
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 5e4be034a392716ea55e2878d336cb9ecac1e052
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1459'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Os projetos do Adobe Commerce em infraestrutura em nuvem usam acesso com base em funções. Há duas funções disponíveis no nível do projeto:
 
-- **Administrador do projeto**—Grava acesso a todos os ambientes do projeto e pode gerenciar usuários, código de push e atualizar configurações do projeto.
+- **Administrador do projeto**—Grava acesso a todos os ambientes do projeto e pode gerenciar usuários, código de push e atualizar configurações do projeto. (Anteriormente conhecido como **Super admin**)
 - **Visualizador do projeto** — Acesso somente para visualização a todos os ambientes do projeto.
 
 Visualizadores de projeto não podem executar tarefas em nenhum ambiente; no entanto, você pode conceder aos visualizadores do projeto acesso de gravação a um tipo de ambiente específico.
