@@ -3,7 +3,7 @@ title: Solução de problemas rápida
 description: Saiba como solucionar problemas e gerenciar o módulo e os serviços do Fastly CDN para Adobe Commerce.
 feature: Cloud, Configuration, Cache, Services
 exl-id: e4c47035-cbad-4838-8d44-fa5eaaac42d1
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: e066e9c7e1a6010c9d316f66f1632e28a0c40652
 workflow-type: tm+mt
 source-wordcount: '1834'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Use as informações a seguir para solucionar problemas e gerenciar o módulo Fastly CDN para o Magento 2 em seus ambientes de projeto do Adobe Commerce na infraestrutura em nuvem. Por exemplo, você pode investigar valores de cabeçalho de resposta e comportamento do armazenamento em cache para resolver problemas de serviço e desempenho do Fastly.
 
-Em ambientes de Produção e Preparo Pro, você pode usar [logs do New Relic](../monitor/log-management.md) para exibir e analisar dados de log do Fastly CDN e do WAF para solucionar erros e problemas de desempenho.
+Em ambientes de produção e preparo profissionais, você pode usar os [logs do New Relic](../monitor/log-management.md) para exibir e analisar os dados de log do Fastly CDN e do WAF para solucionar erros e problemas de desempenho.
 
 >[!NOTE]
 >
@@ -119,7 +119,7 @@ Quando ocorre um erro 503, o Fastly retorna o motivo na página de erro e manute
 
 Se o domínio apex e os subdomínios do seu projeto do Adobe Commerce na infraestrutura em nuvem já estiverem associados a uma conta existente do Fastly com uma ID de Serviço atribuída, você não poderá iniciar o até atualizar a configuração do Fastly:
 
-- Atualize a configuração de apex e subdomínio na conta existente do Fastly. Consulte [Várias contas do Fastly e domínios atribuídos](fastly.md#domain).
+- Atualize a configuração de apex e subdomínio na conta existente do Fastly. Consulte [Várias contas do Fastly e domínios atribuídos](fastly.md#multiple-fastly-accounts-and-assigned-domains).
 
 - [Habilitar e configurar o Fastly](fastly-configuration.md#enable-fastly-caching) e concluir a [configuração do DNS](../launch/checklist.md#update-dns-configuration-with-production-settings)
 
