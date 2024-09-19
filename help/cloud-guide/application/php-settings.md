@@ -3,7 +3,7 @@ title: Configurações do PHP
 description: Saiba mais sobre as configurações ideais do PHP para a configuração de aplicativos do Commerce na infraestrutura de nuvem.
 feature: Cloud, Configuration, Extensions
 exl-id: b4180265-f7a1-48e4-8c23-27835253e171
-source-git-commit: 94c1e16a07567471d446478e3bd2a33977247ef3
+source-git-commit: 9d20cd11e541d343af158eb3eadcf641fb2751bd
 workflow-type: tm+mt
 source-wordcount: '536'
 ht-degree: 0%
@@ -118,6 +118,7 @@ Os requisitos do módulo do PHP estão vinculados à versão do Adobe Commerce. 
 
 Para projetos Pro, as seguintes extensões exigem suporte adicional para instalação:
 
+- `ioncube`
 - `sourceguardian`
 
 Por exemplo, para configurar o PHP para executar somente scripts protegidos pelo SourceGuardian em todos os ambientes, a seguinte opção deve ser definida no arquivo `php.ini`:
