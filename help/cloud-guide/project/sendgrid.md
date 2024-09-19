@@ -2,9 +2,9 @@
 title: Serviço de email SendGrid
 description: Saiba mais sobre o serviço de email SendGrid para Adobe Commerce na infraestrutura em nuvem e como você pode testar sua configuração de DNS.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: 34d1895592c83fa27b52d0f2e0f38445294b3782
+source-git-commit: b5c8dc062a940e9e202d9bd4cca6901b07109e07
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1273'
 ht-degree: 0%
 
 ---
@@ -137,3 +137,13 @@ Não há limites rígidos para o número de emails que podem ser enviados no amb
 ### Reputação de envio de email
 
 Uma reputação de envio de email é uma pontuação atribuída por um provedor de serviços de Internet (ISP) a uma empresa que envia mensagens de email. Quanto maior a pontuação, mais provável um ISP entregará mensagens na caixa de entrada de um recipient. Se a pontuação cair abaixo de um determinado nível, o ISP poderá rotear mensagens para a pasta de spam dos recipients ou até mesmo rejeitar mensagens completamente. A pontuação de reputação é determinada por vários fatores, como uma média de 30 dias de classificação de seus endereços IP em relação a outros endereços IP e taxa de reclamação de spam. Consulte [8 Maneiras de Verificar a Reputação do Envio de Emails](https://sendgrid.com/en-us/blog/5-ways-check-sending-reputation).
+
+### Listas de supressão de email
+
+Uma lista de supressão de email é uma lista de recipients para os quais os emails não devem ser enviados se isso prejudicar sua reputação de envio e as taxas de delivery. Ela é exigida pela CAN-SPAM Act para garantir que os remetentes de email tenham um método de recusa de recipients que cancelaram a inscrição ou marcaram o email como spam. A lista de supressão também coleta emails que são rejeitados, bloqueados ou inválidos.
+
+Para evitar que emails sejam enviados para a pasta de spam, siga o artigo de práticas recomendadas do Sendgrid, [Por que Meus Emails Estão Indo para o Spam?](https://sendgrid.com/en-us/blog/10-tips-to-keep-email-out-of-the-spam-folder).
+
+Se alguns destinatários não estiverem recebendo seus emails, você poderá [Enviar um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) para solicitar uma revisão das listas de supressão e remover os destinatários, se necessário.
+
+Para obter mais detalhes, consulte [O que é uma Lista de Supressão?](https://sendgrid.com/en-us/blog/what-is-a-suppression-list)
