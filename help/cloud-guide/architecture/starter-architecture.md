@@ -3,9 +3,9 @@ title: Arquitetura inicial
 description: Saiba mais sobre os ambientes compatíveis com a arquitetura Starter.
 feature: Cloud, Paas
 exl-id: 03365d32-4eb4-42d4-82a7-771df5e7b3da
-source-git-commit: c61d711b1041ecf76ec6468cd225a34fd77c24b1
+source-git-commit: e5cb79cab4e22d1c787859ab98e6bab6cd2dc2eb
 workflow-type: tm+mt
-source-wordcount: '903'
+source-wordcount: '942'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,9 @@ Os ambientes de integração são projetados para testes e desenvolvimento limit
 
 Para obter o melhor desempenho no ambiente de integração, siga estas práticas recomendadas:
 
-- Restringir tamanho do catálogo
+- Restringir o tamanho do catálogo - Para referência, os Dados de amostra contêm cerca de 2.048 produtos. Tente reduzir o tamanho do catálogo para cerca de 4.000 a 5.000 produtos.
+
+- Reduzir o número de grupos de clientes - ter muitos grupos de clientes pode afetar o desempenho da indexação e o desempenho geral.
 
 - Limitar o uso a um ou dois usuários simultâneos
 
