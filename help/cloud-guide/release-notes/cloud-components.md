@@ -3,9 +3,9 @@ title: Componentes na nuvem do Commerce
 description: Consulte uma lista das melhorias mais recentes no pacote de componentes da nuvem.
 recommendations: noDisplay, catalog
 exl-id: b4e2508a-3558-4fa8-bae0-3eb76c7b2775
-source-git-commit: c02dfd2709cdc63ac1630edaa8c89cad5f737ea1
+source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '590'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,18 @@ As notas de versão incluem:
 
 <!--Add release notes below-->
 
-## v1.0.14 {#latest}
+## v1.1.0 {#latest}
+
+Data de lançamento: 7 de outubro de 2024
+
+- ![Ícone de correção](../../assets/fix.svg) **Código refatorado**—Remoção do suporte às versões antigas do PHP 7.4, 7.3, 7.2 e bibliotecas relacionadas.<!-- MCLOUD-9278 - -->
+- ![Ícone de correção](../../assets/fix.svg) **Versão do Monolog atualizada**—Suporte adicionado para monolog 3.6.<!-- MCLOUD-12855 - -->
+
+## v1.0.14
 
 Data de lançamento: 8 de abril de 2024
 
-- ![novo ícone](../../assets/new.svg) **PHP** — Suporte adicionado para PHP 8.3.
+- ![novo ícone](../../assets/new.svg) **PHP**—Suporte adicionado para o PHP 8.3.
 
 ## v1.0.13
 
@@ -121,4 +128,4 @@ Data de lançamento: 12 de junho de 2019
 
 Esta é a primeira versão do pacote [`magento/magento-cloud-components`](https://github.com/magento/magento-cloud-components), que é uma nova dependência do pacote `ece-tools` versão 2002.0.20 e posterior.
 
-- ![novo ícone](../../assets/new.svg) Adicionada a capacidade de usar padrões regex para configurar a variável de ambiente **WARM_UP_PAGES** para armazenar em cache páginas únicas, vários domínios e várias páginas. Consulte [variáveis de implantação do Post](../environment/variables-post-deploy.md#warm_up_pages).<!--MAGECLOUD-3258-->
+- ![novo ícone](../../assets/new.svg) Adicionada a capacidade de usar padrões regex para configurar a variável de ambiente **WARM_UP_PAGES** para armazenar em cache páginas únicas, vários domínios e várias páginas. Consulte [Variáveis pós-implantação](../environment/variables-post-deploy.md#warm_up_pages).<!--MAGECLOUD-3258-->

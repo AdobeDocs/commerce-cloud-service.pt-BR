@@ -2,11 +2,11 @@
 title: Notas de versão do ECE-Tools
 description: Consulte uma lista das melhorias mais recentes no pacote ECE-Tools.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-05-21T00:00:00Z
+last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: a464b940-c56e-4a7c-9948-559539e25361
-source-git-commit: 923e2114270df22e134e0676ac97f84d770bb226
+source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
 workflow-type: tm+mt
-source-wordcount: '2929'
+source-wordcount: '2990'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,16 @@ As notas de versão incluem:
 
 <!--Add release notes below-->
 
-## v2002.1.19 {#latest}
+## v2002.2.0 {#latest}
+
+Data de lançamento: 7 de outubro de 2024
+
+- ![novo ícone](../../assets/new.svg) **MariaDB 11.4**-Suporte adicionado de MariaDB 11.4.
+- ![ícone de correção](../../assets/fix.svg) **Código refatorado**-Remoção do suporte às versões antigas do PHP 7.4, 7.3, 7.2 e bibliotecas relacionadas.<!-- MCLOUD-9278 -->
+- ![Ícone de correção](../../assets/fix.svg) **Versão do Monolog atualizada**-Suporte adicionado para monolog 3.6.<!-- MCLOUD-12855 -->
+- ![Ícone de correção](../../assets/fix.svg) **Validador para RabbitMQ, MariaDB e PHP** - Corrigido o validador que gerou uma mensagem enganosa sobre a versão incorreta do serviço.
+
+## v2002.1.19
 
 Data de lançamento: 21 de maio de 2024
 
@@ -40,7 +49,7 @@ Data de lançamento: 21 de maio de 2024
 Data de lançamento: 8 de abril de 2024
 
 - ![novo ícone](../../assets/new.svg) **PHP** — Suporte adicionado para PHP 8.3.
-- Validador ![ícone de correção](../../assets/fix.svg) - Validador de EOL atualizado.
+- ![ícone de correção](../../assets/fix.svg) **Validador** - Validador de EOL atualizado.
 
 ## v2002.1.17
 
