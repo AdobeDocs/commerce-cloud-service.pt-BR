@@ -3,9 +3,9 @@ title: Firewall de aplicativo da Web (WAF)
 description: Saiba como o serviço Fastly WAF detecta, registra e bloqueia o tráfego de solicitação mal-intencionado antes que ele possa danificar a rede ou os sites do Adobe Commerce.
 feature: Cloud, Configuration, Security
 exl-id: 40bfe983-7f32-4155-ae77-7cd18866f6e2
-source-git-commit: bd03b2278869b40bd4a8c3395f7061d13680696d
+source-git-commit: 48ac1759fc052175e01998703e7f4ee5eaac5224
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '888'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ O serviço WAF oferece os seguintes benefícios:
 - **Política padrão do WAF** — A política padrão do WAF, configurada e mantida pelo Fastly, fornece uma coleção de regras de segurança personalizadas para proteger seus aplicativos Web do Adobe Commerce contra uma grande variedade de ataques, incluindo ataques de injeção, entradas mal-intencionadas, script entre sites, exfiltração de dados, violações de protocolo HTTP e outras [Dez principais ameaças de segurança do OWASP](https://owasp.org/www-project-top-ten/).
 - **Integração e habilitação do WAF**—o Adobe implanta e habilita a política padrão do WAF no seu ambiente de Produção dentro de 2 a 3 semanas após o provisionamento ser concluído.
 - **Suporte a operações e manutenção**—
-   - O Adobe e o Fastly configuram e gerenciam seus registros e alertas para o serviço do WAF.
+   - O Adobe e o Fastly configuram e gerenciam seus registros, regras e alertas para o serviço do WAF.
    - O Adobe tria tíquetes de suporte ao cliente relacionados a problemas de serviço do WAF que bloqueiam o tráfego legítimo como problemas de Prioridade 1.
    - As atualizações automatizadas para a versão de serviço do WAF garantem cobertura imediata para explorações novas ou em evolução. Consulte [manutenção e atualizações do WAF](#waf-maintenance-and-updates).
 
@@ -40,11 +40,11 @@ O Adobe habilita o serviço WAF em novas contas em 2 a 3 semanas após o provisi
 
 O serviço WAF integra-se ao Fastly e usa a lógica do cache no serviço CDN do Fastly para filtrar o tráfego nos nós globais do Fastly. Habilitamos o serviço WAF em seu ambiente de Produção com uma política padrão do WAF baseada nas [Regras de segurança ModLabs da Trustwave SpiderLabs](https://github.com/owasp-modsecurity/ModSecurity) e nas Dez principais ameaças de segurança da OWASP.
 
-O serviço do WAF filtra o tráfego HTTP e HTTPS (solicitações GET e POST) em relação ao conjunto de regras do WAF e bloqueia o tráfego mal-intencionado ou não compatível com regras específicas. O serviço filtra somente o tráfego associado à origem que tenta atualizar o cache. Como resultado, interrompemos a maioria do tráfego de ataques no cache do Fastly, protegendo seu tráfego de origem de ataques mal-intencionados. Ao processar apenas o tráfego de origem, o serviço WAF preserva o desempenho do cache, introduzindo apenas uma latência estimada de 1,5 milissegundos a 20 milissegundos para cada solicitação não armazenada em cache.
+O serviço do WAF inspeciona o tráfego HTTP e HTTPS (solicitações GET e POST) em relação ao conjunto de regras do WAF e bloqueia o tráfego mal-intencionado ou não compatível com regras específicas. O serviço inspeciona somente o tráfego de origem vinculada que tenta atualizar o cache. Como resultado, interrompemos a maioria do tráfego de ataques no cache do Fastly, protegendo seu tráfego de origem de ataques mal-intencionados. Ao processar apenas o tráfego de origem, o serviço WAF preserva o desempenho do cache, introduzindo apenas uma latência estimada de 1,5 milissegundos a 20 milissegundos para cada solicitação não armazenada em cache.
 
 ## Solução de problemas de solicitações bloqueadas
 
-Quando o serviço WAF está ativado, ele filtra todo o tráfego da Web e administrativo em relação às regras do WAF e bloqueia qualquer solicitação da Web que acione uma regra. Quando uma solicitação é bloqueada, o solicitante vê uma página de erro padrão `403 Forbidden` que inclui uma ID de referência para o evento de bloqueio.
+Quando o serviço WAF está ativado, ele inspeciona todo o tráfego da Web e administrativo em relação às regras do WAF e bloqueia qualquer solicitação da Web que acione uma regra. Quando uma solicitação é bloqueada, o solicitante vê uma página de erro padrão `403 Forbidden` que inclui uma ID de referência para o evento de bloqueio.
 
 ![Página de erro do WAF](../../assets/cdn/fastly-waf-403-error.png)
 
@@ -54,7 +54,7 @@ Se a sua página de administrador ou loja do Adobe Commerce retornar uma página
 
 ## Manutenção e atualizações do WAF
 
-O Fastly mantém e atualiza o conjunto de regras do WAF com base em atualizações de regras de terceiros comerciais, pesquisas do Fastly e fontes abertas. O Fastly atualiza as regras publicadas em uma política, conforme necessário, ou quando alterações nas regras estão disponíveis em suas respectivas fontes. Além disso, o Fastly pode adicionar regras que correspondem às classes de regras publicadas na instância do WAF de qualquer serviço depois que o serviço do WAF é ativado. Essas atualizações garantem cobertura imediata para explorações novas ou em evolução.
+O Fastly atualiza e implanta patches para novos CVEs/regras de modelo com base em atualizações de regras de terceiros comerciais, pesquisa do Fastly e fontes abertas. O Fastly atualiza as regras publicadas em uma política, conforme necessário, ou quando alterações nas regras estão disponíveis em suas respectivas fontes. Além disso, o Fastly pode adicionar regras que correspondem às classes de regras publicadas na instância do WAF de qualquer serviço depois que o serviço do WAF é ativado. Essas atualizações garantem cobertura imediata para explorações novas ou em evolução.
 
 Adobe e gerencie o Fastly no processo de atualização para garantir que as regras do WAF novas ou modificadas funcionem efetivamente no ambiente de Produção antes que as atualizações sejam implantadas no modo de bloqueio.
 
@@ -70,6 +70,6 @@ O serviço WAF padrão desenvolvido pela Fastly não é compatível com os segui
 - Limitação de taxa — Consulte [Limitação de taxa](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/RATE-LIMITING.md) na documentação do Fastly, ou consulte [Limitação de taxa](https://developer.adobe.com/commerce/webapi/get-started/rate-limiting/) na seção de segurança _API da Web do Commerce_.
 - Configurando um ponto de extremidade de log para o cliente — Consulte o [serviço PrivateLink](../development/privatelink-service.md) como uma alternativa.
 
-Embora o serviço WAF não permita bloquear ou permitir o tráfego com base em endereços IP, você pode adicionar listas de controle de acesso (ACL) e trechos de VCL personalizados ao serviço Fastly para especificar os endereços IP e a lógica de VCL para bloquear ou permitir o tráfego. Consulte [Fragmentos de VCL personalizados](fastly-vcl-custom-snippets.md).
+O serviço WAF permite bloquear ou permitir o tráfego com base em endereços IP. Você pode adicionar listas de controle de acesso (ACL) e trechos de VCL personalizados ao serviço Fastly para especificar os endereços IP e a lógica de VCL para bloquear ou permitir o tráfego. Consulte [Fragmentos de VCL personalizados](fastly-vcl-custom-snippets.md).
 
 A filtragem de solicitações TCP, UDP ou ICMP não é suportada pelo serviço WAF. No entanto, essa funcionalidade é fornecida pela proteção DDoS integrada incluída no serviço Fastly CDN. Consulte [Proteção de DDoS](fastly.md#ddos-protection).
