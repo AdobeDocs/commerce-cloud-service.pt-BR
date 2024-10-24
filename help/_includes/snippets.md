@@ -1,7 +1,7 @@
 ---
-source-git-commit: 762ce3cb6268401b0f5fae5b2280a870aa9c83a5
+source-git-commit: a87039d2e96e39d6d8d19673c5e0d52de8b844a4
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
@@ -43,11 +43,12 @@ Defina a opção `_merge` como uma das opções a seguir:
 ## Suporte a serviços profissionais {#pro-update-service}
 
 >[!TIP]
+>
 >Para projetos Pro, você deve [enviar um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para instalar ou atualizar os [serviços](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/services-yaml.html) somente em ambientes `Staging` e `Production`.
 >
 >Indique as mudanças de serviço necessárias, inclua os arquivos atualizados do `.magento.app.yaml` e do `services.yaml` e informe a versão do PHP no tíquete. Para alterações de autoatendimento na versão, extensões ou configurações do ambiente do PHP, consulte [configurações do PHP](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html) em _Configuração do aplicativo_.
 >
->Para alterações em um ambiente de Produção do _live_ (**Pro somente**), você deve fornecer um aviso mínimo de 48 horas para permitir que a equipe de infraestrutura da nuvem tenha tempo suficiente para empacotar recursos e realizar uma atualização segura. O período de aviso não inclui fins de semana. Por exemplo, se você quiser que as atualizações do serviço sejam feitas na segunda-feira, envie a solicitação até a quarta-feira anterior.
+>Para alterações em um ambiente de Produção em tempo real (**Somente profissionais**), é necessário um aviso de no mínimo 48 horas. Isso permite que a equipe de infraestrutura da nuvem tenha tempo suficiente para empacotar recursos e realizar uma atualização segura. O período de aviso começa quando a equipe de infraestrutura reconhece a solicitação e programa a atualização, exceto nos finais de semana. Por exemplo, para que os upgrades de serviço sejam concluídos na segunda-feira, uma confirmação do upgrade agendado deve ser recebida até quarta-feira. Durante períodos de pico de demanda, pode levar mais tempo para processar sua solicitação.
 
 ## Backups Pro {#pro-backups}
 
