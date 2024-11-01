@@ -3,7 +3,7 @@ title: Práticas recomendadas para configuração de loja
 description: Leia sobre as práticas recomendadas para configurar sua loja na Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Best Practices
 exl-id: 01f528bd-74c2-42e7-8e77-7e6f57a40ef4
-source-git-commit: 5b0a691a4355f5eda31d42cd3da9925439dfb510
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '1087'
 ht-degree: 0%
@@ -58,7 +58,7 @@ Para criar uma Regra de Preço, consulte [Guia do Usuário do Adobe Commerce](ht
 
 A seguir, há um exemplo de criação de uma Regra de Preço para um desconto Somente na Primeira Ordem. Para esse desconto, você gostaria de:
 
-* Crie uma regra de preço com um [segmento de cliente](https://docs.magento.com/user-guide/marketing/customer-segment-price-rule.html) com uma condição: Número Total de Pedidos menor que 1
+* Crie uma regra de preço com um [segmento de cliente](https://experienceleague.adobe.com/en/docs/commerce-admin/customers/segments/customer-segment-price-rule) com uma condição: Número Total de Pedidos menor que 1
 * Adicionar este segmento de cliente como uma condição à regra do carrinho
 * Opcional - Adicione condições e regras para aplicar os descontos a SKUs ou categorias de produtos específicos para compras direcionadas
 

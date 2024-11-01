@@ -3,16 +3,16 @@ title: Configurar o serviço RabbitMQ
 description: Saiba como habilitar o serviço RabbitMQ para gerenciar filas de mensagens para o Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Services
 exl-id: 85794b8f-2260-4a6e-b5a6-a1b4c356594e
-source-git-commit: adcfbb7217c70122a4003a66d1bec1a623fbf11a
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '398'
 ht-degree: 0%
 
 ---
 
 # Configurar o serviço [!DNL RabbitMQ]
 
-O [MQF (Estrutura da Fila de Mensagens)](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) é um sistema do Adobe Commerce que permite que um [módulo](https://glossary.magento.com/module) publique mensagens em filas. Também define os consumidores que recebem as mensagens de forma assíncrona.
+O [MQF (Estrutura da Fila de Mensagens)](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) é um sistema do Adobe Commerce que permite que um [módulo](https://experienceleague.adobe.com/en/docs/commerce-operations/operational-playbook/glossary#module) publique mensagens em filas. Também define os consumidores que recebem as mensagens de forma assíncrona.
 
 O MQF usa o [RabbitMQ](https://www.rabbitmq.com/) como agente de mensagens, o que fornece uma plataforma escalável para enviar e receber mensagens. Também inclui um mecanismo para armazenar mensagens não entregues. [!DNL RabbitMQ] é baseado na especificação AMQP (Advanced Message Queuing Protocol) 0.9.1.
 
@@ -144,4 +144,4 @@ Ao fazer logon no contêiner PHP, digite qualquer comando `amqp-` disponível pa
 
 ### Conectar a partir do aplicativo PHP
 
-Para conectar-se ao RabbitMQ usando seu aplicativo PHP, adicione uma [biblioteca](https://glossary.magento.com/library) do PHP à sua árvore de origem.
+Para conectar-se ao RabbitMQ usando seu aplicativo PHP, adicione uma biblioteca PHP à árvore de origem.

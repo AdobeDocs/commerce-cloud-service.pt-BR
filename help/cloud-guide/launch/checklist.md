@@ -2,7 +2,7 @@
 title: Lista de verificação de inicialização
 description: Revise os itens da lista de verificação para o lançamento do site.
 exl-id: 4525742e-18c5-40d1-975d-00ba3f3a51a0
-source-git-commit: 5b0a691a4355f5eda31d42cd3da9925439dfb510
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '1104'
 ht-degree: 0%
@@ -105,7 +105,7 @@ Os itens a seguir são alterações e verificações recomendadas:
 
 - [Teste de email de saída concluído](../project/outgoing-emails.md)
 
-- [Configuração segura para credenciais de Administrador e URL de Administrador Base](https://docs.magento.com/user-guide/stores/security-admin.html)
+- [Configuração segura para credenciais de Administrador e URL de Administrador Base](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-admin)
 
 - [Otimizar todas as imagens para a Web](../cdn/fastly-image-optimization.md)
 
@@ -137,13 +137,13 @@ Você também pode testar usando as seguintes opções de terceiros:
 
 - [Configurar a verificação de segurança](overview.md#set-up-the-security-scan-tool)
 
-- [Configuração segura para o usuário administrador](https://docs.magento.com/user-guide/stores/security-admin.html)
+- [Configuração segura para o usuário administrador](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-admin)
 
-- [Configuração segura para a URL do Administrador](https://docs.magento.com/user-guide/stores/store-urls-custom-admin.html)
+- [Configuração segura para a URL do Administrador]https://experienceleague.adobe.com/en/docs/commerce-admin/stores-sales/site-store/store-urls#use-a-custom-admin-url)
 
 - [Remova os usuários que não estão mais no projeto Adobe Commerce na infraestrutura em nuvem](../project/user-access.md)
 
-- [Configurar autenticação de dois fatores](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
+- [Configurar autenticação de dois fatores](https://developer.adobe.com/commerce/testing/functional-testing-framework/two-factor-authentication/)
 
 ## Monitoramento de desempenho
 

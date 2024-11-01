@@ -2,9 +2,9 @@
 title: Exemplo de gerenciamento de configurações específicas do sistema
 description: Veja um exemplo de como gerenciar e sincronizar as configurações de armazenamento em todos os ambientes do Adobe Commerce na infraestrutura em nuvem.
 hidefromtoc: true
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '864'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ O exemplo usa o seguinte procedimento definido em [Configurações de armazename
 
 Por exemplo, talvez você queira definir as seguintes configurações:
 
-* Desabilite a [localidade](https://glossary.magento.com/locale) e as configurações de otimização de arquivo estático em seu ambiente de integração
+* Desative as configurações de otimização de local e arquivo estático no ambiente de integração
 * Permitir otimização de arquivos estáticos em ambientes de preparo e produção
 * Configure o Fastly no Preparo e na Produção com credenciais específicas para cada
 
@@ -56,7 +56,7 @@ No ambiente de integração, é possível fazer logon no Administrador para modi
    ![Alterar localidade](../../assets/locale-options.png)
 
 1. Clique em **Salvar configuração**.
-1. Se solicitado, [limpe o cache](https://docs.magento.com/user-guide/system/cache-management.html).
+1. Se solicitado, [limpe o cache](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).
 1. Faça logout do Administrador.
 
 ## Exportar valores e transferir config.php para o seu sistema local
@@ -159,7 +159,7 @@ Para adicionar valores de configuração no Admin do ambiente de integração. E
 1. No painel direito, expanda **Configurações do JavaScript**.
 1. Na lista **Mesclar arquivos do JavaScript**, clique em **Sim**.
 1. Clique em **Salvar configuração**.
-1. Se solicitado, [limpe o cache](https://docs.magento.com/user-guide/system/cache-management.html).
+1. Se solicitado, [limpe o cache](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).
 1. Faça logout do Administrador.
 
 Ao executar o comando dump novamente, a nova configuração é anexada ao arquivo.

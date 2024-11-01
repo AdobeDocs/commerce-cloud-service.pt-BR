@@ -2,7 +2,7 @@
 title: Lançamento do site
 description: Saiba como iniciar a preparação para a inicialização do site.
 exl-id: a7b3f260-b76e-4220-b521-699548a9928a
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '902'
 ht-degree: 0%
@@ -43,7 +43,7 @@ Como parte da assinatura do Adobe Commerce na infraestrutura em nuvem, o Adobe f
 
 >[!NOTE]
 >
->Se você quiser implantar seu próprio certificado SSL de Validação Estendida para sua empresa, em vez de usar o certificado Let&#39;s Encrypt, entre em contato com seu CTA ou [Envie um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).
+>Se você quiser implantar seu próprio certificado SSL de Validação Estendida para sua empresa, em vez de usar o certificado Vamos Criptografar, contate sua CTA ou [Envie um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).
 
 ## Configurar a ferramenta Verificação de segurança
 
@@ -65,7 +65,7 @@ A Ferramenta de Verificação de Segurança permite que você monitore regularme
 
 - Receber atualizações de segurança e notificações específicas do site
 
-Consulte o [Guia do Usuário](https://docs.magento.com/user-guide/magento/security-scan.html) para obter informações sobre a configuração e o uso da ferramenta de verificação de segurança. Normalmente, você começa a usar essa ferramenta ao iniciar o teste de aceitação de usuários (UAT).
+Consulte o [Guia do Usuário](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-scan) para obter informações sobre a configuração e o uso da ferramenta de verificação de segurança. Normalmente, você começa a usar essa ferramenta ao iniciar o teste de aceitação de usuários (UAT).
 
 Cada site examinado deve ser registrado por meio da guia Security Scan (Verificação de segurança). Durante o processo de registro, você deve aceitar a isenção de responsabilidade antes de começar a verificar. Você controla o agendamento e autoriza o usuário a receber notificações quando cada verificação é concluída. Você pode programar varreduras para uma data e hora específicas e recorrentes, ou executar uma varredura sob demanda, conforme necessário.
 

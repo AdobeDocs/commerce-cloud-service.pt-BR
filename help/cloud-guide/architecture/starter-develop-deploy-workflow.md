@@ -3,7 +3,7 @@ title: Fluxo de trabalho do projeto inicial
 description: Saiba como usar os workflows de desenvolvimento e implantação do Starter.
 feature: Cloud, Paas
 exl-id: f334047a-1e0d-45c7-bf96-5c2964741951
-source-git-commit: 08f43a3b0a50cdb2a5e8a45bd2e2448bc6dbca2b
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '2103'
 ht-degree: 0%
@@ -105,9 +105,9 @@ Quando estiver pronto para configurar o armazenamento, envie todo o código para
 Para obter as melhores informações sobre configurações, consulte a documentação do Adobe Commerce e as extensões instaladas. Estes são alguns links e ideias que ajudam você a começar:
 
 - [Práticas recomendadas para configuração de armazenamento](../store/best-practices.md) para práticas recomendadas específicas na nuvem
-- [Configuração básica](https://docs.magento.com/user-guide/configuration/configuration-basic.html) para acesso de administrador de loja, nome, idiomas, moedas, identidade visual, sites, exibições de loja e muito mais
-- [Tema](https://docs.magento.com/user-guide/design/design-theme.html) para a aparência do site e lojas, incluindo CSS e layouts
-- [Configuração do sistema](https://docs.magento.com/user-guide/system/system.html) para funções, ferramentas, notificações e sua chave de criptografia para o banco de dados
+- [Configuração básica](https://experienceleague.adobe.com/en/docs/commerce-admin/start/setup/store-details) para acesso de administrador de loja, nome, idiomas, moedas, identidade visual, sites, exibições de loja e muito mais
+- [Tema](https://experienceleague.adobe.com/en/docs/commerce-admin/content-design/content-menu#design-features) para a aparência do site e lojas, incluindo CSS e layouts
+- [Configuração do sistema](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/guide-overview) para funções, ferramentas, notificações e sua chave de criptografia para o banco de dados
 - Configurações de extensão usando a documentação
 
 Além das configurações de loja, você pode configurar vários sites e lojas, serviços configurados e muito mais. Consulte [Configurar armazenamento](../store/overview.md).
@@ -165,7 +165,7 @@ Para ajudar a exportar dados de produção como dados de teste para uso em ambie
 
 - [Execute os utilitários de suporte](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/run-support-utilities.html) comandos da CLI (Recomendado) ao exportar um backup protegido do cliente e armazenar dados usando sua chave de criptografia do Adobe Commerce
 
-- Ferramenta [Coleta de dados](https://docs.magento.com/user-guide/system/support-data-collector.html) para gerar e exportar dados
+- Ferramenta [Coleta de dados](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/support#data-collector) para gerar e exportar dados
 
 Para migrar esses dados, consulte [Migrar e implantar arquivos e dados estáticos](../deploy/staging-production.md#migrate-static-files).
 

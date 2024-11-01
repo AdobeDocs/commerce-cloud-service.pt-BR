@@ -3,9 +3,9 @@ title: Configurar os serviços do Fastly
 description: Saiba como configurar os serviços do Fastly para seu projeto no Adobe Commerce.
 feature: Cloud, Configuration, Iaas, Cache, Security
 exl-id: c53ff3bd-3df2-45fb-933e-d3b29f7edf4e
-source-git-commit: 8a0523f1714b6ea41887e99b5c31294cf5e5255e
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '1961'
+source-wordcount: '1960'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 O Fastly é necessário para o Adobe Commerce em ambientes de Preparo e Produção de infraestrutura em nuvem.
 
-O Fastly trabalha com o Varnish para fornecer recursos rápidos de cache e uma [Rede de Entrega de Conteúdo](https://glossary.magento.com/content-delivery-network) (CDN) para ativos estáticos. O Fastly também fornece um Firewall de Aplicativo Web (WAF) para proteger seu site e a infraestrutura da Nuvem. Para proteger seu site e sua infraestrutura em nuvem contra tráfego mal-intencionado e ataques, roteie todo o tráfego de entrada do site pelo Fastly.
+O Fastly trabalha com o Varnish para fornecer recursos rápidos de armazenamento em cache e uma Rede de entrega de conteúdo (CDN) para ativos estáticos. O Fastly também fornece um Firewall de Aplicativo Web (WAF) para proteger seu site e a infraestrutura da Nuvem. Para proteger seu site e sua infraestrutura em nuvem contra tráfego mal-intencionado e ataques, roteie todo o tráfego de entrada do site pelo Fastly.
 
 >[!NOTE]
 >
