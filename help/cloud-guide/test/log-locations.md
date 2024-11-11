@@ -3,7 +3,7 @@ title: Exibir e gerenciar logs
 description: Entenda os tipos de arquivos de log disponíveis na infraestrutura da nuvem e onde encontrá-los.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 633e5e75ae23a933d15a0faedae22092797d5d0b
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -208,7 +208,7 @@ Para ambientes de preparo e produção Pro, os logs de implantação, pós-impla
 
 ### Arquivos de log arquivados
 
-Os registros de aplicativos são compactados e arquivados uma vez por dia e mantidos por um ano. Os logs compactados são nomeados usando uma ID exclusiva que corresponde ao `Number of Days Ago + 1`. Por exemplo, em ambientes de produção Pro, um log de acesso do PHP para 21 dias no passado é armazenado e nomeado da seguinte maneira:
+Os logs do aplicativo são compactados e arquivados uma vez por dia e mantidos por **30 dias**. Os logs compactados são nomeados usando uma ID exclusiva que corresponde ao `Number of Days Ago + 1`. Por exemplo, em ambientes de produção Pro, um log de acesso do PHP para 21 dias no passado é armazenado e nomeado da seguinte maneira:
 
 ```
 /var/log/platform/<project-ID>/php.access.log.22.gz
@@ -218,7 +218,7 @@ Os arquivos de log arquivados são sempre armazenados no diretório onde o arqui
 
 >[!NOTE]
 >
->Os arquivos de log **Implantar** e **Post-implantar** não são girados e arquivados. Todo o histórico de implantação é gravado nesses arquivos de log.
+>Os arquivos de log de **Implantação** e **Pós-implantação** não são girados e arquivados. Todo o histórico de implantação é gravado nesses arquivos de log.
 
 ## Logs de serviço
 
