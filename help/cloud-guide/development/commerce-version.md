@@ -3,9 +3,9 @@ title: Atualizar versão do Commerce
 description: Saiba como atualizar a versão do Adobe Commerce no projeto de infraestrutura em nuvem.
 feature: Cloud, Upgrade
 exl-id: 87821007-4979-4a20-940b-aa3c82c192d8
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 8851db6ee962bf1a65b31d344e2bd71065e9340d
 workflow-type: tm+mt
-source-wordcount: '1439'
+source-wordcount: '1547'
 ht-degree: 0%
 
 ---
@@ -286,6 +286,19 @@ Examine as informações das [versões de serviço](../services/services-yaml.md
    ```bash
    composer update
    ```
+
+1. Revise os patches atualmente aplicados:
+
+   - Se houver patches instalados no diretório `m2-hotfixes`, [envie um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#support-case) e trabalhe com o Suporte da Adobe Commerce para verificar quais patches ainda podem ser aplicados à nova versão. Remova os patches não aplicáveis do diretório `m2-hotfixes`.
+
+   - Se houver [Patches de Qualidade] aplicados no arquivo `.magento.env.yaml`, verifique se eles ainda podem ser aplicados à nova versão. Remova os patches não aplicáveis da seção `QUALITY_PATCHES` do arquivo `.magento.env.yaml`.
+
+   **Método 1**: [Verifique as versões aplicáveis nas notas de versão de Patches de Qualidade](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/quality-patches-tool/release-notes)
+
+   **Método 2**: [Exibir patches e status disponíveis](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/develop/upgrade/apply-patches#view-available-patches-and-status)
+
+   **Método 3**: [Pesquisar patches](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html?lang=en)
+
 
 1. Adicionar, confirmar e enviar alterações de código.
 
