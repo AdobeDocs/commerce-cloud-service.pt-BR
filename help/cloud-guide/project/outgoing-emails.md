@@ -2,20 +2,24 @@
 title: Configurar emails de saída
 description: Saiba como habilitar emails de saída para o Adobe Commerce na infraestrutura em nuvem.
 exl-id: 814fe2a9-15bf-4bcb-a8de-ae288fd7f284
-source-git-commit: ec9192caa5daa1cd25a3eec6095c2c3cf8fbefb4
+source-git-commit: 75318be63adcbe23bb8b6699b1c59b2b4a3c1a4d
 workflow-type: tm+mt
-source-wordcount: '373'
+source-wordcount: '384'
 ht-degree: 0%
 
 ---
 
 # Configurar emails de saída
 
-Você pode habilitar e desabilitar emails de saída para cada ambiente do [!DNL Cloud Console] ou da linha de comando. Ative emails de saída para ambientes de integração (e de preparo somente para o Starter) para enviar emails de autenticação de dois fatores ou redefinir emails de senha para usuários do projeto na nuvem.
+Você pode habilitar e desabilitar emails de saída para ambientes de integração (e de preparo somente para o Iniciador) do [!DNL Cloud Console] ou da linha de comando. Ative os emails de saída para enviar autenticação de dois fatores ou redefinir emails de senha para usuários do projeto na nuvem.
 
 Por padrão, os emails de saída são ativados nos ambientes de Produção e Preparo (somente Pro). No entanto, a configuração **[!UICONTROL Enable outgoing emails]** pode parecer desabilitada nas configurações do ambiente independentemente do status até que você defina a propriedade `enable_smtp` por meio da [linha de comando](#enable-emails-in-the-cli) ou do [Console da Nuvem](outgoing-emails.md#enable-emails-in-the-cloud-console).
 
 A atualização do valor da propriedade `enable_smtp` pela [linha de comando](#enable-emails-in-the-cli) também altera o valor da configuração [!UICONTROL Enable outgoing emails] desse ambiente no Console da Nuvem.
+
+>[!NOTE]
+>
+>Habilitar/desabilitar a configuração **[!UICONTROL Enable outgoing emails]** não habilitará/desabilitará emails nos ambientes de Preparo Profissional ou Produção.
 
 {{redeploy-warning}}
 
@@ -27,14 +31,14 @@ Se os emails de saída precisarem ser desativados ou reativados nos ambientes de
 
 >[!TIP]
 >
->O status do email de saída pode não ser refletido para ambientes Pro no Cloud Console. Em vez disso, use a [linha de comando](#enable-emails-in-the-cli) para habilitar e testar emails de saída.
+>O status do email de saída pode não ser refletido para ambientes de preparo profissional ou de produção no Cloud Console.
 
 **Para gerenciar o suporte de email do[!DNL Cloud Console]**:
 
 1. Faça logon no [[!DNL Cloud Console]](https://console.adobecommerce.com).
 1. Selecione um projeto na lista _Todos os projetos_.
 1. No painel Projeto, clique no ícone de configuração no canto superior direito.
-1. Clique em **[!UICONTROL Environments]** e selecione um ambiente específico na lista.
+1. Clique em **[!UICONTROL Environments]** e selecione um ambiente específico na lista (exceto Preparo e Produção para Pro).
 1. Para habilitar ou desabilitar emails de saída, alterne _Habilitar emails de saída_ **Ativado** ou **Desativado**.
 
    ![Habilitar configuração de email de saída](../../assets/outgoing-emails.png)
