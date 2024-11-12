@@ -4,7 +4,7 @@ description: Saiba mais sobre o serviço do New Relic disponível com seu projet
 feature: Cloud, Observability
 last-substantial-update: 2023-09-06T00:00:00Z
 exl-id: 613f0694-5338-4037-8ee4-ac5eca376159
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: b53d5a8d06e0ed249bd44b6f38f837a257cbd315
 workflow-type: tm+mt
 source-wordcount: '369'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Os seguintes recursos do New Relic estão disponíveis para uso com ambientes de
 
 - [APM do New Relic](#new-relic-apm) (Pro e Starter)
 - [Infraestrutura New Relic](#new-relic-infrastructure) (somente Pro)
-- [Gerenciamento de logs do New Relic](#new-relic-logs) (somente Pro)
+- [Gerenciamento de logs do New Relic](#new-relic-log-management) (somente Pro)
 
 >[!INFO]
 >
