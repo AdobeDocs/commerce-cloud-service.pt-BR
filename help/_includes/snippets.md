@@ -1,7 +1,7 @@
 ---
-source-git-commit: a87039d2e96e39d6d8d19673c5e0d52de8b844a4
+source-git-commit: 63b966c1562318dc43dd42641e6f607f5438137b
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '907'
 ht-degree: 0%
 
 ---
@@ -81,6 +81,12 @@ Defina a opção `_merge` como uma das opções a seguir:
 >[!NOTE]
 >
 >Com o [!DNL ECE-Tools] 2002.1.0 e versões posteriores, você pode usar o recurso de implantação baseada em cenário para personalizar os processos de compilação, implantação e pós-implantação do seu projeto Adobe Commerce na infraestrutura em nuvem. Consulte [Implantação baseada em cenário](/help/cloud-guide/deploy/scenario-based.md).
+
+## Segundo preparo {#second-staging}
+
+>[!NOTE]
+>
+>Alguns projetos exigem um fluxo de trabalho de desenvolvimento mais sofisticado. Para atender a essa necessidade, o Adobe oferece um [ambiente de preparo adicional](/help/cloud-guide/test/second-staging.md) como uma opção complementar à sua infraestrutura em nuvem.
 
 ## Instrução de serviço {#service-instruction}
 

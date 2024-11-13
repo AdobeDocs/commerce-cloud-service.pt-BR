@@ -2,7 +2,7 @@
 title: Teste de preparo e produção
 description: Saiba como testar em ambientes de preparo e produção.
 exl-id: 5b762d59-04c5-4e89-a637-719141759158
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: c6d4128792e688485e021bad75d9814a9f4d3b4f
 workflow-type: tm+mt
 source-wordcount: '1329'
 ht-degree: 0%
@@ -12,6 +12,8 @@ ht-degree: 0%
 # Teste de preparo e produção
 
 Após uma migração bem-sucedida de código, arquivos e dados para armazenamento temporário ou produção, use os URLs de ambiente para testar seus sites e armazenamentos. A seguir estão informações sobre a verificação de logs, o teste de configurações do Fastly, o teste de aceitação do usuário (UAT) e muito mais.
+
+{{second-staging}}
 
 ## Arquivos de log
 

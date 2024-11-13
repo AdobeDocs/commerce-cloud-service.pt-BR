@@ -3,7 +3,7 @@ title: Fluxo de trabalho do projeto Pro
 description: Saiba como usar os fluxos de trabalho de desenvolvimento e implantação do Pro.
 feature: Cloud, Iaas, Paas
 exl-id: 103e90d5-2ef2-4fef-845c-439344666b00
-source-git-commit: 08f43a3b0a50cdb2a5e8a45bd2e2448bc6dbca2b
+source-git-commit: c6d4128792e688485e021bad75d9814a9f4d3b4f
 workflow-type: tm+mt
 source-wordcount: '782'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Combine todas as alterações de código verificadas mesclando a ramificação d
 O armazenamento temporário é um ambiente de pré-produção que fornece todos os serviços e configurações o mais próximo possível do ambiente de produção. Sempre envie suas alterações de código do ambiente `integration` para o ambiente `staging` por push para que você possa realizar testes completos com todos os serviços. Na primeira vez que usar o ambiente de preparo, você deve configurar serviços, como o [Fastly CDN](../cdn/fastly.md) e o [New Relic](../monitor/new-relic-service.md). Configure gateways de pagamento, envio, notificações e outros serviços essenciais com sandbox ou credenciais de teste.
 
 É melhor testar completamente cada serviço, verificar suas ferramentas de teste de desempenho e executar o teste de UAT como administrador e como cliente, até sentir que sua loja está pronta para o ambiente de produção. Consulte [Implantar seu armazenamento](../deploy/staging-production.md).
+
+{{second-staging}}
 
 ### Mesclar para produção
 

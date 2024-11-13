@@ -4,7 +4,7 @@ description: Saiba mais sobre os ambientes compatíveis com a arquitetura Pro.
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: a1e7674b99d7e289531268e1a298f61344c7bd8f
+source-git-commit: 18f4da5c6e7e5c483f5cf64e977b3fb3fd28bbb0
 workflow-type: tm+mt
 source-wordcount: '1573'
 ht-degree: 0%
@@ -120,6 +120,8 @@ Consulte [Fluxo de trabalho de implantação](pro-develop-deploy-workflow.md#dep
 - Depois de iniciar o site de produção, use o ambiente de preparo principalmente para testar patches para correções de erros críticos de produção.
 
 - Você não pode criar uma ramificação a partir da ramificação `staging`. Em vez disso, você envia as alterações de código da ramificação `integration` para a ramificação `staging`.
+
+{{second-staging}}
 
 ### Ambiente de produção
 

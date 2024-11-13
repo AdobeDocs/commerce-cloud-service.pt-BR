@@ -3,9 +3,9 @@ user-guide-title: Guia do Commerce na infraestrutura em nuvem
 user-guide-description: Saiba como gerenciar o aplicativo do Adobe Commerce na infraestrutura em nuvem.
 product: magento
 feature: Cloud
-source-git-commit: ebd434e488b666d34df9562825a612b33495e44d
+source-git-commit: 54b9101d3cba535a0e2c83e482aaebe261e3bcce
 workflow-type: tm+mt
-source-wordcount: '353'
+source-wordcount: '356'
 ht-degree: 7%
 
 ---
@@ -82,6 +82,7 @@ ht-degree: 7%
       + [Xdebug](test/debug.md)
       + [Dados de exemplo](test/sample-data.md)
       + [Preparo e produção](test/staging-and-production.md)
+      + [Segundo ambiente de preparo](test/second-staging.md)
    + [Serviço PrivateLink](development/privatelink-service.md)
    + [Bloqueio protetor](development/protective-block.md)
    + [Restaurar ambiente](development/restore-environment.md)
@@ -118,7 +119,7 @@ ht-degree: 7%
          + [Global](environment/variables-global.md)
          + [Build](environment/variables-build.md)
          + [Implantar](environment/variables-deploy.md)
-         + [Post-deploy](environment/variables-post-deploy.md)
+         + [Pós-implantação](environment/variables-post-deploy.md)
       + Configurar notificações {#log}
          + [Notificação](environment/set-up-notifications.md)
          + [Manipuladores de log](environment/log-handlers.md)
