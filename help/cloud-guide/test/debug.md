@@ -2,9 +2,9 @@
 title: Configurar [!DNL Xdebug]
 description: Saiba como configurar a extensão Xdebug para depurar o desenvolvimento de projetos do Adobe Commerce na infraestrutura em nuvem.
 exl-id: bf2d32d8-fab7-439e-8df3-b039e53009d4
-source-git-commit: 7b42174663b79b673ee5af05b794090ddc5bdd75
+source-git-commit: 83984f9e30402cda7af29ca5095a251ff835b4a1
 workflow-type: tm+mt
-source-wordcount: '1765'
+source-wordcount: '1920'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Para configurar o [!DNL Xdebug], siga estas etapas:
 
 - [Trabalhe em uma ramificação para enviar atualizações de arquivo](#get-started-with-a-branch)
 - [Habilitar [!DNL Xdebug] para ambientes](#enable-xdebug-in-your-environment)
-- [Configurar o IDE](#configure-phpstorm)
+- [Configurar o servidor PHPStorm](#configure-phpstorm-server)
 - [Configurar encaminhamento de porta](#set-up-port-forwarding)
 
 ### Introdução a uma ramificação
@@ -41,6 +41,8 @@ Para adicionar [!DNL Xdebug], o Adobe recomenda trabalhar em [uma ramificação 
 ### Ativar o Xdebug no seu ambiente
 
 Você pode habilitar o [!DNL Xdebug] diretamente para todos os ambientes de inicialização e integração Pro. Essa etapa de configuração não é necessária para ambientes de produção e preparo profissionais. Consulte [Depuração para Preparo e Produção Profissionais](#debug-for-pro-staging-and-production).
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437407?learn=on)
 
 Para habilitar [!DNL Xdebug] para o seu projeto, adicione `xdebug` à seção `runtime:extensions` do arquivo `.magento.app.yaml`.
 
@@ -65,11 +67,11 @@ Para habilitar [!DNL Xdebug] para o seu projeto, adicione `xdebug` à seção `r
 1. Adicione, confirme e envie as alterações para reimplantar o ambiente.
 
    ```bash
-   git add -A
+   git add .magento.app.yaml
    ```
 
    ```bash
-   git commit -m "Add xdebug"
+   git commit -m "add xdebug"
    ```
 
    ```bash
@@ -78,7 +80,9 @@ Para habilitar [!DNL Xdebug] para o seu projeto, adicione `xdebug` à seção `r
 
 Quando implantado em ambientes iniciais e ambientes de integração Pro, o [!DNL Xdebug] agora está disponível. Continue configurando seu IDE. Para PhpStorm, consulte [Configurar PhpStorm](#configure-phpstorm).
 
-### Configurar o PhpStorm
+### Configurar o servidor PhpStorm
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437409?learn=on)
 
 O IDE [PhpStorm](https://www.jetbrains.com/phpstorm/) deve ser configurado para funcionar corretamente com [!DNL Xdebug].
 
@@ -86,10 +90,10 @@ O IDE [PhpStorm](https://www.jetbrains.com/phpstorm/) deve ser configurado para 
 
 1. No projeto PhpStorm, abra o painel **Configurações**.
 
-   - _macOS_—Selecione **PhpStorm** > **Preferências**.
+   - _macOS_—Selecione **PhpStorm** > **Configurações**.
    - _Windows/Linux_—Selecione **Arquivo** > **Configurações**.
 
-1. No painel _Configurações_, expanda e localize a seção **Idiomas e Estruturas** > **PHP** > **Servidores**.
+1. No painel _Configurações_, expanda a seção **PHP** e clique em **Servidores**.
 
 1. Clique em **+** para adicionar uma configuração de servidor. O nome do projeto está em cinza na parte superior.
 
@@ -110,11 +114,32 @@ O IDE [PhpStorm](https://www.jetbrains.com/phpstorm/) deve ser configurado para 
       - Produção: `/app/<project_code>/`
       - Estágios: `/app/<project_code>_stg/`
 
-1. Altere a porta [!DNL Xdebug] para 9000 no painel **Languages &amp; Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port**.
+1. Altere a porta [!DNL Xdebug] para `9000,9003` ou você pode limitá-la a apenas `9000` no painel **PHP** > **Depurar** > **Xdebug** > **Porta de Depuração**.
 
 1. Clique em **Aplicar**.
 
+### Crie a configuração de execução/depuração do PHPStorm
+
+Isso permite que o aplicativo tenha as configurações de depuração corretas para lidar com a solicitação do aplicativo do Adobe Commerce.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437426?learn=on)
+
+1. Abra o aplicativo PHPStorm e clique em **[!UICONTROL Add Configuration]** no lado superior direito da tela.
+
+1. Clique em **[!UICONTROL Add new run configuration]**.
+
+1. Selecione a opção **[!UICONTROL PHP Remote Debug]**.
+
+   - Insira um nome exclusivo, mas reconhecível.
+   - Marque a caixa de seleção [!UICONTROL Filter debug connection by IDE key]**.
+   - Selecione o servidor criado na [seção anterior](#configure-phpstorm-server). Se você ainda não o criou, crie um agora, mas consulte essa parte do guia de configuração.
+   - No campo de texto **[!UICONTROL IDE key(session id)]**, digite `PHPSTORM` em letras maiúsculas. Usaremos isso em outras partes da configuração, portanto, é importante manter isso inalterado. Se você escolher outra string, deverá se lembrar de usá-la em outro lugar no processo de instalação e configuração.
+
+1. Clique em **[!UICONTROL Apply]** > **[!UICONTROL OK]**.
+
 ### Configurar encaminhamento de porta
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437410?learn=on)
 
 Mapeie a conexão `XDEBUG` do servidor para o sistema local. Para fazer qualquer tipo de depuração, você deve encaminhar a porta 9000 do Adobe Commerce no servidor de infraestrutura em nuvem para o computador local. Consulte uma das seguintes seções:
 
@@ -280,6 +305,10 @@ Você precisa do seguinte:
 >- Método 2: Console Commerce: https://CONSOLE-URL/ENVIRONMENT, clique na lista suspensa `SSH v`
 
 **Para iniciar a depuração usando a URL de ambiente**:
+
+Esta é uma demonstração das configurações usadas, bem como uma demonstração do parâmetro GET para iniciar uma sessão de depuração remota.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437417?learn=on)
 
 1. Habilitar depuração remota; visite o site no navegador e anexe o seguinte à URL em que `KEY` é o valor de `xdebug_key`.
 
