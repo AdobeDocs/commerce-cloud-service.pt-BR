@@ -2,9 +2,9 @@
 title: Commerce na infraestrutura em nuvem
 description: Saiba mais sobre como criar, implantar e gerenciar a infraestrutura do Commerce na nuvem.
 exl-id: c0accd55-95ac-49d9-b6f4-0da19b82c28f
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 6ac23cbcf7ab48d09b494ebe8c7136518d213c4e
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '236'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,10 @@ O Adobe Commerce na infraestrutura em nuvem fornece uma plataforma de hospedagem
 - Hospedagem do Amazon Web Services (AWS) que oferece um ambiente escalável e seguro para vendas e varejo online.
 
 ![Benefícios da nuvem](../assets/CloudBenefits.svg)
+
+>[!NOTE]
+>
+>Para obter mais informações sobre segurança, consulte a [lista de verificação de inicialização de segurança](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/launch/checklist#security-configuration).
 
 Veja a [Pilha de tecnologia](architecture/tech-stack.md) em detalhes ou saiba mais sobre recursos específicos e produtos com suporte na [Arquitetura de nuvem do Commerce](architecture/cloud-architecture.md).
 

@@ -2,7 +2,7 @@
 title: Lista de verificação de inicialização
 description: Revise os itens da lista de verificação para o lançamento do site.
 exl-id: 4525742e-18c5-40d1-975d-00ba3f3a51a0
-source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
+source-git-commit: 6ac23cbcf7ab48d09b494ebe8c7136518d213c4e
 workflow-type: tm+mt
 source-wordcount: '1104'
 ht-degree: 0%
@@ -139,7 +139,7 @@ Você também pode testar usando as seguintes opções de terceiros:
 
 - [Configuração segura para o usuário administrador](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-admin)
 
-- [Configuração segura para a URL do Administrador]https://experienceleague.adobe.com/en/docs/commerce-admin/stores-sales/site-store/store-urls#use-a-custom-admin-url)
+- [Configuração segura para a URL do Administrador](https://experienceleague.adobe.com/en/docs/commerce-admin/stores-sales/site-store/store-urls#use-a-custom-admin-url)
 
 - [Remova os usuários que não estão mais no projeto Adobe Commerce na infraestrutura em nuvem](../project/user-access.md)
 
