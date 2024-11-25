@@ -3,9 +3,9 @@ title: Configurar o serviço Redis
 description: Saiba como configurar e otimizar o Redis como uma solução de cache de back-end para Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Cache, Services
 exl-id: d6971875-d302-495a-ad10-a81c507c2bc9
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '245'
 ht-degree: 0%
 
 ---
@@ -131,7 +131,5 @@ Consulte os seguintes artigos de suporte da Adobe Commerce para obter ajuda com 
 
 - [Redis problema atrasar o logon ou o check-out do administrador](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-issue-delay-magento-admin-login-or-checkout.html)
 - [Implementação do cache Redis estendido no Adobe Commerce 2.3.5+](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/planning/redis-service-configuration.html)
-- [MDVA-30102: cache Redis ficando cheio](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/patches/v1-0-6/mdva-30102-magento-patch-redis-cache-getting-full.html)
 - [Alertas gerenciados no Adobe Commerce: alerta de aviso de memória Redis](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-warning-alert.html)
 - [Alertas gerenciados no Adobe Commerce: alerta crítico de memória Redis](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-critical-alert.html)
-- [Solução de problemas do Redis](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-troubleshooter.html)

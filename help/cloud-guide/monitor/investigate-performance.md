@@ -4,9 +4,9 @@ description: Saiba como acessar o painel do New Relic e analisar dados do seu pr
 feature: Cloud, Observability
 topic: Performance
 exl-id: 8d1e2ad6-14d0-4754-9703-960d93e135a9
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '844'
+source-wordcount: '833'
 ht-degree: 0%
 
 ---
@@ -85,11 +85,11 @@ Quando a infraestrutura do site ou as condições do aplicativo acionam um limit
 
 Não modifique nenhum alerta incluído na política Alertas gerenciados para Adobe Commerce. O Adobe atualiza e melhora as condições de alerta nesta política ao longo do tempo, substituindo qualquer personalização adicionada à política.
 
-Em vez de modificar um alerta existente, você pode criar uma política de alertas. Em seguida, copie as condições de alerta para a nova regra. Consulte [Atualizar políticas ou condições](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/alert-policies/update-or-disable-policies-conditions/) na documentação do _New Relic_.
+Em vez de modificar um alerta existente, você pode criar uma política de alertas. Em seguida, copie as condições de alerta para a nova regra.
 
 >[!TIP]
 >
->Consulte [Introdução aos alertas](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/learn-alerts/alerts-concepts-workflow/) na documentação do _New Relic_ para obter informações mais detalhadas sobre Alertas, políticas de alerta e fluxos de trabalho.
+>Consulte [Introdução aos alertas](https://docs.newrelic.com/docs/alerts/overview/) na documentação do _New Relic_ para obter informações mais detalhadas sobre Alertas, políticas de alerta e fluxos de trabalho.
 
 ## Configurar um fluxo de trabalho para notificações
 

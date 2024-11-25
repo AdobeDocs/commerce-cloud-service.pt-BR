@@ -3,9 +3,9 @@ title: Configurar serviço Elasticsearch
 description: Saiba como habilitar o serviço Elasticsearch para Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Search, Services
 exl-id: ac559cbb-342a-4756-ade5-49eba4827965
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '788'
 ht-degree: 0%
 
 ---
@@ -266,6 +266,5 @@ Remover as entradas de plug-in de `elasticsearch:` em `.magento/services.yaml` n
 Consulte os seguintes artigos de suporte da Adobe Commerce para obter ajuda com a solução de problemas de Elasticsearch:
 
 - [Elasticsearch 5 está configurado, mas a página de pesquisa não carrega com o erro &quot;Fielddata está desabilitado...&quot;](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-5-is-configured-but-search-page-does-not-load-with-fielddata-is-disabled...-error.html)
-- [A paginação do catálogo não funciona quando o Elasticsearch 6.x é usado](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/known-issues-patches-attached/catalog-pagination-doesn-t-work-when-elasticsearch-6.x-is-used.html)
 - [Elasticsearch na solução de problemas do Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-in-magento-troubleshooter.html)
 - O Status do Índice [Elasticsearch é `yellow` ou `red`](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-index-status-is-yellow-or-red.html)
