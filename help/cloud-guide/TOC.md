@@ -3,9 +3,9 @@ user-guide-title: Guia do Commerce na infraestrutura em nuvem
 user-guide-description: Saiba como gerenciar o aplicativo do Adobe Commerce na infraestrutura em nuvem.
 product: magento
 feature: Cloud
-source-git-commit: 54b9101d3cba535a0e2c83e482aaebe261e3bcce
+source-git-commit: 5f00b20e599b7ba26e483a238d05d99daf1dd1b8
 workflow-type: tm+mt
-source-wordcount: '356'
+source-wordcount: '357'
 ht-degree: 7%
 
 ---
@@ -16,6 +16,7 @@ ht-degree: 7%
 + [Commerce](overview.md)
 + Arquitetura {#architecture}
    + [Infraestrutura em nuvem](architecture/cloud-architecture.md)
+   + [Segurança](architecture/security.md)
    + [Pilha de tecnologia](architecture/tech-stack.md)
    + [Arquitetura inicial](architecture/starter-architecture.md)
    + [Fluxo de trabalho inicial](architecture/starter-develop-deploy-workflow.md)
