@@ -3,7 +3,7 @@ title: Práticas recomendadas de implantação
 description: Descubra as práticas recomendadas para implantar o Adobe Commerce na infraestrutura em nuvem.
 feature: Cloud, Deploy, Best Practices
 exl-id: bac3ca83-0eee-4fda-9a5c-a84ab25a837a
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '1904'
 ht-degree: 0%
@@ -118,7 +118,7 @@ Esta fase também executa `composer install` para recuperar dependências.
 Esta fase cria a base de código e executa ganchos na seção `build` de `.magento.app.yaml`. O gancho de compilação padrão é o comando `php ./vendor/bin/ece-tools` e executa o seguinte:
 
 - Aplica patches em `vendor/magento/ece-patches` e patches opcionais específicos do projeto em `m2-hotfixes`
-- Regenera o código e a configuração de [injeção de dependência](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) (ou seja, o diretório `generated/`, que inclui `generated/code` e `generated/metapackage`) usando `bin/magento setup:di:compile`.
+- Regenera o código e a configuração de [injeção de dependência](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) (ou seja, o diretório `generated/`, que inclui `generated/code` e `generated/metapackage`) usando `bin/magento setup:di:compile`.
 - Verifica se o arquivo [`app/etc/config.php`](../store/store-settings.md) existe na base de código. O Adobe Commerce gera automaticamente esse arquivo se ele não for detectado durante a fase de criação e incluir uma lista de módulos e extensões. Se existir, a fase de criação continua normalmente, compacta arquivos estáticos usando GZIP e implanta, o que reduz o tempo de inatividade na fase de implantação. Consulte as [opções de compilação](../environment/variables-build.md) para saber mais sobre como personalizar ou desabilitar a compactação de arquivos.
 
 >[!WARNING]
@@ -145,7 +145,7 @@ O slug inclui todos os arquivos e pastas **excluindo as seguintes** montagens co
 
 ### Fase 4: implantação de slugs e cluster
 
-Seus aplicativos e todos os serviços de [back-end](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) são provisionados da seguinte maneira:
+Seus aplicativos e todos os serviços de [back-end](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) são provisionados da seguinte maneira:
 
 - Monta cada serviço em um contêiner, como servidor Web, OpenSearch, [!DNL RabbitMQ]
 - Monta o sistema de arquivos de leitura e gravação (montado em uma grade de armazenamento distribuída altamente disponível)
@@ -183,7 +183,7 @@ Há dois ganchos de implantação. O gancho `pre-deploy.php` conclui a limpeza e
 >
 >O script de implantação usa os valores definidos pelos arquivos de configuração no diretório `.magento` e, em seguida, o script exclui o diretório e seu conteúdo. O ambiente de desenvolvimento local não é afetado.
 
-### Post-deployment: configurar roteamento
+### Pós-implantação: configurar roteamento
 
 Enquanto a implantação está em execução, o processo interrompe o tráfego de entrada no ponto de entrada por 60 segundos e reconfigura o roteamento para que o tráfego da Web chegue ao cluster recém-criado.
 

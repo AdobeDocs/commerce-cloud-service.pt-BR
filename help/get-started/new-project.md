@@ -4,9 +4,9 @@ description: Saiba como preparar um Adobe Customer Technical Advisor para provis
 recommendations: noDisplay, catalog
 role: Admin
 exl-id: cfb354b0-c255-4b6e-94aa-c5a6bf7230d6
-source-git-commit: da1dec76b9389244f9d5a65428e09f1bc897fa5f
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
-source-wordcount: '756'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Consulte [Gerenciar espaço em disco](../cloud-guide/storage/manage-disk-space.m
 
 Escolha a base Amazon Web Services (AWS) ou Microsoft Azure as your Infrastructure as a Service (IaaS) para seus projetos Adobe Commerce on cloud infrastructure Pro. Cada provedor de serviços opera em várias regiões e fornece várias zonas de disponibilidade. Selecione uma região conveniente para sua localização e reduza a possibilidade de latência e custos mais altos.
 
-Consulte [um mapa de regiões de nuvem do Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/infrastructure/cloud/regions.html) no _Manual de implementação_.
+Consulte [um mapa das regiões de nuvem da Adobe Commerce](../cloud-guide/overview.md).
 
 ## Serviço de conexão
 
