@@ -3,9 +3,9 @@ title: Exibir e gerenciar logs
 description: Entenda os tipos de arquivos de log disponíveis na infraestrutura da nuvem e onde encontrá-los.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 633e5e75ae23a933d15a0faedae22092797d5d0b
+source-git-commit: 564a569c37ab8ec53f8a12bc105106a621251b10
 workflow-type: tm+mt
-source-wordcount: '1056'
+source-wordcount: '1083'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,18 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 >[!TIP]
 >
->Para ambientes Pro de armazenamento temporário e produção, a rotação, compactação e remoção automáticas de registros são ativadas para arquivos de registro com um nome de arquivo fixo. Cada tipo de arquivo de log tem um padrão rotativo e uma duração. Os ambientes iniciais não têm rotação de log. Detalhes completos sobre a rotação de logs e a duração de logs compactados do ambiente podem ser encontrados em: `/etc/logrotate.conf` e `/etc/logrotate.d/<various>`. A rotação de logs não pode ser configurada em ambientes Pro Integration. Para a Integração Pro, você deve implementar uma solução/script personalizado e [configurar seu cron](../application/crons-property.md) para executar o script conforme necessário.
+>Para ambientes Pro Staging e Pro Production, a rotação, compactação e remoção automáticas do registro são ativadas para arquivos de registro com um nome de arquivo fixo. Cada tipo de arquivo de log tem um padrão rotativo e uma duração.
+>Detalhes completos sobre a rotação de logs e a duração de logs compactados do ambiente podem ser encontrados em: `/etc/logrotate.conf` e `/etc/logrotate.d/<various>`.
+>Para ambientes de Pro Staging e Pro Production, você deve [enviar um tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) para solicitar alterações na configuração de rotação do log.
+
+>[!TIP]
+>
+>A rotação de logs não pode ser configurada em ambientes Pro Integration.
+>Para a Integração Pro, você deve implementar uma solução/script personalizado e [configurar seu cron](../application/crons-property.md) para executar o script conforme necessário.
+
+>[!NOTE]
+>
+>Os ambientes do Projeto inicial não têm rotação de log.
 
 ## Criar e implantar logs
 
