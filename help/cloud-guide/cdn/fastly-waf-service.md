@@ -3,9 +3,9 @@ title: Firewall de aplicativo da Web (WAF)
 description: Saiba como o serviço Fastly WAF detecta, registra e bloqueia o tráfego de solicitação mal-intencionado antes que ele possa danificar a rede ou os sites do Adobe Commerce.
 feature: Cloud, Configuration, Security
 exl-id: 40bfe983-7f32-4155-ae77-7cd18866f6e2
-source-git-commit: 48ac1759fc052175e01998703e7f4ee5eaac5224
+source-git-commit: fff4abf396b2c4a5b445c23c10608f54af059815
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '930'
 ht-degree: 0%
 
 ---
@@ -51,6 +51,11 @@ Quando o serviço WAF está ativado, ele inspeciona todo o tráfego da Web e adm
 Você pode personalizar esta página de resposta de erro no Admin. Consulte [Personalizar a página de resposta do WAF](fastly-custom-response.md#customize-the-waf-error-page).
 
 Se a sua página de administrador ou loja do Adobe Commerce retornar uma página de erro `403 Forbidden` em resposta a uma solicitação de URL legítima, envie um [tíquete de Suporte da Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket). Copie a ID de referência da página de resposta de erro e cole-a na descrição do ticket.
+
+Para identificar a resposta do WAF para uma solicitação específica usando o New Relic, consulte o seguinte:
+
+- `Agent_response` — Indica o código de resposta do WAF (`200` significa bom e `406` significa bloqueado)
+- `sigsci` tags — Marca a solicitação para uma tag de ciências de sinais específica com base na natureza da solicitação
 
 ## Manutenção e atualizações do WAF
 
