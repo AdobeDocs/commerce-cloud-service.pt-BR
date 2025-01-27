@@ -3,9 +3,9 @@ title: Acessar o painel de administração do Commerce
 description: Saiba como acessar o painel de administração do Commerce.
 recommendations: noDisplay, catalog
 exl-id: 9a8a0a49-b108-48bd-b413-ec9431370c06
-source-git-commit: 3ca09243dc0a714c1d86cccf9f0620a8a39fd1e1
+source-git-commit: 8be5b3f33798b1f03fc85a7ac9111dabd7bfd9e5
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '310'
 ht-degree: 0%
 
 ---
@@ -30,4 +30,4 @@ Depois de enviar a solicitação de alteração de senha, verifique se há notif
 
 ## Monitorar integridade do site
 
-A [Ferramenta de Análise do Site](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/intro) é uma ferramenta de autoatendimento proativa e um repositório central que inclui insights e recomendações de sistema detalhados para garantir a segurança e a operabilidade da instalação do Adobe Commerce. Ele fornece monitoramento de desempenho em tempo real, relatórios e conselhos 24 horas por dia, 7 dias por semana, para identificar possíveis problemas e melhor visibilidade das configurações de integridade, segurança e aplicativos do site. Ele ajuda a reduzir o tempo de resolução e a melhorar a estabilidade e o desempenho do site. Você pode acessar a Ferramenta de Análise do Site diretamente do [Painel de administração](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-2-logging-in-to-your-site-wide-analysis-tool-dashboard-from-your-stores-admin-panel) ou do [domínio dedicado](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-1-logging-in-to-your-site-wide-analysis-tool-dashboard-directly-from-the-site-wide-analysis-tool-domain-for-adobe-commerce-on-cloud-infrastructure-only) (somente Adobe Commerce em projetos de infraestrutura em nuvem).
+A [Ferramenta de Análise do Site](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/intro) é uma ferramenta de autoatendimento proativa e um repositório central que inclui insights e recomendações de sistema detalhados para garantir a segurança e a operabilidade da instalação do Adobe Commerce. Ele fornece monitoramento de desempenho em tempo real, relatórios e conselhos 24 horas por dia, 7 dias por semana, para identificar possíveis problemas e melhor visibilidade das configurações de integridade, segurança e aplicativos do site. Ele ajuda a reduzir o tempo de resolução e a melhorar a estabilidade e o desempenho do site. Você pode acessar a Ferramenta de Análise do Site diretamente do [Painel de administração](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-2-logging-in-to-your-site-wide-analysis-tool-dashboard-from-your-stores-admin-panel).
