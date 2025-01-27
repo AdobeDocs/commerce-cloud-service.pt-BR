@@ -4,9 +4,9 @@ description: Saiba mais sobre os ambientes compatíveis com a arquitetura Pro.
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 18f4da5c6e7e5c483f5cf64e977b3fb3fd28bbb0
+source-git-commit: eb33d9867355a4ccfada99c7f5b0e4520dbe44f5
 workflow-type: tm+mt
-source-wordcount: '1573'
+source-wordcount: '1554'
 ht-degree: 0%
 
 ---
@@ -185,7 +185,7 @@ Você pode criar um **backup manual** do banco de dados para seus ambientes de P
 
 ### Objetivo de ponto de recuperação
 
-O RPO é um tempo máximo de seis horas para o último backup (por exemplo, às 06:00, depois às 12:00 e, depois, às 18:00). A frequência dos backups depende da programação de backup do seu plano e do volume de alterações a serem gravadas no serviço de armazenamento.
+Entre em contato com o Gerente de sucesso do cliente do Adobe para obter detalhes sobre o tempo do objetivo do ponto de recuperação até o último backup. A frequência dos backups depende da programação de backup do seu plano e do volume de alterações a serem gravadas no serviço de armazenamento.
 
 ### Política de retenção
 
@@ -203,11 +203,7 @@ Essa política pode variar dependendo do seu plano de infraestrutura em nuvem.
 
 ### Meta de tempo de recuperação
 
-O RTO depende do tamanho do armazenamento. Grandes volumes de EBS demoram mais tempo para restaurar. Os tempos de restauração podem variar dependendo do tamanho do banco de dados:
-
-- Um banco de dados grande (mais de 200 GB) pode levar 5 horas
-- Um banco de dados médio (150 GB) pode levar 2 horas e meia
-- Um banco de dados pequeno (60 GB) pode levar 1 hora
+O RTO depende do tamanho do armazenamento. Grandes volumes de EBS demoram mais tempo para restaurar. Os tempos de restauração podem variar dependendo do tamanho do banco de dados. Entre em contato com o Gerente de sucesso do cliente do Adobe para obter mais detalhes.
 
 ## Escalabilidade de cluster Pro
 
