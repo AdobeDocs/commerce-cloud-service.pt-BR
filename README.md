@@ -1,52 +1,10 @@
 ---
-source-git-commit: c816ab2ec84ed13b3e2b31e65f67f37cffa85d37
+source-git-commit: 6867a43586c14057a6334f46ca0f210c3a216667
 workflow-type: tm+mt
-source-wordcount: '331'
+source-wordcount: '10'
 ht-degree: 0%
 
 ---
-# Adobe Commerce na infraestrutura em nuvem
+# Arquivado
 
-Este site contém a documentação mais recente para o desenvolvedor do Commerce na Infraestrutura em nuvem.
-
-- [Guia do Commerce na infraestrutura em nuvem](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/overview.html)
-- [Introdução ao Commerce](https://experienceleague.adobe.com/docs/commerce-cloud-service/start/overview.html) na infraestrutura em nuvem
-
-## Código de conduta de código aberto do Adobe
-
-Este projeto adotou a [Código de conduta de código aberto do Adobe](code-of-conduct.md) ou o [Código de conduta do .NET Foundation](https://dotnetfoundation.org/about/policies/code-of-conduct).
-Consulte a [Contribuição](contributing.md) artigo.
-
-### Pequenas alterações
-
-Se você estiver contribuindo com pequenas atualizações, abra o artigo e clique no link **Editar** link, que direciona você à origem GitHub do artigo. Use a interface do GitHub para fazer suas atualizações. Consulte as [Guia do colaborador do Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
-
-As pequenas correções ou esclarecimentos que você envia para documentação e exemplos de código neste repositório são cobertos pelos termos de uso do Adobe.
-
-### Grandes alterações ou novos artigos de membros da comunidade
-
-Se você fizer parte da comunidade Adobe e quiser criar um artigo ou enviar grandes alterações, envie um problema na guia Problemas para iniciar uma conversa com a equipe de documentação. Depois de concordar com um plano, trabalhe com um funcionário para criar e inserir o conteúdo.
-
-### Grandes mudanças de funcionários do Adobe
-
-Se você for um autor técnico, gerente de programa ou desenvolvedor de uma equipe de produtos do Adobe e seu trabalho for contribuir com ou criar artigos técnicos, use o repositório privado em `https://git.corp.adobe.com/AdobeDocs`.
-
-## Ferramentas e configuração
-
-Os colaboradores da comunidade podem usar a interface do usuário do GitHub para a edição básica ou bifurcar o repositório para fazer grandes contribuições.
-
-Consulte a [Guia do colaborador do Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) para obter detalhes.
-
-## Markdown
-
-Todos os artigos neste repositório usam GitHub flavored markdown. Se não estiver familiarizado com a marcação, consulte:
-
-- [Noções básicas do Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-- [Cheatsheet de markdown para impressão](https://docs.github.com/en/get-started/quickstart/git-cheatsheet)
-
-## Rótulos
-
-No repositório público, os rótulos automatizados são atribuídos às solicitações de pull para nos ajudar a gerenciar o fluxo de trabalho da solicitação de pull e informar sobre o status da solicitação de pull:
-
-- **Alteração enviada para o autor**: o autor foi notificado sobre a solicitação de pull pendente.
-- **pronto para mesclar**: pronto para análise pela equipe de revisão da solicitação de pull.
+O repositório commerce-cloud-service.en agora pode ser encontrado em commerce-on-cloud.en.
